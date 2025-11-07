@@ -2,47 +2,452 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>APAC FINSTAB | Blog</title>
+  <title>APAC FINSTAB | Insights & Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="APAC FINSTAB Blog - in-depth insights on APAC regulatory and digital finance trends." />
+  <meta name="description" content="Weekly regulatory intelligence and Web3 governance insights from APAC FINSTAB." />
   <style>
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#050816;color:#f5f5f5;}
-    header{padding:20px 40px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;}
-    header .logo{font-weight:700;letter-spacing:0.08em;font-size:18px;}
-    header nav a{margin-left:20px;color:#cbd5f5;text-decoration:none;font-size:14px;}
-    header nav a:hover{color:#fff;}
-    main{max-width:900px;margin:0 auto;padding:32px 16px 40px;}
-    h1{font-size:28px;margin-bottom:8px;}
-    p.subtitle{font-size:14px;color:#a0aec0;margin-bottom:24px;}
-    .post{background:#0b1020;border-radius:10px;border:1px solid rgba(255,255,255,0.06);padding:16px 20px;margin-bottom:16px;}
-    .post h2{font-size:18px;margin:0 0 8px;}
-    .post .meta{font-size:12px;color:#a0aec0;margin-bottom:8px;}
-    .post p{font-size:14px;color:#cbd5f5;margin:0 0 8px;}
-    .post a{font-size:13px;color:#a5b4fc;text-decoration:none;}
-    .post a:hover{text-decoration:underline;}
-    footer{padding:20px 40px;font-size:12px;color:#718096;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;}
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-light: #ffa366;
+      --brand-orange-dark: #ff6b1a;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #12172b;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 40px var(--brand-orange-glow);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    /* Header - 复用首页样式 */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.6);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #fff;
+      border-radius: 50%;
+    }
+    
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 2.5px;
+      height: 20px;
+      background: #fff;
+    }
+    
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; letter-spacing: 0.5px; color: var(--text-primary); }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    
+    nav { display: flex; gap: 8px; }
+    nav a {
+      padding: 10px 18px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    /* Page Container */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .page-title {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--brand-orange-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .page-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    /* Ghost CMS 集成说明卡片 */
+    .integration-notice {
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 48px;
+    }
+    
+    .integration-notice h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--brand-orange);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .integration-notice p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    
+    .integration-notice .btn-setup {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--brand-orange);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    
+    .integration-notice .btn-setup:hover {
+      background: var(--brand-orange-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* 临时文章列表（Ghost配置前的占位） */
+    .article-grid {
+      display: grid;
+      gap: 24px;
+    }
+    
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .article-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .article-image {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, #1a2035 0%, #2a3555 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .article-image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent 40%, var(--brand-orange-glow) 50%, transparent 60%);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .article-content {
+      padding: 24px;
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .article-tag {
+      padding: 4px 10px;
+      background: rgba(255, 140, 66, 0.12);
+      color: var(--brand-orange);
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    
+    .article-excerpt {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    .read-more {
+      color: var(--brand-orange);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .member-badge {
+      padding: 4px 10px;
+      background: rgba(59, 130, 246, 0.12);
+      color: #3b82f6;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    footer {
+      padding: 40px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 80px;
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      main { padding: 40px 16px; }
+      .page-title { font-size: 32px; }
+      .article-image { height: 180px; font-size: 36px; }
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">APAC FINSTAB</div>
-  <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="header-inner">
+    <a href="index.html" class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <span class="brand">APAC FINSTAB</span>
+        <span class="tagline">Regulatory Intelligence</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="blog.html" class="active">Insights</a>
+      <a href="contact.html">Connect</a>
+    </nav>
+  </div>
 </header>
+
 <main>
-  <h1>APAC FINSTAB Blog</h1>
-  <p class="subtitle">Weekly long-form commentary on APAC financial stability and Web3 governance.</p>
-  <article class="post">
-    <h2>Hong Kong Stablecoin Regime: From Pilot to Production</h2>
-    <div class="meta">2025-11-07 · Stablecoin Policy · HKMA</div>
-    <p>Hong Kong’s stablecoin pilot transition into full regulation, and its implications for regional competition.</p>
-    <a href="#">(Subscribe to read full post →)</a>
-  </article>
+  <div class="page-header">
+    <h1 class="page-title">Weekly Intelligence & Analysis</h1>
+    <p class="page-subtitle">Deep-dive regulatory analysis, policy impact assessments, and strategic insights for APAC markets. Published every Thursday.</p>
+  </div>
+  
+  <!-- Ghost CMS 集成说明 -->
+  <div class="integration-notice">
+    <h3>🚀 Coming Soon: Ghost CMS Integration</h3>
+    <p>This blog will be powered by Ghost CMS with premium features: member subscriptions, email newsletters, content locking, and automated publishing. Deploy Ghost in 10 minutes with our setup guide.</p>
+    <a href="#setup-guide" class="btn-setup">📖 View Setup Guide Below</a>
+  </div>
+  
+  <!-- 临时文章展示（Ghost配置后会被替换） -->
+  <div class="article-grid">
+    
+    <article class="article-card">
+      <div class="article-image">📊</div>
+      <div class="article-content">
+        <div class="article-meta">
+          <span>📅 Nov 7, 2025</span>
+          <span class="article-tag">Stablecoin Policy</span>
+        </div>
+        <h2 class="article-title">Hong Kong Stablecoin Regime: From Pilot to Production</h2>
+        <p class="article-excerpt">Hong Kong's stablecoin regulatory framework transitions from pilot to full production, marking a pivotal moment in APAC's digital asset landscape...</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Analysis →</a>
+          <span class="member-badge">Members Only</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="article-card">
+      <div class="article-image">🏦</div>
+      <div class="article-content">
+        <div class="article-meta">
+          <span>📅 Oct 31, 2025</span>
+          <span class="article-tag">CBDC Strategy</span>
+        </div>
+        <h2 class="article-title">China's Digital Yuan: Regional Implications</h2>
+        <p class="article-excerpt">As China's digital yuan rollout accelerates, we examine the competitive dynamics and strategic responses from other APAC central banks...</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Analysis →</a>
+          <span class="member-badge">Members Only</span>
+        </div>
+      </div>
+    </article>
+    
+    <article class="article-card">
+      <div class="article-image">⚖️</div>
+      <div class="article-content">
+        <div class="article-meta">
+          <span>📅 Oct 24, 2025</span>
+          <span class="article-tag">DeFi Regulation</span>
+        </div>
+        <h2 class="article-title">Singapore's DeFi Licensing Framework Deep Dive</h2>
+        <p class="article-excerpt">MAS's new DeFi licensing requirements represent the most comprehensive regulatory approach in APAC. Here's what protocols need to know...</p>
+        <div class="article-footer">
+          <a href="#" class="read-more">Read Analysis →</a>
+          <span class="member-badge">Free</span>
+        </div>
+      </div>
+    </article>
+    
+  </div>
+  
+  <!-- Ghost CMS Setup Guide -->
+  <div id="setup-guide" style="margin-top:80px;padding:32px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:12px;">
+    <h2 style="font-size:28px;margin-bottom:20px;color:var(--brand-orange);">📚 Ghost CMS Setup Guide</h2>
+    
+    <div style="font-size:15px;line-height:1.8;color:var(--text-secondary);">
+      <h3 style="font-size:18px;margin:24px 0 12px;color:var(--text-primary);">Why Ghost CMS?</h3>
+      <ul style="padding-left:20px;margin-bottom:20px;">
+        <li style="margin-bottom:8px;">✅ <strong>100% Free & Open Source</strong></li>
+        <li style="margin-bottom:8px;">✅ <strong>Built-in Member Subscriptions</strong> (付费内容锁定)</li>
+        <li style="margin-bottom:8px;">✅ <strong>Email Newsletter</strong> (自动发送)</li>
+        <li style="margin-bottom:8px;">✅ <strong>SEO Optimized</strong></li>
+        <li style="margin-bottom:8px;">✅ <strong>Markdown Editor</strong> (写作体验极佳)</li>
+        <li style="margin-bottom:8px;">✅ <strong>Cover Images</strong> (头图支持)</li>
+      </ul>
+      
+      <h3 style="font-size:18px;margin:24px 0 12px;color:var(--text-primary);">部署步骤（10分钟）：</h3>
+      <ol style="padding-left:20px;margin-bottom:20px;">
+        <li style="margin-bottom:16px;">
+          <strong>注册 Railway.app</strong><br/>
+          <code style="background:rgba(255,140,66,0.1);padding:2px 6px;border-radius:4px;">https://railway.app</code> → 免费部署Ghost
+        </li>
+        <li style="margin-bottom:16px;">
+          <strong>一键部署Ghost模板</strong><br/>
+          点击 "Deploy Ghost" → 等待3分钟部署完成
+        </li>
+        <li style="margin-bottom:16px;">
+          <strong>配置自定义域名</strong><br/>
+          Settings → Custom Domain → 输入 <code style="background:rgba(255,140,66,0.1);padding:2px 6px;border-radius:4px;">blog.apacfinstab.com</code>
+        </li>
+        <li style="margin-bottom:16px;">
+          <strong>安装品牌主题</strong><br/>
+          我会给你定制的橙色主题文件 → 上传到Ghost后台
+        </li>
+        <li style="margin-bottom:16px;">
+          <strong>配置会员订阅</strong><br/>
+          Settings → Members → 启用 "Subscription" → 设置邮件通知
+        </li>
+      </ol>
+      
+      <p style="margin-top:24px;padding:16px;background:rgba(255,140,66,0.08);border-left:3px solid var(--brand-orange);border-radius:4px;">
+        <strong>💡 提示：</strong> 部署后，你只需在Ghost后台写Markdown文章，添加封面图，设置"会员专属"标签，即可一键发布。无需再手动编辑HTML！
+      </p>
+    </div>
+  </div>
+
 </main>
-<footer>© <span id="year"></span> APAC FINSTAB.</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<footer>
+  <p class="footer-text">© <span id="year"></span> APAC FINSTAB. Independent regulatory intelligence.</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
