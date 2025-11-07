@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=https://blog.apacfinstab.com" />
-  <title>APAC FINSTAB | Redirecting to Blog...</title>
+  <title>APAC FINSTAB | Insights & Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Redirecting to APAC FINSTAB Blog - Weekly regulatory intelligence and Web3 governance insights." />
+  <meta name="description" content="Weekly regulatory intelligence and Web3 governance insights from APAC FINSTAB." />
   <style>
     :root {
       --brand-orange: #ff8c42;
@@ -13,90 +12,150 @@
       --bg-primary: #0a0e1a;
       --text-primary: #f5f7fa;
       --text-secondary: #a8b2c1;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --shadow-glow: 0 0 40px rgba(255, 140, 66, 0.25);
     }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
       color: var(--text-primary);
+      overflow-x: hidden;
+    }
+    
+    /* Header - 和主站一致 */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-    }
-    .redirect-container { text-align: center; padding: 40px; max-width: 500px; }
-    .logo-icon {
-      width: 80px; height: 80px;
-      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
-      border-radius: 16px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       position: relative;
-      margin: 0 auto 24px;
-      box-shadow: 0 0 40px rgba(255, 140, 66, 0.3);
-      animation: pulse 2s ease-in-out infinite;
+      box-shadow: var(--shadow-glow);
+      transition: transform 0.2s;
     }
+    
     .logo-icon::before {
       content: '';
       position: absolute;
-      width: 36px; height: 36px;
-      border: 3px solid #fff;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #fff;
       border-radius: 50%;
     }
+    
     .logo-icon::after {
       content: '';
       position: absolute;
-      width: 3px; height: 36px;
+      width: 2.5px;
+      height: 20px;
       background: #fff;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(255, 140, 66, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(255, 140, 66, 0.5); }
-    }
-    h1 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
-    p { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
-    .spinner {
-      width: 40px; height: 40px;
-      border: 3px solid rgba(255, 140, 66, 0.2);
-      border-top-color: var(--brand-orange);
-      border-radius: 50%;
-      margin: 0 auto 24px;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .manual-link {
-      display: inline-block;
-      padding: 12px 28px;
-      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
-      color: #fff;
+    
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; color: var(--text-primary); }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    
+    nav { display: flex; gap: 8px; }
+    nav a {
+      padding: 10px 18px;
+      color: var(--text-secondary);
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 700;
       font-size: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
     }
-    .manual-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(255, 140, 66, 0.5);
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    /* Ghost Content Container */
+    .ghost-container {
+      width: 100%;
+      min-height: calc(100vh - 80px);
+      background: #fff;
+    }
+    
+    iframe {
+      width: 100%;
+      min-height: calc(100vh - 80px);
+      border: none;
+      display: block;
+      background: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      .logo-icon { width: 36px; height: 36px; }
+      nav { gap: 4px; }
+      nav a { padding: 8px 12px; font-size: 13px; }
     }
   </style>
 </head>
 <body>
-  <div class="redirect-container">
-    <div class="logo-icon"></div>
-    <h1>Redirecting to APAC FINSTAB Blog</h1>
-    <p>You will be automatically redirected to our weekly regulatory intelligence blog.</p>
-    <div class="spinner"></div>
-    <a href="https://blog.apacfinstab.com" class="manual-link">
-      Click here if not redirected
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <span class="brand">APAC FINSTAB</span>
+        <span class="tagline">Regulatory Intelligence</span>
+      </div>
     </a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="blog.html" class="active">Insights</a>
+      <a href="contact.html">Connect</a>
+    </nav>
   </div>
-  <script>
-    setTimeout(function() {
-      window.location.href = 'https://blog.apacfinstab.com';
-    }, 500);
-  </script>
+</header>
+
+<div class="ghost-container">
+  <iframe src="https://blog.apacfinstab.com" title="APAC FINSTAB Blog" id="ghost-iframe"></iframe>
+</div>
+
+<script>
+// 自动调整 iframe 高度
+function resizeIframe() {
+  const iframe = document.getElementById('ghost-iframe');
+  const windowHeight = window.innerHeight;
+  const headerHeight = document.querySelector('header').offsetHeight;
+  iframe.style.height = (windowHeight - headerHeight) + 'px';
+}
+
+window.addEventListener('load', resizeIframe);
+window.addEventListener('resize', resizeIframe);
+</script>
+
 </body>
 </html>
