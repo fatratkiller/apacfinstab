@@ -2,47 +2,478 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>APAC FINSTAB | Contact</title>
+  <title>APAC FINSTAB | Connect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact APAC FINSTAB for institutional collaborations and bespoke regulatory dashboards." />
+  <meta name="description" content="Connect with APAC FINSTAB for regulatory intelligence, institutional partnerships, and Web3 governance insights." />
   <style>
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#050816;color:#f5f5f5;}
-    header{padding:20px 40px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;}
-    header .logo{font-weight:700;letter-spacing:0.08em;font-size:18px;}
-    header nav a{margin-left:20px;color:#cbd5f5;text-decoration:none;font-size:14px;}
-    header nav a:hover{color:#fff;}
-    main{max-width:720px;margin:0 auto;padding:32px 16px 40px;}
-    h1{font-size:26px;margin-bottom:8px;}
-    p.subtitle{font-size:14px;color:#a0aec0;margin-bottom:24px;}
-    .card{background:#0b1020;border-radius:10px;border:1px solid rgba(255,255,255,0.06);padding:20px 24px;font-size:14px;line-height:1.7;}
-    a.link{color:#a5b4fc;text-decoration:none;word-break:break-all;}
-    a.link:hover{text-decoration:underline;}
-    footer{padding:20px 40px;font-size:12px;color:#718096;border-top:1px solid rgba(255,255,255,0.06);margin-top:40px;}
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-light: #ffa366;
+      --brand-orange-dark: #ff6b1a;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #12172b;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 40px var(--brand-orange-glow);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.6);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #fff;
+      border-radius: 50%;
+    }
+    
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 2.5px;
+      height: 20px;
+      background: #fff;
+    }
+    
+    .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; letter-spacing: 0.5px; color: var(--text-primary); }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    
+    nav { display: flex; gap: 8px; }
+    nav a {
+      padding: 10px 18px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    /* Page Container */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .page-title {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--brand-orange-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .page-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Section Cards */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: all 0.2s;
+    }
+    
+    .section-card:hover {
+      border-color: var(--border-strong);
+    }
+    
+    .section-card h2 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--brand-orange);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    
+    /* Email Box */
+    .email-box {
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    .email-box a {
+      color: var(--brand-orange);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .email-box a:hover {
+      text-decoration: underline;
+    }
+    
+    .email-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    
+    /* Social Links Grid */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .social-link:hover {
+      border-color: var(--brand-orange);
+      background: rgba(255, 140, 66, 0.05);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .social-icon {
+      font-size: 24px;
+      min-width: 32px;
+      text-align: center;
+    }
+    
+    .social-info {
+      flex: 1;
+    }
+    
+    .social-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .social-handle {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    /* Use Cases */
+    .use-case-list {
+      margin-top: 20px;
+    }
+    
+    .use-case {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .use-case:last-child {
+      border-bottom: none;
+    }
+    
+    .use-case-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    
+    .use-case-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    /* Coverage Map */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    
+    .coverage-item {
+      padding: 12px 16px;
+      background: rgba(255, 140, 66, 0.06);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .coverage-item.primary {
+      border-color: var(--brand-orange);
+      font-weight: 700;
+      color: var(--brand-orange);
+    }
+    
+    footer {
+      padding: 40px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 80px;
+      text-align: center;
+    }
+    
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    @media (max-width: 768px) {
+      main { padding: 40px 16px; }
+      .page-title { font-size: 32px; }
+      .section-card { padding: 24px; }
+      .social-grid { grid-template-columns: 1fr; }
+      .coverage-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">APAC FINSTAB</div>
-  <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-<main>
-  <h1>Contact & Collaboration</h1>
-  <p class="subtitle">For collaborations or bespoke dashboards, please reach out via email.</p>
-  <div class="card">
-    <p>Email: <a class="link" href="mailto:apacfinstab@gmail.com">apacfinstab@gmail.com</a></p>
-    <p>Typical Use Cases:</p>
-    <ul>
-      <li>Regulatory intelligence feed for compliance teams</li>
-      <li>Stablecoin / RWA deep-dive analysis</li>
-      <li>Policy advisory for Web3 foundations or fintech firms</li>
-    </ul>
+  <div class="header-inner">
+    <a href="index.html" class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <span class="brand">APAC FINSTAB</span>
+        <span class="tagline">Regulatory Intelligence</span>
+      </div>
+    </a>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html" class="active">Connect</a>
+    </nav>
   </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <h1 class="page-title">Let's Connect</h1>
+    <p class="page-subtitle">APAC FINSTAB provides regulatory intelligence and strategic insights for institutions, compliance teams, and policy researchers across Asia-Pacific. Reach out for collaborations, custom research, or partnership inquiries.</p>
+  </div>
+  
+  <!-- Direct Contact -->
+  <div class="section-card">
+    <h2>📧 Direct Inquiries</h2>
+    <p>For institutional partnerships, bespoke regulatory dashboards, or research collaborations:</p>
+    <div class="email-box">
+      <a href="mailto:apacfinstab@gmail.com">
+        <span>📮</span>
+        <span>apacfinstab@gmail.com</span>
+      </a>
+      <p class="email-note">⏱️ Response time: 24-48 hours</p>
+    </div>
+  </div>
+  
+  <!-- Social Media -->
+  <div class="section-card">
+    <h2>🌐 Follow Our Research</h2>
+    <p>Stay updated with real-time regulatory intelligence, policy analysis, and weekly insights:</p>
+    <div class="social-grid">
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">💼</div>
+        <div class="social-info">
+          <div class="social-label">LinkedIn</div>
+          <div class="social-handle">APAC FinStab+</div>
+        </div>
+      </a>
+      
+      <a href="https://twitter.com/YOUR_TWITTER" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">𝕏</div>
+        <div class="social-info">
+          <div class="social-label">Twitter/X</div>
+          <div class="social-handle">@APACFinStab</div>
+        </div>
+      </a>
+      
+      <a href="https://medium.com/@apacfinstab" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">📝</div>
+        <div class="social-info">
+          <div class="social-label">Medium</div>
+          <div class="social-handle">@apacfinstab</div>
+        </div>
+      </a>
+      
+      <a href="https://substack.com/@apacfinstab" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">📰</div>
+        <div class="social-info">
+          <div class="social-label">Substack</div>
+          <div class="social-handle">APAC FinStab+</div>
+        </div>
+      </a>
+      
+      <a href="https://paragraph.xyz/@apacfinstab" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">⛓️</div>
+        <div class="social-info">
+          <div class="social-label">Paragraph</div>
+          <div class="social-handle">@apacfinstab</div>
+        </div>
+      </a>
+      
+      <a href="https://t.me/APACFinStab" class="social-link" target="_blank" rel="noopener">
+        <div class="social-icon">✈️</div>
+        <div class="social-info">
+          <div class="social-label">Telegram</div>
+          <div class="social-handle">APAC FinStab</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Collaboration Use Cases -->
+  <div class="section-card">
+    <h2>🤝 Partnership Opportunities</h2>
+    <div class="use-case-list">
+      <div class="use-case">
+        <div class="use-case-title">📊 Institutional Intelligence Feed</div>
+        <div class="use-case-desc">Real-time regulatory alerts, policy momentum tracking, and compliance risk assessments for institutional compliance teams and risk managers</div>
+      </div>
+      
+      <div class="use-case">
+        <div class="use-case-title">📖 Policy Advisory & Deep Research</div>
+        <div class="use-case-desc">Custom research on stablecoin frameworks, CBDC strategies, DeFi regulation, and cross-border payment systems</div>
+      </div>
+      
+      <div class="use-case">
+        <div class="use-case-title">🏛️ Web3 Foundation Consulting</div>
+        <div class="use-case-desc">Jurisdictional analysis, regulatory risk assessment, compliance roadmaps, and policy advocacy strategy</div>
+      </div>
+      
+      <div class="use-case">
+        <div class="use-case-title">🎤 Media & Speaking Engagements</div>
+        <div class="use-case-desc">Expert commentary on APAC regulatory developments for conferences, podcasts, and industry publications</div>
+      </div>
+      
+      <div class="use-case">
+        <div class="use-case-title">📈 Bespoke Dashboard Development</div>
+        <div class="use-case-desc">Custom regulatory intelligence dashboards tailored to your organization's compliance monitoring requirements</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Geographic Coverage -->
+  <div class="section-card">
+    <h2>📍 Geographic Coverage</h2>
+    <p>Primary markets with on-ground regulatory intelligence sources:</p>
+    <div class="coverage-grid">
+      <div class="coverage-item primary">🇭🇰 Hong Kong</div>
+      <div class="coverage-item primary">🇸🇬 Singapore</div>
+      <div class="coverage-item primary">🇯🇵 Japan</div>
+      <div class="coverage-item primary">🇰🇷 South Korea</div>
+      <div class="coverage-item">🇨🇳 China (Mainland)</div>
+      <div class="coverage-item">🇦🇺 Australia</div>
+      <div class="coverage-item">🇮🇳 India</div>
+      <div class="coverage-item">🇹🇭 Thailand</div>
+      <div class="coverage-item">🇮🇩 Indonesia</div>
+      <div class="coverage-item">🇻🇳 Vietnam</div>
+      <div class="coverage-item">🇵🇭 Philippines</div>
+      <div class="coverage-item">🇲🇾 Malaysia</div>
+    </div>
+  </div>
+
 </main>
-<footer>© <span id="year"></span> APAC FINSTAB.</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<footer>
+  <p class="footer-text">© <span id="year"></span> APAC FINSTAB. All rights reserved. | Independent regulatory intelligence for Asia-Pacific</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
