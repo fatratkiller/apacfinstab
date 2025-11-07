@@ -2,210 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0;url=https://apacfinstab.hashnode.dev" />
+  <meta http-equiv="refresh" content="0; url=https://blog.apacfinstab.com" />
   <title>APAC FINSTAB | Redirecting to Blog...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Weekly regulatory intelligence and Web3 governance insights from APAC FINSTAB." />
+  <meta name="description" content="Redirecting to APAC FINSTAB Blog - Weekly regulatory intelligence and Web3 governance insights." />
   <style>
     :root {
       --brand-orange: #ff8c42;
       --brand-orange-dark: #ff6b1a;
-      --brand-orange-glow: rgba(255, 140, 66, 0.25);
       --bg-primary: #0a0e1a;
       --text-primary: #f5f7fa;
       --text-secondary: #a8b2c1;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
       color: var(--text-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      padding: 20px;
     }
-    
-    .container {
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    /* Logo Icon */
+    .redirect-container { text-align: center; padding: 40px; max-width: 500px; }
     .logo-icon {
-      width: 80px;
-      height: 80px;
+      width: 80px; height: 80px;
       background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
       border-radius: 16px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       position: relative;
       margin: 0 auto 24px;
-      box-shadow: 0 0 40px var(--brand-orange-glow);
-      animation: pulse-glow 2s ease-in-out infinite;
+      box-shadow: 0 0 40px rgba(255, 140, 66, 0.3);
+      animation: pulse 2s ease-in-out infinite;
     }
-    
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 40px var(--brand-orange-glow); }
-      50% { box-shadow: 0 0 60px rgba(255, 140, 66, 0.4); }
-    }
-    
     .logo-icon::before {
       content: '';
       position: absolute;
-      width: 32px;
-      height: 32px;
+      width: 36px; height: 36px;
       border: 3px solid #fff;
       border-radius: 50%;
     }
-    
     .logo-icon::after {
       content: '';
       position: absolute;
-      width: 3px;
-      height: 32px;
+      width: 3px; height: 36px;
       background: #fff;
     }
-    
-    /* Brand Name */
-    .brand-name {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(255, 140, 66, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(255, 140, 66, 0.5); }
     }
-    
-    .tagline {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brand-orange);
-      font-weight: 700;
-      margin-bottom: 32px;
-    }
-    
-    /* Spinner */
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    p { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
     .spinner {
-      width: 50px;
-      height: 50px;
-      border: 4px solid rgba(255, 140, 66, 0.2);
+      width: 40px; height: 40px;
+      border: 3px solid rgba(255, 140, 66, 0.2);
       border-top-color: var(--brand-orange);
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
       margin: 0 auto 24px;
+      animation: spin 0.8s linear infinite;
     }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    /* Text */
-    .redirect-text {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--text-primary);
-    }
-    
-    .redirect-info {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-    
-    /* Manual Link */
+    @keyframes spin { to { transform: rotate(360deg); } }
     .manual-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background: rgba(255, 140, 66, 0.12);
-      border: 1px solid rgba(255, 140, 66, 0.3);
-      border-radius: 8px;
-      color: var(--brand-orange);
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      color: #fff;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: 700;
       font-size: 14px;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
     }
-    
     .manual-link:hover {
-      background: rgba(255, 140, 66, 0.2);
-      border-color: var(--brand-orange);
       transform: translateY(-2px);
-    }
-    
-    /* Note */
-    .note {
-      margin-top: 32px;
-      padding: 16px;
-      background: rgba(255, 140, 66, 0.08);
-      border-left: 3px solid var(--brand-orange);
-      border-radius: 4px;
-      text-align: left;
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-    
-    .note strong {
-      color: var(--brand-orange);
-    }
-    
-    /* Responsive */
-    @media (max-width: 480px) {
-      .logo-icon { width: 64px; height: 64px; }
-      .logo-icon::before { width: 24px; height: 24px; }
-      .logo-icon::after { height: 24px; }
-      .brand-name { font-size: 20px; }
-      .redirect-text { font-size: 16px; }
+      box-shadow: 0 6px 25px rgba(255, 140, 66, 0.5);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo -->
+  <div class="redirect-container">
     <div class="logo-icon"></div>
-    
-    <!-- Brand -->
-    <h1 class="brand-name">APAC FINSTAB</h1>
-    <div class="tagline">Regulatory Intelligence</div>
-    
-    <!-- Spinner -->
+    <h1>Redirecting to APAC FINSTAB Blog</h1>
+    <p>You will be automatically redirected to our weekly regulatory intelligence blog.</p>
     <div class="spinner"></div>
-    
-    <!-- Redirect Info -->
-    <p class="redirect-text">Redirecting to our blog...</p>
-    <p class="redirect-info">
-      You're being redirected to our weekly intelligence & analysis platform.
-    </p>
-    
-    <!-- Manual Link -->
-    <a href="https://apacfinstab.hashnode.dev" class="manual-link">
-      <span>→</span>
-      <span>Click here if not redirected</span>
+    <a href="https://blog.apacfinstab.com" class="manual-link">
+      Click here if not redirected
     </a>
-    
-    <!-- Note about future domain -->
-    <div class="note">
-      <strong>📌 Note:</strong> We're currently using a temporary blog address. Once we launch our custom domain (<strong>blog.apacfinstab.com</strong>), all links will automatically redirect. Your bookmarks and subscriptions will remain active.
-    </div>
   </div>
-  
   <script>
-    // JavaScript backup redirect with slight delay for better UX
     setTimeout(function() {
-      window.location.href = "https://apacfinstab.hashnode.dev";
-    }, 1000);
-    
-    // Track redirect attempt (optional - for debugging)
-    console.log('Redirecting to: https://apacfinstab.hashnode.dev');
+      window.location.href = 'https://blog.apacfinstab.com';
+    }, 500);
   </script>
 </body>
 </html>
