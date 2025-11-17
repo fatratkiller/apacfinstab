@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Nov 10-16, 2025)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance">
+
+<!-- Open Graph (Social Media Sharing) -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle {
+  font-size: 20px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* Three Column Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+}
+
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.kpi-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.kpi-icon {
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.kpi-value {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.kpi-change {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+
+.kpi-detail {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.chart-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.chart-subtitle {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.chart-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+/* Data Table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data-table thead {
+  background: rgba(74,158,255,0.08);
+}
+
+.data-table th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--border);
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.data-table tr:hover {
+  background: rgba(74,158,255,0.04);
+}
+
+.table-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tag-critical { background: rgba(255,71,87,0.2); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.2); color: var(--accent-orange); }
+.tag-medium { background: rgba(255,211,61,0.2); color: var(--accent-yellow); }
+.tag-low { background: rgba(0,217,163,0.2); color: var(--accent-green); }
+.tag-neutral { background: rgba(74,158,255,0.2); color: var(--accent-blue); }
+
+/* Alert Boxes */
+.alert-box {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+  border: 1px solid;
+}
+
+.alert-box.critical {
+  background: rgba(255,71,87,0.08);
+  border-color: var(--accent-red);
+}
+
+.alert-box.warning {
+  background: rgba(255,140,66,0.08);
+  border-color: var(--accent-orange);
+}
+
+.alert-box.success {
+  background: rgba(0,217,163,0.08);
+  border-color: var(--accent-green);
+}
+
+.alert-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.alert-content {
+  flex: 1;
+}
+
+.alert-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.alert-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+</h1>
+      <div class="subtitle">Regulatory Intelligence Dashboard</div>
+      <div class="period">📊 November 10-16, 2025 | Week 46</div>
+    </div>
+  </div>
+
+  <!-- Key Performance Indicators -->
+  <div class="grid-3">
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <span class="kpi-label">Regulatory Actions</span>
+        <span class="kpi-icon">⚖️</span>
+      </div>
+      <div class="kpi-value">12</div>
+      <div class="kpi-change up">+3 from last week</div>
+      <div class="kpi-detail">
+        US Gov Shutdown Ended (43 days) • Brazil Crypto Framework ($700k license threshold) • 
+        Ethereum Kohaku SDK (privacy for 100M MetaMask users) • Binance Resumed Privacy Trading
+      </div>
+    </div>
+
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <span class="kpi-label">Market Risk Index (LFI)</span>
+        <span class="kpi-icon">📉</span>
+      </div>
+      <div class="kpi-value">65</div>
+      <div class="kpi-change down">-7 from peak 72</div>
+      <div class="kpi-detail">
+        Still in Alert Zone (40-75) • Liquidity Trap: Shutdown ended but ETF outflow $866M • 
+        Privacy Coin Overheating: ZEC funding rate 181% APR • Validation Period: x402 TGE 11.17-11.22
+      </div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <span class="kpi-label">Institutional Signals</span>
+        <span class="kpi-icon">🐋</span>
+      </div>
+      <div class="kpi-value">8</div>
+      <div class="kpi-change neutral">Mixed sentiment</div>
+      <div class="kpi-detail">
+        NEW: Whale $582M ETH Bottom Fishing ($3000-3200) • Monetalis OTC $14.3M UNI (12.2 vote) • 
+        BUT: LTH Selling 45k ETH/day • FTX/Alameda 193.8k SOL Liquidation • ETF Outflow $866M/week
+      </div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <span class="kpi-label">Privacy Coin Momentum</span>
+        <span class="kpi-icon">🔐</span>
+      </div>
+      <div class="kpi-value">+40%</div>
+      <div class="kpi-change up">ZEC Weekly Gain</div>
+      <div class="kpi-detail">
+        ZEC Hits $10B Market Cap (from $26M in Feb) • CoinGecko Search #1 • 
+        Perp OI $1.03B (Rank #6) • WARNING: Funding Rate 181% APR (extreme overheating)
+      </div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <span class="kpi-label">x402 Verification Period</span>
+        <span class="kpi-icon">⏰</span>
+      </div>
+      <div class="kpi-value">48H</div>
+      <div class="kpi-change neutral">Critical Window</div>
+      <div class="kpi-detail">
+        Nov 17-22 TGE Period Determines Narrative Validity • PING -59% Warning ($80M→$33M) • 
+        JPMorgan Values Infrastructure at $34B vs $30M Token Market Cap (1133x gap)
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-label">Compliance Actions</span>
+        <span class="kpi-icon">📋</span>
+      </div>
+      <div class="kpi-value">5</div>
+      <div class="kpi-change up">+2 frameworks</div>
+      <div class="kpi-detail">
+        Brazil: $700k License (vs EU MiCA $1.5M) • Canada: Stablecoin Framework Accelerated • 
+        US: Coinbase Token Sale Platform (algo allocation, no platform token) • 
+        Singapore: Continued Leadership in APAC
+      </div>
+    </div>
+  </div>
+
+  <!-- Two Column Grid -->
+  <div class="grid-3" style="grid-template-columns: 2fr 1fr;">
+    <!-- Major Regulatory Developments -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🌐 APAC Regulatory Developments</div>
+          <div class="chart-subtitle">Week 46 policy updates and enforcement actions</div>
+        </div>
+        <span class="chart-badge badge-high">11 Actions</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Jurisdiction</th>
+            <th>Action</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nov 13</td>
+            <td>🇧🇷 Brazil</td>
+            <td>Crypto Licensing Framework</td>
+            <td><span class="table-tag tag-low">$700k Threshold (vs EU $1.5M)</span></td>
+          </tr>
+          <tr>
+            <td>Nov 14</td>
+            <td>🇺🇸 United States</td>
+            <td>Gov Shutdown Ended (43 days)</td>
+            <td><span class="table-tag tag-medium">BUT: ETF Outflow $866M</span></td>
+          </tr>
+          <tr>
+            <td>Nov 12</td>
+            <td>🇺🇸 United States</td>
+            <td>Coinbase Token Sale Platform</td>
+            <td><span class="table-tag tag-low">Algo Allocation, No BNB-style</span></td>
+          </tr>
+          <tr>
+            <td>Nov 10</td>
+            <td>🌐 Global</td>
+            <td>Ethereum Kohaku SDK</td>
+            <td><span class="table-tag tag-high">Privacy for 100M MetaMask Users</span></td>
+          </tr>
+          <tr>
+            <td>Nov 11</td>
+            <td>🌐 Global</td>
+            <td>Binance Privacy Trading Resumed</td>
+            <td><span class="table-tag tag-high">After 73 XMR Delistings</span></td>
+          </tr>
+          <tr>
+            <td>Nov 12</td>
+            <td>🇺🇸 United States</td>
+            <td>Uniswap Fee Switch Proposal</td>
+            <td><span class="table-tag tag-medium">Vote 12.2, Burn 100M UNI</span></td>
+          </tr>
+          <tr>
+            <td>Nov 06</td>
+            <td>🇨🇦 Canada</td>
+            <td>Stablecoin Framework Accelerated</td>
+            <td><span class="table-tag tag-low">Circle/Paxos Compliant Path</span></td>
+          </tr>
+          <tr>
+            <td>Nov 15</td>
+            <td>🌐 Winklevoss Capital</td>
+            <td>All-In Privacy Coin Allocation</td>
+            <td><span class="table-tag tag-critical">ZEC Institutional Signal</span></td>
+          </tr>
+          <tr>
+            <td>Ongoing</td>
+            <td>🇰🇷 South Korea</td>
+            <td>Market Structural Collapse</td>
+            <td><span class="table-tag tag-critical">Upbit -80% YoY Volume</span></td>
+          </tr>
+          <tr>
+            <td>Nov 17-22</td>
+            <td>🌐 Global</td>
+            <td>x402 Validation Period (TGE)</td>
+            <td><span class="table-tag tag-high">48H Truth Test</span></td>
+          </tr>
+          <tr>
+            <td>Dec 2</td>
+            <td>🌐 DeFi</td>
+            <td>UNI Governance Vote Deadline</td>
+            <td><span class="table-tag tag-high">Need >60% Yes Rate</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 16px; padding: 12px; background: rgba(255,71,87,0.08); border-radius: 8px; border: 1px solid var(--accent-red);">
+        <div style="font-size: 11px; font-weight: 700; margin-bottom: 4px; color: var(--accent-red);">⚠️ Critical Alert</div>
+        <div style="font-size: 10px; color: var(--text-secondary);">
+          <strong>Liquidity Trap:</strong> US shutdown ended but $866M ETF outflow (BlackRock $473M single day). 
+          Real turning point = Dec FOMC, not shutdown resolution. Hold 30-40% cash until clarity.<br>
+          <strong>Privacy Overheating:</strong> ZEC funding rate 181% APR shows extreme speculation. 
+          Historical pattern: >100% APR → 7-14 day correction >30%. Regulatory arbitrage window only 2-4 weeks.<br>
+          <strong>x402 Verification:</strong> Nov 17-22 TGE period determines narrative validity. 
+          PING -59% warns of MEME risk. If 3+ projects break $50M FDV, exit all x402 exposure.
+        </div>
+      </div>
+    </div>
+
+    <!-- Week Ahead Calendar -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📅 Week Ahead</div>
+          <div class="chart-subtitle">Key events & decision points</div>
+        </div>
+        <span class="chart-badge badge-active">Nov 17-24</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nov 17-22</td>
+            <td><strong>x402 TGE Validation Period</strong><br>
+            <span style="font-size: 10px; color: var(--text-secondary);">48H truth test for payment protocol narrative</span></td>
+          </tr>
+          <tr>
+            <td>Nov 20</td>
+            <td><strong>Sentiment Turning Point</strong><br>
+            <span style="font-size: 10px; color: var(--text-secondary);">Fear Index forecast: 20→28±5 (verify bottom or second dip)</span></td>
+          </tr>
+          <tr>
+            <td>Nov 22</td>
+            <td><strong>LINK Swift Integration Live</strong><br>
+            <span style="font-size: 10px; color: var(--text-secondary);">11,500 banks onchain, 84% oracle market share</span></td>
+          </tr>
+          <tr>
+            <td>Nov 24</td>
+            <td><strong>Monad Mainnet Launch</strong><br>
+            <span style="font-size: 10px; color: var(--text-secondary);">Public $0.025 vs Premarket $0.06 (2.4x premium)</span></td>
+          </tr>
+          <tr>
+            <td>Nov 25</td>
+            <td><strong>Kaito TGE + Season 2 Airdrop</strong><br>
+            <span style="font-size: 10px; color: var(--text-secondary);">$1M incentive pool, 3370 participants at $35M valuation</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 16px; padding: 10px; background: rgba(255,140,66,0.08); border-radius: 8px; border: 1px solid var(--accent-orange);">
+        <div style="font-size: 10px; font-weight: 700; margin-bottom: 4px;">⏰ Critical Windows</div>
+        <div style="font-size: 9px; color: var(--text-secondary); line-height: 1.4;">
+          • <strong>11.20:</strong> BTC must hold $94,500 / ETH $3000 to confirm bottom<br>
+          • <strong>11.17-22:</strong> x402 apps must hold $50M+ FDV or narrative fails<br>
+          • <strong>12.2:</strong> UNI vote needs >60% yes or protocol fee revolution stalls<br>
+          • <strong>Dec Mid:</strong> FOMC = real liquidity turning point (not shutdown end)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Institutional Flow Tracking -->
+  <div class="grid-3" style="grid-template-columns: 1.5fr 1.5fr;">
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🐋 Institutional Flow Tracking</div>
+          <div class="chart-subtitle">Whale accumulation & distribution patterns</div>
+        </div>
+        <span class="chart-badge badge-medium">8 Signals</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Entity</th>
+            <th>Action</th>
+            <th>Interpretation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New Wallets (Multiple)</td>
+            <td>$582M ETH Buy (163,680 ETH)</td>
+            <td><span class="table-tag tag-low">Bottom Fishing at $3000-3200</span></td>
+          </tr>
+          <tr>
+            <td>Monetalis (OTC)</td>
+            <td>1.851M UNI ($14.3M @$7.7)</td>
+            <td><span class="table-tag tag-low">Pre-Vote Positioning (12.2 deadline)</span></td>
+          </tr>
+          <tr>
+            <td>Pump.fun Protocol</td>
+            <td>9214.98 SOL Buyback ($1.54M)</td>
+            <td><span class="table-tag tag-low">$400M+ Annual Revenue Verified</span></td>
+          </tr>
+          <tr>
+            <td>PEPE Whale ($36M Profit)</td>
+            <td>Accumulating ASTER</td>
+            <td><span class="table-tag tag-medium">Meme Winner → Infrastructure</span></td>
+          </tr>
+          <tr>
+            <td>Winklevoss Capital</td>
+            <td>All-In Privacy Allocation</td>
+            <td><span class="table-tag tag-high">ZEC Institutional Signal</span></td>
+          </tr>
+          <tr>
+            <td>Long-Term Holders</td>
+            <td>Selling 45k ETH/day</td>
+            <td><span class="table-tag tag-critical">2021 Peak Holders Exiting</span></td>
+          </tr>
+          <tr>
+            <td>FTX/Alameda</td>
+            <td>193.8k SOL Distribution ($30.69M)</td>
+            <td><span class="table-tag tag-critical">Bankruptcy Liquidation</span></td>
+          </tr>
+          <tr>
+            <td>Jump Crypto</td>
+            <td>18.42M WLFI to Binance ($2.9M)</td>
+            <td><span class="table-tag tag-critical">Trump Coin Dumping</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 16px; padding: 12px; background: rgba(74,158,255,0.08); border-radius: 8px;">
+        <div style="font-size: 11px; font-weight: 700; margin-bottom: 4px;">📊 New vs Old Buyer Standoff</div>
+        <div style="font-size: 10px; color: var(--text-secondary);">
+          <strong>New Buyers:</strong> $582M weekly inflow at $3000-3200 (institutional scale)<br>
+          <strong>Old Holders:</strong> 45k ETH/day outflow = $153M×7 = $1.07B/week<br>
+          <strong>Net Position:</strong> New buyers 5.4x larger, validates bottom forming<br>
+          <strong>Critical Threshold:</strong> $3000 = liquidation trigger for $2.3B Aave/Compound positions
+        </div>
+      </div>
+    </div>
+
+    <!-- Regulatory Action Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">⚖️ Upcoming Regulatory Milestones</div>
+          <div class="chart-subtitle">Key dates and decision windows</div>
+        </div>
+        <span class="chart-badge badge-medium">Q4 2025 - Q1 2026</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nov 20, 2025</td>
+            <td>Market Sentiment Inflection</td>
+            <td><span class="table-tag tag-high">Fear Index 20→28±5</span></td>
+          </tr>
+          <tr>
+            <td>Nov 22, 2025</td>
+            <td>LINK Swift Integration</td>
+            <td><span class="table-tag tag-medium">11.5k Banks Onchain</span></td>
+          </tr>
+          <tr>
+            <td>Nov 24, 2025</td>
+            <td>Monad Mainnet + Coinbase ICO</td>
+            <td><span class="table-tag tag-high">$200k+ Income Gate</span></td>
+          </tr>
+          <tr>
+            <td>Dec 2, 2025</td>
+            <td>UNI Governance Vote Deadline</td>
+            <td><span class="table-tag tag-critical">Fee Switch On/Off</span></td>
+          </tr>
+          <tr>
+            <td>Dec Mid, 2025</td>
+            <td>Fed FOMC Meeting</td>
+            <td><span class="table-tag tag-critical">Real Liquidity Pivot</span></td>
+          </tr>
+          <tr>
+            <td>Q1 2026</td>
+            <td>XMR Thorchain Integration</td>
+            <td><span class="table-tag tag-high">DeFi Privacy +300%</span></td>
+          </tr>
+          <tr>
+            <td>Q1 2026</td>
+            <td>Coinbase Agent SDK Official</td>
+            <td><span class="table-tag tag-high">x402 Mainstream</span></td>
+          </tr>
+          <tr>
+            <td>Q2 2026</td>
+            <td>x402 Adoption Tipping Point</td>
+            <td><span class="table-tag tag-medium">1M+ Daily Transactions</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 12px; padding: 10px; background: rgba(255,211,61,0.08); border-radius: 8px; border: 1px solid var(--accent-yellow);">
+        <div style="font-size: 10px; font-weight: 700; margin-bottom: 4px;">⚠️ Verification Checkpoints</div>
+        <div style="font-size: 9px; color: var(--text-secondary); line-height: 1.4;">
+          • If BTC breaks $94,500 before 11.20 → Second dip likely<br>
+          • If x402 TGEs all break $50M FDV (11.17-22) → Exit narrative<br>
+          • If UNI vote fails or <55% yes (12.2) → Protocol fee revolution stalled<br>
+          • If FOMC stays hawkish (Dec) → Liquidity trap extends to Q1 2026
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk Assessment Grid -->
+  <div class="grid-3">
+    <!-- Sectoral Risk Matrix -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🎯 Sectoral Risk Assessment</div>
+          <div class="chart-subtitle">Regulatory probability × market impact matrix</div>
+        </div>
+        <span class="chart-badge badge-high">High Alert</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th>Reg Risk</th>
+            <th>Market Risk</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Privacy Coins (Overheating)</td>
+            <td><span class="table-tag tag-critical">92%</span></td>
+            <td style="color: var(--accent-red);">181% APR</td>
+            <td><span class="table-tag tag-critical">Bubble</span></td>
+          </tr>
+          <tr>
+            <td>Liquidity Trap (Post-Shutdown)</td>
+            <td><span class="table-tag tag-critical">88%</span></td>
+            <td style="color: var(--accent-red);">$866M Out</td>
+            <td><span class="table-tag tag-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>x402 Validation (MEME Risk)</td>
+            <td><span class="table-tag tag-high">78%</span></td>
+            <td style="color: var(--accent-red);">PING -59%</td>
+            <td><span class="table-tag tag-high">48H Test</span></td>
+          </tr>
+          <tr>
+            <td>ETH Liquidation Threshold</td>
+            <td><span class="table-tag tag-high">72%</span></td>
+            <td style="color: var(--accent-red);">$2.3B@$3k</td>
+            <td><span class="table-tag tag-high">Watch</span></td>
+          </tr>
+          <tr>
+            <td>Protocol Fee Vote (UNI)</td>
+            <td><span class="table-tag tag-medium">55%</span></td>
+            <td style="color: var(--accent-green);">+36% if pass</td>
+            <td><span class="table-tag tag-medium">Dec 2</span></td>
+          </tr>
+          <tr>
+            <td>Stablecoins (Compliant Path)</td>
+            <td><span class="table-tag tag-low">28%</span></td>
+            <td style="color: var(--accent-green);">Positive</td>
+            <td><span class="table-tag tag-low">Favorable</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 12px; padding: 10px; background: rgba(255,71,87,0.08); border-radius: 8px; border: 1px solid var(--accent-red);">
+        <div style="font-size: 10px; font-weight: 700; margin-bottom: 4px; color: var(--accent-red);">🚨 Top 3 Risks This Week</div>
+        <div style="font-size: 9px; color: var(--text-secondary); line-height: 1.4;">
+          1. <strong>Privacy Overheating:</strong> ZEC 181% APR funding = extreme speculation. Wait for >30% correction<br>
+          2. <strong>x402 TGE Test:</strong> If 3+ apps break $50M FDV (11.17-22), exit all exposure immediately<br>
+          3. <strong>ETH $3000 Threshold:</strong> Break below triggers $2.3B Aave/Compound cascade liquidation
+        </div>
+      </div>
+    </div>
+
+    <!-- Compliance Scorecard -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📋 APAC Compliance Scorecard</div>
+          <div class="chart-subtitle">Jurisdictional regulatory maturity index</div>
+        </div>
+        <span class="chart-badge badge-active">Q4 2025</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Jurisdiction</th>
+            <th>Framework</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🇸🇬 Singapore</td>
+            <td>MAS Payment Services Act</td>
+            <td><span class="table-tag tag-low">A+</span></td>
+          </tr>
+          <tr>
+            <td>🇭🇰 Hong Kong</td>
+            <td>VASP Licensing (SFC)</td>
+            <td><span class="table-tag tag-low">A</span></td>
+          </tr>
+          <tr>
+            <td>🇦🇪 UAE (Dubai)</td>
+            <td>VARA Framework</td>
+            <td><span class="table-tag tag-low">A-</span></td>
+          </tr>
+          <tr>
+            <td>🇧🇷 Brazil</td>
+            <td>$700k License Threshold</td>
+            <td><span class="table-tag tag-medium">B+</span></td>
+          </tr>
+          <tr>
+            <td>🇯🇵 Japan</td>
+            <td>FSA Crypto Regulation</td>
+            <td><span class="table-tag tag-medium">B</span></td>
+          </tr>
+          <tr>
+            <td>🇰🇷 South Korea</td>
+            <td>Market Collapse (-80% Vol)</td>
+            <td><span class="table-tag tag-critical">D</span></td>
+          </tr>
+          <tr>
+            <td>🇺🇸 United States</td>
+            <td>Fragmented (SEC vs CFTC)</td>
+            <td><span class="table-tag tag-medium">B-</span></td>
+          </tr>
+          <tr>
+            <td>🇪🇺 European Union</td>
+            <td>MiCA ($1.5M threshold)</td>
+            <td><span class="table-tag tag-low">A-</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 12px; padding: 10px; background: rgba(0,217,163,0.08); border-radius: 8px; border: 1px solid var(--accent-green);">
+        <div style="font-size: 10px; font-weight: 700; margin-bottom: 4px;">✅ Regulatory Arbitrage Opportunities</div>
+        <div style="font-size: 9px; color: var(--text-secondary); line-height: 1.4;">
+          • <strong>Brazil:</strong> $700k threshold (vs EU $1.5M) = lower barrier for compliant entry<br>
+          • <strong>Singapore:</strong> Continued APAC leadership, attracts top-tier institutional capital<br>
+          • <strong>UAE:</strong> VARA framework provides clarity for Web3 innovation hubs<br>
+          • <strong>Avoid:</strong> South Korea (structural collapse, KOSPI bleeding crypto capital)
+        </div>
+      </div>
+    </div>
+
+    <!-- Forward-Looking Indicators -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🔮 Forward-Looking Indicators</div>
+          <div class="chart-subtitle">Early warning signals & predictive metrics</div>
+        </div>
+        <span class="chart-badge badge-medium">Week 47 Forecast</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Indicator</th>
+            <th>Current</th>
+            <th>Forecast</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fear & Greed Index</td>
+            <td style="color: var(--accent-red);">20</td>
+            <td><span class="table-tag tag-medium">28±5 by 11.20</span></td>
+          </tr>
+          <tr>
+            <td>LFI (Liquidity Fragility)</td>
+            <td style="color: var(--accent-orange);">65</td>
+            <td><span class="table-tag tag-low">60-62 if stable</span></td>
+          </tr>
+          <tr>
+            <td>Leverage Ratio</td>
+            <td style="color: var(--accent-green);">42%</td>
+            <td><span class="table-tag tag-low">40% (deleveraging)</span></td>
+          </tr>
+          <tr>
+            <td>ZEC Funding Rate</td>
+            <td style="color: var(--accent-red);">181% APR</td>
+            <td><span class="table-tag tag-high">Must drop <50%</span></td>
+          </tr>
+          <tr>
+            <td>ETF Weekly Flow</td>
+            <td style="color: var(--accent-red);">-$866M</td>
+            <td><span class="table-tag tag-medium">Target <$200M out</span></td>
+          </tr>
+          <tr>
+            <td>x402 Validation Status</td>
+            <td style="color: var(--accent-yellow);">TBD</td>
+            <td><span class="table-tag tag-high">11.17-22 truth test</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 12px; padding: 10px; background: rgba(74,158,255,0.08); border-radius: 8px;">
+        <div style="font-size: 10px; font-weight: 700; margin-bottom: 4px;">📍 Critical Verification Points</div>
+        <div style="font-size: 9px; color: var(--text-secondary); line-height: 1.4;">
+          ✓ <strong>11.20:</strong> If Fear Index rebounds to 28±5 + BTC holds $94,500 → Bottom confirmed<br>
+          ✓ <strong>11.22:</strong> LINK Swift launch success validates institutional onchain adoption<br>
+          ✓ <strong>12.2:</strong> UNI vote >60% yes confirms protocol fee revolution<br>
+          ✗ <strong>Risk:</strong> If 3/5 indicators worsen → LFI breaks 75 → Full defensive mode
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Recommendations -->
+  <div class="grid-3" style="grid-template-columns: 1fr;">
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">⚡ Actionable Intelligence Summary</div>
+          <div class="chart-subtitle">Prioritized response framework for institutional & VIP traders</div>
+        </div>
+        <span class="chart-badge badge-high">Week 46 Briefing</span>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-content">
+          <div class="alert-title">Immediate Risk Management (11.17-11.22)</div>
+          <div class="alert-desc">
+            <strong>Privacy Overheating:</strong> ZEC funding rate 181% APR = extreme bubble. DO NOT chase. Wait for >30% correction or rate <50% APR before entering second-tier (GHOST/PIVX/ZEN). Regulatory arbitrage window closing in 2-4 weeks after 73 XMR delistings.<br><br>
+            <strong>x402 TGE Validation:</strong> Critical 48-hour window (11.17-11.22). PING -59% ($80M→$33M) warns of MEME risk. Exit ALL x402 exposure if 3+ app TGEs break $50M FDV. Focus on infrastructure only: LINK (verification layer) + USDC (settlement) + SOL (98% Base traffic).<br><br>
+            <strong>Liquidity Trap:</strong> Shutdown ended 11.14 but ETF outflow $866M (BlackRock $473M single day). Real turning point = Dec FOMC, not political theater. Hold 30-40% cash, avoid front-running false bottoms.
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <div class="alert-title">Medium-Term Tactical Positioning (11.23-12.02)</div>
+          <div class="alert-desc">
+            <strong>New vs Old Buyer Standoff:</strong> Follow $582M whale bottom-fishing at ETH $3000-3200. BUT set hard stop at $2950 (triggers $2.3B Aave/Compound liquidation cascade). LTH selling 45k/day but new buyers 5.4x larger = validates accumulation zone.<br><br>
+            <strong>UNI Fee Switch Vote (Dec 2):</strong> Monetalis OTC $14.3M @$7.7 validates institutional pre-positioning. Entry: $8.0-8.5, Target: $10.5 (+36%), Stop: <$7.0 if vote fails. Needs >60% yes rate. Portfolio: 50% UNI + 30% AERO (revenue >UNI but 3-4% market cap) + 20% Pendle (16-50% APR hedge).<br><br>
+            <strong>Monad Secondary Market (11.24):</strong> Wait for post-launch day-1 dump. Public $0.025 vs premarket $0.06 (2.4x). Expect Aptos/Sui pattern: spike to $0.15-0.20 → retrace to $0.08-0.10 (40-50% correction). Enter ONLY on deep pullback, <5% position size.
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-box success">
+        <div class="alert-icon">✅</div>
+        <div class="alert-content">
+          <div class="alert-title">Long-Term Structural Themes (Q4 2025 - Q1 2026)</div>
+          <div class="alert-desc">
+            <strong>Coinbase Platform Revolution:</strong> Token sale platform (algo allocation, no BNB-style rent-seeking, 6-month lockup, IPO-level disclosure) changes game for compliant issuance. Monad first test case. If successful, Binance/OKX forced to follow → platform tokens lose edge.<br><br>
+            <strong>Brazil Regulatory Arbitrage:</strong> $700k license (vs EU MiCA $1.5M) creates LatAm sandbox for institutional testing. Watch for: (1) Brazil native projects w/ license premium, (2) US projects "offshore via Brazil", (3) PIX payment integration plays.<br><br>
+            <strong>Privacy Institutionalization:</strong> Winklevoss all-in + Ethereum Kohaku SDK (100M MetaMask users get default privacy) + Binance resume = privacy moving from "dark web" to "institutional compliance tool". Q1 2026 XMR Thorchain integration unlocks DeFi for privacy coins (+300% historical pattern).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div style="text-align: center; padding: 20px;">
+      <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 12px;">
+        <strong>Methodology:</strong> Cross-jurisdictional regulatory monitoring, institutional flow tracking (on-chain + OTC), statistical anomaly detection, time series forecasting, sentiment analysis, compliance gap identification. Sources synthesized: official regulatory announcements, central bank publications, exchange filings, on-chain analytics, institutional reports.
+      </div>
+      <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">
+        <strong>Disclaimer:</strong> This dashboard consolidates publicly available regulatory intelligence and market data for informational purposes only. Not financial, legal, or compliance advice. All regulatory interpretations should be cross-referenced with official sources and qualified legal counsel. Historical patterns do not guarantee future regulatory actions or market outcomes. Users are responsible for independent due diligence and compliance with applicable laws in their jurisdictions. Data sources: Official regulatory bodies (MAS, SFC, SEC, CFTC, etc.), DeFiLlama, Nansen, Dune Analytics, Etherscan, CoinMarketCap, institutional filings (13F, 8-K), on-chain analytics. APAC FinStab+ is an independent research initiative and is not affiliated with any regulatory body, government agency, or financial institution.
+      </div>
+      <div style="margin-top: 16px; font-size: 10px; color: var(--text-secondary);">
+        © 2025 APAC FinStab+ | Updated November 16, 2025 | Next Update: November 23, 2025
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
