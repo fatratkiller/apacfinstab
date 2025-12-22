@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Dec 16 - Dec 22, 2025)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance, Basel stablecoin rules, GENIUS Act">
+
+<!-- Open Graph (Social Media Sharing) -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(0,0,0,0.6); }
+
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); font-weight: 700; }
+.kpi-icon { font-size: 24px; opacity: 0.8; }
+.kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.kpi-change { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+.kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chart-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.chart-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.chart-badge { padding: 4px 12px; border-radius: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table thead { background: rgba(74,158,255,0.08); }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.data-table tr:hover { background: rgba(74,158,255,0.04); }
+
+.table-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+/* Alert Box */
+.alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
+.alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
+.alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
+.alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
+.alert-icon { font-size: 20px; line-height: 1; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Progress Bar */
+.progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
+.progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
+.progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
+.progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
+.progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); border: 2px solid var(--bg-card); }
+.timeline-date { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+.timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Footer */
+.footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
+      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
+      <div class="period">📅 December 16 - December 22, 2025</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 1 -->
+  <div class="grid-3">
+    <div class="kpi-card green">
+      <div class="kpi-header">
+        <div class="kpi-label">Basel Capital Rule Change</div>
+        <div class="kpi-icon">🏦</div>
+      </div>
+      <div class="kpi-value">12.5x</div>
+      <div class="kpi-change up">↗ Risk Weight Reduction (1250%→100%)</div>
+      <div class="kpi-detail">Basel Committee slashes qualified stablecoin risk weight from 1250% to 100%. Banks need $1 capital per $100 stablecoin vs $12.50 before. Effective Q1 2026.</div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <div class="kpi-label">Jurisdictions Active</div>
+        <div class="kpi-icon">🌏</div>
+      </div>
+      <div class="kpi-value">16</div>
+      <div class="kpi-change up">↗ +2 vs Last Week</div>
+      <div class="kpi-detail">USA, Hong Kong, Japan, Singapore, Korea, UAE, Switzerland, EU, UK, Australia, China, India, Thailand, Vietnam, Philippines, Malaysia</div>
+    </div>
+
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <div class="kpi-label">Exchange Delisting Wave</div>
+        <div class="kpi-icon">⚠️</div>
+      </div>
+      <div class="kpi-value">73+</div>
+      <div class="kpi-change down">↘ XMR Delistings YTD + Year-End Cleanup</div>
+      <div class="kpi-detail">Binance Dec 23 (SEI/FDUSD/ENA pairs), Bitmex Dec 24 (PYTH/GOAT). XMR hits 73 exchange delistings this year. Privacy assets under sustained pressure.</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 2 -->
+  <div class="grid-3">
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <div class="kpi-label">Compliance Alert Level</div>
+        <div class="kpi-icon">🚨</div>
+      </div>
+      <div class="kpi-value">HIGH</div>
+      <div class="kpi-change up">↗ Year-End Regulatory Cleanup</div>
+      <div class="kpi-detail">Concentrated delisting wave Dec 23-24, MyMonero shutdown Jan 6, Christmas liquidity vacuum creates enforcement gap uncertainty</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">GENIUS Act Timeline</div>
+        <div class="kpi-icon">⏳</div>
+      </div>
+      <div class="kpi-value">Q1 2026</div>
+      <div class="kpi-change neutral">⚡ Stablecoin Framework Progress</div>
+      <div class="kpi-detail">US stablecoin legislation advancing. Circle OCC National Trust Charter approved conditionally. Visa/SoFi/JPMorgan 4-day 3-milestone stablecoin integration sprint.</div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <div class="kpi-label">Privacy Sector Signal</div>
+        <div class="kpi-icon">🔐</div>
+      </div>
+      <div class="kpi-value">MIXED</div>
+      <div class="kpi-change neutral">⚡ SEC Roundtable + Exchange Exit</div>
+      <div class="kpi-detail">ZEC gets SEC roundtable seat Dec 15, Grayscale ETF filing Nov 26. But XMR 73 delistings + MyMonero Jan 6 shutdown = infrastructure contraction.</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-3">
+    <!-- Column 1: Regulatory Heat Map -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🔥 Regulatory Heat Map</div>
+          <div class="chart-subtitle">Jurisdiction activity & enforcement probability</div>
+        </div>
+        <span class="chart-badge badge-high">Critical</span>
+      </div>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Stance</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USA (SEC)</strong></td>
+            <td style="color: var(--accent-green);">Softening</td>
+            <td><span class="table-tag tag-medium">5.2</span></td>
+          </tr>
+          <tr>
+            <td><strong>USA (OCC)</strong></td>
+            <td style="color: var(--accent-green);">Enabling</td>
+            <td><span class="table-tag tag-low">3.8</span></td>
+          </tr>
+          <tr>
+            <td><strong>Japan (FSA)</strong></td>
+            <td style="color: var(--accent-green);">Approved SEI</td>
+            <td><span class="table-tag tag-medium">5.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>South Korea</strong></td>
+            <td style="color: var(--accent-red);">Tightening</td>
+            <td><span class="table-tag tag-critical">8.6</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hong Kong</strong></td>
+            <td style="color: var(--accent-green);">Progressive</td>
+            <td><span class="table-tag tag-medium">4.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Singapore</strong></td>
+            <td style="color: var(--accent-green);">Stable</td>
+            <td><span class="table-tag tag-low">3.6</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box success">
+        <div class="alert-icon">✅</div>
+        <div class="alert-content">
+          <div class="alert-title">Basel Stablecoin Capital Rules Published</div>
+          <div class="alert-desc">Risk weight reduction from 1250% to 100% for qualified stablecoins (USDC, etc). Banks can now hold stablecoins at 12.5x lower capital cost. Effective Q1 2026.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Protocol Compliance Risk -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🎯 Protocol Compliance Risk</div>
+          <div class="chart-subtitle">Vulnerability assessment by category</div>
+        </div>
+        <span class="chart-badge badge-active">Live Tracking</span>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Privacy Coins (Exchange Access)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">92%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 92%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Perp DEX (No Registration)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">85%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 85%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Stablecoin Issuers (Multi-Regime)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">68%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 68%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">AI Agent Payments (Unregulated)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">58%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 58%">Medium-High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">RWA Tokenization (SEC Template)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">18%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 18%">Low</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Bank Stablecoin Products</span>
+          <span style="font-size: 11px; color: var(--accent-green);">12%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 12%">Low</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">Year-End Delisting Wave</div>
+          <div class="alert-desc">Binance Dec 23 + Bitmex Dec 24 concentrated delistings. XMR 73 delistings YTD. Compliance-driven exit pattern accelerating before year-end.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Key Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of December 16 - December 22, 2025</div>
+        </div>
+        <span class="chart-badge badge-medium">9 Events</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 16, 2025</div>
+          <div class="timeline-title">Basel Stablecoin Rules Published</div>
+          <div class="timeline-desc">Risk weight 1250%→100% for qualified stablecoins. Banks need $1 vs $12.50 capital per $100. Q1 2026 effective.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 17, 2025</div>
+          <div class="timeline-title">Circle OCC National Trust Charter</div>
+          <div class="timeline-desc">Conditional approval granted. USDC issuer gains federal banking status. Stablecoin-as-bank model validated.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 18, 2025</div>
+          <div class="timeline-title">Visa Stablecoin Settlement Launch</div>
+          <div class="timeline-desc">Major payment network opens stablecoin rails. Combined with SoFi bank stablecoin + JPMorgan Base L2 = 4-day TradFi sprint.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 19, 2025</div>
+          <div class="timeline-title">SEI Japan FSA Approval</div>
+          <div class="timeline-desc">High-performance L1 receives Japan regulatory clearance. 93% Q3 address growth + Coinbase Coin50 inclusion.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 23, 2025</div>
+          <div class="timeline-title">Binance Delisting Wave</div>
+          <div class="timeline-desc">SEI/FDUSD/ENA margin pairs removed. Year-end compliance cleanup. Check full pair list before trading.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 24, 2025</div>
+          <div class="timeline-title">Bitmex PYTH/GOAT Delisting</div>
+          <div class="timeline-desc">Additional exchange delisting same week as Binance. Low liquidity + holiday timing = amplified impact.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="grid-3" style="margin-top: 24px;">
+    <!-- Stablecoin Regulatory Status -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">💰 Stablecoin Regulatory Status</div>
+          <div class="chart-subtitle">Jurisdiction-specific compliance assessment</div>
+        </div>
+        <span class="chart-badge badge-low">Basel Upgrade</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Stablecoin</th>
+            <th>Status</th>
+            <th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USDC</strong></td>
+            <td style="color: var(--accent-green);">Basel Qualified + MiCA</td>
+            <td><span class="table-tag tag-low">Very Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDT</strong></td>
+            <td style="color: var(--accent-orange);">ADGM Certified</td>
+            <td><span class="table-tag tag-high">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>PYUSD</strong></td>
+            <td style="color: var(--accent-green);">YouTube Integration</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>RLUSD</strong></td>
+            <td style="color: var(--accent-green);">$1B Market Cap</td>
+            <td><span class="table-tag tag-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>EURC</strong></td>
+            <td style="color: var(--accent-green);">EU Native</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>SoFi Bank Stablecoin</strong></td>
+            <td style="color: var(--accent-green);">Bank-Issued</td>
+            <td><span class="table-tag tag-low">Very Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Institutional Rails -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🏦 Institutional Rail Activation</div>
+          <div class="chart-subtitle">TradFi-DeFi integration milestones</div>
+        </div>
+        <span class="chart-badge badge-low">Accelerating</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rail</th>
+            <th>Volume/Status</th>
+            <th>Timeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Visa Stablecoin Settlement</td>
+            <td style="color: var(--accent-green);">Live</td>
+            <td><span class="table-tag tag-medium">Dec 18</span></td>
+          </tr>
+          <tr>
+            <td>SoFi Bank Stablecoin</td>
+            <td style="color: var(--accent-green);">Launched</td>
+            <td><span class="table-tag tag-medium">Dec 17</span></td>
+          </tr>
+          <tr>
+            <td>JPMorgan Base L2</td>
+            <td style="color: var(--accent-green);">Migration</td>
+            <td><span class="table-tag tag-medium">Dec 19</span></td>
+          </tr>
+          <tr>
+            <td>Circle OCC Charter</td>
+            <td style="color: var(--accent-green);">Approved</td>
+            <td><span class="table-tag tag-medium">Dec 17</span></td>
+          </tr>
+          <tr>
+            <td>Ondo Solana Expansion</td>
+            <td style="color: var(--accent-blue);">$2B Assets</td>
+            <td><span class="table-tag tag-low">Q1 2026</span></td>
+          </tr>
+          <tr>
+            <td>HEDERA CME Price Feed</td>
+            <td style="color: var(--accent-blue);">Launching</td>
+            <td><span class="table-tag tag-low">Dec 29</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compliance Actions -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">✅ Required Actions</div>
+          <div class="chart-subtitle">Immediate compliance requirements</div>
+        </div>
+        <span class="chart-badge badge-critical">Urgent</span>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">1️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Delisting Wave Preparation (Dec 22)</div>
+          <div class="alert-desc">Complete migration/liquidation of SEI/FDUSD/ENA (Binance Dec 23) and PYTH/GOAT (Bitmex Dec 24) positions before holiday weekend. Liquidity will be minimal.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">2️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Privacy Asset Infrastructure Review</div>
+          <div class="alert-desc">MyMonero shutting down Jan 6, 2026. XMR holders need alternative wallet solutions. Despite 73 exchange delistings, XMR still 52% of NanoGPT payments—real use cases persist.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">3️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Basel Stablecoin Strategy Update</div>
+          <div class="alert-desc">Risk weight 12.5x reduction effective Q1 2026. Banks will rapidly adopt qualified stablecoins. Position for institutional demand surge. Prioritize USDC/EURC for Basel compliance.</div>
+        </div>
+      </div>
+
+      <div class="alert-box success">
+        <div class="alert-icon">4️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">TradFi Integration Window Open</div>
+          <div class="alert-desc">Visa + SoFi + JPMorgan 4-day sprint validates stablecoin-bank convergence. Circle OCC charter approved. Deploy compliant institutional products before regulatory clarity attracts competition.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Impact Matrix -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🎯 Cross-Jurisdictional Policy Impact Matrix</div>
+        <div class="chart-subtitle">Regulatory actions and market implications across major jurisdictions</div>
+      </div>
+      <span class="chart-badge badge-active">Real-Time Tracking</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Recent Action</th>
+          <th>Impact Scope</th>
+          <th>Market Effect</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>Global (Basel)</strong></td>
+          <td>Stablecoin Risk Weight 1250%→100%</td>
+          <td><span class="table-tag tag-medium">Bank Capital</span></td>
+          <td style="color: var(--accent-green);">12.5x capital efficiency unlock for banks</td>
+          <td>Q1 2026</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (OCC)</strong></td>
+          <td>Circle National Trust Charter Approved</td>
+          <td><span class="table-tag tag-medium">Stablecoin Issuer</span></td>
+          <td style="color: var(--accent-green);">USDC gains federal bank status</td>
+          <td>Immediate</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (SEC)</strong></td>
+          <td>ZEC Roundtable Seat + Grayscale ETF Filing</td>
+          <td><span class="table-tag tag-low">Privacy Assets</span></td>
+          <td style="color: var(--accent-green);">Regulatory dialogue opened for privacy</td>
+          <td>Ongoing</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>Japan (FSA)</strong></td>
+          <td>SEI L1 Approval Granted</td>
+          <td><span class="table-tag tag-medium">High-Perf L1</span></td>
+          <td style="color: var(--accent-green);">RWA + trading infrastructure validated</td>
+          <td>Immediate</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Global (Exchanges)</strong></td>
+          <td>Concentrated Delisting Wave Dec 23-24</td>
+          <td><span class="table-tag tag-high">Liquidity</span></td>
+          <td style="color: var(--accent-orange);">Year-end compliance cleanup accelerates</td>
+          <td>Dec 23-24</td>
+        </tr>
+        <tr style="background: rgba(255,71,87,0.05);">
+          <td><strong>Privacy Infra</strong></td>
+          <td>MyMonero Shutdown Jan 6, XMR 73 Delistings</td>
+          <td><span class="table-tag tag-critical">Access</span></td>
+          <td style="color: var(--accent-red);">Privacy asset infrastructure contracting</td>
+          <td>Jan 6</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (TradFi)</strong></td>
+          <td>Visa/SoFi/JPMorgan 4-Day Stablecoin Sprint</td>
+          <td><span class="table-tag tag-medium">Bank Rails</span></td>
+          <td style="color: var(--accent-green);">TradFi-stablecoin convergence accelerating</td>
+          <td>Live</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>USA (CME)</strong></td>
+          <td>HEDERA Price Feed Dec 29</td>
+          <td><span class="table-tag tag-low">Derivatives</span></td>
+          <td style="color: var(--accent-blue);">Institutional derivatives infrastructure expanding</td>
+          <td>Dec 29</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>EU (MiCA)</strong></td>
+          <td>Full Enforcement Approaching</td>
+          <td><span class="table-tag tag-high">Comprehensive</span></td>
+          <td style="color: var(--accent-orange);">Non-compliant stablecoins face EU exit</td>
+          <td>Jan 2026</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Final Alert Section -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🚨 Critical Intelligence Summary</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+      </div>
+      <span class="chart-badge badge-high">Priority Actions</span>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">1. Basel Stablecoin Rules = Biggest Banking Unlock Since 2008</div>
+        <div class="alert-desc">Risk weight reduction from 1250% to 100% means banks can hold 12.5x more stablecoins with same capital. This isn't regulatory softening—it's institutional floodgates opening. Banks that held $100M stablecoins can now hold $1.25B. Effective Q1 2026. Position for massive institutional demand surge in USDC/qualified stablecoins.</div>
+      </div>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">2. Year-End Delisting Wave Creates Immediate Liquidity Risk</div>
+        <div class="alert-desc">Binance (Dec 23) + Bitmex (Dec 24) concentrated delistings during Christmas liquidity vacuum. SEI/FDUSD/ENA/PYTH/GOAT affected. Complete position migration by Dec 22. This pattern confirms exchanges using year-end for compliance cleanup—expect annual December delisting waves.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">3. Privacy Asset Bifurcation: Compliant vs Functional</div>
+        <div class="alert-desc">ZEC gets SEC roundtable + Grayscale ETF filing = "compliant privacy" path validated. XMR gets 73 delistings + MyMonero shutdown BUT 52% of NanoGPT payments = real use case persists despite exchange access collapse. Two divergent paths emerging: regulatory-engaged (ZEC) vs censorship-resistant (XMR).</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. TradFi Stablecoin Integration Sprint Validates Convergence</div>
+        <div class="alert-desc">4 days, 3 major milestones: Visa stablecoin settlement (Dec 18), SoFi bank stablecoin launch (Dec 17), JPMorgan Base L2 migration (Dec 19). Add Circle OCC charter approval. This is coordinated institutional deployment, not isolated experiments. Stablecoin-bank convergence is now operational reality.</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">5. Japan FSA SEI Approval Opens APAC High-Performance L1 Market</div>
+        <div class="alert-desc">SEI receives Japan regulatory clearance with 93% Q3 address growth and Coinbase Coin50 inclusion. Combined with 824K daily addresses and $687M TVL ATH, this positions SEI as the compliant high-performance L1 for APAC RWA and trading infrastructure. First-mover advantage in Japan institutional market.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
+      Data Sources: Basel Committee publications, OCC announcements, SEC filings, FSA Japan, MAS Singapore, SFC Hong Kong, ADGM UAE, CME Group, on-chain analytics (Nansen, Chainalysis, Glassnode), exchange delisting notices, stablecoin flow monitoring, institutional transaction records.<br/>
+      <em>This dashboard synthesizes real-time regulatory developments with market impact analysis to identify compliance requirements and risk factors before enforcement actions occur.</em>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions. Basel stablecoin rule changes and year-end delisting waves indicate elevated compliance activity requiring immediate assessment.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
