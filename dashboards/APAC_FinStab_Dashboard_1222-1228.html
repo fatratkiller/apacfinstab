@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Dec 22 - Dec 28, 2025)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance">
+
+<!-- Open Graph (Social Media Sharing) -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(0,0,0,0.6); }
+
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); font-weight: 700; }
+.kpi-icon { font-size: 24px; opacity: 0.8; }
+.kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.kpi-change { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+.kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chart-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.chart-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.chart-badge { padding: 4px 12px; border-radius: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table thead { background: rgba(74,158,255,0.08); }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.data-table tr:hover { background: rgba(74,158,255,0.04); }
+
+.table-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+/* Alert Box */
+.alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
+.alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
+.alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
+.alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
+.alert-icon { font-size: 20px; line-height: 1; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Progress Bar */
+.progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
+.progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
+.progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
+.progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
+.progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); border: 2px solid var(--bg-card); }
+.timeline-date { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+.timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Footer */
+.footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
+      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
+      <div class="period">📅 December 22 - December 28, 2025</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 1 -->
+  <div class="grid-3">
+    <div class="kpi-card green">
+      <div class="kpi-header">
+        <div class="kpi-label">Regulatory Momentum</div>
+        <div class="kpi-icon">🧭</div>
+      </div>
+      <div class="kpi-value">+220%</div>
+      <div class="kpi-change up">↗ GENIUS Act + Basel Risk Weight Reform</div>
+      <div class="kpi-detail">US GENIUS stablecoin framework passed; Basel risk weight 1250%→100% (12.5x cost reduction); EU DAC8 effective Jan 1</div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <div class="kpi-label">Jurisdictions Active</div>
+        <div class="kpi-icon">🌏</div>
+      </div>
+      <div class="kpi-value">16</div>
+      <div class="kpi-change up">↗ +2 vs Last Week</div>
+      <div class="kpi-detail">USA, Hong Kong, Japan, Singapore, Korea, UAE, Switzerland, EU, UK, Australia, China, India, Thailand, Germany, Netherlands, Abu Dhabi</div>
+    </div>
+
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <div class="kpi-label">Capital Under Review</div>
+        <div class="kpi-icon">💵</div>
+      </div>
+      <div class="kpi-value">$24.8B</div>
+      <div class="kpi-change up">↗ Stablecoin Framework + Banking Access</div>
+      <div class="kpi-detail">Basel stablecoin capital relief, GENIUS Act institutional onramp, EU DAC8 tax transparency, HK SFC platform warnings</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 2 -->
+  <div class="grid-3">
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <div class="kpi-label">Compliance Flags</div>
+        <div class="kpi-icon">⚠️</div>
+      </div>
+      <div class="kpi-value">31</div>
+      <div class="kpi-change up">↗ +4 Critical This Week</div>
+      <div class="kpi-detail">HK SFC suspicious platform warnings, EU DAC8 Jan 1 deadline, NIST quantum 2030 mandate, Trust Wallet $6M exploit</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">Policy Gap Window</div>
+        <div class="kpi-icon">⏳</div>
+      </div>
+      <div class="kpi-value">4 days</div>
+      <div class="kpi-change neutral">⚡ EU DAC8 Jan 1 + Quantum 2030</div>
+      <div class="kpi-detail">DAC8 crypto tax transparency imminent, NIST ECC256 phase-out 2030, Basel stablecoin rules 2026, BIP360 quantum upgrade</div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <div class="kpi-label">Institutional Access Score</div>
+        <div class="kpi-icon">🏛️</div>
+      </div>
+      <div class="kpi-value">9.2/10</div>
+      <div class="kpi-change up">↗ Basel + GENIUS = Bank Onramp</div>
+      <div class="kpi-detail">Basel 100% risk weight enables bank stablecoin holdings; GENIUS Act provides federal framework; Deutsche Bank L2 building</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-3">
+    <!-- Column 1: Regulatory Heat Map -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🔥 Regulatory Heat Map</div>
+          <div class="chart-subtitle">Jurisdiction activity & enforcement probability</div>
+        </div>
+        <span class="chart-badge badge-high">Critical</span>
+      </div>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Stance</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USA (GENIUS)</strong></td>
+            <td style="color: var(--accent-green);">Progressive</td>
+            <td><span class="table-tag tag-medium">4.2</span></td>
+          </tr>
+          <tr>
+            <td><strong>EU (DAC8)</strong></td>
+            <td style="color: var(--accent-orange);">Enforcing</td>
+            <td><span class="table-tag tag-high">7.8</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hong Kong (SFC)</strong></td>
+            <td style="color: var(--accent-orange);">Warning</td>
+            <td><span class="table-tag tag-high">6.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>South Korea</strong></td>
+            <td style="color: var(--accent-green);">Piloting</td>
+            <td><span class="table-tag tag-medium">5.2</span></td>
+          </tr>
+          <tr>
+            <td><strong>Singapore</strong></td>
+            <td style="color: var(--accent-green);">Stable</td>
+            <td><span class="table-tag tag-low">3.8</span></td>
+          </tr>
+          <tr>
+            <td><strong>Basel (Global)</strong></td>
+            <td style="color: var(--accent-green);">Easing</td>
+            <td><span class="table-tag tag-low">2.8</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-content">
+          <div class="alert-title">Hong Kong SFC Platform Warnings</div>
+          <div class="alert-desc">SFC added "CoinCola" and "Globiance X/Globiance HK" to suspicious VATP list. Unlicensed operation allegations; investor withdrawal difficulties reported.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Protocol Compliance Risk -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🎯 Protocol Compliance Risk</div>
+          <div class="chart-subtitle">Vulnerability assessment by category</div>
+        </div>
+        <span class="chart-badge badge-active">Live Tracking</span>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Quantum-Vulnerable Chains (Pre-2030)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">92%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 92%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">EU DAC8 Non-Compliant Platforms</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">78%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 78%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Perp DEX (No Registration)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">85%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 85%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Stablecoin Issuers (Basel Eligible)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">35%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 35%">Improving</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Privacy Compliance Infrastructure</span>
+          <span style="font-size: 11px; color: var(--accent-blue);">48%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill blue" style="width: 48%">Building</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">RWA Tokenization (SEC Template)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">18%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 18%">Low</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">NIST Quantum Security Mandate</div>
+          <div class="alert-desc">2030 deadline for ECC256 phase-out. BIP360 numbered for BTC quantum resistance. 2-8 year upgrade window before quantum threat materializes (2030-2035).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Key Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of December 22 - December 28, 2025</div>
+        </div>
+        <span class="chart-badge badge-medium">9 Events</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 23, 2025</div>
+          <div class="timeline-title">USDC $500M Minted on Solana</div>
+          <div class="timeline-desc">Circle single-day mint; 2025 Solana USDC issuance hits $55B total; institutional settlement acceleration</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 24, 2025</div>
+          <div class="timeline-title">Korea BC Card Stablecoin Pilot Complete</div>
+          <div class="timeline-desc">Foreign users can pay Korean merchants via stablecoins; Wavebridge/Aaron Group partnership; Asia payments infrastructure milestone</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 24, 2025</div>
+          <div class="timeline-title">HK SFC Suspicious Platform Warnings</div>
+          <div class="timeline-desc">CoinCola and Globiance added to warning list; investor withdrawal issues reported; unlicensed operation allegations</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 25, 2025</div>
+          <div class="timeline-title">Circle Tokenized Metals Launch</div>
+          <div class="timeline-desc">CircleMetals: GLDC (gold) and SILC (silver) tokens; USDC-to-precious-metals conversion; COMEX liquidity backing</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 25, 2025</div>
+          <div class="timeline-title">Mt.Gox Linked BTC Movement</div>
+          <div class="timeline-desc">1,300 BTC ($114M) deposited to unknown exchange; 4,100 BTC ($360M) still held; ongoing liquidation risk</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 26, 2025</div>
+          <div class="timeline-title">Ethereum Glamsterdam Roadmap Confirmed</div>
+          <div class="timeline-desc">Gas limit 60M→200M; parallel processing; ~10,000 TPS target; Q1 2026 hard fork scheduled</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="grid-3" style="margin-top: 24px;">
+    <!-- Stablecoin Regulatory Status -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">💰 Stablecoin Regulatory Status</div>
+          <div class="chart-subtitle">Post-GENIUS Act & Basel reform assessment</div>
+        </div>
+        <span class="chart-badge badge-low">Improving</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Stablecoin</th>
+            <th>Status</th>
+            <th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USDC</strong></td>
+            <td style="color: var(--accent-green);">GENIUS + MiCA + Basel</td>
+            <td><span class="table-tag tag-medium">Lowest</span></td>
+          </tr>
+          <tr>
+            <td><strong>USD1 (WLFI)</strong></td>
+            <td style="color: var(--accent-green);">$3B+ Market Cap</td>
+            <td><span class="table-tag tag-medium">New Leader</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDT</strong></td>
+            <td style="color: var(--accent-orange);">ADGM/Asia Focus</td>
+            <td><span class="table-tag tag-high">Regional</span></td>
+          </tr>
+          <tr>
+            <td><strong>PYUSD</strong></td>
+            <td style="color: var(--accent-green);">PayPal + YouTube</td>
+            <td><span class="table-tag tag-low">Consumer</span></td>
+          </tr>
+          <tr>
+            <td><strong>RLUSD</strong></td>
+            <td style="color: var(--accent-green);">OP via Wormhole</td>
+            <td><span class="table-tag tag-medium">Cross-Chain</span></td>
+          </tr>
+          <tr>
+            <td><strong>EURC</strong></td>
+            <td style="color: var(--accent-green);">EU Regulated</td>
+            <td><span class="table-tag tag-low">MiCA Native</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Institutional Rails -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🏦 Institutional Rail Activation</div>
+          <div class="chart-subtitle">TradFi-DeFi integration milestones</div>
+        </div>
+        <span class="chart-badge badge-low">Accelerating</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rail</th>
+            <th>Volume/TVL</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Deutsche Bank ETH L2</td>
+            <td style="color: var(--accent-blue);">Building</td>
+            <td><span class="table-tag tag-low">Development</span></td>
+          </tr>
+          <tr>
+            <td>JPMorgan Tokenized Funds</td>
+            <td style="color: var(--accent-green);">Active</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>Maple Finance Record Loan</td>
+            <td style="color: var(--accent-green);">$500M Single</td>
+            <td><span class="table-tag tag-medium">ATH</span></td>
+          </tr>
+          <tr>
+            <td>Circle CCTP v2</td>
+            <td style="color: var(--accent-green);">Cross-Chain</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>Korea BC Card Pilot</td>
+            <td style="color: var(--accent-green);">Complete</td>
+            <td><span class="table-tag tag-medium">Asia First</span></td>
+          </tr>
+          <tr>
+            <td>CircleMetals (Gold/Silver)</td>
+            <td style="color: var(--accent-green);">GLDC/SILC</td>
+            <td><span class="table-tag tag-medium">New</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compliance Actions -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">✅ Required Actions</div>
+          <div class="chart-subtitle">Immediate compliance requirements</div>
+        </div>
+        <span class="chart-badge badge-critical">Urgent</span>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">1️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">EU DAC8 Jan 1 Deadline</div>
+          <div class="alert-desc">Crypto tax transparency directive effective in 4 days. EU exchanges must report user transactions to tax authorities. Review EU user exposure and reporting obligations immediately.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">2️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Basel Stablecoin Position Review</div>
+          <div class="alert-desc">Risk weight reduction 1250%→100% enables bank stablecoin holdings at 12.5x lower capital cost. Reassess institutional stablecoin allocation frameworks for 2026.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">3️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Quantum Security Timeline Assessment</div>
+          <div class="alert-desc">NIST 2030 ECC256 phase-out mandate. BIP360 numbered. 2-8 year window before quantum threat. Long-term custody solutions require quantum-resistance planning.</div>
+        </div>
+      </div>
+
+      <div class="alert-box success">
+        <div class="alert-icon">4️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">GENIUS Act Compliance Framework</div>
+          <div class="alert-desc">First US federal stablecoin framework passed. Establishes reserve requirements, issuer licensing, consumer protections. Update US stablecoin strategy for new regulatory clarity.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Impact Matrix -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🎯 Cross-Jurisdictional Policy Impact Matrix</div>
+        <div class="chart-subtitle">Regulatory actions and market implications across major jurisdictions</div>
+      </div>
+      <span class="chart-badge badge-active">Real-Time Tracking</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Recent Action</th>
+          <th>Impact Scope</th>
+          <th>Market Effect</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (GENIUS Act)</strong></td>
+          <td>First Federal Stablecoin Framework</td>
+          <td><span class="table-tag tag-medium">Stablecoins</span></td>
+          <td style="color: var(--accent-green);">Institutional onramp established</td>
+          <td>Passed</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>Basel Committee</strong></td>
+          <td>Risk Weight 1250%→100%</td>
+          <td><span class="table-tag tag-medium">Banking</span></td>
+          <td style="color: var(--accent-green);">12.5x capital cost reduction for banks</td>
+          <td>2026</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>EU (DAC8)</strong></td>
+          <td>Crypto Tax Transparency Directive</td>
+          <td><span class="table-tag tag-high">Tax Reporting</span></td>
+          <td style="color: var(--accent-orange);">EU exchange reporting mandatory</td>
+          <td>Jan 1, 2026</td>
+        </tr>
+        <tr style="background: rgba(255,71,87,0.05);">
+          <td><strong>Hong Kong (SFC)</strong></td>
+          <td>Suspicious Platform Warnings</td>
+          <td><span class="table-tag tag-critical">Enforcement</span></td>
+          <td style="color: var(--accent-red);">CoinCola/Globiance flagged</td>
+          <td>Immediate</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>South Korea</strong></td>
+          <td>BC Card Stablecoin Pilot Complete</td>
+          <td><span class="table-tag tag-medium">Payments</span></td>
+          <td style="color: var(--accent-green);">Asia stablecoin payments validated</td>
+          <td>Complete</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Global (NIST)</strong></td>
+          <td>Quantum Security Mandate</td>
+          <td><span class="table-tag tag-low">Long-Term</span></td>
+          <td style="color: var(--accent-blue);">ECC256 phase-out by 2030</td>
+          <td>2030</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>China (736 HK)</strong></td>
+          <td>Listed Company BNB Allocation</td>
+          <td><span class="table-tag tag-medium">Corporate Treasury</span></td>
+          <td style="color: var(--accent-green);">HK-listed company crypto reserve precedent</td>
+          <td>Announced</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Germany (Deutsche)</strong></td>
+          <td>Building Ethereum L2</td>
+          <td><span class="table-tag tag-low">Infrastructure</span></td>
+          <td style="color: var(--accent-blue);">Bank-grade settlement rails on ETH</td>
+          <td>Building</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Final Alert Section -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🚨 Critical Intelligence Summary</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+      </div>
+      <span class="chart-badge badge-high">Priority Actions</span>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">1. EU DAC8 Effective in 4 Days - Tax Transparency Mandate</div>
+        <div class="alert-desc">January 1, 2026: EU exchanges must report user transactions to tax authorities. This is the most significant EU crypto compliance event since MiCA. EU users face automatic tax reporting. Non-EU platforms serving EU users need immediate assessment. Failure to comply = regulatory action + potential market access loss.</div>
+      </div>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">2. Basel + GENIUS = Institutional Stablecoin Era Begins</div>
+        <div class="alert-desc">Two transformative events this week: Basel risk weight 1250%→100% (12.5x capital cost reduction for bank stablecoin holdings) + GENIUS Act (first US federal stablecoin framework). Combined effect: banks can now hold stablecoins at reasonable capital cost with regulatory clarity. Expect $300B→$1,200-1,800B monthly stablecoin settlement by 2026.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">3. Hong Kong SFC Enforcement Acceleration</div>
+        <div class="alert-desc">SFC added CoinCola and Globiance to suspicious platform list this week. Allegations: unlicensed operation, investor withdrawal difficulties. Pattern: HK regulator moving from licensing to active enforcement. Platforms operating without VASP license face increasing risk. HK remains attractive for compliant players but hostile to unlicensed operators.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. Quantum Security Planning Window Opens</div>
+        <div class="alert-desc">NIST mandates ECC256 phase-out by 2030. US government agencies must abandon quantum-vulnerable cryptography. BIP360 numbered for Bitcoin quantum resistance. Timeline: quantum threat 2030-2035, BTC upgrade cycle 3-5 years. This creates 2-8 year window for orderly transition. Long-term custody solutions require quantum-resistance roadmap now.</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">5. Asia Stablecoin Payments Infrastructure Milestone</div>
+        <div class="alert-desc">Korea BC Card stablecoin pilot complete: foreign users can pay Korean merchants via stablecoins. This is Asia's first bank-grade stablecoin payment integration. Unlike US top-down regulation (GENIUS Act), Asia is building bottom-up through bank/payment company partnerships. Watch for Japan, Singapore, HK to follow. Stablecoin-fiat conversion infrastructure is the next battleground.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
+      Data Sources: SEC filings, CFTC announcements, FSA Japan, MAS Singapore, SFC Hong Kong, ADGM UAE, Basel Committee, EU Commission, NIST, on-chain analytics (Nansen, Chainalysis, Glassnode), regulatory filing analysis, stablecoin flow monitoring, institutional transaction records.<br/>
+      <em>This dashboard synthesizes real-time regulatory developments with market impact analysis to identify compliance requirements and risk factors before enforcement actions occur.</em>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions. EU DAC8 Jan 1 deadline and Basel stablecoin reforms indicate elevated compliance activity requiring immediate assessment.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
