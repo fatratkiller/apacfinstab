@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Dec 29, 2025 - Jan 5, 2026)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance">
+
+<!-- Open Graph (Social Media Sharing) -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(0,0,0,0.6); }
+
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); font-weight: 700; }
+.kpi-icon { font-size: 24px; opacity: 0.8; }
+.kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.kpi-change { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+.kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chart-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.chart-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.chart-badge { padding: 4px 12px; border-radius: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table thead { background: rgba(74,158,255,0.08); }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.data-table tr:hover { background: rgba(74,158,255,0.04); }
+
+.table-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+/* Alert Box */
+.alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
+.alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
+.alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
+.alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
+.alert-icon { font-size: 20px; line-height: 1; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Progress Bar */
+.progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
+.progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
+.progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
+.progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
+.progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); border: 2px solid var(--bg-card); }
+.timeline-date { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+.timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Footer */
+.footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
+      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
+      <div class="period">📅 December 29, 2025 - January 5, 2026</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 1 -->
+  <div class="grid-3">
+    <div class="kpi-card green">
+      <div class="kpi-header">
+        <div class="kpi-label">Regulatory Momentum</div>
+        <div class="kpi-icon">🧭</div>
+      </div>
+      <div class="kpi-value">+220%</div>
+      <div class="kpi-change up">↗ ETF Wave + Tax Enforcement</div>
+      <div class="kpi-detail">Bitwise 11 altcoin ETF filings, EU DAC8 enforcement live Jan 1, Goldman $1.7B crypto ETF holdings, Canton DTCC pilot confirmed H1</div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <div class="kpi-label">Jurisdictions Active</div>
+        <div class="kpi-icon">🌏</div>
+      </div>
+      <div class="kpi-value">16</div>
+      <div class="kpi-change up">↗ +2 vs Last Week</div>
+      <div class="kpi-detail">USA, EU, Hong Kong, Japan, Singapore, Korea, UAE, Switzerland, UK, Australia, China, India, Thailand, Brazil, Taiwan, Vietnam</div>
+    </div>
+
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <div class="kpi-label">Capital Under Review</div>
+        <div class="kpi-icon">💵</div>
+      </div>
+      <div class="kpi-value">$24.3B</div>
+      <div class="kpi-change up">↗ ETF Flows + Institutional Rails</div>
+      <div class="kpi-detail">$21.3B ETF inflows 2025, Goldman $1.7B holdings, Tether 8,888 BTC stacked, JPMorgan tokenized bond infrastructure</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 2 -->
+  <div class="grid-3">
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <div class="kpi-label">Compliance Flags</div>
+        <div class="kpi-icon">⚠️</div>
+      </div>
+      <div class="kpi-value">31</div>
+      <div class="kpi-change up">↗ +4 Critical This Week</div>
+      <div class="kpi-detail">EU DAC8 tax reporting live, MSCI mining stock decision Jan 15, Japan FSA transition ongoing, Korea DEX arbitrage acceleration</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">Policy Gap Window</div>
+        <div class="kpi-icon">⏳</div>
+      </div>
+      <div class="kpi-value">26 days</div>
+      <div class="kpi-change neutral">⚡ MiCA Full + US GENIUS Act Gap</div>
+      <div class="kpi-detail">MiCA stablecoin enforcement Jan 2026, US legislative gap continues, Japan framework Q2 deadline, Basel risk weights implementation</div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <div class="kpi-label">Institutional Adoption Score</div>
+        <div class="kpi-icon">🏛️</div>
+      </div>
+      <div class="kpi-value">9.2/10</div>
+      <div class="kpi-change up">↗ Highest Since 2021</div>
+      <div class="kpi-detail">Goldman + Tether accumulating, Canton DTCC pilot, JPMorgan Solana infrastructure, ETF universe expanding to 11+ altcoins</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-3">
+    <!-- Column 1: Regulatory Heat Map -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🔥 Regulatory Heat Map</div>
+          <div class="chart-subtitle">Jurisdiction activity & enforcement probability</div>
+        </div>
+        <span class="chart-badge badge-high">Critical</span>
+      </div>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Stance</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>EU (DAC8)</strong></td>
+            <td style="color: var(--accent-red);">Enforcing</td>
+            <td><span class="table-tag tag-critical">8.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>USA (SEC/CFTC)</strong></td>
+            <td style="color: var(--accent-green);">Softening</td>
+            <td><span class="table-tag tag-medium">5.2</span></td>
+          </tr>
+          <tr>
+            <td><strong>Japan (FSA)</strong></td>
+            <td style="color: var(--accent-orange);">Transitioning</td>
+            <td><span class="table-tag tag-high">7.2</span></td>
+          </tr>
+          <tr>
+            <td><strong>South Korea</strong></td>
+            <td style="color: var(--accent-red);">Pressured</td>
+            <td><span class="table-tag tag-critical">8.1</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hong Kong</strong></td>
+            <td style="color: var(--accent-green);">Progressive</td>
+            <td><span class="table-tag tag-medium">4.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Singapore</strong></td>
+            <td style="color: var(--accent-green);">Stable</td>
+            <td><span class="table-tag tag-low">3.8</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-content">
+          <div class="alert-title">EU DAC8 Now Enforcing</div>
+          <div class="alert-desc">As of Jan 1, 2026, EU exchanges must report all user transactions to tax authorities. Non-EU platforms serving EU users face compliance pressure. User migration to DEX accelerating.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Protocol Compliance Risk -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🎯 Protocol Compliance Risk</div>
+          <div class="chart-subtitle">Vulnerability assessment by category</div>
+        </div>
+        <span class="chart-badge badge-active">Live Tracking</span>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Privacy Protocols (Railgun Lawsuit)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">92%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 92%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Perp DEX (No Registration)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">85%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 85%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Stablecoin Issuers (Multi-Regime)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">72%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 72%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Mining Companies (MSCI Review)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">65%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 65%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Tokenized Securities (ETF Path)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">18%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 18%">Low</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Institutional RWA (Canton/DTCC)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">12%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 12%">Low</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">MSCI Mining Stock Decision Jan 15</div>
+          <div class="alert-desc">Potential delisting of crypto mining stocks from MSCI indices. Could trigger $500M+ passive fund outflows. Monitor closely.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Key Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of December 29 - January 5</div>
+        </div>
+        <span class="chart-badge badge-medium">9 Events</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 1, 2026</div>
+          <div class="timeline-title">EU DAC8 Tax Reporting Live</div>
+          <div class="timeline-desc">All EU exchanges must report user transactions to tax authorities; compliance pressure on non-EU platforms serving EU users</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Dec 30, 2025</div>
+          <div class="timeline-title">Bitwise 11 Altcoin ETF Filings</div>
+          <div class="timeline-desc">STRK, HYPE, NEAR, TRX, UNI, AAVE + more; most comprehensive ETF wave since BTC/ETH approval</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 2, 2026</div>
+          <div class="timeline-title">Goldman Sachs $1.7B Crypto ETF Holdings</div>
+          <div class="timeline-desc">Largest traditional finance crypto exposure disclosed; institutional validation signal</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 5, 2026</div>
+          <div class="timeline-title">Bank of America Adviser Allocations Begin</div>
+          <div class="timeline-desc">BofA wealth management advisers can now recommend crypto; retail-institutional bridge</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 6, 2026</div>
+          <div class="timeline-title">Dango Mainnet Alpha (zkML)</div>
+          <div class="timeline-desc">First zkML mainnet deployment; privacy-preserving AI compliance infrastructure</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 7, 2026</div>
+          <div class="timeline-title">Ethereum BPO Fork + AlignerZ IWO</div>
+          <div class="timeline-desc">ETH infrastructure upgrade; first Initial Wallet Offering with time-weighted vesting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="grid-3" style="margin-top: 24px;">
+    <!-- Stablecoin Regulatory Status -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">💰 Stablecoin Regulatory Status</div>
+          <div class="chart-subtitle">Jurisdiction-specific compliance assessment</div>
+        </div>
+        <span class="chart-badge badge-medium">Fragmented</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Stablecoin</th>
+            <th>Status</th>
+            <th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USDC</strong></td>
+            <td style="color: var(--accent-green);">MiCA + US Compliant</td>
+            <td><span class="table-tag tag-medium">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDT</strong></td>
+            <td style="color: var(--accent-orange);">ADGM + APAC Focus</td>
+            <td><span class="table-tag tag-high">Medium-High</span></td>
+          </tr>
+          <tr>
+            <td><strong>USD1 (WLFI)</strong></td>
+            <td style="color: var(--accent-blue);">$786M Volume Live</td>
+            <td><span class="table-tag tag-high">Unrated</span></td>
+          </tr>
+          <tr>
+            <td><strong>PYUSD</strong></td>
+            <td style="color: var(--accent-green);">PayPal Backed</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>EURC</strong></td>
+            <td style="color: var(--accent-green);">EU Native</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>cUSDT (Zama)</strong></td>
+            <td style="color: var(--accent-purple);">First Confidential</td>
+            <td><span class="table-tag tag-high">New Category</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Institutional Rails -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🏦 Institutional Rail Activation</div>
+          <div class="chart-subtitle">TradFi-DeFi integration milestones</div>
+        </div>
+        <span class="chart-badge badge-low">Accelerating</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rail</th>
+            <th>Volume/TVL</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Goldman Sachs ETF</td>
+            <td style="color: var(--accent-green);">$1.7B Holdings</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>Tether BTC Treasury</td>
+            <td style="color: var(--accent-green);">8,888 BTC Stacked</td>
+            <td><span class="table-tag tag-medium">Accumulating</span></td>
+          </tr>
+          <tr>
+            <td>Canton DTCC Pilot</td>
+            <td style="color: var(--accent-blue);">Tokenized Treasuries</td>
+            <td><span class="table-tag tag-low">H1 2026</span></td>
+          </tr>
+          <tr>
+            <td>Revolut Polygon</td>
+            <td style="color: var(--accent-green);">$111M Monthly</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>Bank of America</td>
+            <td style="color: var(--accent-blue);">Adviser Access</td>
+            <td><span class="table-tag tag-low">Jan 5</span></td>
+          </tr>
+          <tr>
+            <td>SEI PayPal/Revolut</td>
+            <td style="color: var(--accent-green);">2M DAU + Payments</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compliance Actions -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">✅ Required Actions</div>
+          <div class="chart-subtitle">Immediate compliance requirements</div>
+        </div>
+        <span class="chart-badge badge-critical">Urgent</span>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">1️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">EU DAC8 Tax Documentation</div>
+          <div class="alert-desc">EU users: Ensure all exchange accounts are KYC compliant. Tax authorities now receive transaction reports automatically. Review 2025 transaction history immediately.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">2️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">MSCI Mining Stock Exposure Review</div>
+          <div class="alert-desc">Jan 15 decision on crypto mining stock inclusion. If delisted, passive fund outflows could impact BTC mining companies. Assess portfolio exposure before deadline.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">3️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Privacy Protocol Compliance Check</div>
+          <div class="alert-desc">Railgun $2.1M lawsuit creates precedent risk. Review exposure to privacy protocols. Regulatory heat increasing on transaction obfuscation tools.</div>
+        </div>
+      </div>
+
+      <div class="alert-box success">
+        <div class="alert-icon">4️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">ETF Access Window Open</div>
+          <div class="alert-desc">11 altcoin ETF filings create compliant access path. Bitwise STRK/HYPE/NEAR filings signal regulatory acceptance. Position for institutional product expansion.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Impact Matrix -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🎯 Cross-Jurisdictional Policy Impact Matrix</div>
+        <div class="chart-subtitle">Regulatory actions and market implications across major jurisdictions</div>
+      </div>
+      <span class="chart-badge badge-active">Real-Time Tracking</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Recent Action</th>
+          <th>Impact Scope</th>
+          <th>Market Effect</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(255,71,87,0.05);">
+          <td><strong>EU (DAC8)</strong></td>
+          <td>Tax Reporting Enforcement Live</td>
+          <td><span class="table-tag tag-critical">Comprehensive</span></td>
+          <td style="color: var(--accent-red);">DEX migration accelerating, compliance costs rising</td>
+          <td>Jan 1 Live</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (Bitwise)</strong></td>
+          <td>11 Altcoin ETF Filings Submitted</td>
+          <td><span class="table-tag tag-medium">Institutional Access</span></td>
+          <td style="color: var(--accent-green);">Most favorable regulatory signal since 2021</td>
+          <td>Pending</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (TradFi)</strong></td>
+          <td>Goldman $1.7B + BofA Adviser Access</td>
+          <td><span class="table-tag tag-medium">Capital Flow</span></td>
+          <td style="color: var(--accent-green);">Institutional validation, retail bridge opening</td>
+          <td>Live/Jan 5</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Japan (FSA)</strong></td>
+          <td>PSA → FIA Migration Ongoing</td>
+          <td><span class="table-tag tag-high">Framework Upgrade</span></td>
+          <td style="color: var(--accent-orange);">Q2 2026 deadline, license upgrade required</td>
+          <td>Q2 2026</td>
+        </tr>
+        <tr style="background: rgba(255,71,87,0.05);">
+          <td><strong>South Korea</strong></td>
+          <td>CEX → DEX Migration Accelerating</td>
+          <td><span class="table-tag tag-critical">Market Shift</span></td>
+          <td style="color: var(--accent-red);">Regulatory arbitrage driving volume offshore</td>
+          <td>Ongoing</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Brazil (DREX)</strong></td>
+          <td>SEI Integration for CBDC Pilot</td>
+          <td><span class="table-tag tag-low">Infrastructure</span></td>
+          <td style="color: var(--accent-blue);">Public chain integration with CBDC</td>
+          <td>Pilot</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Global (MSCI)</strong></td>
+          <td>Mining Stock Index Review</td>
+          <td><span class="table-tag tag-high">Passive Flows</span></td>
+          <td style="color: var(--accent-orange);">Potential $500M+ outflows if delisted</td>
+          <td>Jan 15</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>Global (Privacy)</strong></td>
+          <td>Zama cUSDT Mainnet Launch</td>
+          <td><span class="table-tag tag-medium">New Category</span></td>
+          <td style="color: var(--accent-green);">Confidential stablecoins enter market</td>
+          <td>Live</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>USA (Canton/DTCC)</strong></td>
+          <td>Tokenized Treasuries Pilot Confirmed</td>
+          <td><span class="table-tag tag-low">Institutional</span></td>
+          <td style="color: var(--accent-blue);">SEC-approved settlement infrastructure</td>
+          <td>H1 2026</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Final Alert Section -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🚨 Critical Intelligence Summary</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+      </div>
+      <span class="chart-badge badge-high">Priority Actions</span>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">1. EU DAC8 Tax Enforcement Now Live - Immediate Action Required</div>
+        <div class="alert-desc">As of January 1, 2026, all EU exchanges must report user transactions to tax authorities. This affects both EU residents using any exchange AND non-EU platforms serving EU customers. Compliance requirement: Review all 2025 transaction records, ensure tax documentation is complete, consider DEX alternatives for privacy-conscious users. Non-compliance penalties are severe.</div>
+      </div>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">2. Bitwise 11 Altcoin ETF Wave = Most Favorable US Signal Since 2021</div>
+        <div class="alert-desc">Bitwise filed for STRK, HYPE, NEAR, TRX, UNI, AAVE, and more ETFs on Dec 30. Combined with Goldman's $1.7B holdings and BofA adviser access starting Jan 5, this represents the strongest institutional on-ramp signal in years. Deploy compliant institutional strategies before regulatory window potentially closes with political cycle shifts.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">3. MSCI Mining Stock Decision Jan 15 - Portfolio Review Required</div>
+        <div class="alert-desc">MSCI will decide whether to delist crypto mining stocks from indices on January 15. If delisted, passive index funds must sell, potentially triggering $500M+ in forced outflows. Impact: Mining company stocks, BTC correlation, and crypto-adjacent equities. Action: Review exposure to MARA, RIOT, CLSK, and similar holdings before decision date.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. Privacy Protocol Regulatory Heat Intensifying</div>
+        <div class="alert-desc">Railgun $2.1M lawsuit after Stream Finance exploit creates legal precedent for privacy protocol liability. Simultaneously, Zama launched first confidential stablecoin (cUSDT) on mainnet. Result: Regulatory clarity emerging but risk elevated. Action: Evaluate privacy protocol exposure, distinguish between "compliance privacy" (FHE for enterprise) vs "transaction obfuscation" (regulatory target).</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">5. Institutional Rails Opening Across Multiple Channels</div>
+        <div class="alert-desc">Goldman $1.7B ETF holdings, Tether 8,888 BTC treasury accumulation, Canton DTCC tokenized treasuries pilot H1 2026, BofA adviser crypto access Jan 5, Revolut $111M monthly Polygon volume, SEI PayPal/Revolut integration at 2M DAU. This is coordinated institutional infrastructure buildout. Position for compliant capital flows—RWA tokenization, ETF-accessible assets, and payment-integrated L1s are the winners.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
+      Data Sources: SEC filings, CFTC announcements, FSA Japan, MAS Singapore, SFC Hong Kong, ADGM UAE, EU regulatory publications, on-chain analytics (Nansen, Chainalysis, Glassnode), Bloomberg institutional flow data, stablecoin monitoring, ETF filing analysis.<br/>
+      <em>This dashboard synthesizes real-time regulatory developments with market impact analysis to identify compliance requirements and risk factors before enforcement actions occur.</em>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions. EU DAC8 enforcement, MSCI mining stock review, and privacy protocol litigation indicate elevated compliance risk requiring immediate assessment.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
