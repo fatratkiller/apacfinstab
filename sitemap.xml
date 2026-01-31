@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://apacfinstab.com/</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://apacfinstab.com/contact.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Redirect -->
+  <url>
+    <loc>https://apacfinstab.com/blog.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Weekly Dashboards (each is a unique content page) -->
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0119-0125.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0113-0119.html</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1229-0105.html</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1222-1228.html</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1216-1222.html</loc>
+    <lastmod>2025-12-22</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1208-1214.html</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1201-1207.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1124-1130.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/apacfinreg1117-1123.html</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/apacfinreg1110-1116.html</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/apacfinreg1110.html</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://apacfinstab.com/dashboards/regulation-weekly-2025-11-03.html</loc>
+    <lastmod>2025-11-03</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>
