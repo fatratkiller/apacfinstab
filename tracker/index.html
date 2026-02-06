@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="canonical" href="https://apacfinstab.com/tracker/" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <title>APAC Crypto Policy Tracker | Real-time Regulation Database for ETH, BTC, SOL, Exchanges</title>
+  <meta name="description" content="Track crypto regulations across Asia-Pacific in real-time. Filter by protocol (ETH, BTC, SOL, TON), region (Hong Kong, Singapore, Japan), topic (Staking, ETF, DeFi), or entity (Binance, OKX). Updated daily." />
+  <meta name="keywords" content="crypto regulation tracker, APAC crypto policy, Ethereum regulation, Bitcoin regulation Asia, Solana policy, Binance license, OKX regulation, Hong Kong crypto, Singapore MAS crypto, Japan FSA crypto" />
+  <meta name="robots" content="index, follow" />
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apacfinstab.com/tracker/" />
+  <meta property="og:title" content="APAC Crypto Policy Tracker | APAC FINSTAB" />
+  <meta property="og:description" content="Real-time database tracking crypto regulations across Asia-Pacific. Filter by protocol, region, topic, or entity." />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "APAC Crypto Policy Tracker",
+    "description": "Real-time database tracking cryptocurrency and Web3 regulatory events across Asia-Pacific jurisdictions",
+    "url": "https://apacfinstab.com/tracker/",
+    "creator": {"@type": "Organization", "name": "APAC FINSTAB"},
+    "keywords": ["crypto regulation", "APAC policy", "Ethereum", "Bitcoin", "Solana", "Binance", "OKX", "Hong Kong", "Singapore", "Japan"],
+    "spatialCoverage": {"@type": "Place", "name": "Asia-Pacific"},
+    "temporalCoverage": "2025/..",
+    "isAccessibleForFree": true
+  }
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --accent-yellow: #f59e0b;
+      --accent-red: #ef4444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--brand-orange) 0%, #ff6b1a 100%); border-radius: 10px; position: relative; }
+    .logo-icon::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; border: 2.5px solid #fff; border-radius: 50%; }
+    .logo-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.5px; height: 20px; background: #fff; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; color: var(--text-primary); display: block; }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    nav { display: flex; gap: 8px; }
+    nav a { padding: 10px 18px; color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 8px; }
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    /* Hero */
+    .hero {
+      padding: 60px 40px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 0%, var(--brand-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 32px;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat .value { font-size: 32px; font-weight: 900; color: var(--brand-orange); }
+    .hero-stat .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
+    
+    /* Filters */
+    .filters {
+      padding: 24px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 16px;
+      margin-bottom: 32px;
+    }
+    .filter-section {
+      margin-bottom: 16px;
+    }
+    .filter-section:last-child { margin-bottom: 0; }
+    .filter-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-btn {
+      padding: 8px 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover {
+      border-color: var(--brand-orange);
+      color: var(--brand-orange);
+    }
+    .filter-btn.active {
+      background: rgba(255, 140, 66, 0.15);
+      border-color: var(--brand-orange);
+      color: var(--brand-orange);
+    }
+    .filter-btn .emoji { margin-right: 4px; }
+    
+    /* Results */
+    .results {
+      padding: 0 40px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .results-count { font-size: 14px; color: var(--text-muted); }
+    .results-count strong { color: var(--text-primary); }
+    
+    /* Timeline */
+    .timeline { position: relative; }
+    .year-group { margin-bottom: 40px; }
+    .year-label {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--brand-orange);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand-orange);
+      display: inline-block;
+    }
+    
+    .event-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .event-card:hover {
+      border-color: var(--brand-orange);
+      transform: translateX(4px);
+    }
+    .event-card.high { border-left: 4px solid var(--accent-green); }
+    .event-card.medium { border-left: 4px solid var(--accent-yellow); }
+    .event-card.low { border-left: 4px solid var(--text-muted); }
+    
+    .event-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .event-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-orange);
+      white-space: nowrap;
+    }
+    .event-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .tag.protocol { background: rgba(139, 92, 246, 0.15); color: var(--accent-purple); }
+    .tag.region { background: rgba(59, 130, 246, 0.15); color: var(--accent-blue); }
+    .tag.topic { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); }
+    .tag.entity { background: rgba(245, 158, 11, 0.15); color: var(--accent-yellow); }
+    
+    .event-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .event-summary {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .event-source {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .event-source a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .event-source a:hover { color: var(--brand-orange); }
+    
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+    .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+    
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: var(--text-muted);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    .footer-logo { font-size: 18px; font-weight: 800; color: var(--brand-orange); margin-bottom: 12px; }
+    .footer-text { font-size: 13px; color: var(--text-muted); }
+    
+    /* CTA */
+    .cta-bar {
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto 32px;
+    }
+    .cta-inner {
+      padding: 24px 32px;
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 140, 66, 0.05) 100%);
+      border: 1px solid var(--brand-orange);
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-text h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .cta-text p { font-size: 14px; color: var(--text-secondary); }
+    .cta-btn {
+      padding: 12px 24px;
+      background: var(--brand-orange);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      .hero, .filters, .results, .cta-bar { padding-left: 20px; padding-right: 20px; }
+      .hero h1 { font-size: 28px; }
+      .hero-stats { gap: 24px; }
+      .cta-inner { flex-direction: column; text-align: center; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <span class="brand">APAC FINSTAB</span>
+        <span class="tagline">Regulatory Intelligence</span>
+      </div>
+    </a>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/tracker/" class="active">Policy Tracker</a>
+      <a href="/blog.html">Insights</a>
+      <a href="/contact.html">Connect</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <h1>🔍 APAC Crypto Policy Tracker</h1>
+  <p>Real-time regulatory intelligence database. Filter by protocol, region, topic, or entity. Updated daily.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="value" id="stat-events">--</div>
+      <div class="label">Policy Events</div>
+    </div>
+    <div class="hero-stat">
+      <div class="value" id="stat-regions">--</div>
+      <div class="label">Regions</div>
+    </div>
+    <div class="hero-stat">
+      <div class="value" id="stat-protocols">--</div>
+      <div class="label">Protocols</div>
+    </div>
+  </div>
+</section>
+
+<section class="filters" id="filters">
+  <div class="filter-section">
+    <span class="filter-label">Protocol</span>
+    <div class="filter-buttons" id="filter-protocols"></div>
+  </div>
+  <div class="filter-section">
+    <span class="filter-label">Region</span>
+    <div class="filter-buttons" id="filter-regions"></div>
+  </div>
+  <div class="filter-section">
+    <span class="filter-label">Topic</span>
+    <div class="filter-buttons" id="filter-topics"></div>
+  </div>
+  <div class="filter-section">
+    <span class="filter-label">Entity</span>
+    <div class="filter-buttons" id="filter-entities"></div>
+  </div>
+</section>
+
+<section class="cta-bar">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h3>Need Custom Policy Tracking?</h3>
+      <p>We provide tailored regulatory intelligence for L1/L2 protocols and exchanges expanding into APAC.</p>
+    </div>
+    <a href="/contact.html" class="cta-btn">Get in Touch →</a>
+  </div>
+</section>
+
+<section class="results">
+  <div class="results-header">
+    <div class="results-count">Showing <strong id="results-count">0</strong> events</div>
+  </div>
+  <div class="timeline" id="timeline">
+    <div class="loading">Loading policy events...</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo">APAC FINSTAB+</div>
+  <p class="footer-text">
+    APAC Crypto Policy Tracker — Updated Daily<br/>
+    © 2026 APAC FINSTAB. All rights reserved.
+  </p>
+</footer>
+
+<script>
+const regionEmojis = {
+  HK: '🇭🇰', SG: '🇸🇬', JP: '🇯🇵', KR: '🇰🇷', CN: '🇨🇳',
+  AU: '🇦🇺', IN: '🇮🇳', TH: '🇹🇭', ID: '🇮🇩', VN: '🇻🇳',
+  PH: '🇵🇭', MY: '🇲🇾', TW: '🇹🇼'
+};
+
+let data = null;
+let activeFilters = { protocols: [], regions: [], topics: [], entities: [] };
+
+async function loadData() {
+  try {
+    const res = await fetch('/data/policy-events.json');
+    data = await res.json();
+    initFilters();
+    renderEvents();
+    updateStats();
+  } catch (e) {
+    document.getElementById('timeline').innerHTML = '<div class="empty-state"><div class="icon">⚠️</div><p>Failed to load data</p></div>';
+  }
+}
+
+function initFilters() {
+  const dims = data.dimensions;
+  
+  // Protocols
+  document.getElementById('filter-protocols').innerHTML = dims.protocols.map(p => 
+    `<button class="filter-btn" data-type="protocols" data-value="${p}">${p}</button>`
+  ).join('');
+  
+  // Regions
+  document.getElementById('filter-regions').innerHTML = dims.regions.map(r => 
+    `<button class="filter-btn" data-type="regions" data-value="${r}"><span class="emoji">${regionEmojis[r] || ''}</span>${r}</button>`
+  ).join('');
+  
+  // Topics
+  document.getElementById('filter-topics').innerHTML = dims.topics.map(t => 
+    `<button class="filter-btn" data-type="topics" data-value="${t}">${t}</button>`
+  ).join('');
+  
+  // Entities
+  document.getElementById('filter-entities').innerHTML = dims.entities.map(e => 
+    `<button class="filter-btn" data-type="entities" data-value="${e}">${e}</button>`
+  ).join('');
+  
+  // Add click handlers
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => toggleFilter(btn));
+  });
+}
+
+function toggleFilter(btn) {
+  const type = btn.dataset.type;
+  const value = btn.dataset.value;
+  
+  if (activeFilters[type].includes(value)) {
+    activeFilters[type] = activeFilters[type].filter(v => v !== value);
+    btn.classList.remove('active');
+  } else {
+    activeFilters[type].push(value);
+    btn.classList.add('active');
+  }
+  
+  renderEvents();
+}
+
+function filterEvents() {
+  return data.events.filter(evt => {
+    if (activeFilters.protocols.length && !activeFilters.protocols.some(p => evt.protocols.includes(p))) return false;
+    if (activeFilters.regions.length && !activeFilters.regions.some(r => evt.regions.includes(r))) return false;
+    if (activeFilters.topics.length && !activeFilters.topics.some(t => evt.topics.includes(t))) return false;
+    if (activeFilters.entities.length && !activeFilters.entities.some(e => evt.entities.includes(e))) return false;
+    return true;
+  });
+}
+
+function renderEvents() {
+  const events = filterEvents();
+  document.getElementById('results-count').textContent = events.length;
+  
+  if (!events.length) {
+    document.getElementById('timeline').innerHTML = '<div class="empty-state"><div class="icon">🔍</div><p>No events match your filters</p></div>';
+    return;
+  }
+  
+  // Group by year
+  const byYear = {};
+  events.forEach(evt => {
+    const year = evt.date.split('-')[0];
+    if (!byYear[year]) byYear[year] = [];
+    byYear[year].push(evt);
+  });
+  
+  let html = '';
+  Object.keys(byYear).sort().reverse().forEach(year => {
+    html += `<div class="year-group"><div class="year-label">${year}</div>`;
+    byYear[year].sort((a, b) => b.date.localeCompare(a.date)).forEach(evt => {
+      html += renderEventCard(evt);
+    });
+    html += '</div>';
+  });
+  
+  document.getElementById('timeline').innerHTML = html;
+}
+
+function renderEventCard(evt) {
+  const date = new Date(evt.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  
+  let tags = '';
+  evt.protocols.forEach(p => tags += `<span class="tag protocol">${p}</span>`);
+  evt.regions.forEach(r => tags += `<span class="tag region">${regionEmojis[r] || ''} ${r}</span>`);
+  evt.topics.slice(0, 2).forEach(t => tags += `<span class="tag topic">${t}</span>`);
+  evt.entities.forEach(e => tags += `<span class="tag entity">${e}</span>`);
+  
+  return `
+    <div class="event-card ${evt.impact || 'medium'}">
+      <div class="event-header">
+        <span class="event-date">${date}</span>
+        <div class="event-tags">${tags}</div>
+      </div>
+      <h3 class="event-title">${evt.title}</h3>
+      <p class="event-summary">${evt.summary}</p>
+      ${evt.source ? `<div class="event-source"><a href="${evt.source}" target="_blank">Source →</a></div>` : ''}
+    </div>
+  `;
+}
+
+function updateStats() {
+  const events = data.events;
+  const regions = new Set();
+  const protocols = new Set();
+  
+  events.forEach(e => {
+    e.regions.forEach(r => regions.add(r));
+    e.protocols.forEach(p => protocols.add(p));
+  });
+  
+  document.getElementById('stat-events').textContent = events.length;
+  document.getElementById('stat-regions').textContent = regions.size;
+  document.getElementById('stat-protocols').textContent = protocols.size;
+}
+
+loadData();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "lastUpdated": "2026-02-06T10:30:00+08:00",
+    "totalEvents": 12,
+    "version": "1.0"
+  },
+  "dimensions": {
+    "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC"],
+    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
+    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing"],
+    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io"]
+  },
+  "regionNames": {
+    "HK": "Hong Kong",
+    "SG": "Singapore", 
+    "JP": "Japan",
+    "KR": "South Korea",
+    "CN": "China",
+    "AU": "Australia",
+    "IN": "India",
+    "TH": "Thailand",
+    "ID": "Indonesia",
+    "VN": "Vietnam",
+    "PH": "Philippines",
+    "MY": "Malaysia",
+    "TW": "Taiwan"
+  },
+  "events": [
+    {
+      "id": "evt-2026-0206-001",
+      "date": "2026-02-06",
+      "title": "FSTB Confirms 2026 VASP Custody & Dealer Legislation",
+      "protocols": ["ETH", "BTC"],
+      "regions": ["HK"],
+      "topics": ["Regulation", "Custody", "Licensing"],
+      "entities": [],
+      "summary": "Hong Kong's Financial Services and Treasury Bureau confirms comprehensive legislation for virtual asset custodians and dealers by end of 2026.",
+      "impact": "high",
+      "source": "https://www.fstb.gov.hk"
+    },
+    {
+      "id": "evt-2026-0128-001",
+      "date": "2026-01-28",
+      "title": "First ETH Staking ETF Launched in Hong Kong",
+      "protocols": ["ETH"],
+      "regions": ["HK"],
+      "topics": ["Staking", "ETF"],
+      "entities": ["OSL"],
+      "summary": "ChinaAMC partners with OSL to launch world's first regulated ETH Staking ETF, offering ~2.8% APR through compliant vehicle.",
+      "impact": "high",
+      "source": "https://www.sfc.hk"
+    },
+    {
+      "id": "evt-2026-0115-001",
+      "date": "2026-01-15",
+      "title": "MAS Project Guardian Phase 2 Expansion",
+      "protocols": ["ETH"],
+      "regions": ["SG"],
+      "topics": ["DeFi", "Regulation"],
+      "entities": [],
+      "summary": "Monetary Authority of Singapore expands institutional DeFi pilots to include ETH-based lending protocols and tokenized bonds.",
+      "impact": "medium",
+      "source": "https://www.mas.gov.sg"
+    },
+    {
+      "id": "evt-2026-0108-001",
+      "date": "2026-01-08",
+      "title": "Japan FSA Clarifies Staking Tax Treatment",
+      "protocols": ["ETH", "SOL"],
+      "regions": ["JP"],
+      "topics": ["Staking", "Taxation"],
+      "entities": [],
+      "summary": "Japan FSA issues guidance treating staking rewards as miscellaneous income at time of receipt.",
+      "impact": "medium",
+      "source": "https://www.fsa.go.jp"
+    },
+    {
+      "id": "evt-2025-1215-001",
+      "date": "2025-12-15",
+      "title": "Hong Kong Approves Spot ETH ETFs",
+      "protocols": ["ETH"],
+      "regions": ["HK"],
+      "topics": ["ETF"],
+      "entities": ["HashKey", "OSL"],
+      "summary": "SFC approves multiple spot Ethereum ETFs for HKEX trading.",
+      "impact": "high",
+      "source": "https://www.sfc.hk"
+    },
+    {
+      "id": "evt-2025-1120-001",
+      "date": "2025-11-20",
+      "title": "Singapore MAS Issues Staking Guidelines",
+      "protocols": ["ETH", "SOL"],
+      "regions": ["SG"],
+      "topics": ["Staking", "Regulation"],
+      "entities": [],
+      "summary": "MAS requires licensed staking services to segregate assets and maintain insurance.",
+      "impact": "medium",
+      "source": "https://www.mas.gov.sg"
+    },
+    {
+      "id": "evt-2025-1105-001",
+      "date": "2025-11-05",
+      "title": "Binance Obtains Japan Re-entry License",
+      "protocols": ["BTC", "ETH", "BNB"],
+      "regions": ["JP"],
+      "topics": ["Exchange", "Licensing"],
+      "entities": ["Binance"],
+      "summary": "Binance receives FSA approval to resume operations in Japan after 2023 exit.",
+      "impact": "high",
+      "source": "https://www.fsa.go.jp"
+    },
+    {
+      "id": "evt-2025-1020-001",
+      "date": "2025-10-20",
+      "title": "OKX Receives Singapore MPI License",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["SG"],
+      "topics": ["Exchange", "Licensing"],
+      "entities": ["OKX"],
+      "summary": "OKX obtains Major Payment Institution license from MAS for Singapore operations.",
+      "impact": "medium",
+      "source": "https://www.mas.gov.sg"
+    },
+    {
+      "id": "evt-2025-1005-001",
+      "date": "2025-10-05",
+      "title": "SFC Signals DeFi Sandbox Intent",
+      "protocols": ["ETH"],
+      "regions": ["HK"],
+      "topics": ["DeFi", "Regulation"],
+      "entities": [],
+      "summary": "Securities and Futures Commission indicates plans for DeFi regulatory sandbox.",
+      "impact": "medium",
+      "source": "https://www.sfc.hk"
+    },
+    {
+      "id": "evt-2025-0901-001",
+      "date": "2025-09-01",
+      "title": "South Korea Implements VAUPA",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["KR"],
+      "topics": ["Regulation", "Exchange"],
+      "entities": [],
+      "summary": "Virtual Asset User Protection Act takes effect with enhanced investor protections.",
+      "impact": "high",
+      "source": "https://www.fsc.go.kr"
+    },
+    {
+      "id": "evt-2025-0822-001",
+      "date": "2025-08-22",
+      "title": "Japan Web3 National Strategy Update",
+      "protocols": ["ETH", "SOL"],
+      "regions": ["JP"],
+      "topics": ["Regulation"],
+      "entities": [],
+      "summary": "Government updates Web3 strategy emphasizing ecosystem development and institutional adoption.",
+      "impact": "medium",
+      "source": "https://www.kantei.go.jp"
+    },
+    {
+      "id": "evt-2025-0601-001",
+      "date": "2025-06-01",
+      "title": "Hong Kong VASP Regime Fully Effective",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["HK"],
+      "topics": ["Licensing", "Exchange"],
+      "entities": ["HashKey", "OSL"],
+      "summary": "Full VASP licensing under AMLO becomes mandatory for all crypto exchanges.",
+      "impact": "high",
+      "source": "https://www.sfc.hk"
+    }
+  ]
+}
