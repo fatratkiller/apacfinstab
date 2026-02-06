@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://apacfinstab.com/ethereum/" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <!-- Primary Meta Tags -->
+  <title>Ethereum APAC Policy Tracker | Regulation, Staking & Compliance Database</title>
+  <meta name="description" content="Comprehensive Ethereum regulatory intelligence for Asia-Pacific. Track ETH staking compliance, DeFi policy, smart contract regulations, and institutional frameworks across Hong Kong, Singapore, Japan, and 10+ APAC jurisdictions." />
+  <meta name="keywords" content="Ethereum regulation Asia, ETH staking compliance, Ethereum policy Hong Kong, ETH regulation Singapore, Ethereum DeFi policy APAC, smart contract regulation, Vitalik APAC, Ethereum Layer 2 compliance, ETH institutional framework" />
+  <meta name="author" content="APAC FINSTAB" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apacfinstab.com/ethereum/" />
+  <meta property="og:title" content="Ethereum APAC Policy Tracker | APAC FINSTAB" />
+  <meta property="og:description" content="Comprehensive Ethereum regulatory intelligence for Asia-Pacific. Track ETH staking, DeFi policy, and institutional frameworks across 12+ jurisdictions." />
+  <meta property="og:site_name" content="APAC FINSTAB" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@APACFinStab" />
+  <meta name="twitter:title" content="Ethereum APAC Policy Tracker | APAC FINSTAB" />
+  <meta name="twitter:description" content="Track Ethereum regulation, staking compliance, and DeFi policy across Asia-Pacific." />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Ethereum APAC Regulatory Database",
+    "description": "Comprehensive database tracking Ethereum-related regulations, staking compliance requirements, DeFi policies, and institutional frameworks across Asia-Pacific jurisdictions.",
+    "url": "https://apacfinstab.com/ethereum/",
+    "creator": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB"
+    },
+    "keywords": ["Ethereum regulation", "ETH staking", "DeFi policy", "APAC compliance", "Hong Kong crypto", "Singapore MAS"],
+    "spatialCoverage": {
+      "@type": "Place",
+      "name": "Asia-Pacific"
+    },
+    "isAccessibleForFree": true
+  }
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-light: #ffa366;
+      --brand-orange-dark: #ff6b1a;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --eth-purple: #627eea;
+      --eth-purple-glow: rgba(98, 126, 234, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #12172b;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.6);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #fff;
+      border-radius: 50%;
+    }
+    
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 2.5px;
+      height: 20px;
+      background: #fff;
+    }
+    
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    
+    .logo-text .brand {
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--text-primary);
+    }
+    
+    .logo-text .tagline {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-orange);
+      font-weight: 700;
+    }
+    
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+    
+    nav a {
+      padding: 10px 18px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    /* Hero with ETH branding */
+    .hero {
+      padding: 80px 40px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--eth-purple-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .hero-content { position: relative; z-index: 1; }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(98, 126, 234, 0.12);
+      border: 1px solid rgba(98, 126, 234, 0.3);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--eth-purple);
+      margin-bottom: 24px;
+    }
+    
+    .hero-badge svg {
+      width: 18px;
+      height: 18px;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #ffffff 0%, var(--eth-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+    
+    .cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    
+    .btn-primary {
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--eth-purple) 0%, #4f6bd6 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary:hover { transform: translateY(-2px); }
+    
+    .btn-secondary {
+      padding: 14px 28px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .btn-secondary:hover { border-color: var(--eth-purple); }
+    
+    /* Stats */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+    }
+    
+    .stat-value {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--eth-purple);
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    
+    /* Coverage Grid */
+    .coverage-section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .coverage-card {
+      padding: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    
+    .coverage-card:hover {
+      border-color: var(--eth-purple);
+      transform: translateY(-4px);
+    }
+    
+    .coverage-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    
+    .coverage-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    
+    .coverage-card .flag {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    
+    .coverage-card .status {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 10px;
+      background: rgba(98, 126, 234, 0.1);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--eth-purple);
+      text-transform: uppercase;
+    }
+    
+    /* Topics Grid */
+    .topics-section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .topic-card {
+      padding: 28px;
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+    }
+    
+    .topic-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--eth-purple);
+    }
+    
+    .topic-card ul {
+      list-style: none;
+    }
+    
+    .topic-card li {
+      padding: 8px 0;
+      padding-left: 20px;
+      position: relative;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    
+    .topic-card li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: var(--eth-purple);
+      font-size: 8px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .cta-box {
+      padding: 48px;
+      background: linear-gradient(135deg, rgba(98, 126, 234, 0.1) 0%, rgba(98, 126, 234, 0.05) 100%);
+      border: 1px solid rgba(98, 126, 234, 0.2);
+      border-radius: 20px;
+    }
+    
+    .cta-box h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    
+    .cta-box p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 8px 16px;
+      background: rgba(255, 140, 66, 0.1);
+      border: 1px solid var(--brand-orange);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand-orange);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-orange);
+      margin-bottom: 12px;
+    }
+    
+    .footer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+    }
+    
+    .footer-links a:hover { color: var(--brand-orange); }
+    
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      .hero { padding: 48px 20px 32px; }
+      .hero h1 { font-size: 32px; }
+      .stats-bar { grid-template-columns: 1fr; padding: 20px; }
+      .coverage-section, .topics-section { padding: 40px 20px; }
+      .cta-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo-container">
+      <div class="logo-icon"></div>
+      <div class="logo-text">
+        <span class="brand">APAC FINSTAB</span>
+        <span class="tagline">Regulatory Intelligence</span>
+      </div>
+    </a>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/ethereum/" class="active">Ethereum</a>
+      <a href="/blog.html">Insights</a>
+      <a href="/contact.html">Connect</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">
+      <svg viewBox="0 0 256 417" fill="currentColor"><path d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z"/><path d="M127.962 0L0 212.32l127.962 75.639V154.158z"/><path d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.6L256 236.587z"/><path d="M127.962 416.905v-104.72L0 236.585z"/></svg>
+      Ethereum Policy Database
+    </span>
+    <h1>Ethereum Regulatory Intelligence for Asia-Pacific</h1>
+    <p>Track <strong>ETH staking compliance</strong>, <strong>DeFi policy frameworks</strong>, <strong>smart contract regulations</strong>, and <strong>institutional adoption</strong> across 12+ APAC jurisdictions. Updated daily with policy operator insights.</p>
+    <div class="cta-buttons">
+      <a href="timeline.html" class="btn-primary">📅 View Policy Timeline</a>
+      <a href="hong-kong.html" class="btn-secondary">🇭🇰 Hong Kong Deep Dive</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">12+</div>
+    <div class="stat-label">Jurisdictions</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">47</div>
+    <div class="stat-label">Policy Events Tracked</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">Daily</div>
+    <div class="stat-label">Updates</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value">2026</div>
+    <div class="stat-label">Coverage Since</div>
+  </div>
+</section>
+
+<section class="coverage-section">
+  <h2 class="section-title">Jurisdiction Coverage</h2>
+  <div class="coverage-grid">
+    <a href="hong-kong.html" class="coverage-card">
+      <div class="flag">🇭🇰</div>
+      <h3>Hong Kong</h3>
+      <p>ETH Staking ETF approved, VASP licensing framework, SFC regulatory sandbox for DeFi protocols.</p>
+      <span class="status">Most Active</span>
+    </a>
+    <a href="singapore.html" class="coverage-card">
+      <div class="flag">🇸🇬</div>
+      <h3>Singapore</h3>
+      <p>MAS staking guidance, institutional DeFi framework, Project Guardian tokenization pilots.</p>
+      <span class="status">Active</span>
+    </a>
+    <a href="japan.html" class="coverage-card">
+      <div class="flag">🇯🇵</div>
+      <h3>Japan</h3>
+      <p>FSA crypto asset review, staking tax treatment, Web3 national strategy implementation.</p>
+      <span class="status">Evolving</span>
+    </a>
+    <div class="coverage-card">
+      <div class="flag">🇰🇷</div>
+      <h3>South Korea</h3>
+      <p>Virtual Asset User Protection Act, staking service regulations, institutional custody framework.</p>
+      <span class="status">Monitoring</span>
+    </div>
+    <div class="coverage-card">
+      <div class="flag">🇦🇺</div>
+      <h3>Australia</h3>
+      <p>Token mapping consultation, DeFi regulatory approach, ASIC enforcement actions.</p>
+      <span class="status">Monitoring</span>
+    </div>
+    <div class="coverage-card">
+      <div class="flag">🇮🇳</div>
+      <h3>India</h3>
+      <p>Crypto tax framework, potential licensing regime, CBDC-private crypto coexistence.</p>
+      <span class="status">Watching</span>
+    </div>
+  </div>
+</section>
+
+<section class="topics-section">
+  <h2 class="section-title">Topics We Track</h2>
+  <div class="topics-grid">
+    <div class="topic-card">
+      <h3>🥩 ETH Staking Compliance</h3>
+      <ul>
+        <li>Staking ETF/ETP regulatory status</li>
+        <li>Staking-as-a-service licensing</li>
+        <li>Tax treatment of staking rewards</li>
+        <li>Liquid staking token regulations</li>
+        <li>Validator node requirements</li>
+      </ul>
+    </div>
+    <div class="topic-card">
+      <h3>🏦 DeFi Policy Framework</h3>
+      <ul>
+        <li>DEX regulatory classification</li>
+        <li>Lending protocol compliance</li>
+        <li>Smart contract audit requirements</li>
+        <li>DAO governance recognition</li>
+        <li>Cross-border DeFi access</li>
+      </ul>
+    </div>
+    <div class="topic-card">
+      <h3>🏢 Institutional Adoption</h3>
+      <ul>
+        <li>Custody solutions for ETH</li>
+        <li>ETH derivatives products</li>
+        <li>Institutional staking pools</li>
+        <li>ETH-based fund structures</li>
+        <li>Prime brokerage services</li>
+      </ul>
+    </div>
+    <div class="topic-card">
+      <h3>⚡ Layer 2 Ecosystem</h3>
+      <ul>
+        <li>L2 regulatory classification</li>
+        <li>Bridge security requirements</li>
+        <li>Rollup-specific compliance</li>
+        <li>L2 token listing standards</li>
+        <li>Cross-L2 interoperability</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Custom Policy Intelligence</h2>
+    <p>Need tailored Ethereum regulatory analysis for your project? We provide custom policy tracking, compliance gap analysis, and market entry advisory for L1/L2 protocols expanding into APAC.</p>
+    <a href="/contact.html" class="btn-primary">📧 Get in Touch</a>
+    <div class="cta-badge">🔒 Enterprise & Protocol Partnerships Available</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-logo">APAC FINSTAB+</div>
+  <p class="footer-text">
+    Ethereum APAC Policy Database — Part of APAC FINSTAB Regulatory Intelligence<br/>
+    © 2026 APAC FINSTAB. All rights reserved.
+  </p>
+  <div class="footer-links">
+    <a href="/">Dashboard</a>
+    <a href="/blog.html">Insights</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
