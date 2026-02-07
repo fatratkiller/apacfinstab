@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-06T10:30:00+08:00",
-    "totalEvents": 12,
+    "lastUpdated": "2026-02-07T10:02:00+08:00",
+    "totalEvents": 16,
     "version": "1.0"
   },
   "dimensions": {
     "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC"],
     "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
     "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing"],
-    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io"]
+    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit"]
   },
   "regionNames": {
     "HK": "Hong Kong",
@@ -26,6 +26,54 @@
     "TW": "Taiwan"
   },
   "events": [
+    {
+      "id": "evt-2026-0207-001",
+      "date": "2026-02-07",
+      "title": "Stablecoin Inflows Surge to $100B Amid Crypto Market Correction",
+      "protocols": ["USDT", "USDC"],
+      "regions": ["SG", "HK"],
+      "topics": ["Stablecoin", "Exchange"],
+      "entities": ["Binance", "OKX"],
+      "summary": "Stablecoin inflows on exchanges doubled to $100B despite ongoing crypto sell-off, indicating institutional positioning for potential market recovery.",
+      "impact": "medium",
+      "source": "https://bitcoinethereumnews.com/crypto/stablecoin-inflows-surge-to-100b-amid-crypto-dip/"
+    },
+    {
+      "id": "evt-2026-0206-003",
+      "date": "2026-02-06",
+      "title": "South Korea Deploys AI Surveillance for Crypto Market Monitoring",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["KR"],
+      "topics": ["Regulation", "Exchange"],
+      "entities": [],
+      "summary": "South Korean regulators deploy AI-powered surveillance systems to monitor cryptocurrency markets for manipulation and fraud in real-time.",
+      "impact": "high",
+      "source": "https://blockchainreporter.net/crypto-market-news-today-south-korea-arms-regulators-with-ai-link-and-sui-slide-as-deepsnitch-ai-gears-for-utility-fueled-1000x-in-february/"
+    },
+    {
+      "id": "evt-2026-0206-002",
+      "date": "2026-02-06",
+      "title": "China Establishes Legal Framework for RWA Tokenization",
+      "protocols": ["ETH"],
+      "regions": ["CN"],
+      "topics": ["Regulation", "DeFi"],
+      "entities": [],
+      "summary": "Beijing announces clear separation between banned virtual currencies and RWA tokenization, with RWA being included in regulatory framework. First sign of legal recognition for tokenized real-world assets in China.",
+      "impact": "high",
+      "source": "https://www.reuters.com/world/asia-pacific/china-vows-tighten-virtual-currency-restrictions-2026-02-06/"
+    },
+    {
+      "id": "evt-2026-0205-001",
+      "date": "2026-02-05",
+      "title": "IG Group Completes Acquisition of Independent Reserve",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["SG", "AU"],
+      "topics": ["Exchange", "Licensing"],
+      "entities": ["Independent Reserve", "IG Group"],
+      "summary": "London-listed IG Group completes acquisition of MAS-licensed Independent Reserve, plans to launch crypto trading services in Singapore, Australia, and UAE in H2 2026.",
+      "impact": "high",
+      "source": "https://www.blockhead.co/2026/02/05/ig-group-completes-acquisition-of-crypto-exchange-independent-reserve/"
+    },
     {
       "id": "evt-2026-0206-001",
       "date": "2026-02-06",
