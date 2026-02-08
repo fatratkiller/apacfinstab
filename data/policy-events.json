@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-07T10:02:00+08:00",
-    "totalEvents": 16,
+    "lastUpdated": "2026-02-08T10:08:00+08:00",
+    "totalEvents": 18,
     "version": "1.0"
   },
   "dimensions": {
     "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC"],
     "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
     "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing"],
-    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit"]
+    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb"]
   },
   "regionNames": {
     "HK": "Hong Kong",
@@ -26,6 +26,30 @@
     "TW": "Taiwan"
   },
   "events": [
+    {
+      "id": "evt-2026-0208-001",
+      "date": "2026-02-08",
+      "title": "Bithumb $44B Bitcoin Error Triggers FSC Emergency Review",
+      "protocols": ["BTC"],
+      "regions": ["KR"],
+      "topics": ["Exchange", "Regulation"],
+      "entities": ["Bithumb"],
+      "summary": "South Korean exchange Bithumb accidentally sent 620,000 BTC ($44B) to 249 users during promotional event. FSC convened emergency meeting, announced on-site inspections of crypto exchanges to review internal control systems and asset holdings.",
+      "impact": "high",
+      "source": "https://www.reuters.com/world/asia-pacific/crypto-firm-accidentally-sends-44-billion-bitcoins-users-2026-02-07/"
+    },
+    {
+      "id": "evt-2026-0208-002",
+      "date": "2026-02-08",
+      "title": "Japan Unveils Crypto Tax Cut & ETF Roadmap to 2028",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["JP"],
+      "topics": ["Taxation", "ETF", "Regulation"],
+      "entities": [],
+      "summary": "Japan announces sweeping crypto reforms: tax rate reduction from 55% to 20% by 2028, reclassifying 105 cryptocurrencies as financial products, and launching crypto ETFs by 2028.",
+      "impact": "high",
+      "source": "https://decrypt.co/357162/japan-crypto-industry-faces-critical-test-snap-election"
+    },
     {
       "id": "evt-2026-0207-001",
       "date": "2026-02-07",
