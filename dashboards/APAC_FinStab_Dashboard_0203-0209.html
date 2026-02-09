@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Feb 3 - Feb 9, 2026)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance">
+
+<!-- Open Graph (Social Media Sharing) -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+/* Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+/* KPI Cards */
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(0,0,0,0.6); }
+
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); font-weight: 700; }
+.kpi-icon { font-size: 24px; opacity: 0.8; }
+.kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.kpi-change { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+.kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Chart Card */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chart-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.chart-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.chart-badge { padding: 4px 12px; border-radius: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
+
+/* Data Table */
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table thead { background: rgba(74,158,255,0.08); }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.data-table tr:hover { background: rgba(74,158,255,0.04); }
+
+.table-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+
+/* Alert Box */
+.alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
+.alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
+.alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
+.alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
+.alert-icon { font-size: 20px; line-height: 1; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+/* Progress Bar */
+.progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
+.progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
+.progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
+.progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
+.progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); border: 2px solid var(--bg-card); }
+.timeline-date { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+.timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+/* Footer */
+.footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
+      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
+      <div class="period">📅 February 3 - February 9, 2026</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 1 -->
+  <div class="grid-3">
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <div class="kpi-label">Regulatory Stress Level</div>
+        <div class="kpi-icon">🚨</div>
+      </div>
+      <div class="kpi-value">CRITICAL</div>
+      <div class="kpi-change down">↘ USDT Depeg $0.998 + $1.25B Liquidations in 24h</div>
+      <div class="kpi-detail">USDT briefly depegged to $0.998—its lowest level in 5 years—during the Feb 6 crash. This is not just a market event: it is a live stress test for every stablecoin regulatory framework globally. FATF's early-2026 stablecoin risk review now has real-world crisis data to evaluate. Regulators in HK, Singapore, and EU will use this episode as evidence for tighter reserve requirements.</div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <div class="kpi-label">Jurisdictions Active</div>
+        <div class="kpi-icon">🌏</div>
+      </div>
+      <div class="kpi-value">27</div>
+      <div class="kpi-change up">↗ +3 vs Last Week (Brazil, Russia, New Zealand)</div>
+      <div class="kpi-detail">Brazil's BCB authorization regime went live Feb 2 (capital requirements BRL 10.8-37.2M). Russia legalized crypto for all investors this week. New Zealand remains in regulatory vacuum—no VASP framework despite growing adoption. FATF expanded "materially important" crypto jurisdictions from 58 to 67, with 85% now enforcing Travel Rule. OECD CARF reporting commenced in 50+ jurisdictions.</div>
+    </div>
+
+    <div class="kpi-card green">
+      <div class="kpi-header">
+        <div class="kpi-label">Project Crypto — Joint SEC-CFTC</div>
+        <div class="kpi-icon">⚖️</div>
+      </div>
+      <div class="kpi-value">TAXONOMY</div>
+      <div class="kpi-change up">↗ Jan 30: Token Classification Framework Announced</div>
+      <div class="kpi-detail">SEC Chair Atkins and CFTC Chair Selig jointly announced Project Crypto will proceed as inter-agency effort. Key outcome: "most crypto assets trading today are not securities." Joint token taxonomy will classify assets as digital commodities, collectibles, tools (non-securities) vs tokenized securities. Perpetual contracts onshoring pathway announced. Prediction market restrictions withdrawn.</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 2 -->
+  <div class="grid-3">
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <div class="kpi-label">ASIC Countdown — Australia</div>
+        <div class="kpi-icon">⏳</div>
+      </div>
+      <div class="kpi-value">141 Days</div>
+      <div class="kpi-change neutral">⚡ No-Action Relief Expires June 30, 2026</div>
+      <div class="kpi-detail">ASIC warned that "rapid growth in unlicensed cryptoasset firms has created regulatory gaps." Firms must secure an AFSL or notify intent to apply before June 30. ASIC's Key Issues Outlook 2026 flagged unlicensed digital asset sector as priority risk. Stablecoin exemption for intermediaries announced to enable regulated stablecoins with reduced friction.</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">JFSA Stablecoin Consultation</div>
+        <div class="kpi-icon">🇯🇵</div>
+      </div>
+      <div class="kpi-value">Feb 27</div>
+      <div class="kpi-change neutral">⚡ Reserve Asset Rules — Deadline for Comment</div>
+      <div class="kpi-detail">Japan FSA launched public consultation on draft rules specifying eligible bonds for stablecoin reserve assets under trust structures. Implements June 2025 Payment Services Act amendments. Comment period closes Feb 27. Japan is designing the most prescriptive reserve composition framework in APAC—this will set the regional benchmark for what qualifies as "safe" stablecoin backing.</div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <div class="kpi-label">SEC Token Taxonomy Impact</div>
+        <div class="kpi-icon">📋</div>
+      </div>
+      <div class="kpi-value">"DIVERGENT"</div>
+      <div class="kpi-change down">↘ SEC Classification Creates 3-Tier Asset System</div>
+      <div class="kpi-detail">Project Crypto's taxonomy creates three distinct regulatory tiers: "likely not securities" (BTC, ETH, SOL, SUI, XRP, USDC, USDT), assets with clear classification paths, and "divergent" assets facing uncertain status. Aptos received "divergent" classification despite 5.2M daily txns and BlackRock BUIDL integration. This classification framework will determine which assets get ETF, custody, and institutional access.</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-3">
+    <!-- Column 1: Regulatory Heat Map -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🔥 Regulatory Heat Map</div>
+          <div class="chart-subtitle">Jurisdiction activity & enforcement probability</div>
+        </div>
+        <span class="chart-badge badge-high">Critical</span>
+      </div>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Stance</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Australia (ASIC)</strong></td>
+            <td style="color: var(--accent-red);">AFSL Deadline June 30 + Unlicensed Firm Warning</td>
+            <td><span class="table-tag tag-critical">9.0</span></td>
+          </tr>
+          <tr>
+            <td><strong>USA (SEC+CFTC)</strong></td>
+            <td style="color: var(--accent-green);">Joint Project Crypto — Token Taxonomy</td>
+            <td><span class="table-tag tag-medium">3.0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Japan (JFSA)</strong></td>
+            <td style="color: var(--accent-blue);">Stablecoin Reserve Consultation Open</td>
+            <td><span class="table-tag tag-low">4.0</span></td>
+          </tr>
+          <tr>
+            <td><strong>Brazil (BCB)</strong></td>
+            <td style="color: var(--accent-orange);">VASP Authorization Regime Live Feb 2</td>
+            <td><span class="table-tag tag-high">7.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Hong Kong (HKMA)</strong></td>
+            <td style="color: var(--accent-blue);">Stablecoin Licenses: "Handful Only"</td>
+            <td><span class="table-tag tag-medium">5.0</span></td>
+          </tr>
+          <tr>
+            <td><strong>New Zealand</strong></td>
+            <td style="color: var(--accent-red);">No VASP Framework — Regulatory Vacuum</td>
+            <td><span class="table-tag tag-high">8.0</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">Brazil BCB Regime — 270-Day Grace Period Active</div>
+          <div class="alert-desc">Brazil's authorization regime went live Feb 2. Existing VASPs get 270 days (until Oct 30, 2026) to comply. New capital requirements: BRL 10.8-37.2M. Cross-border stablecoin transfers >$100K face enhanced reporting. This is the largest LatAm crypto market going from unregulated to fully supervised.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Protocol Compliance Risk -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🎯 Protocol Compliance Risk</div>
+          <div class="chart-subtitle">Vulnerability assessment by category</div>
+        </div>
+        <span class="chart-badge badge-active">Live Tracking</span>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">AI Agent Platforms (No Regulatory Framework)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">92%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 92%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Privacy Coins (ZEC Shielded +11%, Regulatory Split)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">78%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 78%">High Risk</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">"Divergent" Classified Assets (Aptos, Others)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">70%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 70%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Unlicensed APAC VASPs (ASIC/JFSA Deadline)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">65%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 65%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">ETF-Accessible L1s (BTC/ETH/SOL/XRP)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">12%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 12%">Low</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Tokenized Securities (SEC Guidance Jan 28)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">8%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 8%">Low</div>
+        </div>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">🚨</div>
+        <div class="alert-content">
+          <div class="alert-title">AI Agent Regulatory Vacuum — Highest Compliance Risk</div>
+          <div class="alert-desc">10,000+ autonomous agents deployed on ERC-8004 with no regulatory classification, no KYC framework, no liability assignment. Agents executing trades, hiring humans, launching tokens. No jurisdiction has addressed agent accountability. This is the largest unregulated financial activity category in crypto.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Key Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of February 3 - February 9</div>
+        </div>
+        <span class="chart-badge badge-medium">8 Events</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 27, 2026</div>
+          <div class="timeline-title">JFSA Stablecoin Reserve Consultation</div>
+          <div class="timeline-desc">Japan FSA opened consultation on draft rules specifying eligible bonds for stablecoin reserve assets under trust structures. Comment deadline: Feb 27.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 28, 2026</div>
+          <div class="timeline-title">SEC Tokenized Securities Joint Guidance</div>
+          <div class="timeline-desc">Three SEC divisions issued joint guidance: tokenized securities subject to same rules as traditional counterparts. DTC no-action letter enables tokenization of Russell 1000, U.S. Treasuries.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 30, 2026</div>
+          <div class="timeline-title">Project Crypto Goes Joint (SEC + CFTC)</div>
+          <div class="timeline-desc">SEC-CFTC joint event: token taxonomy to classify digital commodities, collectibles, tools vs securities. Perpetual contracts onshoring pathway. Prediction market restrictions withdrawn.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 2, 2026</div>
+          <div class="timeline-title">Brazil BCB Authorization Regime Live</div>
+          <div class="timeline-desc">Brazil's Central Bank VASP licensing effective. Capital requirements BRL 10.8-37.2M. Existing firms get 270-day grace period. Enhanced reporting for cross-border transfers >$100K.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 3, 2026</div>
+          <div class="timeline-title">White House Stablecoin Summit Outcomes</div>
+          <div class="timeline-desc">GENIUS Act implementation details discussed. Stablecoin licensing framework advancing. CLARITY Act facing delays over bankers' opposition to stablecoin yield provisions.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 6, 2026</div>
+          <div class="timeline-title">USDT Depeg to $0.998 — Systemic Stress Test</div>
+          <div class="timeline-desc">USDT hit 5-year low at $0.998 during market crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% in 2025 — flight-to-quality signal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div class="grid-3" style="margin-top: 24px;">
+    <!-- Stablecoin Regulatory Status -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">💰 Stablecoin Regulatory Status</div>
+          <div class="chart-subtitle">Post-depeg stress test assessment</div>
+        </div>
+        <span class="chart-badge badge-medium">Stress Tested</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Stablecoin</th>
+            <th>Status</th>
+            <th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USDT (Tether)</strong></td>
+            <td style="color: var(--accent-orange);">Depegged $0.998 on Feb 6 — 5yr Low</td>
+            <td><span class="table-tag tag-high">Elevated</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDC (Circle)</strong></td>
+            <td style="color: var(--accent-green);">Holders +60% YoY, Flight-to-Quality</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDC (Agent Economy)</strong></td>
+            <td style="color: var(--accent-blue);">9x Monthly Turnover in AI Agent Scenarios</td>
+            <td><span class="table-tag tag-low">Monitoring</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDT (SOL Supply)</strong></td>
+            <td style="color: var(--accent-green);">Hit 3B on Solana — New ATH</td>
+            <td><span class="table-tag tag-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>USD1 (WLFI)</strong></td>
+            <td style="color: var(--accent-orange);">$75M Justin Sun + $500M Abu Dhabi</td>
+            <td><span class="table-tag tag-high">High Scrutiny</span></td>
+          </tr>
+          <tr>
+            <td><strong>PAXG (Gold-Backed)</strong></td>
+            <td style="color: var(--accent-green);">+155% YoY Growth During Crisis</td>
+            <td><span class="table-tag tag-low">Safe Haven</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Institutional Rails -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🏦 Institutional Rail Activation</div>
+          <div class="chart-subtitle">TradFi-DeFi integration milestones this week</div>
+        </div>
+        <span class="chart-badge badge-low">Accelerating</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Rail</th>
+            <th>Volume/TVL</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SEC Tokenized Securities</td>
+            <td style="color: var(--accent-green);">DTC: Russell 1000 + Treasuries</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>MetaMask × Ondo Stocks</td>
+            <td style="color: var(--accent-green);">30M Users → Tokenized Equities</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+          <tr>
+            <td>UK FCA Crypto Gateway</td>
+            <td style="color: var(--accent-blue);">Full FSMA Authorization</td>
+            <td><span class="table-tag tag-low">Sep 30, 2026</span></td>
+          </tr>
+          <tr>
+            <td>OECD CARF Tax Reporting</td>
+            <td style="color: var(--accent-orange);">50+ Jurisdictions</td>
+            <td><span class="table-tag tag-high">Active</span></td>
+          </tr>
+          <tr>
+            <td>HK Stablecoin Licenses</td>
+            <td style="color: var(--accent-blue);">70+ Expressions, "Handful" Approved</td>
+            <td><span class="table-tag tag-low">H1 2026</span></td>
+          </tr>
+          <tr>
+            <td>Russia Crypto Legalization</td>
+            <td style="color: var(--accent-green);">All Investors Eligible</td>
+            <td><span class="table-tag tag-medium">Live</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compliance Actions -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">✅ Required Actions</div>
+          <div class="chart-subtitle">Immediate compliance requirements</div>
+        </div>
+        <span class="chart-badge badge-critical">Urgent</span>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">1️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">ASIC Licensing — Immediate Assessment Required</div>
+          <div class="alert-desc">Australia's ASIC no-action relief expires June 30, 2026 (141 days). All digital asset firms operating in Australia must secure AFSL or notify intent to apply. ASIC explicitly flagged "unlicensed digital asset sector" as top 2026 risk. Non-compliance = enforcement action.</div>
+        </div>
+      </div>
+
+      <div class="alert-box critical">
+        <div class="alert-icon">2️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">OECD CARF Reporting — Data Collection Mandatory</div>
+          <div class="alert-desc">CARF reporting period commenced Jan 1, 2026 in 50+ jurisdictions. Crypto service providers must collect detailed customer information and report annually to tax authorities. First exchanges expected 2027. Firms not collecting data now face retroactive compliance gaps.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">3️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">JFSA Comment Window — Stablecoin Issuers</div>
+          <div class="alert-desc">JFSA stablecoin reserve asset consultation closes Feb 27. Any firm planning stablecoin issuance in Japan or targeting Japanese users must submit comments. Rules will define which bonds qualify as reserve backing — directly impacts product design.</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">4️⃣</div>
+        <div class="alert-content">
+          <div class="alert-title">Project Crypto Token Taxonomy — Reclassification Risk</div>
+          <div class="alert-desc">SEC-CFTC joint token taxonomy will create binding classifications. Assets currently traded as commodities may be reclassified. "Divergent" classification (e.g., Aptos) creates custody, ETF, and institutional access barriers. Monitor SEC/CFTC staff guidance for your token exposure.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Impact Matrix -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🎯 Cross-Jurisdictional Policy Impact Matrix</div>
+        <div class="chart-subtitle">Regulatory actions and market implications across major jurisdictions</div>
+      </div>
+      <span class="chart-badge badge-active">Real-Time Tracking</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Recent Action</th>
+          <th>Impact Scope</th>
+          <th>Market Effect</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (SEC+CFTC)</strong></td>
+          <td>Joint Project Crypto — Token Taxonomy</td>
+          <td><span class="table-tag tag-medium">Classification</span></td>
+          <td style="color: var(--accent-green);">"Most tokens not securities" — onshoring perps, prediction markets</td>
+          <td>Jan 30 Active</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (SEC)</strong></td>
+          <td>Tokenized Securities Joint Guidance</td>
+          <td><span class="table-tag tag-medium">RWA</span></td>
+          <td style="color: var(--accent-green);">DTC tokenizing Russell 1000 + Treasuries; same rules as traditional</td>
+          <td>Jan 28 Live</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Australia (ASIC)</strong></td>
+          <td>No-Action Relief Expiry Warning</td>
+          <td><span class="table-tag tag-high">Licensing</span></td>
+          <td style="color: var(--accent-orange);">Unlicensed firms face enforcement after June 30; stablecoin exemption released</td>
+          <td>June 30 Deadline</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Japan (JFSA)</strong></td>
+          <td>Stablecoin Reserve Asset Consultation</td>
+          <td><span class="table-tag tag-low">Stablecoins</span></td>
+          <td style="color: var(--accent-blue);">Most prescriptive reserve composition rules in APAC; sets regional benchmark</td>
+          <td>Feb 27 Close</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Brazil (BCB)</strong></td>
+          <td>VASP Authorization Regime Live</td>
+          <td><span class="table-tag tag-high">Licensing</span></td>
+          <td style="color: var(--accent-orange);">Largest LatAm market: capital req + enhanced reporting for stablecoin transfers</td>
+          <td>Feb 2 Live</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Hong Kong (HKMA)</strong></td>
+          <td>Stablecoin License: "High Bar, Handful"</td>
+          <td><span class="table-tag tag-low">Stablecoins</span></td>
+          <td style="color: var(--accent-blue);">70+ expressions of interest, but HKMA maintains strict licensing standard</td>
+          <td>H1 2026</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>UK (FCA)</strong></td>
+          <td>Crypto Gateway Consultation Open</td>
+          <td><span class="table-tag tag-medium">Full Framework</span></td>
+          <td style="color: var(--accent-green);">Full FSMA authorization for crypto firms; stablecoin sandbox active</td>
+          <td>Sep 30, 2026</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Vietnam</strong></td>
+          <td>DTI Law Effective Jan 1</td>
+          <td><span class="table-tag tag-low">Framework</span></td>
+          <td style="color: var(--accent-blue);">First formal digital asset law; implementation details still emerging</td>
+          <td>Live</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>Russia</strong></td>
+          <td>Crypto Legalized for All Investors</td>
+          <td><span class="table-tag tag-medium">Market Access</span></td>
+          <td style="color: var(--accent-green);">Full legalization amid sanctions; BTC strategic reserve signals</td>
+          <td>Live</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Final Alert Section -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🚨 Critical Intelligence Summary</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+      </div>
+      <span class="chart-badge badge-high">Priority Actions</span>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">1. Project Crypto Token Taxonomy — The Most Consequential US Regulatory Event of 2026</div>
+        <div class="alert-desc">The SEC-CFTC joint announcement on Jan 30 creates a binding classification framework that will determine the regulatory destiny of every crypto asset. SEC Chair Atkins stated "most crypto assets trading today are not securities." CFTC will onshore perpetual contracts and withdraw prediction market restrictions. The joint taxonomy will classify tokens as digital commodities, collectibles, tools (non-securities), or tokenized securities. Assets classified as "divergent" (like Aptos) face uncertain custody, ETF, and institutional access status. Action: Map your entire portfolio against the emerging taxonomy. Assets in the "likely not securities" tier (BTC, ETH, SOL, XRP) will receive full institutional rails. "Divergent" assets require hedging strategies against potential reclassification.</div>
+      </div>
+    </div>
+
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
+      <div class="alert-content">
+        <div class="alert-title">2. USDT $0.998 Depeg — Live Stress Test for Every Stablecoin Regulator Globally</div>
+        <div class="alert-desc">USDT's depeg to $0.998 on Feb 6 — its lowest in 5 years — during a -14% BTC single-day crash is not just a market event. FATF's early-2026 stablecoin risk review now has fresh crisis data. HKMA, JFSA, and MAS will use this as evidence for tighter reserve and redemption requirements. Meanwhile, USDC holders grew 60% YoY and USDC now does 9x monthly turnover in AI agent scenarios vs USDT's 3x — a flight-to-quality signal that has structural implications. Action: Assess stablecoin counterparty risk by jurisdiction. Monitor JFSA consultation (Feb 27 deadline) for reserve composition rules that will set the APAC benchmark. Diversify stablecoin exposure away from single-issuer concentration.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">3. AI Agent Regulatory Vacuum — Largest Unclassified Financial Activity in Crypto</div>
+        <div class="alert-desc">Over 10,000 autonomous agents are now deployed on ERC-8004, executing trades, launching tokens, and hiring humans — with zero regulatory classification in any jurisdiction. No KYC framework exists for agent-initiated transactions. No liability assignment for agent failures. The x402 payment protocol processes $50M+ monthly with no AML oversight. FATF Travel Rule applies to human-initiated transactions but has no provision for agent-to-agent commerce. Action: This is the single largest regulatory blind spot in crypto. Firms building or integrating AI agents must anticipate that classification is coming — likely within 12-18 months. Build compliance-ready architectures now. Agent identity standards (ERC-8004) are the minimum viable compliance layer.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. ASIC June 30 Deadline — 141 Days to Comply for Australian Operations</div>
+        <div class="alert-desc">ASIC's no-action relief for unlicensed crypto firms expires June 30, 2026. ASIC's Key Issues Outlook 2026 explicitly flagged "rapid growth in unlicensed cryptoasset, payments and AI firms" as creating "regulatory gaps that expose consumers to risk." Simultaneously, ASIC released stablecoin intermediary exemptions to reduce friction for compliant entrants. This is a clear signal: comply or face enforcement. Action: Any firm with Australian exposure must initiate AFSL application immediately. The stablecoin intermediary exemption creates a fast-track opportunity for regulated stablecoin distribution. Post-June 30, enforcement actions against unlicensed operators become virtually certain.</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">5. Tokenized Securities Institutional Rails Now Live — DTC + MetaMask + Ondo Convergence</div>
+        <div class="alert-desc">Three events converged this week to create the first complete tokenized securities distribution stack: (1) SEC's three-division joint guidance establishing clear rules for tokenized securities; (2) DTC no-action letter enabling tokenization of Russell 1000 constituents and U.S. Treasuries; (3) MetaMask integration giving 30M users direct access to Ondo's tokenized stocks with EU approval. The CLARITY Act and GENIUS Act provide the legislative backbone. Action: Tokenized securities are now the lowest-compliance-risk category in crypto (8% risk score). Institutional allocators should evaluate this as the first crypto category with full regulatory clarity across SEC, CFTC, and multiple APAC jurisdictions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
+      Data Sources: SEC filings, CFTC announcements, JFSA consultation papers, ASIC Key Issues Outlook 2026, HKMA stablecoin licensing updates, BCB authorization framework, FCA consultation CP25/2, FATF updated jurisdiction list, OECD CARF implementation tracker, MAS Singapore policy statements, on-chain analytics (Nansen, Chainalysis, Glassnode), stablecoin peg monitoring, ETF filing analysis, Morrison Foerster/Sidley Austin/Elliptic regulatory analysis.<br/>
+      <em>This dashboard synthesizes real-time regulatory developments with market impact analysis to identify compliance requirements and risk factors before enforcement actions occur.</em>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions. Project Crypto token taxonomy, USDT depeg stress test, ASIC licensing deadline, JFSA stablecoin consultation, and AI agent regulatory vacuum indicate critical compliance windows requiring immediate assessment.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
