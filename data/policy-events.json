@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-08T10:08:00+08:00",
-    "totalEvents": 18,
+    "lastUpdated": "2026-02-09T13:45:00+08:00",
+    "totalEvents": 21,
     "version": "1.0"
   },
   "dimensions": {
     "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC"],
-    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
-    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing"],
-    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb"]
+    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW", "US"],
+    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing", "Conference"],
+    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb", "BlackRock"]
   },
   "regionNames": {
     "HK": "Hong Kong",
@@ -23,9 +23,46 @@
     "VN": "Vietnam",
     "PH": "Philippines",
     "MY": "Malaysia",
-    "TW": "Taiwan"
+    "TW": "Taiwan",
+    "US": "United States"
   },
   "events": [
+    {
+      "id": "evt-2026-0209-001",
+      "date": "2026-02-09",
+      "title": "China Extends Crypto Ban to Stablecoins and Tokenized Assets",
+      "protocols": ["USDT", "USDC"],
+      "regions": ["CN"],
+      "topics": ["Regulation", "Stablecoin"],
+      "entities": [],
+      "summary": "Chinese companies seeking to tokenize assets overseas must now obtain regulatory approvals, while financial and tech partners face increased compliance standards. The ban extends to stablecoins for the first time.",
+      "impact": "high",
+      "source": "https://www.pymnts.com/cryptocurrency/2026/china-extends-crypto-ban-to-stablecoins-and-tokenized-assets/"
+    },
+    {
+      "id": "evt-2026-0209-002",
+      "date": "2026-02-09",
+      "title": "Consensus Hong Kong 2026 to Focus on Crypto Policy & Financial Integration",
+      "protocols": ["ETH", "BTC"],
+      "regions": ["HK"],
+      "topics": ["Regulation", "Conference"],
+      "entities": [],
+      "summary": "Consensus Hong Kong 2026 conference will explore crypto policy and financial integration, featuring global regulators and industry leaders. Key topics include tokenization, regulatory frameworks, and institutional adoption.",
+      "impact": "medium",
+      "source": "https://phemex.com/news/article/consensus-hong-kong-2026-to-address-crypto-policy-and-financial-integration-59084"
+    },
+    {
+      "id": "evt-2026-0209-003",
+      "date": "2026-02-09",
+      "title": "BlackRock Files for Staked Ethereum ETF with SEC",
+      "protocols": ["ETH"],
+      "regions": ["US"],
+      "topics": ["Staking", "ETF"],
+      "entities": ["BlackRock"],
+      "summary": "BlackRock submitted SEC filing for a staked Ethereum ETF in December 2025, signaling major institutional interest in ETH yield products. This follows Hong Kong's first staked ETH ETF approval.",
+      "impact": "high",
+      "source": "https://www.fool.com/investing/2026/02/02/prediction-2026-will-be-the-year-of-ethereum-eth/"
+    },
     {
       "id": "evt-2026-0208-001",
       "date": "2026-02-08",
