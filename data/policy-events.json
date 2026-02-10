@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-10T10:03:00+08:00",
-    "totalEvents": 22,
+    "lastUpdated": "2026-02-10T13:30:00+08:00",
+    "totalEvents": 30,
     "version": "1.0"
   },
   "dimensions": {
-    "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC"],
-    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW", "US"],
-    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing", "Conference"],
-    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb", "BlackRock"]
+    "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC", "XRP"],
+    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW", "US", "BR", "RU", "UK"],
+    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing", "Conference", "Tokenization"],
+    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb", "BlackRock", "Tether", "Circle"]
   },
   "regionNames": {
     "HK": "Hong Kong",
@@ -24,7 +24,10 @@
     "PH": "Philippines",
     "MY": "Malaysia",
     "TW": "Taiwan",
-    "US": "United States"
+    "US": "United States",
+    "BR": "Brazil",
+    "RU": "Russia",
+    "UK": "United Kingdom"
   },
   "events": [
     {
@@ -35,7 +38,7 @@
       "regions": ["KR"],
       "topics": ["Regulation", "Exchange"],
       "entities": ["Bithumb"],
-      "summary": "South Korea's Financial Supervisory Service (FSS) announces stricter crypto regulations following Bithumb's accidental $44B Bitcoin giveaway. FSS calls for resolution of 'ghost coins' issue before cryptocurrencies can become legacy financial assets. Task force to finalize second-stage crypto legislation by Q1 2026.",
+      "summary": "South Korea's Financial Supervisory Service (FSS) announces stricter crypto regulations following Bithumb's accidental $44B Bitcoin giveaway. FSS calls for resolution of 'ghost coins' issue before cryptocurrencies can become legacy financial assets.",
       "impact": "high",
       "source": "https://www.straitstimes.com/asia/east-asia/south-korea-watchdog-says-tougher-crypto-rules-needed-after-unintentional-50-billion-giveaway"
     },
@@ -47,19 +50,19 @@
       "regions": ["CN"],
       "topics": ["Regulation", "Stablecoin"],
       "entities": [],
-      "summary": "Chinese companies seeking to tokenize assets overseas must now obtain regulatory approvals, while financial and tech partners face increased compliance standards. The ban extends to stablecoins for the first time.",
+      "summary": "Chinese companies seeking to tokenize assets overseas must now obtain regulatory approvals, while financial and tech partners face increased compliance standards.",
       "impact": "high",
       "source": "https://www.pymnts.com/cryptocurrency/2026/china-extends-crypto-ban-to-stablecoins-and-tokenized-assets/"
     },
     {
       "id": "evt-2026-0209-002",
       "date": "2026-02-09",
-      "title": "Consensus Hong Kong 2026 to Focus on Crypto Policy & Financial Integration",
+      "title": "Consensus Hong Kong 2026 to Focus on Crypto Policy",
       "protocols": ["ETH", "BTC"],
       "regions": ["HK"],
       "topics": ["Regulation", "Conference"],
       "entities": [],
-      "summary": "Consensus Hong Kong 2026 conference will explore crypto policy and financial integration, featuring global regulators and industry leaders. Key topics include tokenization, regulatory frameworks, and institutional adoption.",
+      "summary": "Consensus Hong Kong 2026 conference will explore crypto policy and financial integration, featuring global regulators and industry leaders.",
       "impact": "medium",
       "source": "https://phemex.com/news/article/consensus-hong-kong-2026-to-address-crypto-policy-and-financial-integration-59084"
     },
@@ -71,7 +74,7 @@
       "regions": ["US"],
       "topics": ["Staking", "ETF"],
       "entities": ["BlackRock"],
-      "summary": "BlackRock submitted SEC filing for a staked Ethereum ETF in December 2025, signaling major institutional interest in ETH yield products. This follows Hong Kong's first staked ETH ETF approval.",
+      "summary": "BlackRock submitted SEC filing for a staked Ethereum ETF, signaling major institutional interest in ETH yield products.",
       "impact": "high",
       "source": "https://www.fool.com/investing/2026/02/02/prediction-2026-will-be-the-year-of-ethereum-eth/"
     },
@@ -83,7 +86,7 @@
       "regions": ["KR"],
       "topics": ["Exchange", "Regulation"],
       "entities": ["Bithumb"],
-      "summary": "South Korean exchange Bithumb accidentally sent 620,000 BTC ($44B) to 249 users during promotional event. FSC convened emergency meeting, announced on-site inspections of crypto exchanges to review internal control systems and asset holdings.",
+      "summary": "Bithumb accidentally sent 620,000 BTC ($44B) to 249 users. FSC convened emergency meeting, announced on-site inspections of crypto exchanges.",
       "impact": "high",
       "source": "https://www.reuters.com/world/asia-pacific/crypto-firm-accidentally-sends-44-billion-bitcoins-users-2026-02-07/"
     },
@@ -95,21 +98,33 @@
       "regions": ["JP"],
       "topics": ["Taxation", "ETF", "Regulation"],
       "entities": [],
-      "summary": "Japan announces sweeping crypto reforms: tax rate reduction from 55% to 20% by 2028, reclassifying 105 cryptocurrencies as financial products, and launching crypto ETFs by 2028.",
+      "summary": "Japan announces crypto tax reduction from 55% to 20% by 2028, reclassifying 105 cryptocurrencies as financial products.",
       "impact": "high",
       "source": "https://decrypt.co/357162/japan-crypto-industry-faces-critical-test-snap-election"
     },
     {
       "id": "evt-2026-0207-001",
       "date": "2026-02-07",
-      "title": "Stablecoin Inflows Surge to $100B Amid Crypto Market Correction",
+      "title": "Stablecoin Inflows Surge to $100B Amid Correction",
       "protocols": ["USDT", "USDC"],
       "regions": ["SG", "HK"],
       "topics": ["Stablecoin", "Exchange"],
       "entities": ["Binance", "OKX"],
-      "summary": "Stablecoin inflows on exchanges doubled to $100B despite ongoing crypto sell-off, indicating institutional positioning for potential market recovery.",
+      "summary": "Stablecoin inflows on exchanges doubled to $100B during market sell-off, indicating institutional positioning.",
       "impact": "medium",
       "source": "https://bitcoinethereumnews.com/crypto/stablecoin-inflows-surge-to-100b-amid-crypto-dip/"
+    },
+    {
+      "id": "evt-2026-0206-004",
+      "date": "2026-02-06",
+      "title": "USDT Depeg to $0.998 - 5-Year Low Systemic Stress Test",
+      "protocols": ["USDT"],
+      "regions": ["HK", "SG"],
+      "topics": ["Stablecoin", "Regulation"],
+      "entities": ["Tether"],
+      "summary": "USDT briefly depegged to $0.998—its lowest level in 5 years—during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
     {
       "id": "evt-2026-0206-003",
@@ -121,7 +136,7 @@
       "entities": [],
       "summary": "South Korean regulators deploy AI-powered surveillance systems to monitor cryptocurrency markets for manipulation and fraud in real-time.",
       "impact": "high",
-      "source": "https://blockchainreporter.net/crypto-market-news-today-south-korea-arms-regulators-with-ai-link-and-sui-slide-as-deepsnitch-ai-gears-for-utility-fueled-1000x-in-february/"
+      "source": "https://blockchainreporter.net/"
     },
     {
       "id": "evt-2026-0206-002",
@@ -129,23 +144,11 @@
       "title": "China Establishes Legal Framework for RWA Tokenization",
       "protocols": ["ETH"],
       "regions": ["CN"],
-      "topics": ["Regulation", "DeFi"],
+      "topics": ["Regulation", "Tokenization"],
       "entities": [],
-      "summary": "Beijing announces clear separation between banned virtual currencies and RWA tokenization, with RWA being included in regulatory framework. First sign of legal recognition for tokenized real-world assets in China.",
+      "summary": "Beijing announces clear separation between banned virtual currencies and RWA tokenization, with RWA being included in regulatory framework.",
       "impact": "high",
-      "source": "https://www.reuters.com/world/asia-pacific/china-vows-tighten-virtual-currency-restrictions-2026-02-06/"
-    },
-    {
-      "id": "evt-2026-0205-001",
-      "date": "2026-02-05",
-      "title": "IG Group Completes Acquisition of Independent Reserve",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["SG", "AU"],
-      "topics": ["Exchange", "Licensing"],
-      "entities": ["Independent Reserve", "IG Group"],
-      "summary": "London-listed IG Group completes acquisition of MAS-licensed Independent Reserve, plans to launch crypto trading services in Singapore, Australia, and UAE in H2 2026.",
-      "impact": "high",
-      "source": "https://www.blockhead.co/2026/02/05/ig-group-completes-acquisition-of-crypto-exchange-independent-reserve/"
+      "source": "https://www.reuters.com/"
     },
     {
       "id": "evt-2026-0206-001",
@@ -155,9 +158,81 @@
       "regions": ["HK"],
       "topics": ["Regulation", "Custody", "Licensing"],
       "entities": [],
-      "summary": "Hong Kong's Financial Services and Treasury Bureau confirms comprehensive legislation for virtual asset custodians and dealers by end of 2026.",
+      "summary": "Hong Kong's FSTB confirms comprehensive legislation for virtual asset custodians and dealers by end of 2026.",
       "impact": "high",
       "source": "https://www.fstb.gov.hk"
+    },
+    {
+      "id": "evt-2026-0205-001",
+      "date": "2026-02-05",
+      "title": "IG Group Completes Acquisition of Independent Reserve",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["SG", "AU"],
+      "topics": ["Exchange", "Licensing"],
+      "entities": ["Independent Reserve", "IG Group"],
+      "summary": "London-listed IG Group completes acquisition of MAS-licensed Independent Reserve, plans to launch in Singapore, Australia, and UAE in H2 2026.",
+      "impact": "high",
+      "source": "https://www.blockhead.co/"
+    },
+    {
+      "id": "evt-2026-0203-001",
+      "date": "2026-02-03",
+      "title": "White House Stablecoin Summit: GENIUS Act Implementation",
+      "protocols": ["USDT", "USDC"],
+      "regions": ["US"],
+      "topics": ["Stablecoin", "Regulation"],
+      "entities": [],
+      "summary": "White House summit discusses GENIUS Act implementation details. Stablecoin licensing framework advancing. CLARITY Act facing delays over bankers' opposition to stablecoin yield provisions.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
+    },
+    {
+      "id": "evt-2026-0202-001",
+      "date": "2026-02-02",
+      "title": "Brazil BCB VASP Authorization Regime Goes Live",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["BR"],
+      "topics": ["Licensing", "Regulation"],
+      "entities": [],
+      "summary": "Brazil's Central Bank VASP licensing effective. Capital requirements BRL 10.8-37.2M. Existing firms get 270-day grace period. Enhanced reporting for cross-border transfers >$100K.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
+    },
+    {
+      "id": "evt-2026-0202-002",
+      "date": "2026-02-02",
+      "title": "Russia Legalizes Crypto for All Investors",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["RU"],
+      "topics": ["Regulation"],
+      "entities": [],
+      "summary": "Russia legalized crypto for all investors this week, no longer restricted to qualified investors only.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
+    },
+    {
+      "id": "evt-2026-0130-001",
+      "date": "2026-01-30",
+      "title": "SEC-CFTC Project Crypto: Token Taxonomy Framework",
+      "protocols": ["BTC", "ETH", "SOL", "XRP"],
+      "regions": ["US"],
+      "topics": ["Regulation", "ETF"],
+      "entities": [],
+      "summary": "SEC and CFTC jointly announced Project Crypto with token taxonomy: 'most crypto assets trading today are not securities.' Creates 3-tier classification: digital commodities, collectibles, tools vs tokenized securities.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
+    },
+    {
+      "id": "evt-2026-0128-002",
+      "date": "2026-01-28",
+      "title": "SEC Tokenized Securities Joint Guidance",
+      "protocols": ["ETH"],
+      "regions": ["US"],
+      "topics": ["Regulation", "Tokenization"],
+      "entities": [],
+      "summary": "Three SEC divisions issued joint guidance: tokenized securities subject to same rules as traditional counterparts. DTC no-action letter enables tokenization of Russell 1000, U.S. Treasuries.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
     {
       "id": "evt-2026-0128-001",
@@ -167,9 +242,21 @@
       "regions": ["HK"],
       "topics": ["Staking", "ETF"],
       "entities": ["OSL"],
-      "summary": "ChinaAMC partners with OSL to launch world's first regulated ETH Staking ETF, offering ~2.8% APR through compliant vehicle.",
+      "summary": "ChinaAMC partners with OSL to launch world's first regulated ETH Staking ETF, offering ~2.8% APR.",
       "impact": "high",
       "source": "https://www.sfc.hk"
+    },
+    {
+      "id": "evt-2026-0127-001",
+      "date": "2026-01-27",
+      "title": "Japan FSA Stablecoin Reserve Consultation",
+      "protocols": ["USDT", "USDC"],
+      "regions": ["JP"],
+      "topics": ["Stablecoin", "Regulation"],
+      "entities": [],
+      "summary": "Japan FSA opened consultation on draft rules specifying eligible bonds for stablecoin reserve assets under trust structures. Comment deadline: Feb 27. Most prescriptive reserve framework in APAC.",
+      "impact": "high",
+      "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
     {
       "id": "evt-2026-0115-001",
@@ -179,7 +266,7 @@
       "regions": ["SG"],
       "topics": ["DeFi", "Regulation"],
       "entities": [],
-      "summary": "Monetary Authority of Singapore expands institutional DeFi pilots to include ETH-based lending protocols and tokenized bonds.",
+      "summary": "MAS expands institutional DeFi pilots to include ETH-based lending protocols and tokenized bonds.",
       "impact": "medium",
       "source": "https://www.mas.gov.sg"
     },
@@ -251,7 +338,7 @@
       "regions": ["HK"],
       "topics": ["DeFi", "Regulation"],
       "entities": [],
-      "summary": "Securities and Futures Commission indicates plans for DeFi regulatory sandbox.",
+      "summary": "SFC indicates plans for DeFi regulatory sandbox.",
       "impact": "medium",
       "source": "https://www.sfc.hk"
     },
@@ -275,9 +362,21 @@
       "regions": ["JP"],
       "topics": ["Regulation"],
       "entities": [],
-      "summary": "Government updates Web3 strategy emphasizing ecosystem development and institutional adoption.",
+      "summary": "Government updates Web3 strategy emphasizing ecosystem development.",
       "impact": "medium",
       "source": "https://www.kantei.go.jp"
+    },
+    {
+      "id": "evt-2025-0630-001",
+      "date": "2025-06-30",
+      "title": "ASIC No-Action Relief Deadline Set",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["AU"],
+      "topics": ["Licensing", "Regulation"],
+      "entities": [],
+      "summary": "ASIC sets June 30, 2026 deadline for crypto firms to obtain AFSL or notify intent. Unlicensed digital asset sector flagged as priority risk.",
+      "impact": "high",
+      "source": "https://asic.gov.au"
     },
     {
       "id": "evt-2025-0601-001",
