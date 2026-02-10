@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-09T13:45:00+08:00",
-    "totalEvents": 21,
+    "lastUpdated": "2026-02-10T10:03:00+08:00",
+    "totalEvents": 22,
     "version": "1.0"
   },
   "dimensions": {
@@ -27,6 +27,18 @@
     "US": "United States"
   },
   "events": [
+    {
+      "id": "evt-2026-0210-001",
+      "date": "2026-02-10",
+      "title": "South Korea FSS Announces Tougher Crypto Rules After Bithumb Incident",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["KR"],
+      "topics": ["Regulation", "Exchange"],
+      "entities": ["Bithumb"],
+      "summary": "South Korea's Financial Supervisory Service (FSS) announces stricter crypto regulations following Bithumb's accidental $44B Bitcoin giveaway. FSS calls for resolution of 'ghost coins' issue before cryptocurrencies can become legacy financial assets. Task force to finalize second-stage crypto legislation by Q1 2026.",
+      "impact": "high",
+      "source": "https://www.straitstimes.com/asia/east-asia/south-korea-watchdog-says-tougher-crypto-rules-needed-after-unintentional-50-billion-giveaway"
+    },
     {
       "id": "evt-2026-0209-001",
       "date": "2026-02-09",
