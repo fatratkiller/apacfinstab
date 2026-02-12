@@ -1,18 +1,75 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-11T10:02:00+08:00",
-    "totalEvents": 32,
+    "lastUpdated": "2026-02-12T13:01:00+08:00",
+    "totalEvents": 36,
     "version": "1.0"
   },
   "dimensions": {
-    "protocols": ["ETH", "BTC", "SOL", "TON", "BNB", "USDT", "USDC", "XRP"],
-    "regions": ["HK", "SG", "JP", "KR", "CN", "AU", "IN", "TH", "ID", "VN", "PH", "MY", "TW", "US", "BR", "RU", "UK"],
-    "topics": ["Staking", "ETF", "DeFi", "Regulation", "Custody", "Stablecoin", "CBDC", "Exchange", "Taxation", "Licensing", "Conference", "Tokenization"],
-    "entities": ["Binance", "OKX", "Coinbase", "HashKey", "OSL", "Bybit", "Huobi", "Gate.io", "Independent Reserve", "IG Group", "Korbit", "Bithumb", "BlackRock", "Tether", "Circle"]
+    "protocols": [
+      "ETH",
+      "BTC",
+      "SOL",
+      "TON",
+      "BNB",
+      "USDT",
+      "USDC",
+      "XRP"
+    ],
+    "regions": [
+      "HK",
+      "SG",
+      "JP",
+      "KR",
+      "CN",
+      "AU",
+      "IN",
+      "TH",
+      "ID",
+      "VN",
+      "PH",
+      "MY",
+      "TW",
+      "US",
+      "BR",
+      "RU",
+      "UK",
+      "PK"
+    ],
+    "topics": [
+      "Staking",
+      "ETF",
+      "DeFi",
+      "Regulation",
+      "Custody",
+      "Stablecoin",
+      "CBDC",
+      "Exchange",
+      "Taxation",
+      "Licensing",
+      "Conference",
+      "Tokenization"
+    ],
+    "entities": [
+      "Binance",
+      "OKX",
+      "Coinbase",
+      "HashKey",
+      "OSL",
+      "Bybit",
+      "Huobi",
+      "Gate.io",
+      "Independent Reserve",
+      "IG Group",
+      "Korbit",
+      "Bithumb",
+      "BlackRock",
+      "Tether",
+      "Circle"
+    ]
   },
   "regionNames": {
     "HK": "Hong Kong",
-    "SG": "Singapore", 
+    "SG": "Singapore",
     "JP": "Japan",
     "KR": "South Korea",
     "CN": "China",
@@ -27,17 +84,107 @@
     "US": "United States",
     "BR": "Brazil",
     "RU": "Russia",
-    "UK": "United Kingdom"
+    "UK": "United Kingdom",
+    "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0212-004",
+      "date": "2026-02-12",
+      "title": "Pakistan Virtual Assets Ordinance Faces Regulatory Deadlock",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "PK"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Pakistan Senate committee faces deadlock as no government ministry steps forward to take ownership of proposed Virtual Assets Ordinance.",
+      "impact": "medium",
+      "source": "https://dailytimes.com.pk/1449154/senate-committee-faces-deadlock-over-crypto-regulation-bill/"
+    },
+    {
+      "id": "evt-2026-0212-003",
+      "date": "2026-02-12",
+      "title": "Malaysia Central Bank Tests Ringgit-Denominated Stablecoins",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "MY"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Bank Negara Malaysia's Digital Asset Innovation Hub (DAIH) onboards three initiatives to test MYR-denominated stablecoins and tokenized deposits for 2026.",
+      "impact": "medium",
+      "source": "https://crypto.news/asia-crypto-regulation-hong-kong-malaysia/"
+    },
+    {
+      "id": "evt-2026-0212-002",
+      "date": "2026-02-12",
+      "title": "Hong Kong SFC Announces Perpetual Futures Framework for Institutions",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [],
+      "summary": "SFC CEO Julia Leung announces high-level framework allowing licensed platforms to offer crypto perpetual futures to institutional investors. New margin lending rules for virtual assets also introduced.",
+      "impact": "high",
+      "source": "https://www.coindesk.com/policy/2026/02/11/hong-kong-working-to-allow-perpetual-contracts-chief-regulator-says"
+    },
+    {
+      "id": "evt-2026-0212-001",
+      "date": "2026-02-12",
+      "title": "Hong Kong to Issue First Stablecoin Licenses in March 2026",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Hong Kong Financial Secretary confirms first stablecoin licenses will be issued in March 2026, as part of the city's push to become a global digital asset hub.",
+      "impact": "high",
+      "source": "https://www.coindesk.com/policy/2026/02/11/hong-kong-ready-to-issue-first-stablecoin-licenses-in-march-financial-secretary-says"
+    },
     {
       "id": "evt-2026-0211-001",
       "date": "2026-02-11",
       "title": "UK FCA Orders Social Media Platforms to Block HTX Crypto Exchange",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["UK"],
-      "topics": ["Regulation", "Exchange"],
-      "entities": ["Huobi"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "UK"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Huobi"
+      ],
       "summary": "UK Financial Conduct Authority asks social media firms to block crypto exchange HTX (formerly Huobi) over illegal financial promotions to UK users. HTX restricted new UK registrations but existing users can still access unlawful promotions.",
       "impact": "high",
       "source": "https://www.reuters.com/sustainability/boards-policy-regulation/uk-regulator-sues-crypto-exchange-htx-over-illegal-promotions-2026-02-10/"
@@ -46,10 +193,23 @@
       "id": "evt-2026-0210-002",
       "date": "2026-02-10",
       "title": "White House CLARITY Act Summit: Major Banks Meet Crypto Firms",
-      "protocols": ["USDT", "USDC", "XRP"],
-      "regions": ["US"],
-      "topics": ["Regulation", "Stablecoin", "Tokenization"],
-      "entities": ["Coinbase", "Circle"],
+      "protocols": [
+        "USDT",
+        "USDC",
+        "XRP"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin",
+        "Tokenization"
+      ],
+      "entities": [
+        "Coinbase",
+        "Circle"
+      ],
       "summary": "White House hosts landmark meeting with JPMorgan, Bank of America, Wells Fargo, Coinbase, Ripple, and Circle to discuss stablecoin yield and tokenization rules. CLARITY Act advancing despite banking industry opposition to stablecoin yield provisions.",
       "impact": "high",
       "source": "https://coinnews.com/news/crypto-white-house-meeting-clarity-act-passed/"
@@ -58,10 +218,20 @@
       "id": "evt-2026-0210-001",
       "date": "2026-02-10",
       "title": "South Korea FSS Announces Tougher Crypto Rules After Bithumb Incident",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["KR"],
-      "topics": ["Regulation", "Exchange"],
-      "entities": ["Bithumb"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Bithumb"
+      ],
       "summary": "South Korea's Financial Supervisory Service (FSS) announces stricter crypto regulations following Bithumb's accidental $44B Bitcoin giveaway. FSS calls for resolution of 'ghost coins' issue before cryptocurrencies can become legacy financial assets.",
       "impact": "high",
       "source": "https://www.straitstimes.com/asia/east-asia/south-korea-watchdog-says-tougher-crypto-rules-needed-after-unintentional-50-billion-giveaway"
@@ -70,9 +240,17 @@
       "id": "evt-2026-0209-001",
       "date": "2026-02-09",
       "title": "China Extends Crypto Ban to Stablecoins and Tokenized Assets",
-      "protocols": ["USDT", "USDC"],
-      "regions": ["CN"],
-      "topics": ["Regulation", "Stablecoin"],
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "CN"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin"
+      ],
       "entities": [],
       "summary": "Chinese companies seeking to tokenize assets overseas must now obtain regulatory approvals, while financial and tech partners face increased compliance standards.",
       "impact": "high",
@@ -82,9 +260,17 @@
       "id": "evt-2026-0209-002",
       "date": "2026-02-09",
       "title": "Consensus Hong Kong 2026 to Focus on Crypto Policy",
-      "protocols": ["ETH", "BTC"],
-      "regions": ["HK"],
-      "topics": ["Regulation", "Conference"],
+      "protocols": [
+        "ETH",
+        "BTC"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Regulation",
+        "Conference"
+      ],
       "entities": [],
       "summary": "Consensus Hong Kong 2026 conference will explore crypto policy and financial integration, featuring global regulators and industry leaders.",
       "impact": "medium",
@@ -94,10 +280,19 @@
       "id": "evt-2026-0209-003",
       "date": "2026-02-09",
       "title": "BlackRock Files for Staked Ethereum ETF with SEC",
-      "protocols": ["ETH"],
-      "regions": ["US"],
-      "topics": ["Staking", "ETF"],
-      "entities": ["BlackRock"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Staking",
+        "ETF"
+      ],
+      "entities": [
+        "BlackRock"
+      ],
       "summary": "BlackRock submitted SEC filing for a staked Ethereum ETF, signaling major institutional interest in ETH yield products.",
       "impact": "high",
       "source": "https://www.fool.com/investing/2026/02/02/prediction-2026-will-be-the-year-of-ethereum-eth/"
@@ -106,10 +301,19 @@
       "id": "evt-2026-0208-001",
       "date": "2026-02-08",
       "title": "Bithumb $44B Bitcoin Error Triggers FSC Emergency Review",
-      "protocols": ["BTC"],
-      "regions": ["KR"],
-      "topics": ["Exchange", "Regulation"],
-      "entities": ["Bithumb"],
+      "protocols": [
+        "BTC"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Exchange",
+        "Regulation"
+      ],
+      "entities": [
+        "Bithumb"
+      ],
       "summary": "Bithumb accidentally sent 620,000 BTC ($44B) to 249 users. FSC convened emergency meeting, announced on-site inspections of crypto exchanges.",
       "impact": "high",
       "source": "https://www.reuters.com/world/asia-pacific/crypto-firm-accidentally-sends-44-billion-bitcoins-users-2026-02-07/"
@@ -118,9 +322,18 @@
       "id": "evt-2026-0208-002",
       "date": "2026-02-08",
       "title": "Japan Unveils Crypto Tax Cut & ETF Roadmap to 2028",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["JP"],
-      "topics": ["Taxation", "ETF", "Regulation"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Taxation",
+        "ETF",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "Japan announces crypto tax reduction from 55% to 20% by 2028, reclassifying 105 cryptocurrencies as financial products.",
       "impact": "high",
@@ -130,10 +343,22 @@
       "id": "evt-2026-0207-001",
       "date": "2026-02-07",
       "title": "Stablecoin Inflows Surge to $100B Amid Correction",
-      "protocols": ["USDT", "USDC"],
-      "regions": ["SG", "HK"],
-      "topics": ["Stablecoin", "Exchange"],
-      "entities": ["Binance", "OKX"],
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "SG",
+        "HK"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Exchange"
+      ],
+      "entities": [
+        "Binance",
+        "OKX"
+      ],
       "summary": "Stablecoin inflows on exchanges doubled to $100B during market sell-off, indicating institutional positioning.",
       "impact": "medium",
       "source": "https://bitcoinethereumnews.com/crypto/stablecoin-inflows-surge-to-100b-amid-crypto-dip/"
@@ -142,10 +367,20 @@
       "id": "evt-2026-0206-004",
       "date": "2026-02-06",
       "title": "USDT Depeg to $0.998 - 5-Year Low Systemic Stress Test",
-      "protocols": ["USDT"],
-      "regions": ["HK", "SG"],
-      "topics": ["Stablecoin", "Regulation"],
-      "entities": ["Tether"],
+      "protocols": [
+        "USDT"
+      ],
+      "regions": [
+        "HK",
+        "SG"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [
+        "Tether"
+      ],
       "summary": "USDT briefly depegged to $0.998—its lowest level in 5 years—during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
       "impact": "high",
       "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
@@ -154,9 +389,17 @@
       "id": "evt-2026-0206-003",
       "date": "2026-02-06",
       "title": "South Korea Deploys AI Surveillance for Crypto Market Monitoring",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["KR"],
-      "topics": ["Regulation", "Exchange"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
       "entities": [],
       "summary": "South Korean regulators deploy AI-powered surveillance systems to monitor cryptocurrency markets for manipulation and fraud in real-time.",
       "impact": "high",
@@ -166,9 +409,16 @@
       "id": "evt-2026-0206-002",
       "date": "2026-02-06",
       "title": "China Establishes Legal Framework for RWA Tokenization",
-      "protocols": ["ETH"],
-      "regions": ["CN"],
-      "topics": ["Regulation", "Tokenization"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "CN"
+      ],
+      "topics": [
+        "Regulation",
+        "Tokenization"
+      ],
       "entities": [],
       "summary": "Beijing announces clear separation between banned virtual currencies and RWA tokenization, with RWA being included in regulatory framework.",
       "impact": "high",
@@ -178,9 +428,18 @@
       "id": "evt-2026-0206-001",
       "date": "2026-02-06",
       "title": "FSTB Confirms 2026 VASP Custody & Dealer Legislation",
-      "protocols": ["ETH", "BTC"],
-      "regions": ["HK"],
-      "topics": ["Regulation", "Custody", "Licensing"],
+      "protocols": [
+        "ETH",
+        "BTC"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Regulation",
+        "Custody",
+        "Licensing"
+      ],
       "entities": [],
       "summary": "Hong Kong's FSTB confirms comprehensive legislation for virtual asset custodians and dealers by end of 2026.",
       "impact": "high",
@@ -190,10 +449,22 @@
       "id": "evt-2026-0205-001",
       "date": "2026-02-05",
       "title": "IG Group Completes Acquisition of Independent Reserve",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["SG", "AU"],
-      "topics": ["Exchange", "Licensing"],
-      "entities": ["Independent Reserve", "IG Group"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "SG",
+        "AU"
+      ],
+      "topics": [
+        "Exchange",
+        "Licensing"
+      ],
+      "entities": [
+        "Independent Reserve",
+        "IG Group"
+      ],
       "summary": "London-listed IG Group completes acquisition of MAS-licensed Independent Reserve, plans to launch in Singapore, Australia, and UAE in H2 2026.",
       "impact": "high",
       "source": "https://www.blockhead.co/"
@@ -202,9 +473,17 @@
       "id": "evt-2026-0203-001",
       "date": "2026-02-03",
       "title": "White House Stablecoin Summit: GENIUS Act Implementation",
-      "protocols": ["USDT", "USDC"],
-      "regions": ["US"],
-      "topics": ["Stablecoin", "Regulation"],
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "White House summit discusses GENIUS Act implementation details. Stablecoin licensing framework advancing. CLARITY Act facing delays over bankers' opposition to stablecoin yield provisions.",
       "impact": "high",
@@ -214,9 +493,17 @@
       "id": "evt-2026-0202-001",
       "date": "2026-02-02",
       "title": "Brazil BCB VASP Authorization Regime Goes Live",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["BR"],
-      "topics": ["Licensing", "Regulation"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "BR"
+      ],
+      "topics": [
+        "Licensing",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "Brazil's Central Bank VASP licensing effective. Capital requirements BRL 10.8-37.2M. Existing firms get 270-day grace period. Enhanced reporting for cross-border transfers >$100K.",
       "impact": "high",
@@ -226,9 +513,16 @@
       "id": "evt-2026-0202-002",
       "date": "2026-02-02",
       "title": "Russia Legalizes Crypto for All Investors",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["RU"],
-      "topics": ["Regulation"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "RU"
+      ],
+      "topics": [
+        "Regulation"
+      ],
       "entities": [],
       "summary": "Russia legalized crypto for all investors this week, no longer restricted to qualified investors only.",
       "impact": "high",
@@ -238,9 +532,19 @@
       "id": "evt-2026-0130-001",
       "date": "2026-01-30",
       "title": "SEC-CFTC Project Crypto: Token Taxonomy Framework",
-      "protocols": ["BTC", "ETH", "SOL", "XRP"],
-      "regions": ["US"],
-      "topics": ["Regulation", "ETF"],
+      "protocols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "XRP"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "ETF"
+      ],
       "entities": [],
       "summary": "SEC and CFTC jointly announced Project Crypto with token taxonomy: 'most crypto assets trading today are not securities.' Creates 3-tier classification: digital commodities, collectibles, tools vs tokenized securities.",
       "impact": "high",
@@ -250,9 +554,16 @@
       "id": "evt-2026-0128-002",
       "date": "2026-01-28",
       "title": "SEC Tokenized Securities Joint Guidance",
-      "protocols": ["ETH"],
-      "regions": ["US"],
-      "topics": ["Regulation", "Tokenization"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "Tokenization"
+      ],
       "entities": [],
       "summary": "Three SEC divisions issued joint guidance: tokenized securities subject to same rules as traditional counterparts. DTC no-action letter enables tokenization of Russell 1000, U.S. Treasuries.",
       "impact": "high",
@@ -262,10 +573,19 @@
       "id": "evt-2026-0128-001",
       "date": "2026-01-28",
       "title": "First ETH Staking ETF Launched in Hong Kong",
-      "protocols": ["ETH"],
-      "regions": ["HK"],
-      "topics": ["Staking", "ETF"],
-      "entities": ["OSL"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Staking",
+        "ETF"
+      ],
+      "entities": [
+        "OSL"
+      ],
       "summary": "ChinaAMC partners with OSL to launch world's first regulated ETH Staking ETF, offering ~2.8% APR.",
       "impact": "high",
       "source": "https://www.sfc.hk"
@@ -274,9 +594,17 @@
       "id": "evt-2026-0127-001",
       "date": "2026-01-27",
       "title": "Japan FSA Stablecoin Reserve Consultation",
-      "protocols": ["USDT", "USDC"],
-      "regions": ["JP"],
-      "topics": ["Stablecoin", "Regulation"],
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "Japan FSA opened consultation on draft rules specifying eligible bonds for stablecoin reserve assets under trust structures. Comment deadline: Feb 27. Most prescriptive reserve framework in APAC.",
       "impact": "high",
@@ -286,9 +614,16 @@
       "id": "evt-2026-0115-001",
       "date": "2026-01-15",
       "title": "MAS Project Guardian Phase 2 Expansion",
-      "protocols": ["ETH"],
-      "regions": ["SG"],
-      "topics": ["DeFi", "Regulation"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "SG"
+      ],
+      "topics": [
+        "DeFi",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "MAS expands institutional DeFi pilots to include ETH-based lending protocols and tokenized bonds.",
       "impact": "medium",
@@ -298,9 +633,17 @@
       "id": "evt-2026-0108-001",
       "date": "2026-01-08",
       "title": "Japan FSA Clarifies Staking Tax Treatment",
-      "protocols": ["ETH", "SOL"],
-      "regions": ["JP"],
-      "topics": ["Staking", "Taxation"],
+      "protocols": [
+        "ETH",
+        "SOL"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Staking",
+        "Taxation"
+      ],
       "entities": [],
       "summary": "Japan FSA issues guidance treating staking rewards as miscellaneous income at time of receipt.",
       "impact": "medium",
@@ -310,10 +653,19 @@
       "id": "evt-2025-1215-001",
       "date": "2025-12-15",
       "title": "Hong Kong Approves Spot ETH ETFs",
-      "protocols": ["ETH"],
-      "regions": ["HK"],
-      "topics": ["ETF"],
-      "entities": ["HashKey", "OSL"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "ETF"
+      ],
+      "entities": [
+        "HashKey",
+        "OSL"
+      ],
       "summary": "SFC approves multiple spot Ethereum ETFs for HKEX trading.",
       "impact": "high",
       "source": "https://www.sfc.hk"
@@ -322,9 +674,17 @@
       "id": "evt-2025-1120-001",
       "date": "2025-11-20",
       "title": "Singapore MAS Issues Staking Guidelines",
-      "protocols": ["ETH", "SOL"],
-      "regions": ["SG"],
-      "topics": ["Staking", "Regulation"],
+      "protocols": [
+        "ETH",
+        "SOL"
+      ],
+      "regions": [
+        "SG"
+      ],
+      "topics": [
+        "Staking",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "MAS requires licensed staking services to segregate assets and maintain insurance.",
       "impact": "medium",
@@ -334,10 +694,21 @@
       "id": "evt-2025-1105-001",
       "date": "2025-11-05",
       "title": "Binance Obtains Japan Re-entry License",
-      "protocols": ["BTC", "ETH", "BNB"],
-      "regions": ["JP"],
-      "topics": ["Exchange", "Licensing"],
-      "entities": ["Binance"],
+      "protocols": [
+        "BTC",
+        "ETH",
+        "BNB"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Exchange",
+        "Licensing"
+      ],
+      "entities": [
+        "Binance"
+      ],
       "summary": "Binance receives FSA approval to resume operations in Japan after 2023 exit.",
       "impact": "high",
       "source": "https://www.fsa.go.jp"
@@ -346,10 +717,20 @@
       "id": "evt-2025-1020-001",
       "date": "2025-10-20",
       "title": "OKX Receives Singapore MPI License",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["SG"],
-      "topics": ["Exchange", "Licensing"],
-      "entities": ["OKX"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "SG"
+      ],
+      "topics": [
+        "Exchange",
+        "Licensing"
+      ],
+      "entities": [
+        "OKX"
+      ],
       "summary": "OKX obtains Major Payment Institution license from MAS for Singapore operations.",
       "impact": "medium",
       "source": "https://www.mas.gov.sg"
@@ -358,9 +739,16 @@
       "id": "evt-2025-1005-001",
       "date": "2025-10-05",
       "title": "SFC Signals DeFi Sandbox Intent",
-      "protocols": ["ETH"],
-      "regions": ["HK"],
-      "topics": ["DeFi", "Regulation"],
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "DeFi",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "SFC indicates plans for DeFi regulatory sandbox.",
       "impact": "medium",
@@ -370,9 +758,17 @@
       "id": "evt-2025-0901-001",
       "date": "2025-09-01",
       "title": "South Korea Implements VAUPA",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["KR"],
-      "topics": ["Regulation", "Exchange"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
       "entities": [],
       "summary": "Virtual Asset User Protection Act takes effect with enhanced investor protections.",
       "impact": "high",
@@ -382,9 +778,16 @@
       "id": "evt-2025-0822-001",
       "date": "2025-08-22",
       "title": "Japan Web3 National Strategy Update",
-      "protocols": ["ETH", "SOL"],
-      "regions": ["JP"],
-      "topics": ["Regulation"],
+      "protocols": [
+        "ETH",
+        "SOL"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Regulation"
+      ],
       "entities": [],
       "summary": "Government updates Web3 strategy emphasizing ecosystem development.",
       "impact": "medium",
@@ -394,9 +797,17 @@
       "id": "evt-2025-0630-001",
       "date": "2025-06-30",
       "title": "ASIC No-Action Relief Deadline Set",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["AU"],
-      "topics": ["Licensing", "Regulation"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "AU"
+      ],
+      "topics": [
+        "Licensing",
+        "Regulation"
+      ],
       "entities": [],
       "summary": "ASIC sets June 30, 2026 deadline for crypto firms to obtain AFSL or notify intent. Unlicensed digital asset sector flagged as priority risk.",
       "impact": "high",
@@ -406,13 +817,26 @@
       "id": "evt-2025-0601-001",
       "date": "2025-06-01",
       "title": "Hong Kong VASP Regime Fully Effective",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["HK"],
-      "topics": ["Licensing", "Exchange"],
-      "entities": ["HashKey", "OSL"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Licensing",
+        "Exchange"
+      ],
+      "entities": [
+        "HashKey",
+        "OSL"
+      ],
       "summary": "Full VASP licensing under AMLO becomes mandatory for all crypto exchanges.",
       "impact": "high",
       "source": "https://www.sfc.hk"
     }
   ]
 }
+# Added 4 new events, total: 36
+
