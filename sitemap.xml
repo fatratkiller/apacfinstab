@@ -123,4 +123,11 @@
     <changefreq>never</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- REN - Regulatory Engagement Navigator -->
+  <url>
+    <loc>https://apacfinstab.com/ren/</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

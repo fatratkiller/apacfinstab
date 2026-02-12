@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulatory Engagement Navigator (REN) | APAC FINSTAB</title>
+  <meta name="description" content="From Intelligence to Decision in 90 Seconds. Know whether to engage, what to say, and when to say it.">
+  
+  <link rel="canonical" href="https://apacfinstab.com/ren/">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --accent-yellow: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--brand-orange) 0%, #ff6b1a 100%); border-radius: 10px; position: relative; }
+    .logo-icon::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; border: 2.5px solid #fff; border-radius: 50%; }
+    .logo-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.5px; height: 20px; background: #fff; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; color: var(--text-primary); display: block; }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    nav { display: flex; gap: 8px; }
+    nav a { padding: 10px 18px; color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 8px; transition: all 0.2s; }
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 40px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 140, 66, 0.15);
+      color: var(--brand-orange);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .hero-tagline {
+      font-size: 16px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    /* Main Layout */
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 40px;
+    }
+    
+    /* Input Panel */
+    .input-panel {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--border-subtle);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .input-panel h2 {
+      font-size: 18px;
+      margin-bottom: 24px;
+      color: var(--brand-orange);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--brand-orange);
+      box-shadow: 0 0 0 3px var(--brand-orange-glow);
+    }
+    .form-group textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--bg-elevated);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .checkbox-item:hover {
+      background: rgba(255, 140, 66, 0.1);
+    }
+    .checkbox-item input {
+      accent-color: var(--brand-orange);
+    }
+    
+    .run-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, #ff6b1a 100%);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .run-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 140, 66, 0.3);
+    }
+    .run-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    /* Output Panel */
+    .output-panel {
+      min-height: 400px;
+    }
+    
+    .output-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 2px dashed var(--border-strong);
+      color: var(--text-muted);
+    }
+    .output-placeholder .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    /* Module Cards */
+    .module-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-subtle);
+    }
+    .module-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .module-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+    }
+    .module-badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .module-badge.success { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+    .module-badge.warning { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
+    .module-badge.danger { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+    .module-badge.info { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+    
+    /* Triage Module */
+    .triage-decision {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .triage-decision.engage { color: var(--accent-green); }
+    .triage-decision.monitor { color: var(--accent-yellow); }
+    .triage-decision.silent { color: var(--accent-red); }
+    
+    .triage-reason {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    
+    .risk-meter {
+      height: 8px;
+      background: var(--bg-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .risk-meter-fill {
+      height: 100%;
+      transition: width 0.5s ease;
+    }
+    
+    /* Boundary Engine */
+    .factor-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .factor-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+    }
+    .factor-label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .factor-score {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .factor-score .score-value {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .factor-score .signal {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .factor-score .signal.positive { background: var(--accent-green); }
+    .factor-score .signal.neutral { background: var(--accent-yellow); }
+    .factor-score .signal.warning { background: var(--accent-red); }
+    .factor-score .signal.danger { background: var(--accent-red); }
+    
+    .total-score {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    .total-score .label {
+      font-weight: 700;
+    }
+    .total-score .value {
+      font-size: 24px;
+      font-weight: 800;
+    }
+    
+    .adjustments {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-yellow);
+    }
+    .adjustments h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--accent-yellow);
+      margin-bottom: 8px;
+    }
+    .adjustments ul {
+      list-style: none;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .adjustments li {
+      padding: 4px 0;
+    }
+    .adjustments li::before {
+      content: '→ ';
+      color: var(--accent-yellow);
+    }
+    
+    /* Timing Module */
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .timing-item {
+      padding: 16px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+    }
+    .timing-item .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .timing-item .value {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .timing-item.full-width {
+      grid-column: span 2;
+    }
+    
+    /* Ripple Module */
+    .ripple-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ripple-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 16px;
+      background: var(--bg-elevated);
+      border-radius: 8px;
+    }
+    .ripple-item .target {
+      font-weight: 700;
+      font-size: 18px;
+      min-width: 50px;
+    }
+    .ripple-item .weight-bar {
+      flex: 1;
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .ripple-item .weight-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--brand-orange), var(--accent-yellow));
+    }
+    .ripple-item .weight-value {
+      font-weight: 700;
+      color: var(--brand-orange);
+      min-width: 50px;
+      text-align: right;
+    }
+    .ripple-item .lag {
+      font-size: 13px;
+      color: var(--text-muted);
+      min-width: 100px;
+    }
+    
+    .blocked-list {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(239, 68, 68, 0.1);
+      border-radius: 8px;
+    }
+    .blocked-list h4 {
+      font-size: 13px;
+      color: var(--accent-red);
+      margin-bottom: 8px;
+    }
+    .blocked-item {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 4px 0;
+    }
+    
+    .recommendation-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-green);
+    }
+    .recommendation-box h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 8px;
+    }
+    .recommendation-box p {
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+    
+    /* Processing indicator */
+    .processing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      background: var(--bg-card);
+      border-radius: 16px;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--border-strong);
+      border-top-color: var(--brand-orange);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .input-panel {
+        position: static;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .main-container { padding: 20px; }
+      .timing-grid { grid-template-columns: 1fr; }
+      .timing-item.full-width { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo-container">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+          <span class="brand">APAC FINSTAB</span>
+          <span class="tagline">Regulatory Intelligence</span>
+        </div>
+      </a>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/ren/" class="active">REN</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">Decision Layer</div>
+    <h1>Regulatory Engagement Navigator</h1>
+    <p class="hero-subtitle">From Intelligence to Decision in 90 Seconds</p>
+    <p class="hero-tagline">"Should I engage? What do I say? When do I say it?"</p>
+  </section>
+
+  <main class="main-container">
+    <aside class="input-panel">
+      <h2>🎯 Input Parameters</h2>
+      
+      <div class="form-group">
+        <label>1. Event Type</label>
+        <select id="eventType">
+          <option value="">Select event type...</option>
+          <option value="public_consultation">Public Consultation</option>
+          <option value="direct_inquiry">Direct Inquiry (Regulator → You)</option>
+          <option value="enforcement_competitor">Enforcement Against Competitor</option>
+          <option value="draft_leak">Draft Regulation Leak</option>
+          <option value="political_controversy">Political Controversy</option>
+          <option value="technical_misinformation">Technical Misinformation in Record</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>2. Your Organization Type</label>
+        <select id="orgType">
+          <option value="">Select organization...</option>
+          <option value="foundation">L1/L2 Foundation (Credible Neutrality)</option>
+          <option value="cex_licensed">CEX (Licensed)</option>
+          <option value="defi_unlicensed">DeFi Protocol (Unlicensed)</option>
+          <option value="investor">Institutional Investor</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>3. Region</label>
+        <select id="region">
+          <option value="">Select region...</option>
+          <option value="HK">🇭🇰 Hong Kong</option>
+          <option value="SG">🇸🇬 Singapore</option>
+          <option value="JP">🇯🇵 Japan</option>
+          <option value="KR">🇰🇷 South Korea</option>
+          <option value="AU">🇦🇺 Australia</option>
+          <option value="ID">🇮🇩 Indonesia</option>
+          <option value="CN">🇨🇳 China</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>4. Topic</label>
+        <select id="topic">
+          <option value="">Select topic...</option>
+          <option value="stablecoin_licensing">Stablecoin Licensing</option>
+          <option value="vasp_custody">VASP Custody Requirements</option>
+          <option value="fia_migration">FIA Migration (Japan)</option>
+          <option value="staking_tax">Staking Tax Treatment</option>
+          <option value="stablecoin_framework">Stablecoin Framework</option>
+          <option value="afsl_deadline">AFSL Deadline (Australia)</option>
+          <option value="vaupa_phase2">VAUPA Phase 2 (Korea)</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>5. Constraints</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" id="constraint_neutrality" value="credible_neutrality">
+            Credible Neutrality
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="constraint_licensed" value="licensed_obligation">
+            Licensed Obligation
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="constraint_investigation" value="under_investigation">
+            Under Investigation
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>6. Content Characteristics (for Boundary Engine)</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" id="content_counter" value="counterarguments">
+            Includes Counterarguments
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="content_verifiable" value="verifiable">
+            Cites Verifiable Data
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="content_agnostic" value="agnostic">
+            Protocol-Agnostic
+          </label>
+        </div>
+      </div>
+      
+      <button class="run-btn" id="runBtn" onclick="runREN()">
+        ⚡ Run REN Analysis
+      </button>
+    </aside>
+
+    <section class="output-panel" id="output">
+      <div class="output-placeholder">
+        <div class="icon">🧭</div>
+        <p>Configure parameters and run analysis</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>APAC FINSTAB+ | Regulatory Engagement Navigator v2.0 (Phase 2)</p>
+    <p>Not legal advice. Decision support tool for regulatory engagement strategy.</p>
+  </footer>
+
+  <script src="engine.js"></script>
+  <script>
+    function getConstraints() {
+      const constraints = [];
+      if (document.getElementById('constraint_neutrality').checked) constraints.push('credible_neutrality');
+      if (document.getElementById('constraint_licensed').checked) constraints.push('licensed_obligation');
+      if (document.getElementById('constraint_investigation').checked) constraints.push('under_investigation');
+      return constraints;
+    }
+    
+    function runREN() {
+      const eventType = document.getElementById('eventType').value;
+      const orgType = document.getElementById('orgType').value;
+      const region = document.getElementById('region').value;
+      const topic = document.getElementById('topic').value;
+      
+      if (!eventType || !orgType) {
+        alert('Please select Event Type and Organization Type');
+        return;
+      }
+      
+      const output = document.getElementById('output');
+      output.innerHTML = '<div class="processing"><div class="spinner"></div><p style="margin-top:16px;color:var(--text-muted)">Processing...</p></div>';
+      
+      setTimeout(() => {
+        const input = {
+          eventType,
+          orgType,
+          region,
+          topic,
+          constraints: getConstraints(),
+          initiator: eventType === 'direct_inquiry' ? 'regulator' : (eventType === 'public_consultation' ? 'regulator' : 'self'),
+          includesCounterarguments: document.getElementById('content_counter').checked,
+          citesVerifiableData: document.getElementById('content_verifiable').checked,
+          protocolAgnostic: document.getElementById('content_agnostic').checked,
+          protocolMentions: document.getElementById('content_agnostic').checked ? 'minimal' : 'heavy',
+          expectedOutcome: 'understanding',
+          couldIndustryProduce: true
+        };
+        
+        const results = RENEngine.processQuery(input);
+        renderResults(results);
+      }, 800);
+    }
+    
+    function renderResults(results) {
+      const output = document.getElementById('output');
+      let html = '';
+      
+      // Module 1: Triage
+      const triage = results.modules.triage;
+      const triageClass = triage.decision === 'ENGAGE' ? 'engage' : (triage.decision === 'MONITOR' ? 'monitor' : 'silent');
+      const triageBadge = triage.decision === 'ENGAGE' ? 'success' : (triage.decision === 'MONITOR' ? 'warning' : 'danger');
+      const riskColor = triage.riskScore < 0.4 ? 'var(--accent-green)' : (triage.riskScore < 0.7 ? 'var(--accent-yellow)' : 'var(--accent-red)');
+      
+      html += `
+        <div class="module-card">
+          <div class="module-header">
+            <span class="module-title">Module 1: Engagement Triage</span>
+            <span class="module-badge ${triageBadge}">${triage.decision}</span>
+          </div>
+          <div class="triage-decision ${triageClass}">${triage.decision}</div>
+          <p class="triage-reason">${triage.reason}</p>
+          <div>
+            <span style="font-size:13px;color:var(--text-muted)">Boundary Risk Score: ${(triage.riskScore * 100).toFixed(0)}%</span>
+            <div class="risk-meter">
+              <div class="risk-meter-fill" style="width:${triage.riskScore * 100}%;background:${riskColor}"></div>
+            </div>
+          </div>
+          ${triage.override ? '<p style="margin-top:12px;color:var(--accent-red);font-size:13px">⚠️ Decision overridden due to constraints</p>' : ''}
+        </div>
+      `;
+      
+      // Module 3: Boundary Engine
+      const boundary = results.modules.boundary;
+      html += `
+        <div class="module-card">
+          <div class="module-header">
+            <span class="module-title">Module 3: Boundary Compliance Engine</span>
+            <span class="module-badge ${boundary.verdictClass}">${boundary.verdict}</span>
+          </div>
+          <div class="factor-grid">
+            ${Object.entries(boundary.factors).map(([key, f]) => `
+              <div class="factor-item">
+                <div>
+                  <div class="factor-label">${f.label}</div>
+                  <div style="font-size:12px;color:var(--text-muted)">${f.detail}</div>
+                </div>
+                <div class="factor-score">
+                  <span class="score-value">${f.score.toFixed(1)}</span>
+                  <span class="signal ${f.signal}"></span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="total-score">
+            <span class="label">Total Score</span>
+            <span class="value" style="color:${boundary.verdictClass === 'success' ? 'var(--accent-green)' : (boundary.verdictClass === 'warning' ? 'var(--accent-yellow)' : 'var(--accent-red)')}">${boundary.totalScore.toFixed(1)} / ${boundary.maxScore}</span>
+          </div>
+          ${boundary.adjustments.length > 0 ? `
+            <div class="adjustments">
+              <h4>Recommended Adjustments</h4>
+              <ul>${boundary.adjustments.map(a => `<li>${a}</li>`).join('')}</ul>
+            </div>
+          ` : ''}
+        </div>
+      `;
+      
+      // Module 4: Timing
+      if (results.modules.timing && results.modules.timing.available) {
+        const timing = results.modules.timing;
+        const urgencyColor = timing.recommendation === 'URGENT' ? 'var(--accent-red)' : (timing.recommendation === 'PREPARE NOW' ? 'var(--accent-yellow)' : 'var(--accent-green)');
+        
+        html += `
+          <div class="module-card">
+            <div class="module-header">
+              <span class="module-title">Module 4: Timing Intelligence</span>
+              <span class="module-badge ${timing.recommendation === 'URGENT' ? 'danger' : (timing.recommendation === 'PREPARE NOW' ? 'warning' : 'info')}">${timing.recommendation}</span>
+            </div>
+            <div class="timing-grid">
+              <div class="timing-item">
+                <div class="label">Official Deadline</div>
+                <div class="value">${timing.officialDeadline}</div>
+              </div>
+              <div class="timing-item">
+                <div class="label">Days Remaining</div>
+                <div class="value" style="color:${urgencyColor}">${timing.daysRemaining}</div>
+              </div>
+              <div class="timing-item">
+                <div class="label">CLR Factor</div>
+                <div class="value">${timing.clrFactor}x</div>
+              </div>
+              <div class="timing-item">
+                <div class="label">Effective Deadline (Est.)</div>
+                <div class="value">${timing.effectiveDeadline}</div>
+              </div>
+              <div class="timing-item full-width">
+                <div class="label">Optimal Engagement Window</div>
+                <div class="value" style="color:var(--brand-orange)">${timing.optimalWindow}</div>
+              </div>
+            </div>
+            ${timing.note ? `<p style="margin-top:16px;font-size:13px;color:var(--text-muted)">${timing.note}</p>` : ''}
+          </div>
+        `;
+      }
+      
+      // Module 5: Ripple
+      if (results.modules.ripple && results.modules.ripple.available) {
+        const ripple = results.modules.ripple;
+        
+        html += `
+          <div class="module-card">
+            <div class="module-header">
+              <span class="module-title">Module 5: Cross-Jurisdictional Ripple</span>
+              <span class="module-badge info">From ${ripple.source}</span>
+            </div>
+            <div class="ripple-list">
+              ${ripple.propagation.map(p => `
+                <div class="ripple-item">
+                  <span class="target">${p.target}</span>
+                  <div class="weight-bar">
+                    <div class="weight-bar-fill" style="width:${p.weight * 100}%"></div>
+                  </div>
+                  <span class="weight-value">${(p.weight * 100).toFixed(0)}%</span>
+                  <span class="lag">${p.lag}</span>
+                </div>
+              `).join('')}
+            </div>
+            ${ripple.blocked.length > 0 ? `
+              <div class="blocked-list">
+                <h4>Will NOT Propagate To</h4>
+                ${ripple.blocked.map(b => `<div class="blocked-item">× <strong>${b.region}</strong>: ${b.reason}</div>`).join('')}
+              </div>
+            ` : ''}
+            <div class="recommendation-box">
+              <h4>Strategic Recommendation</h4>
+              <p>${ripple.recommendation}</p>
+            </div>
+          </div>
+        `;
+      }
+      
+      // Processing time
+      html += `
+        <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:13px">
+          Analysis completed in ${results.processingTimeMs}ms
+        </div>
+      `;
+      
+      output.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
