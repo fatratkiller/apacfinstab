@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-12T16:30:00+08:00",
-    "totalEvents": 36,
+    "lastUpdated": "2026-02-13T10:00:00+08:00",
+    "totalEvents": 40,
     "version": "1.0"
   },
   "dimensions": {
@@ -88,6 +88,108 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0213-001",
+      "date": "2026-02-13",
+      "title": "Australia Defers Crypto Travel Rule to Q1 2027",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "AU"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "AUSTRAC and Department of Home Affairs publish transitional rules deferring Crypto Travel Rule for value transfer services. Originally expected March 31, 2026, now postponed to allow industry preparation.",
+      "impact": "medium",
+      "source": "https://notabene.id/world/australia"
+    },
+    {
+      "id": "evt-2026-0212-008",
+      "date": "2026-02-12",
+      "title": "Asia Leading Global Stablecoin Adoption as Banking Infrastructure",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "SG",
+        "PH",
+        "PK"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "The Economist reports Asia is turning stablecoins into banking infrastructure, with freelancers in Lahore and Manila using smartphones as crypto banks. Regulatory clarity in Hong Kong and UAE positioning them as global leaders.",
+      "impact": "high",
+      "source": "https://www.economist.com/asia/2026/02/12/asia-is-turning-stablecoins-into-banking-infrastructure"
+    },
+    {
+      "id": "evt-2026-0212-007",
+      "date": "2026-02-12",
+      "title": "Pakistan PVARA Chairman Addresses Consensus HK on Crypto Necessity",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "PK"
+      ],
+      "topics": [
+        "Regulation",
+        "Conference"
+      ],
+      "entities": [],
+      "summary": "PVARA Chairman Bilal Bin Saqib told Consensus Hong Kong 2026 that crypto is 'a ladder for the masses' in Pakistan - a necessity, not luxury. Pakistan had one of largest unregulated crypto markets before PVARA establishment.",
+      "impact": "medium",
+      "source": "https://www.coindesk.com/business/2026/02/12/crypto-isn-t-a-luxury-in-pakistan-it-s-a-ladder-for-the-masses"
+    },
+    {
+      "id": "evt-2026-0212-006",
+      "date": "2026-02-12",
+      "title": "US Treasury Secretary Warns CLARITY Act Facing Delays",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin"
+      ],
+      "entities": [
+        "Coinbase"
+      ],
+      "summary": "Treasury Secretary Bessent warns that Coinbase stance is blocking major stablecoin legislation. CLARITY Act needs to pass for crypto to 'remain viable.' Bipartisan support expected but disputes over stablecoin rewards and regulatory scope delaying markup.",
+      "impact": "high",
+      "source": "https://www.thestreet.com/crypto/markets/treasury-secretary-bessent-warns-over-coinbase-stance-on-key-legislation"
+    },
+    {
+      "id": "evt-2026-0212-005",
+      "date": "2026-02-12",
+      "title": "Solana Ecosystem Eyes APAC as Next Growth Frontier",
+      "protocols": [
+        "SOL"
+      ],
+      "regions": [
+        "HK",
+        "SG"
+      ],
+      "topics": [
+        "Conference"
+      ],
+      "entities": [],
+      "summary": "Solana Accelerate APAC held alongside Consensus Hong Kong. HSDT Executive Chairman predicts first billion new blockchain users from Asia-Pacific, citing region's population size, asset base, and openness to new technology.",
+      "impact": "medium",
+      "source": "https://stocktwits.com/news-articles/markets/cryptocurrency/solana-crypto-supercycle-could-begin-in-asia-says-hsdt-executive-chairman/cZRTSDOR4rI"
+    },
     {
       "id": "evt-2026-0212-004",
       "date": "2026-02-12",
