@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APAC Crypto Regulation Comparison | Hong Kong vs Singapore vs Japan | APAC FINSTAB</title>
+  <meta name="description" content="Compare cryptocurrency regulations across APAC jurisdictions. Side-by-side analysis of Hong Kong, Singapore, Japan, Korea, Australia licensing requirements, stablecoin rules, and compliance frameworks.">
+  <meta name="keywords" content="Hong Kong crypto regulation, Singapore MAS crypto, Japan FSA cryptocurrency, APAC crypto comparison, crypto license comparison, stablecoin regulation Asia">
+  
+  <link rel="canonical" href="https://apacfinstab.com/compare/">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --accent-yellow: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.8);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--brand-orange) 0%, #ff6b1a 100%); border-radius: 10px; position: relative; }
+    .logo-icon::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; border: 2.5px solid #fff; border-radius: 50%; }
+    .logo-icon::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 2.5px; height: 20px; background: #fff; }
+    .logo-text .brand { font-weight: 800; font-size: 19px; color: var(--text-primary); display: block; }
+    .logo-text .tagline { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-orange); font-weight: 700; }
+    nav { display: flex; gap: 8px; }
+    nav a { padding: 10px 18px; color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 600; border-radius: 8px; transition: all 0.2s; }
+    nav a:hover { color: var(--brand-orange); background: rgba(255, 140, 66, 0.08); }
+    nav a.active { color: var(--brand-orange); background: rgba(255, 140, 66, 0.12); }
+    
+    .hero {
+      text-align: center;
+      padding: 60px 40px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 140, 66, 0.15);
+      color: var(--brand-orange);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+    }
+    
+    .selector-bar {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 40px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .jurisdiction-btn {
+      padding: 12px 24px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .jurisdiction-btn:hover {
+      border-color: var(--brand-orange);
+      color: var(--text-primary);
+    }
+    .jurisdiction-btn.selected {
+      background: rgba(255, 140, 66, 0.15);
+      border-color: var(--brand-orange);
+      color: var(--brand-orange);
+    }
+    .jurisdiction-btn .flag {
+      font-size: 20px;
+    }
+    
+    .compare-instruction {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    
+    .comparison-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: grid;
+      gap: 20px;
+    }
+    
+    .comparison-row {
+      display: grid;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .comparison-row.cols-2 { grid-template-columns: 200px repeat(2, 1fr); }
+    .comparison-row.cols-3 { grid-template-columns: 200px repeat(3, 1fr); }
+    .comparison-row.cols-4 { grid-template-columns: 200px repeat(4, 1fr); }
+    
+    .row-label {
+      background: var(--bg-elevated);
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      color: var(--brand-orange);
+    }
+    
+    .comparison-cell {
+      background: var(--bg-card);
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+    }
+    .comparison-cell.header {
+      background: var(--bg-elevated);
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+      border: 2px solid var(--border-strong);
+    }
+    .comparison-cell .flag {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .comparison-cell .jurisdiction-name {
+      color: var(--text-primary);
+    }
+    .comparison-cell .value {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .comparison-cell .value.highlight {
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+    .comparison-cell .value.warning {
+      color: var(--accent-yellow);
+    }
+    .comparison-cell .value.danger {
+      color: var(--accent-red);
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .status-badge.green { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+    .status-badge.yellow { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
+    .status-badge.red { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+    .status-badge.blue { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+    
+    .empty-state {
+      text-align: center;
+      padding: 80px 40px;
+      color: var(--text-muted);
+    }
+    .empty-state .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .summary-box {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 24px;
+      background: var(--bg-card);
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    .summary-box h3 {
+      color: var(--brand-orange);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    .summary-box p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    @media (max-width: 900px) {
+      .comparison-row { grid-template-columns: 1fr; }
+      .comparison-row.cols-2, .comparison-row.cols-3, .comparison-row.cols-4 { grid-template-columns: 1fr; }
+      .row-label { background: var(--brand-orange); color: #fff; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .selector-bar { padding: 0 20px; }
+      .comparison-grid { padding: 0 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo-container">
+        <div class="logo-icon"></div>
+        <div class="logo-text">
+          <span class="brand">APAC FINSTAB</span>
+          <span class="tagline">Regulatory Intelligence</span>
+        </div>
+      </a>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/ren/">REN</a>
+        <a href="/compare/" class="active">Compare</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">Jurisdiction Analysis</div>
+    <h1>APAC Crypto Regulation Comparison</h1>
+    <p class="hero-subtitle">Side-by-side analysis of licensing, stablecoins, staking, and compliance requirements</p>
+  </section>
+
+  <div class="selector-bar" id="selector">
+    <button class="jurisdiction-btn" data-code="HK" onclick="toggleJurisdiction('HK')">
+      <span class="flag">🇭🇰</span> Hong Kong
+    </button>
+    <button class="jurisdiction-btn" data-code="SG" onclick="toggleJurisdiction('SG')">
+      <span class="flag">🇸🇬</span> Singapore
+    </button>
+    <button class="jurisdiction-btn" data-code="JP" onclick="toggleJurisdiction('JP')">
+      <span class="flag">🇯🇵</span> Japan
+    </button>
+    <button class="jurisdiction-btn" data-code="KR" onclick="toggleJurisdiction('KR')">
+      <span class="flag">🇰🇷</span> South Korea
+    </button>
+    <button class="jurisdiction-btn" data-code="AU" onclick="toggleJurisdiction('AU')">
+      <span class="flag">🇦🇺</span> Australia
+    </button>
+    <button class="jurisdiction-btn" data-code="ID" onclick="toggleJurisdiction('ID')">
+      <span class="flag">🇮🇩</span> Indonesia
+    </button>
+  </div>
+  
+  <p class="compare-instruction">Select 2-4 jurisdictions to compare</p>
+
+  <div id="output">
+    <div class="empty-state">
+      <div class="icon">⚖️</div>
+      <p>Select jurisdictions above to see comparison</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>APAC FINSTAB+ | Jurisdiction Comparison Tool</p>
+    <p>Data updated February 2026. Not legal advice.</p>
+  </footer>
+
+  <script>
+    const jurisdictionData = {
+      HK: {
+        name: 'Hong Kong',
+        flag: '🇭🇰',
+        regulator: 'SFC / HKMA',
+        license: {
+          name: 'VASP License (AMLO)',
+          status: 'Mandatory',
+          statusClass: 'green',
+          timeline: 'Full enforcement since June 2025',
+          cost: 'HKD 5M+ capital'
+        },
+        stablecoin: {
+          status: 'Licensing Q1 2026',
+          statusClass: 'yellow',
+          detail: 'First licenses expected March 2026. HKD-backed focus.',
+          reserves: 'Full reserve + audit required'
+        },
+        staking: {
+          status: 'Permitted (ETF)',
+          statusClass: 'green',
+          detail: 'First staking ETF launched Jan 2026 via ChinaAMC/OSL',
+          tax: 'No specific guidance'
+        },
+        defi: {
+          status: 'Sandbox planned',
+          statusClass: 'yellow',
+          detail: 'SFC indicated DeFi regulatory sandbox intent'
+        },
+        retail: {
+          access: 'Full access',
+          statusClass: 'green',
+          restrictions: 'Licensed platforms only'
+        },
+        score: 8.5,
+        trend: 'Expanding',
+        trendClass: 'green'
+      },
+      SG: {
+        name: 'Singapore',
+        flag: '🇸🇬',
+        regulator: 'MAS',
+        license: {
+          name: 'MPI License (PSA)',
+          status: 'Mandatory',
+          statusClass: 'green',
+          timeline: 'Enforced since 2020',
+          cost: 'SGD 250K-1M capital'
+        },
+        stablecoin: {
+          status: 'Framework active',
+          statusClass: 'green',
+          detail: 'MAS stablecoin framework since Aug 2023',
+          reserves: 'Full reserve + MAS oversight'
+        },
+        staking: {
+          status: 'Guidelines issued',
+          statusClass: 'green',
+          detail: 'MAS staking guidelines Nov 2025. Segregation required.',
+          tax: 'Income tax on rewards'
+        },
+        defi: {
+          status: 'Project Guardian',
+          statusClass: 'green',
+          detail: 'Institutional DeFi pilots active'
+        },
+        retail: {
+          access: 'Restricted',
+          statusClass: 'yellow',
+          restrictions: 'No retail marketing, advertising banned'
+        },
+        score: 8.0,
+        trend: 'Stable',
+        trendClass: 'blue'
+      },
+      JP: {
+        name: 'Japan',
+        flag: '🇯🇵',
+        regulator: 'FSA / JFSA',
+        license: {
+          name: 'CESRB Registration',
+          status: 'Mandatory',
+          statusClass: 'green',
+          timeline: 'Since 2017, updated 2023',
+          cost: 'JPY 10M+ capital'
+        },
+        stablecoin: {
+          status: 'Trust-based only',
+          statusClass: 'yellow',
+          detail: 'Only trust/bank-issued stablecoins permitted',
+          reserves: 'Bank-grade reserve rules'
+        },
+        staking: {
+          status: 'FIA migration',
+          statusClass: 'yellow',
+          detail: 'Moving under Financial Instruments Act by Q2 2026',
+          tax: '55% max (reform to 20% by 2028)'
+        },
+        defi: {
+          status: 'Uncertain',
+          statusClass: 'yellow',
+          detail: 'No clear framework. Case-by-case.'
+        },
+        retail: {
+          access: 'Full access',
+          statusClass: 'green',
+          restrictions: 'Only listed tokens on registered exchanges'
+        },
+        score: 7.5,
+        trend: 'Reforming',
+        trendClass: 'yellow'
+      },
+      KR: {
+        name: 'South Korea',
+        flag: '🇰🇷',
+        regulator: 'FSC / FSS',
+        license: {
+          name: 'VASP Registration',
+          status: 'Mandatory',
+          statusClass: 'green',
+          timeline: 'VAUPA effective Sep 2025',
+          cost: 'KRW 3B+ capital'
+        },
+        stablecoin: {
+          status: 'Restricted',
+          statusClass: 'red',
+          detail: 'KRW stablecoins effectively banned',
+          reserves: 'N/A'
+        },
+        staking: {
+          status: 'Under review',
+          statusClass: 'yellow',
+          detail: 'FSS reviewing after Bithumb incident',
+          tax: '20% on gains >KRW 2.5M (from 2025)'
+        },
+        defi: {
+          status: 'Not addressed',
+          statusClass: 'red',
+          detail: 'No framework. High regulatory risk.'
+        },
+        retail: {
+          access: 'Full access',
+          statusClass: 'green',
+          restrictions: 'Real-name bank accounts required'
+        },
+        score: 6.5,
+        trend: 'Tightening',
+        trendClass: 'red'
+      },
+      AU: {
+        name: 'Australia',
+        flag: '🇦🇺',
+        regulator: 'ASIC / AUSTRAC',
+        license: {
+          name: 'AFSL (pending)',
+          status: 'Grace period',
+          statusClass: 'yellow',
+          timeline: 'AFSL deadline June 30, 2026',
+          cost: 'Varies by activity'
+        },
+        stablecoin: {
+          status: 'Consultation',
+          statusClass: 'yellow',
+          detail: 'Treasury consultation ongoing',
+          reserves: 'TBD'
+        },
+        staking: {
+          status: 'Unclear',
+          statusClass: 'yellow',
+          detail: 'May require AFSL depending on structure',
+          tax: 'CGT on disposal'
+        },
+        defi: {
+          status: 'Unregulated',
+          statusClass: 'yellow',
+          detail: 'No specific guidance'
+        },
+        retail: {
+          access: 'Full access',
+          statusClass: 'green',
+          restrictions: 'CFD restrictions apply'
+        },
+        score: 6.0,
+        trend: 'Developing',
+        trendClass: 'yellow'
+      },
+      ID: {
+        name: 'Indonesia',
+        flag: '🇮🇩',
+        regulator: 'OJK / Bappebti',
+        license: {
+          name: 'Bappebti Registration',
+          status: 'Mandatory',
+          statusClass: 'green',
+          timeline: 'Transition to OJK by 2025',
+          cost: 'IDR 100B capital'
+        },
+        stablecoin: {
+          status: 'Not permitted',
+          statusClass: 'red',
+          detail: 'Only commodity-class crypto allowed',
+          reserves: 'N/A'
+        },
+        staking: {
+          status: 'Not addressed',
+          statusClass: 'red',
+          detail: 'No framework',
+          tax: '0.1% transaction tax'
+        },
+        defi: {
+          status: 'Not permitted',
+          statusClass: 'red',
+          detail: 'Falls outside commodity classification'
+        },
+        retail: {
+          access: 'Restricted',
+          statusClass: 'yellow',
+          restrictions: 'Only approved tokens, no derivatives'
+        },
+        score: 4.5,
+        trend: 'Restrictive',
+        trendClass: 'red'
+      }
+    };
+
+    let selectedJurisdictions = [];
+
+    function toggleJurisdiction(code) {
+      const btn = document.querySelector(`[data-code="${code}"]`);
+      const idx = selectedJurisdictions.indexOf(code);
+      
+      if (idx > -1) {
+        selectedJurisdictions.splice(idx, 1);
+        btn.classList.remove('selected');
+      } else if (selectedJurisdictions.length < 4) {
+        selectedJurisdictions.push(code);
+        btn.classList.add('selected');
+      }
+      
+      renderComparison();
+    }
+
+    function renderComparison() {
+      const output = document.getElementById('output');
+      
+      if (selectedJurisdictions.length < 2) {
+        output.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">⚖️</div>
+            <p>Select at least 2 jurisdictions to compare</p>
+          </div>
+        `;
+        return;
+      }
+
+      const cols = selectedJurisdictions.length;
+      const colClass = `cols-${cols}`;
+      
+      let html = '';
+      
+      // Summary box
+      const avgScore = selectedJurisdictions.reduce((sum, code) => sum + jurisdictionData[code].score, 0) / cols;
+      const bestFor = {
+        stablecoin: selectedJurisdictions.reduce((best, code) => 
+          jurisdictionData[code].stablecoin.statusClass === 'green' ? code : best, null),
+        retail: selectedJurisdictions.reduce((best, code) => 
+          jurisdictionData[code].retail.statusClass === 'green' ? code : best, null),
+        defi: selectedJurisdictions.reduce((best, code) => 
+          jurisdictionData[code].defi.statusClass === 'green' ? code : best, null)
+      };
+      
+      html += `
+        <div class="summary-box">
+          <h3>📊 Quick Summary</h3>
+          <p>
+            Comparing <strong>${selectedJurisdictions.map(c => jurisdictionData[c].name).join(', ')}</strong>. 
+            Average regulatory maturity score: <strong>${avgScore.toFixed(1)}/10</strong>.
+            ${bestFor.stablecoin ? `Best for stablecoins: <strong>${jurisdictionData[bestFor.stablecoin].name}</strong>.` : ''}
+            ${bestFor.defi ? `Best for DeFi: <strong>${jurisdictionData[bestFor.defi].name}</strong>.` : ''}
+          </p>
+        </div>
+      `;
+      
+      html += '<div class="comparison-grid">';
+      
+      // Header row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Jurisdiction</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell header">
+            <span class="flag">${j.flag}</span>
+            <span class="jurisdiction-name">${j.name}</span>
+            <span class="status-badge ${j.trendClass}">${j.trend}</span>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // Regulator row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Regulator</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `<div class="comparison-cell"><div class="value">${j.regulator}</div></div>`;
+      });
+      html += '</div>';
+      
+      // License row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Exchange License</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell">
+            <div class="value"><strong>${j.license.name}</strong></div>
+            <span class="status-badge ${j.license.statusClass}">${j.license.status}</span>
+            <div class="value" style="margin-top:8px">${j.license.timeline}</div>
+            <div class="value" style="margin-top:4px;font-size:12px">${j.license.cost}</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // Stablecoin row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Stablecoin</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell">
+            <span class="status-badge ${j.stablecoin.statusClass}">${j.stablecoin.status}</span>
+            <div class="value" style="margin-top:8px">${j.stablecoin.detail}</div>
+            <div class="value" style="margin-top:4px;font-size:12px">${j.stablecoin.reserves}</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // Staking row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Staking</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell">
+            <span class="status-badge ${j.staking.statusClass}">${j.staking.status}</span>
+            <div class="value" style="margin-top:8px">${j.staking.detail}</div>
+            <div class="value" style="margin-top:4px;font-size:12px">Tax: ${j.staking.tax}</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // DeFi row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">DeFi</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell">
+            <span class="status-badge ${j.defi.statusClass}">${j.defi.status}</span>
+            <div class="value" style="margin-top:8px">${j.defi.detail}</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // Retail Access row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Retail Access</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        html += `
+          <div class="comparison-cell">
+            <span class="status-badge ${j.retail.statusClass}">${j.retail.access}</span>
+            <div class="value" style="margin-top:8px">${j.retail.restrictions}</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      // Score row
+      html += `<div class="comparison-row ${colClass}">`;
+      html += `<div class="row-label">Maturity Score</div>`;
+      selectedJurisdictions.forEach(code => {
+        const j = jurisdictionData[code];
+        const scoreColor = j.score >= 7.5 ? 'var(--accent-green)' : (j.score >= 6 ? 'var(--accent-yellow)' : 'var(--accent-red)');
+        html += `
+          <div class="comparison-cell" style="text-align:center">
+            <div style="font-size:32px;font-weight:800;color:${scoreColor}">${j.score}</div>
+            <div class="value">/10</div>
+          </div>
+        `;
+      });
+      html += '</div>';
+      
+      html += '</div>';
+      
+      output.innerHTML = html;
+    }
+
+    // Pre-select HK and SG on load
+    window.onload = function() {
+      toggleJurisdiction('HK');
+      toggleJurisdiction('SG');
+    };
+  </script>
+</body>
+</html>
