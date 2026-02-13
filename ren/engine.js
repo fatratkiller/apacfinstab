@@ -384,6 +384,128 @@ const RENEngine = (function() {
     return results;
   }
 
+  // ==========================================
+  // MODULE 6: TOPIC RISK DETECTOR
+  // ==========================================
+  
+  const topicRiskMatrix = {
+    'staking_yield': {
+      HK: { risk: 'medium', note: 'SFC monitoring. ETF structure approved, direct yield products unclear.' },
+      SG: { risk: 'medium', note: 'MAS guidelines issued. Segregation required.' },
+      JP: { risk: 'high', note: 'FIA migration in progress. May be classified as financial instrument.' },
+      KR: { risk: 'high', note: 'Under review post-Bithumb. Regulatory uncertainty.' },
+      AU: { risk: 'medium', note: 'May require AFSL depending on structure.' },
+      ID: { risk: 'high', note: 'No framework. Likely not permitted.' },
+      CN: { risk: 'critical', note: 'Banned. No exceptions.' }
+    },
+    'stablecoin_issuance': {
+      HK: { risk: 'medium', note: 'Licensing regime launching Q1 2026. Wait for clarity.' },
+      SG: { risk: 'low', note: 'Clear MAS framework since 2023.' },
+      JP: { risk: 'high', note: 'Trust/bank-issued only. Foreign stablecoins restricted.' },
+      KR: { risk: 'critical', note: 'KRW stablecoins effectively banned.' },
+      AU: { risk: 'medium', note: 'Consultation ongoing. Framework TBD.' },
+      ID: { risk: 'critical', note: 'Not permitted under commodity framework.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    },
+    'defi_lending': {
+      HK: { risk: 'high', note: 'No clear framework. SFC sandbox planned but not active.' },
+      SG: { risk: 'medium', note: 'Project Guardian pilots only. Retail unclear.' },
+      JP: { risk: 'high', note: 'Regulatory uncertainty. Case-by-case.' },
+      KR: { risk: 'critical', note: 'Not addressed. High enforcement risk.' },
+      AU: { risk: 'medium', note: 'Unregulated but ASIC watching.' },
+      ID: { risk: 'critical', note: 'Falls outside permitted activities.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    },
+    'nft_trading': {
+      HK: { risk: 'low', note: 'Generally not regulated unless security-like.' },
+      SG: { risk: 'low', note: 'Not regulated unless payment token features.' },
+      JP: { risk: 'low', note: 'Generally outside CESRB scope.' },
+      KR: { risk: 'medium', note: 'Tax implications. NFT-specific rules emerging.' },
+      AU: { risk: 'low', note: 'Not specifically regulated.' },
+      ID: { risk: 'medium', note: 'Unclear classification.' },
+      CN: { risk: 'high', note: 'Restricted. Only "digital collectibles" permitted.' }
+    },
+    'token_listing': {
+      HK: { risk: 'medium', note: 'Must be on SFC-approved list for licensed platforms.' },
+      SG: { risk: 'medium', note: 'Due diligence requirements under PSA.' },
+      JP: { risk: 'high', note: 'Strict JVCEA screening. Whitelisting required.' },
+      KR: { risk: 'high', note: 'Real-name verification. "Ghost coin" crackdown.' },
+      AU: { risk: 'medium', note: 'AFSL implications for certain tokens.' },
+      ID: { risk: 'high', note: 'Only Bappebti-approved tokens.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    },
+    'custody_services': {
+      HK: { risk: 'medium', note: 'FSTB legislation expected 2026. Prepare for licensing.' },
+      SG: { risk: 'low', note: 'Clear framework under PSA.' },
+      JP: { risk: 'medium', note: 'Regulated under CESRB framework.' },
+      KR: { risk: 'medium', note: 'VAUPA requirements apply.' },
+      AU: { risk: 'high', note: 'AFSL likely required. Deadline June 2026.' },
+      ID: { risk: 'high', note: 'Must work with registered entities.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    },
+    'airdrop_marketing': {
+      HK: { risk: 'medium', note: 'May trigger VASP obligations if promotional.' },
+      SG: { risk: 'high', note: 'Marketing restrictions. No retail solicitation.' },
+      JP: { risk: 'medium', note: 'Tax implications for recipients.' },
+      KR: { risk: 'medium', note: 'Must comply with advertising rules.' },
+      AU: { risk: 'low', note: 'Generally permitted with disclosures.' },
+      ID: { risk: 'medium', note: 'Careful with unregistered token promotion.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    },
+    'algorithmic_stablecoin': {
+      HK: { risk: 'critical', note: 'Likely not approvable under new regime.' },
+      SG: { risk: 'critical', note: 'MAS explicitly cautious post-Terra.' },
+      JP: { risk: 'critical', note: 'Not permitted under trust framework.' },
+      KR: { risk: 'critical', note: 'De facto banned after Terra collapse.' },
+      AU: { risk: 'high', note: 'High regulatory scrutiny expected.' },
+      ID: { risk: 'critical', note: 'Not permitted.' },
+      CN: { risk: 'critical', note: 'Banned.' }
+    }
+  };
+
+  function runTopicRiskDetection(topic, regions = null) {
+    const topicData = topicRiskMatrix[topic];
+    if (!topicData) {
+      return {
+        available: false,
+        topic,
+        message: 'Topic not in risk database. Available: ' + Object.keys(topicRiskMatrix).join(', ')
+      };
+    }
+
+    const targetRegions = regions || Object.keys(topicData);
+    const results = {};
+    let highestRisk = 'low';
+    const riskLevels = { low: 1, medium: 2, high: 3, critical: 4 };
+
+    targetRegions.forEach(r => {
+      if (topicData[r]) {
+        results[r] = topicData[r];
+        if (riskLevels[topicData[r].risk] > riskLevels[highestRisk]) {
+          highestRisk = topicData[r].risk;
+        }
+      }
+    });
+
+    const safeRegions = Object.entries(results).filter(([_, v]) => v.risk === 'low').map(([k]) => k);
+    const dangerRegions = Object.entries(results).filter(([_, v]) => v.risk === 'critical').map(([k]) => k);
+
+    return {
+      available: true,
+      topic,
+      topicLabel: topic.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      results,
+      summary: {
+        highestRisk,
+        safeRegions,
+        dangerRegions,
+        recommendation: dangerRegions.length > 0 
+          ? `Avoid or seek legal counsel for: ${dangerRegions.join(', ')}`
+          : (safeRegions.length > 0 ? `Lower risk entry points: ${safeRegions.join(', ')}` : 'Proceed with caution in all jurisdictions.')
+      }
+    };
+  }
+
   // Public API
   return {
     processQuery,
@@ -391,7 +513,9 @@ const RENEngine = (function() {
     runBoundaryEngine,
     runTimingAnalysis,
     runRippleMapping,
-    version: '2.0.0-phase2'
+    runTopicRiskDetection,
+    getAvailableTopics: () => Object.keys(topicRiskMatrix),
+    version: '2.1.0-phase2'
   };
   
 })();

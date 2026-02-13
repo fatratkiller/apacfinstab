@@ -643,6 +643,27 @@
       <button class="run-btn" id="runBtn" onclick="runREN()">
         ⚡ Run REN Analysis
       </button>
+      
+      <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border-strong)">
+        <h2 style="font-size:16px;color:var(--brand-orange);margin-bottom:16px">🚨 Topic Risk Scanner</h2>
+        <div class="form-group">
+          <label>Select Topic</label>
+          <select id="riskTopic">
+            <option value="">Choose a topic...</option>
+            <option value="staking_yield">Staking Yield Products</option>
+            <option value="stablecoin_issuance">Stablecoin Issuance</option>
+            <option value="defi_lending">DeFi Lending</option>
+            <option value="nft_trading">NFT Trading</option>
+            <option value="token_listing">Token Listing</option>
+            <option value="custody_services">Custody Services</option>
+            <option value="airdrop_marketing">Airdrop / Marketing</option>
+            <option value="algorithmic_stablecoin">Algorithmic Stablecoin</option>
+          </select>
+        </div>
+        <button class="run-btn" style="background:linear-gradient(135deg, #ef4444 0%, #dc2626 100%)" onclick="runRiskScan()">
+          🔍 Scan Risk
+        </button>
+      </div>
     </aside>
 
     <section class="output-panel" id="output">
@@ -845,6 +866,80 @@
         <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:13px">
           Analysis completed in ${results.processingTimeMs}ms
         </div>
+      `;
+      
+      output.innerHTML = html;
+    }
+    
+    function runRiskScan() {
+      const topic = document.getElementById('riskTopic').value;
+      if (!topic) { alert('Please select a topic'); return; }
+      
+      const output = document.getElementById('output');
+      output.innerHTML = '<div class="processing"><div class="spinner"></div><p style="margin-top:16px;color:var(--text-muted)">Scanning risk...</p></div>';
+      
+      setTimeout(() => {
+        const results = RENEngine.runTopicRiskDetection(topic);
+        renderRiskResults(results);
+      }, 500);
+    }
+    
+    function renderRiskResults(results) {
+      const output = document.getElementById('output');
+      if (!results.available) {
+        output.innerHTML = `<div class="module-card"><p>${results.message}</p></div>`;
+        return;
+      }
+      
+      const riskColors = {
+        low: 'var(--accent-green)',
+        medium: 'var(--accent-yellow)', 
+        high: '#f97316',
+        critical: 'var(--accent-red)'
+      };
+      const riskBadgeClass = {
+        low: 'success',
+        medium: 'warning',
+        high: 'warning',
+        critical: 'danger'
+      };
+      
+      let html = `
+        <div class="module-card">
+          <div class="module-header">
+            <span class="module-title">Topic Risk Analysis</span>
+            <span class="module-badge ${riskBadgeClass[results.summary.highestRisk]}">${results.summary.highestRisk.toUpperCase()} RISK</span>
+          </div>
+          <h3 style="font-size:24px;margin-bottom:20px">${results.topicLabel}</h3>
+          
+          <div style="display:grid;gap:12px">
+      `;
+      
+      const regionNames = { HK: 'Hong Kong', SG: 'Singapore', JP: 'Japan', KR: 'South Korea', AU: 'Australia', ID: 'Indonesia', CN: 'China' };
+      const flags = { HK: '🇭🇰', SG: '🇸🇬', JP: '🇯🇵', KR: '🇰🇷', AU: '🇦🇺', ID: '🇮🇩', CN: '🇨🇳' };
+      
+      Object.entries(results.results).forEach(([region, data]) => {
+        html += `
+          <div style="display:flex;align-items:center;gap:16px;padding:14px 16px;background:var(--bg-elevated);border-radius:8px;border-left:4px solid ${riskColors[data.risk]}">
+            <span style="font-size:24px">${flags[region]}</span>
+            <div style="flex:1">
+              <div style="font-weight:700">${regionNames[region]}</div>
+              <div style="font-size:13px;color:var(--text-secondary)">${data.note}</div>
+            </div>
+            <span class="module-badge ${riskBadgeClass[data.risk]}">${data.risk}</span>
+          </div>
+        `;
+      });
+      
+      html += `</div>`;
+      
+      // Recommendation
+      html += `
+        <div class="recommendation-box" style="margin-top:20px">
+          <h4>Strategic Recommendation</h4>
+          <p>${results.summary.recommendation}</p>
+        </div>
+      </div>
       `;
       
       output.innerHTML = html;
