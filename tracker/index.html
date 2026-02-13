@@ -14,9 +14,9 @@
     gtag('config', 'G-PX174NJW6M');
   </script>
   
-  <title>APAC Crypto Policy Tracker | Real-time Regulation Database for ETH, BTC, SOL, Exchanges</title>
-  <meta name="description" content="Track crypto regulations across Asia-Pacific in real-time. Filter by protocol (ETH, BTC, SOL, TON), region (Hong Kong, Singapore, Japan), topic (Staking, ETF, DeFi), or entity (Binance, OKX). Updated daily." />
-  <meta name="keywords" content="crypto regulation tracker, APAC crypto policy, Ethereum regulation, Bitcoin regulation Asia, Solana policy, Binance license, OKX regulation, Hong Kong crypto, Singapore MAS crypto, Japan FSA crypto" />
+  <title>APAC Crypto Policy Tracker & Comparison | Real-time Regulation Database</title>
+  <meta name="description" content="Track and compare crypto regulations across Asia-Pacific. Hong Kong vs Singapore vs Japan side-by-side. Filter by protocol, region, topic. Updated daily." />
+  <meta name="keywords" content="crypto regulation tracker, APAC crypto policy, Hong Kong vs Singapore crypto, Japan FSA cryptocurrency, crypto regulation comparison, APAC crypto comparison, stablecoin regulation Asia" />
   <meta name="robots" content="index, follow" />
   
   <meta property="og:type" content="website" />
@@ -286,6 +286,87 @@
     .footer-logo { font-size: 18px; font-weight: 800; color: var(--brand-orange); margin-bottom: 12px; }
     .footer-text { font-size: 13px; color: var(--text-muted); }
     
+    /* Tabs */
+    .tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 40px;
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      padding: 12px 32px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      border-color: var(--brand-orange);
+      color: var(--text-primary);
+    }
+    .tab-btn.active {
+      background: rgba(255, 140, 66, 0.15);
+      border-color: var(--brand-orange);
+      color: var(--brand-orange);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+    /* Compare View */
+    .compare-selector {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 40px;
+      margin-bottom: 16px;
+    }
+    .jurisdiction-btn {
+      padding: 10px 20px;
+      background: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .jurisdiction-btn:hover { border-color: var(--brand-orange); color: var(--text-primary); }
+    .jurisdiction-btn.selected { background: rgba(255, 140, 66, 0.15); border-color: var(--brand-orange); color: var(--brand-orange); }
+    .compare-instruction { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+    
+    .comparison-grid { max-width: 1400px; margin: 0 auto; padding: 0 40px 60px; display: grid; gap: 16px; }
+    .comparison-row { display: grid; gap: 12px; align-items: stretch; }
+    .comparison-row.cols-2 { grid-template-columns: 180px repeat(2, 1fr); }
+    .comparison-row.cols-3 { grid-template-columns: 180px repeat(3, 1fr); }
+    .comparison-row.cols-4 { grid-template-columns: 180px repeat(4, 1fr); }
+    .row-label { background: var(--bg-elevated); padding: 14px; border-radius: 8px; font-weight: 700; font-size: 13px; display: flex; align-items: center; color: var(--brand-orange); }
+    .comparison-cell { background: var(--bg-card); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle); font-size: 13px; }
+    .comparison-cell.header { background: var(--bg-elevated); text-align: center; font-weight: 700; border: 2px solid var(--border-strong); }
+    .comparison-cell .flag { font-size: 20px; display: block; margin-bottom: 4px; }
+    .comparison-cell .value { color: var(--text-secondary); }
+    .status-badge { display: inline-block; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: 600; }
+    .status-badge.green { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+    .status-badge.yellow { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
+    .status-badge.red { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+    .status-badge.blue { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+    .compare-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .compare-empty .icon { font-size: 40px; margin-bottom: 12px; }
+    
+    @media (max-width: 900px) {
+      .comparison-row, .comparison-row.cols-2, .comparison-row.cols-3, .comparison-row.cols-4 { grid-template-columns: 1fr; }
+      .row-label { background: var(--brand-orange); color: #fff; }
+    }
+    
     /* CTA */
     .cta-bar {
       padding: 20px 40px;
@@ -340,8 +421,8 @@
     <nav>
       <a href="/">Dashboard</a>
       <a href="/tracker/" class="active">Policy Tracker</a>
-      <a href="/blog.html">Insights</a>
-      <a href="/contact.html">Connect</a>
+      <a href="/ren/">REN</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -366,6 +447,12 @@
   </div>
 </section>
 
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('events')">📋 Policy Events</button>
+  <button class="tab-btn" onclick="switchTab('compare')">⚖️ Compare Jurisdictions</button>
+</div>
+
+<div id="events-view" class="tab-content active">
 <section class="filters" id="filters">
   <div class="filter-section">
     <span class="filter-label">Protocol</span>
@@ -403,6 +490,22 @@
     <div class="loading">Loading policy events...</div>
   </div>
 </section>
+</div>
+
+<div id="compare-view" class="tab-content">
+  <div class="compare-selector" id="compare-selector">
+    <button class="jurisdiction-btn" data-code="HK" onclick="toggleCompare('HK')">🇭🇰 Hong Kong</button>
+    <button class="jurisdiction-btn" data-code="SG" onclick="toggleCompare('SG')">🇸🇬 Singapore</button>
+    <button class="jurisdiction-btn" data-code="JP" onclick="toggleCompare('JP')">🇯🇵 Japan</button>
+    <button class="jurisdiction-btn" data-code="KR" onclick="toggleCompare('KR')">🇰🇷 South Korea</button>
+    <button class="jurisdiction-btn" data-code="AU" onclick="toggleCompare('AU')">🇦🇺 Australia</button>
+    <button class="jurisdiction-btn" data-code="ID" onclick="toggleCompare('ID')">🇮🇩 Indonesia</button>
+  </div>
+  <p class="compare-instruction">Select 2-4 jurisdictions to compare</p>
+  <div id="compare-output">
+    <div class="compare-empty"><div class="icon">⚖️</div><p>Select jurisdictions above</p></div>
+  </div>
+</div>
 </main>
 
 <footer>
@@ -557,6 +660,124 @@ function updateStats() {
 }
 
 loadData();
+
+// Tab switching
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.tab-btn[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(tab + '-view').classList.add('active');
+}
+
+// Compare functionality
+const jurisdictionData = {
+  HK: { name: 'Hong Kong', flag: '🇭🇰', regulator: 'SFC / HKMA',
+    license: { name: 'VASP License', status: 'Mandatory', statusClass: 'green', detail: 'Full enforcement since June 2025' },
+    stablecoin: { status: 'Licensing Q1 2026', statusClass: 'yellow', detail: 'First licenses March 2026' },
+    staking: { status: 'Permitted', statusClass: 'green', detail: 'ETF launched Jan 2026' },
+    defi: { status: 'Sandbox planned', statusClass: 'yellow' },
+    retail: { status: 'Full access', statusClass: 'green' },
+    score: 8.5, trend: 'Expanding', trendClass: 'green' },
+  SG: { name: 'Singapore', flag: '🇸🇬', regulator: 'MAS',
+    license: { name: 'MPI License', status: 'Mandatory', statusClass: 'green', detail: 'Enforced since 2020' },
+    stablecoin: { status: 'Framework active', statusClass: 'green', detail: 'MAS framework Aug 2023' },
+    staking: { status: 'Guidelines issued', statusClass: 'green', detail: 'Nov 2025 guidelines' },
+    defi: { status: 'Project Guardian', statusClass: 'green' },
+    retail: { status: 'Restricted', statusClass: 'yellow' },
+    score: 8.0, trend: 'Stable', trendClass: 'blue' },
+  JP: { name: 'Japan', flag: '🇯🇵', regulator: 'FSA / JFSA',
+    license: { name: 'CESRB Registration', status: 'Mandatory', statusClass: 'green', detail: 'Since 2017, updated 2023' },
+    stablecoin: { status: 'Trust-based only', statusClass: 'yellow', detail: 'Bank-grade reserves' },
+    staking: { status: 'FIA migration', statusClass: 'yellow', detail: 'Q2 2026 transition' },
+    defi: { status: 'Uncertain', statusClass: 'yellow' },
+    retail: { status: 'Full access', statusClass: 'green' },
+    score: 7.5, trend: 'Reforming', trendClass: 'yellow' },
+  KR: { name: 'South Korea', flag: '🇰🇷', regulator: 'FSC / FSS',
+    license: { name: 'VASP Registration', status: 'Mandatory', statusClass: 'green', detail: 'VAUPA effective Sep 2025' },
+    stablecoin: { status: 'Restricted', statusClass: 'red', detail: 'KRW stablecoins banned' },
+    staking: { status: 'Under review', statusClass: 'yellow', detail: 'Post-Bithumb review' },
+    defi: { status: 'Not addressed', statusClass: 'red' },
+    retail: { status: 'Full access', statusClass: 'green' },
+    score: 6.5, trend: 'Tightening', trendClass: 'red' },
+  AU: { name: 'Australia', flag: '🇦🇺', regulator: 'ASIC / AUSTRAC',
+    license: { name: 'AFSL (pending)', status: 'Grace period', statusClass: 'yellow', detail: 'Deadline June 30, 2026' },
+    stablecoin: { status: 'Consultation', statusClass: 'yellow', detail: 'Treasury ongoing' },
+    staking: { status: 'Unclear', statusClass: 'yellow', detail: 'May require AFSL' },
+    defi: { status: 'Unregulated', statusClass: 'yellow' },
+    retail: { status: 'Full access', statusClass: 'green' },
+    score: 6.0, trend: 'Developing', trendClass: 'yellow' },
+  ID: { name: 'Indonesia', flag: '🇮🇩', regulator: 'OJK / Bappebti',
+    license: { name: 'Bappebti Reg', status: 'Mandatory', statusClass: 'green', detail: 'Transition to OJK' },
+    stablecoin: { status: 'Not permitted', statusClass: 'red', detail: 'Commodity-only' },
+    staking: { status: 'Not addressed', statusClass: 'red', detail: 'No framework' },
+    defi: { status: 'Not permitted', statusClass: 'red' },
+    retail: { status: 'Restricted', statusClass: 'yellow' },
+    score: 4.5, trend: 'Restrictive', trendClass: 'red' }
+};
+
+let selectedJurisdictions = [];
+
+function toggleCompare(code) {
+  const btn = document.querySelector(`.jurisdiction-btn[data-code="${code}"]`);
+  const idx = selectedJurisdictions.indexOf(code);
+  if (idx > -1) { selectedJurisdictions.splice(idx, 1); btn.classList.remove('selected'); }
+  else if (selectedJurisdictions.length < 4) { selectedJurisdictions.push(code); btn.classList.add('selected'); }
+  renderComparison();
+}
+
+function renderComparison() {
+  const output = document.getElementById('compare-output');
+  if (selectedJurisdictions.length < 2) {
+    output.innerHTML = '<div class="compare-empty"><div class="icon">⚖️</div><p>Select at least 2 jurisdictions</p></div>';
+    return;
+  }
+  const cols = selectedJurisdictions.length;
+  const colClass = `cols-${cols}`;
+  let html = '<div class="comparison-grid">';
+  
+  // Header
+  html += `<div class="comparison-row ${colClass}"><div class="row-label">Jurisdiction</div>`;
+  selectedJurisdictions.forEach(c => {
+    const j = jurisdictionData[c];
+    html += `<div class="comparison-cell header"><span class="flag">${j.flag}</span>${j.name}<br><span class="status-badge ${j.trendClass}">${j.trend}</span></div>`;
+  });
+  html += '</div>';
+  
+  // Rows
+  const rows = [
+    { label: 'Regulator', key: 'regulator', simple: true },
+    { label: 'Exchange License', key: 'license' },
+    { label: 'Stablecoin', key: 'stablecoin' },
+    { label: 'Staking', key: 'staking' },
+    { label: 'DeFi', key: 'defi' },
+    { label: 'Retail Access', key: 'retail' }
+  ];
+  
+  rows.forEach(row => {
+    html += `<div class="comparison-row ${colClass}"><div class="row-label">${row.label}</div>`;
+    selectedJurisdictions.forEach(c => {
+      const j = jurisdictionData[c];
+      if (row.simple) {
+        html += `<div class="comparison-cell"><div class="value">${j[row.key]}</div></div>`;
+      } else {
+        const d = j[row.key];
+        html += `<div class="comparison-cell"><span class="status-badge ${d.statusClass}">${d.status}</span><div class="value" style="margin-top:6px">${d.detail || ''}</div></div>`;
+      }
+    });
+    html += '</div>';
+  });
+  
+  // Score
+  html += `<div class="comparison-row ${colClass}"><div class="row-label">Maturity Score</div>`;
+  selectedJurisdictions.forEach(c => {
+    const j = jurisdictionData[c];
+    const color = j.score >= 7.5 ? 'var(--accent-green)' : (j.score >= 6 ? 'var(--accent-yellow)' : 'var(--accent-red)');
+    html += `<div class="comparison-cell" style="text-align:center"><div style="font-size:28px;font-weight:800;color:${color}">${j.score}</div><div class="value">/10</div></div>`;
+  });
+  html += '</div></div>';
+  
+  output.innerHTML = html;
+}
 </script>
 
 </body>
