@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REN Tarot - Compliance Oracle | APAC FINSTAB</title>
+  <meta name="description" content="Divine your regulatory destiny. The Compliance Oracle reveals whether the stars align for your engagement.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-glow: rgba(212, 175, 55, 0.3);
+      --purple-deep: #1a0a2e;
+      --purple-mid: #2d1b4e;
+      --purple-light: #4a2c6a;
+      --text-light: #f5f0e8;
+      --text-muted: #a89cc8;
+      --danger: #c41e3a;
+      --success: #228b22;
+      --warning: #daa520;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, var(--purple-deep) 0%, #0d0518 100%);
+      color: var(--text-light);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Mystical Background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.6), transparent);
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: twinkle 4s ease-in-out infinite;
+      opacity: 0.5;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.8; }
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      z-index: 10;
+    }
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    nav a:hover, nav a.active {
+      color: var(--gold);
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 40px 60px;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 56px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px var(--gold-glow);
+    }
+    .hero .subtitle {
+      font-size: 20px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .oracle-icon {
+      font-size: 80px;
+      margin-bottom: 24px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Main Container */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      position: relative;
+      z-index: 10;
+    }
+    
+    /* Question Panel */
+    .question-panel {
+      background: linear-gradient(135deg, var(--purple-mid) 0%, var(--purple-deep) 100%);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      box-shadow: 0 0 60px rgba(212, 175, 55, 0.1);
+    }
+    .question-panel h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 32px;
+      font-size: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      color: var(--text-light);
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+    
+    .divine-btn {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--gold) 0%, #b8860b 100%);
+      color: var(--purple-deep);
+      border: none;
+      border-radius: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 16px;
+    }
+    .divine-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px var(--gold-glow);
+    }
+    
+    /* Tarot Cards Display */
+    .tarot-spread {
+      display: none;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    .tarot-spread.visible {
+      display: flex;
+    }
+    
+    .tarot-card {
+      width: 220px;
+      height: 360px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .tarot-card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+    .tarot-card.flipped .tarot-card-inner {
+      transform: rotateY(180deg);
+    }
+    .tarot-card.reversed.flipped .tarot-card-inner {
+      transform: rotateY(180deg) rotateZ(180deg);
+    }
+    
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .card-back {
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--purple-deep) 100%);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+    }
+    .card-back::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 2px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+    }
+    
+    .card-front {
+      background: linear-gradient(180deg, var(--purple-mid) 0%, var(--purple-deep) 100%);
+      border: 3px solid var(--gold);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .card-header {
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .card-position {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    
+    .card-symbol {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+    
+    .card-meaning {
+      text-align: center;
+      padding-top: 12px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .card-verdict {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card-verdict.positive { color: var(--success); }
+    .card-verdict.warning { color: var(--warning); }
+    .card-verdict.danger { color: var(--danger); }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    
+    .reversed-indicator {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--danger);
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    
+    /* Reading Summary */
+    .reading-summary {
+      display: none;
+      background: linear-gradient(135deg, var(--purple-mid) 0%, var(--purple-deep) 100%);
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .reading-summary.visible {
+      display: block;
+    }
+    .reading-summary h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    .final-verdict {
+      font-size: 48px;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 16px;
+    }
+    .final-verdict.engage { color: var(--success); }
+    .final-verdict.monitor { color: var(--warning); }
+    .final-verdict.silent { color: var(--danger); }
+    
+    .oracle-message {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    
+    .wisdom-box {
+      background: rgba(0,0,0,0.3);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+    }
+    .wisdom-box h4 {
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .wisdom-box ul {
+      list-style: none;
+    }
+    .wisdom-box li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    .wisdom-box li:last-child {
+      border-bottom: none;
+    }
+    .wisdom-box li::before {
+      content: '✦ ';
+      color: var(--gold);
+    }
+    
+    /* Processing Animation */
+    .divining {
+      display: none;
+      text-align: center;
+      padding: 60px;
+    }
+    .divining.visible {
+      display: block;
+    }
+    .crystal-ball {
+      font-size: 100px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .divining-text {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 24px;
+      margin-top: 24px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .tarot-card { width: 160px; height: 260px; }
+      .tarot-spread { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  
+  <header>
+    <a href="/" class="logo">APAC FINSTAB</a>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/tracker/">Tracker</a>
+      <a href="/ren/" class="active">REN Oracle</a>
+      <a href="/blog.html">Insights</a>
+    </nav>
+  </header>
+  
+  <section class="hero">
+    <div class="oracle-icon">🔮</div>
+    <h1>The Compliance Oracle</h1>
+    <p class="subtitle">"Reveal the path through the regulatory mist..."</p>
+  </section>
+  
+  <main class="main-container">
+    <!-- Question Panel -->
+    <div class="question-panel" id="questionPanel">
+      <h2>☽ Seek Your Reading ☾</h2>
+      
+      <div class="form-group">
+        <label>What brings you to the Oracle?</label>
+        <select id="eventType">
+          <option value="">Choose your question...</option>
+          <option value="public_consultation">📜 A public consultation awaits my voice</option>
+          <option value="direct_inquiry">⚖️ The regulators have summoned me</option>
+          <option value="enforcement_competitor">👁️ My rival faces the authority's gaze</option>
+          <option value="draft_leak">🌙 Whispers of new rules reach my ears</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>What nature of entity are you?</label>
+        <select id="orgType">
+          <option value="">Reveal your form...</option>
+          <option value="foundation">🏛️ A Foundation, keeper of neutrality</option>
+          <option value="cex_licensed">🏰 An Exchange, blessed with license</option>
+          <option value="defi_unlicensed">🌊 A DeFi spirit, wild and free</option>
+          <option value="investor">💎 An Institutional seeker of returns</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Which realm concerns you?</label>
+        <select id="region">
+          <option value="">Point to the stars...</option>
+          <option value="HK">🇭🇰 Hong Kong - The Eastern Gateway</option>
+          <option value="SG">🇸🇬 Singapore - The Lion's Domain</option>
+          <option value="JP">🇯🇵 Japan - Land of the Rising Sun</option>
+          <option value="KR">🇰🇷 Korea - The Dragon's Peninsula</option>
+          <option value="AU">🇦🇺 Australia - The Southern Cross</option>
+        </select>
+      </div>
+      
+      <button class="divine-btn" onclick="divineReading()">
+        ✧ Divine My Fate ✧
+      </button>
+    </div>
+    
+    <!-- Divining Animation -->
+    <div class="divining" id="divining">
+      <div class="crystal-ball">🔮</div>
+      <p class="divining-text">The Oracle peers into the regulatory mist...</p>
+    </div>
+    
+    <!-- Tarot Cards -->
+    <div class="tarot-spread" id="tarotSpread">
+      <div class="tarot-card" id="card1" onclick="flipCard(this)">
+        <div class="tarot-card-inner">
+          <div class="card-face card-back">🌟</div>
+          <div class="card-face card-front">
+            <div class="card-header">
+              <div class="card-position">Past Influence</div>
+              <div class="card-title" id="card1-title">The Tower</div>
+            </div>
+            <div class="card-symbol" id="card1-symbol">🗼</div>
+            <div class="card-meaning">
+              <div class="card-verdict" id="card1-verdict">Disruption</div>
+              <div class="card-desc" id="card1-desc">Past regulatory changes shape today's landscape</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tarot-card" id="card2" onclick="flipCard(this)">
+        <div class="tarot-card-inner">
+          <div class="card-face card-back">🌟</div>
+          <div class="card-face card-front">
+            <div class="card-header">
+              <div class="card-position">Present State</div>
+              <div class="card-title" id="card2-title">Justice</div>
+            </div>
+            <div class="card-symbol" id="card2-symbol">⚖️</div>
+            <div class="card-meaning">
+              <div class="card-verdict positive" id="card2-verdict">Favorable</div>
+              <div class="card-desc" id="card2-desc">The scales tip in your favor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tarot-card" id="card3" onclick="flipCard(this)">
+        <div class="tarot-card-inner">
+          <div class="card-face card-back">🌟</div>
+          <div class="card-face card-front">
+            <div class="card-header">
+              <div class="card-position">Future Path</div>
+              <div class="card-title" id="card3-title">The Star</div>
+            </div>
+            <div class="card-symbol" id="card3-symbol">⭐</div>
+            <div class="card-meaning">
+              <div class="card-verdict positive" id="card3-verdict">Hope</div>
+              <div class="card-desc" id="card3-desc">Clarity emerges from the regulatory fog</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Reading Summary -->
+    <div class="reading-summary" id="readingSummary">
+      <h3>☽ The Oracle Speaks ☾</h3>
+      <div class="final-verdict engage" id="finalVerdict">ENGAGE</div>
+      <p class="oracle-message" id="oracleMessage">
+        The stars align for your voice to be heard. The regulators are receptive, 
+        and your message carries the weight of legitimacy. Speak now, for the window 
+        of opportunity shall not remain open forever.
+      </p>
+      
+      <div class="wisdom-box">
+        <h4>✦ The Oracle's Wisdom</h4>
+        <ul id="wisdomList">
+          <li>Your timing is auspicious — the consultation period ends in 45 days</li>
+          <li>Maintain credible neutrality in your submission</li>
+          <li>Reference verifiable data to strengthen your position</li>
+          <li>Watch for ripple effects in Singapore and Japan</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>The Compliance Oracle | APAC FINSTAB</p>
+    <p style="margin-top:8px">For entertainment and strategic inspiration. Not legal advice.</p>
+  </footer>
+  
+  <script>
+    const tarotCards = {
+      tower: { title: 'The Tower', symbol: '🗼', meaning: 'Disruption awaits' },
+      justice: { title: 'Justice', symbol: '⚖️', meaning: 'Balance and fairness' },
+      star: { title: 'The Star', symbol: '⭐', meaning: 'Hope and clarity' },
+      emperor: { title: 'The Emperor', symbol: '👑', meaning: 'Authority and structure' },
+      hermit: { title: 'The Hermit', symbol: '🏮', meaning: 'Seek wisdom in silence' },
+      wheel: { title: 'Wheel of Fortune', symbol: '🎡', meaning: 'Change is coming' },
+      moon: { title: 'The Moon', symbol: '🌙', meaning: 'Uncertainty and illusion' },
+      sun: { title: 'The Sun', symbol: '☀️', meaning: 'Success and vitality' },
+      death: { title: 'Death', symbol: '💀', meaning: 'Transformation required' },
+      fool: { title: 'The Fool', symbol: '🃏', meaning: 'New beginnings' }
+    };
+    
+    const regionVerdicts = {
+      HK: { verdict: 'engage', message: 'Hong Kong\'s regulators welcome structured dialogue. Your voice carries weight in the Eastern Gateway.' },
+      SG: { verdict: 'monitor', message: 'Singapore\'s MAS moves deliberately. Watch and prepare, but do not rush.' },
+      JP: { verdict: 'engage', message: 'Japan values detailed technical submissions. Precision is your ally.' },
+      KR: { verdict: 'silent', message: 'Korea\'s regulatory storm has not yet passed. Patience is wisdom.' },
+      AU: { verdict: 'engage', message: 'Australia seeks industry input. The Southern Cross guides you forward.' }
+    };
+    
+    function divineReading() {
+      const eventType = document.getElementById('eventType').value;
+      const orgType = document.getElementById('orgType').value;
+      const region = document.getElementById('region').value;
+      
+      if (!eventType || !orgType) {
+        alert('The Oracle requires you to speak your question and reveal your nature.');
+        return;
+      }
+      
+      // Show divining animation
+      document.getElementById('questionPanel').style.display = 'none';
+      document.getElementById('divining').classList.add('visible');
+      
+      setTimeout(() => {
+        document.getElementById('divining').classList.remove('visible');
+        showReading(region || 'HK');
+      }, 2500);
+    }
+    
+    function showReading(region) {
+      // Prepare cards based on region
+      const cards = prepareCards(region);
+      
+      // Update card content
+      for (let i = 1; i <= 3; i++) {
+        const card = cards[i-1];
+        document.getElementById(`card${i}-title`).textContent = card.title;
+        document.getElementById(`card${i}-symbol`).textContent = card.symbol;
+        document.getElementById(`card${i}-verdict`).textContent = card.verdict;
+        document.getElementById(`card${i}-verdict`).className = `card-verdict ${card.verdictClass}`;
+        document.getElementById(`card${i}-desc`).textContent = card.desc;
+        
+        const cardEl = document.getElementById(`card${i}`);
+        cardEl.classList.remove('reversed', 'flipped');
+        if (card.reversed) {
+          cardEl.classList.add('reversed');
+        }
+      }
+      
+      // Update summary
+      const rv = regionVerdicts[region];
+      document.getElementById('finalVerdict').textContent = rv.verdict.toUpperCase();
+      document.getElementById('finalVerdict').className = `final-verdict ${rv.verdict}`;
+      document.getElementById('oracleMessage').textContent = rv.message;
+      
+      // Show cards
+      document.getElementById('tarotSpread').classList.add('visible');
+      
+      // Auto-flip cards with delay
+      setTimeout(() => flipCard(document.getElementById('card1')), 500);
+      setTimeout(() => flipCard(document.getElementById('card2')), 1200);
+      setTimeout(() => flipCard(document.getElementById('card3')), 1900);
+      setTimeout(() => {
+        document.getElementById('readingSummary').classList.add('visible');
+      }, 2600);
+    }
+    
+    function prepareCards(region) {
+      const cardPool = Object.values(tarotCards);
+      const selected = [];
+      const used = new Set();
+      
+      for (let i = 0; i < 3; i++) {
+        let idx;
+        do {
+          idx = Math.floor(Math.random() * cardPool.length);
+        } while (used.has(idx));
+        used.add(idx);
+        
+        const card = cardPool[idx];
+        const reversed = Math.random() > 0.7;
+        
+        let verdictClass, verdict;
+        if (reversed) {
+          verdictClass = 'danger';
+          verdict = 'Reversed - Caution';
+        } else {
+          verdictClass = Math.random() > 0.3 ? 'positive' : 'warning';
+          verdict = verdictClass === 'positive' ? 'Upright - Favorable' : 'Upright - Consider';
+        }
+        
+        selected.push({
+          ...card,
+          reversed,
+          verdict,
+          verdictClass,
+          desc: card.meaning
+        });
+      }
+      
+      return selected;
+    }
+    
+    function flipCard(card) {
+      card.classList.add('flipped');
+    }
+    
+    function resetReading() {
+      document.getElementById('questionPanel').style.display = 'block';
+      document.getElementById('tarotSpread').classList.remove('visible');
+      document.getElementById('readingSummary').classList.remove('visible');
+      document.querySelectorAll('.tarot-card').forEach(c => c.classList.remove('flipped', 'reversed'));
+    }
+  </script>
+</body>
+</html>
