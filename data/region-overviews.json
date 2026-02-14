@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "lastUpdated": "2026-02-14T17:15:00+08:00",
+    "version": "1.0"
+  },
+  "regions": {
+    "HK": {
+      "name": "Hong Kong",
+      "regulator": "Securities and Futures Commission (SFC)",
+      "framework": "Virtual Asset Service Provider (VASP) Licensing Regime",
+      "status": "Active - Full framework operational",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Type 1 & Type 7 (SFC) + VASP License",
+        "capitalRequirement": "HKD 5M minimum",
+        "timeline": "6-12 months",
+        "licensedExchanges": ["HashKey", "OSL", "HKbitEX"]
+      },
+      "stablecoinRules": {
+        "status": "Framework announced Dec 2024",
+        "issuerRequirements": "HKMA licensing required",
+        "reserveRequirements": "1:1 backing, segregated accounts",
+        "effectiveDate": "2025 H1"
+      },
+      "retailAccess": "Permitted with licensed platforms",
+      "defiStatus": "Unregulated, cautionary stance",
+      "lastMajorUpdate": "2024-12 Stablecoin Framework"
+    },
+    "SG": {
+      "name": "Singapore", 
+      "regulator": "Monetary Authority of Singapore (MAS)",
+      "framework": "Payment Services Act (PSA) 2019, amended 2024",
+      "status": "Active - Mature framework",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Major Payment Institution (MPI) License",
+        "capitalRequirement": "SGD 250K base + risk-based",
+        "timeline": "12-18 months",
+        "licensedExchanges": ["Coinbase SG", "Crypto.com", "Independent Reserve", "Coinhako"]
+      },
+      "stablecoinRules": {
+        "status": "MAS Stablecoin Framework finalized Aug 2023",
+        "issuerRequirements": "MAS-regulated, minimum capital SGD 1M",
+        "reserveRequirements": "100% reserve in cash/cash equivalents",
+        "effectiveDate": "Active"
+      },
+      "retailAccess": "Restricted marketing rules",
+      "defiStatus": "Technology-neutral approach, case-by-case",
+      "lastMajorUpdate": "2024-06 Enhanced AML requirements"
+    },
+    "JP": {
+      "name": "Japan",
+      "regulator": "Financial Services Agency (FSA) / JFSA",
+      "framework": "Payment Services Act + Financial Instruments and Exchange Act",
+      "status": "Active - Most mature APAC framework",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Crypto Asset Exchange Service Provider (CAESP)",
+        "capitalRequirement": "JPY 10M minimum",
+        "timeline": "6-12 months",
+        "licensedExchanges": ["bitFlyer", "Coincheck", "GMO Coin", "Bitbank"]
+      },
+      "stablecoinRules": {
+        "status": "Legal framework effective June 2023",
+        "issuerRequirements": "Must be bank, trust company, or funds transfer service",
+        "reserveRequirements": "Full reserve backing required",
+        "effectiveDate": "2023-06 Active"
+      },
+      "retailAccess": "Fully permitted, self-regulatory body JVCEA",
+      "defiStatus": "DAO LLC framework under consideration",
+      "lastMajorUpdate": "2024-09 DAO legal framework proposal"
+    },
+    "KR": {
+      "name": "South Korea",
+      "regulator": "Financial Services Commission (FSC) / Financial Supervisory Service (FSS)",
+      "framework": "Virtual Asset User Protection Act (VAUPA)",
+      "status": "Active - Comprehensive user protection focus",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Virtual Asset Service Provider Registration",
+        "capitalRequirement": "KRW 3B minimum",
+        "timeline": "6-9 months",
+        "licensedExchanges": ["Upbit", "Bithumb", "Coinone", "Korbit"]
+      },
+      "stablecoinRules": {
+        "status": "Under development",
+        "issuerRequirements": "TBD - FSC studying options",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "Expected 2025"
+      },
+      "retailAccess": "Permitted, real-name bank accounts required",
+      "defiStatus": "Cautious approach, monitoring",
+      "lastMajorUpdate": "2024-07 VAUPA effective"
+    },
+    "AU": {
+      "name": "Australia",
+      "regulator": "Australian Securities and Investments Commission (ASIC) / AUSTRAC",
+      "framework": "Evolving - Token Mapping consultation ongoing",
+      "status": "Transitional - Major reforms expected 2025-2026",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "AUSTRAC DCE Registration + AFSL (for certain products)",
+        "capitalRequirement": "Varies by license type",
+        "timeline": "3-6 months DCE, 12+ months AFSL",
+        "licensedExchanges": ["Independent Reserve", "CoinSpot", "Swyftx", "BTC Markets"]
+      },
+      "stablecoinRules": {
+        "status": "Treasury consultation 2024",
+        "issuerRequirements": "Proposed ADI-like requirements",
+        "reserveRequirements": "Proposed 1:1 backing",
+        "effectiveDate": "Expected 2025-2026"
+      },
+      "retailAccess": "Permitted, debanking issues ongoing",
+      "defiStatus": "Unregulated, ASIC watching",
+      "lastMajorUpdate": "2024-10 Token Mapping consultation"
+    },
+    "CN": {
+      "name": "China (Mainland)",
+      "regulator": "People's Bank of China (PBOC) / Multiple agencies",
+      "framework": "Complete prohibition on crypto trading/mining",
+      "status": "Banned - No legal pathway",
+      "exchangeLicensing": {
+        "required": false,
+        "licenseType": "N/A - Prohibited",
+        "capitalRequirement": "N/A",
+        "timeline": "N/A",
+        "licensedExchanges": []
+      },
+      "stablecoinRules": {
+        "status": "Prohibited",
+        "issuerRequirements": "N/A",
+        "reserveRequirements": "N/A",
+        "effectiveDate": "2021 ban"
+      },
+      "retailAccess": "Prohibited",
+      "defiStatus": "Prohibited",
+      "lastMajorUpdate": "2021-09 Complete crypto ban"
+    }
+  }
+}

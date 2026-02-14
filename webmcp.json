@@ -1,0 +1,151 @@
+{
+  "$schema": "https://webmcp.org/schema/v1",
+  "name": "APAC FINSTAB",
+  "description": "APAC Crypto Regulatory Intelligence - Policy tracking, compliance checking, and risk assessment for Asia-Pacific markets",
+  "version": "0.1.0",
+  "homepage": "https://apacfinstab.com",
+  "tools": [
+    {
+      "name": "getLatestPolicies",
+      "description": "Get latest crypto policy events from APAC regions",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string",
+            "enum": ["HK", "SG", "JP", "KR", "AU", "CN", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
+            "description": "ISO country/region code"
+          },
+          "topic": {
+            "type": "string", 
+            "enum": ["Stablecoin", "Exchange", "DeFi", "ETF", "Licensing", "Taxation", "CBDC", "Tokenization"],
+            "description": "Policy topic filter"
+          },
+          "days": {
+            "type": "integer",
+            "default": 30,
+            "description": "Events from last N days"
+          }
+        }
+      },
+      "returns": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {"type": "string"},
+            "date": {"type": "string", "format": "date"},
+            "title": {"type": "string"},
+            "region": {"type": "string"},
+            "topic": {"type": "string"},
+            "impact": {"type": "string", "enum": ["high", "medium", "low"]},
+            "summary": {"type": "string"}
+          }
+        }
+      }
+    },
+    {
+      "name": "getRegionOverview",
+      "description": "Get regulatory overview for a specific APAC region",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string",
+            "enum": ["HK", "SG", "JP", "KR", "AU", "CN", "IN", "TH", "ID"],
+            "required": true
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "region": {"type": "string"},
+          "regulator": {"type": "string"},
+          "framework": {"type": "string"},
+          "exchangeLicensing": {"type": "string"},
+          "stablecoinRules": {"type": "string"},
+          "lastMajorUpdate": {"type": "string"}
+        }
+      }
+    },
+    {
+      "name": "comparePolicies",
+      "description": "Compare crypto policies across multiple APAC regions",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "regions": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 2,
+            "maxItems": 5
+          },
+          "topic": {
+            "type": "string",
+            "enum": ["Stablecoin", "Exchange", "DeFi", "ETF", "Licensing"]
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "topic": {"type": "string"},
+          "comparison": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "region": {"type": "string"},
+                "status": {"type": "string"},
+                "requirements": {"type": "string"},
+                "timeline": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "checkCompliance",
+      "description": "Check compliance requirements for a business model in specific regions",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "businessType": {
+            "type": "string",
+            "enum": ["exchange", "stablecoin_issuer", "defi_protocol", "custodian", "payment_service"]
+          },
+          "targetRegions": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      },
+      "returns": {
+        "type": "object",
+        "properties": {
+          "businessType": {"type": "string"},
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object", 
+              "properties": {
+                "region": {"type": "string"},
+                "licensingRequired": {"type": "boolean"},
+                "licenseType": {"type": "string"},
+                "capitalRequirement": {"type": "string"},
+                "timeline": {"type": "string"},
+                "keyRequirements": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "dataEndpoints": {
+    "policyEvents": "/data/policy-events.json",
+    "api": "/api/v1/"
+  }
+}
