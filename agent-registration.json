@@ -1,0 +1,48 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "APAC FINSTAB",
+  "description": "AI-powered regulatory intelligence agent for APAC crypto markets. Provides policy tracking, compliance checking, and cross-jurisdiction comparison for Hong Kong, Singapore, Japan, Korea, Australia and 10+ APAC regions.",
+  "image": "https://apacfinstab.com/images/agent-avatar.png",
+  "services": [
+    {
+      "type": "mcp",
+      "url": "https://apacfinstab.com/api/mcp",
+      "version": "2026-02-14",
+      "mcpTools": [
+        "getLatestPolicies",
+        "getRegionOverview", 
+        "comparePolicies",
+        "checkCompliance"
+      ]
+    },
+    {
+      "type": "webmcp",
+      "url": "https://apacfinstab.com/webmcp.json",
+      "description": "WebMCP manifest for browser-based AI agents"
+    },
+    {
+      "type": "api",
+      "url": "https://apacfinstab.com/data/policy-events.json",
+      "description": "Raw policy events data (JSON)"
+    },
+    {
+      "type": "api", 
+      "url": "https://apacfinstab.com/data/region-overviews.json",
+      "description": "Region regulatory overviews (JSON)"
+    }
+  ],
+  "capabilities": {
+    "domains": ["crypto_regulation", "compliance", "apac_policy", "stablecoin", "exchange_licensing"],
+    "regions": ["HK", "SG", "JP", "KR", "AU", "CN", "IN", "TH", "ID", "VN", "PH", "MY", "TW"],
+    "languages": ["en", "zh", "ja", "ko"]
+  },
+  "payment": {
+    "chain": "base",
+    "address": "TBD"
+  },
+  "links": {
+    "website": "https://apacfinstab.com",
+    "tracker": "https://apacfinstab.com/tracker/",
+    "twitter": "https://x.com/APACFinStab"
+  }
+}
