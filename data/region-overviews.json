@@ -135,6 +135,72 @@
       "retailAccess": "Prohibited",
       "defiStatus": "Prohibited",
       "lastMajorUpdate": "2021-09 Complete crypto ban"
+    },
+    "IN": {
+      "name": "India",
+      "regulator": "Reserve Bank of India (RBI) / Securities and Exchange Board of India (SEBI)",
+      "framework": "Taxation framework exists, comprehensive regulation pending",
+      "status": "Grey zone - Taxed but not fully regulated",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "FIU-IND Registration (AML compliance)",
+        "capitalRequirement": "Varies",
+        "timeline": "Ongoing",
+        "licensedExchanges": ["WazirX", "CoinDCX", "ZebPay"]
+      },
+      "stablecoinRules": {
+        "status": "Under consideration",
+        "issuerRequirements": "TBD",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "TBD"
+      },
+      "retailAccess": "Permitted with 30% tax + 1% TDS",
+      "defiStatus": "Unregulated",
+      "lastMajorUpdate": "2024-12 Privacy coin ban"
+    },
+    "TH": {
+      "name": "Thailand",
+      "regulator": "Securities and Exchange Commission (SEC Thailand)",
+      "framework": "Digital Asset Business Decree 2018",
+      "status": "Active - Established framework",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Digital Asset Exchange License",
+        "capitalRequirement": "THB 50M minimum",
+        "timeline": "6-12 months",
+        "licensedExchanges": ["Bitkub", "Satang Pro"]
+      },
+      "stablecoinRules": {
+        "status": "Under development",
+        "issuerRequirements": "TBD",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "TBD"
+      },
+      "retailAccess": "Permitted",
+      "defiStatus": "Cautious approach",
+      "lastMajorUpdate": "2024-08 Exchange advertising rules"
+    },
+    "ID": {
+      "name": "Indonesia",
+      "regulator": "Commodity Futures Trading Regulatory Agency (Bappebti) → OJK transition",
+      "framework": "Transitioning from commodity to financial regulation",
+      "status": "Transitional - Moving to OJK oversight",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Bappebti Registration (transitioning to OJK)",
+        "capitalRequirement": "IDR 100B minimum",
+        "timeline": "Varies",
+        "licensedExchanges": ["Indodax", "Tokocrypto", "Pintu"]
+      },
+      "stablecoinRules": {
+        "status": "Under OJK review",
+        "issuerRequirements": "TBD",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "Expected 2025"
+      },
+      "retailAccess": "Permitted",
+      "defiStatus": "Monitoring",
+      "lastMajorUpdate": "2025-01 OJK transition announcement"
     }
   }
 }
