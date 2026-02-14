@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-14T17:15:00+08:00",
+    "lastUpdated": "2026-02-14T21:55:00+08:00",
     "version": "1.0"
   },
   "regions": {
@@ -201,6 +201,94 @@
       "retailAccess": "Permitted",
       "defiStatus": "Monitoring",
       "lastMajorUpdate": "2025-01 OJK transition announcement"
+    },
+    "VN": {
+      "name": "Vietnam",
+      "regulator": "State Bank of Vietnam (SBV) / Ministry of Finance",
+      "framework": "Digital Technology Law (effective Jan 1, 2026)",
+      "status": "Active - New framework just launched",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Digital Asset Service Provider License",
+        "capitalRequirement": "VND 300B+ (one of world's highest)",
+        "timeline": "12-18 months",
+        "licensedExchanges": []
+      },
+      "stablecoinRules": {
+        "status": "Under development",
+        "issuerRequirements": "TBD",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "TBD"
+      },
+      "retailAccess": "Legal as of Jan 2026, 0.1% transaction tax proposed",
+      "defiStatus": "Unregulated",
+      "lastMajorUpdate": "2026-01 Digital Technology Law effective"
+    },
+    "PH": {
+      "name": "Philippines",
+      "regulator": "Bangko Sentral ng Pilipinas (BSP) / Securities and Exchange Commission (SEC)",
+      "framework": "BSP VASP Framework + SEC CASP Rules",
+      "status": "Active - Dual regulator system",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "BSP VASP License + SEC CASP License",
+        "capitalRequirement": "PHP 50M minimum",
+        "timeline": "6-12 months (moratorium lifted Sept 2025)",
+        "licensedExchanges": ["Coins.ph", "PDAX", "UnionBank"]
+      },
+      "stablecoinRules": {
+        "status": "Under BSP review",
+        "issuerRequirements": "TBD",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "TBD"
+      },
+      "retailAccess": "Permitted, ~6.1% population owns crypto",
+      "defiStatus": "Unregulated, FATF travel rule compliance required",
+      "lastMajorUpdate": "2025-12 Major platform crackdown (50+ blocked)"
+    },
+    "MY": {
+      "name": "Malaysia",
+      "regulator": "Securities Commission Malaysia (SC) / Bank Negara Malaysia (BNM)",
+      "framework": "Capital Markets and Services Act + SC Guidelines",
+      "status": "Active - Established framework",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "Recognized Market Operator (RMO) License",
+        "capitalRequirement": "MYR 5M minimum",
+        "timeline": "6-12 months",
+        "licensedExchanges": ["Luno", "Tokenize", "MX Global", "Sinegy"]
+      },
+      "stablecoinRules": {
+        "status": "BNM Digital Asset Innovation Hub testing MYR stablecoins",
+        "issuerRequirements": "Under sandbox evaluation",
+        "reserveRequirements": "TBD",
+        "effectiveDate": "Expected 2026"
+      },
+      "retailAccess": "Permitted, crypto not legal tender",
+      "defiStatus": "Monitoring, BNM exploring tokenization",
+      "lastMajorUpdate": "2026-02 BNM MYR stablecoin sandbox"
+    },
+    "TW": {
+      "name": "Taiwan",
+      "regulator": "Financial Supervisory Commission (FSC)",
+      "framework": "Evolving - VASP guidelines + upcoming legislation",
+      "status": "Transitional - Major reforms expected 2026",
+      "exchangeLicensing": {
+        "required": true,
+        "licenseType": "VASP Registration (FSC)",
+        "capitalRequirement": "Varies",
+        "timeline": "6-12 months",
+        "licensedExchanges": ["MaiCoin", "BitoPro", "ACE Exchange"]
+      },
+      "stablecoinRules": {
+        "status": "EU MiCA-inspired framework in draft",
+        "issuerRequirements": "Bank or trust company (proposed)",
+        "reserveRequirements": "1:1 backing (proposed)",
+        "effectiveDate": "Expected H2 2026"
+      },
+      "retailAccess": "Permitted, treated as virtual commodity",
+      "defiStatus": "Unregulated",
+      "lastMajorUpdate": "2025-12 FSC stablecoin framework announcement"
     }
   }
 }
