@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-13T10:00:00+08:00",
-    "totalEvents": 40,
+    "lastUpdated": "2026-02-14T10:00:00+08:00",
+    "totalEvents": 42,
     "version": "1.0"
   },
   "dimensions": {
@@ -88,6 +88,30 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0214-002",
+      "date": "2026-02-14",
+      "title": "US Treasury Secretary Bessent: CLARITY Act Should Pass This Spring",
+      "protocols": ["USDT", "USDC"],
+      "regions": ["US"],
+      "topics": ["Regulation", "Stablecoin"],
+      "entities": ["Coinbase"],
+      "summary": "Treasury Secretary Bessent tells Reuters the CLARITY Act should pass this spring to give 'great comfort to the market' amid volatility. Warns some crypto industry players resisting 'very good regulation.'",
+      "impact": "high",
+      "source": "https://www.reuters.com/sustainability/boards-policy-regulation/bessent-says-congress-should-pass-crypto-regulation-bill-this-spring-2026-02-13/"
+    },
+    {
+      "id": "evt-2026-0214-001",
+      "date": "2026-02-14",
+      "title": "South Korea FSS Grants Critical Exemption for Market Integrity Reporting",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["KR"],
+      "topics": ["Regulation", "Exchange"],
+      "entities": ["Bithumb", "Korbit"],
+      "summary": "South Korea's Financial Supervisory Service grants critical exemption allowing crypto exchanges to delay market integrity reporting requirements. FSS continues AI-powered VISTA platform upgrades for real-time manipulation detection.",
+      "impact": "medium",
+      "source": "https://bitcoinethereumnews.com/tech/south-koreas-fss-grants-critical-exemption-for-market-integrity-reporting/"
+    },
     {
       "id": "evt-2026-0213-001",
       "date": "2026-02-13",
