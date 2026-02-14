@@ -24,6 +24,9 @@
   <meta property="og:title" content="APAC Crypto Policy Tracker | APAC FINSTAB" />
   <meta property="og:description" content="Real-time database tracking crypto regulations across Asia-Pacific. Filter by protocol, region, topic, or entity." />
   
+  <!-- WebMCP Manifest for AI Agent Integration -->
+  <link rel="webmcp-manifest" href="/webmcp.json" />
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -455,6 +458,33 @@
 </div>
 
 <div id="events-view" class="tab-content active">
+<!-- WebMCP Declarative Form for AI Agents -->
+<form id="webmcp-policy-search" data-webmcp-tool="getLatestPolicies" data-webmcp-description="Search APAC crypto policy events by region, topic, and time range" style="display:none;">
+  <select name="region" data-webmcp-param="region" data-webmcp-description="APAC region code">
+    <option value="">All Regions</option>
+    <option value="HK">Hong Kong</option>
+    <option value="SG">Singapore</option>
+    <option value="JP">Japan</option>
+    <option value="KR">South Korea</option>
+    <option value="AU">Australia</option>
+    <option value="CN">China</option>
+    <option value="IN">India</option>
+    <option value="TH">Thailand</option>
+    <option value="ID">Indonesia</option>
+  </select>
+  <select name="topic" data-webmcp-param="topic" data-webmcp-description="Policy topic filter">
+    <option value="">All Topics</option>
+    <option value="Stablecoin">Stablecoin</option>
+    <option value="Exchange">Exchange</option>
+    <option value="DeFi">DeFi</option>
+    <option value="ETF">ETF</option>
+    <option value="Licensing">Licensing</option>
+    <option value="CBDC">CBDC</option>
+    <option value="Taxation">Taxation</option>
+  </select>
+  <input type="number" name="days" value="30" data-webmcp-param="days" data-webmcp-description="Events from last N days" />
+</form>
+
 <section class="filters" id="filters">
   <div class="filter-section">
     <span class="filter-label">Protocol</span>
@@ -519,6 +549,97 @@
 </footer>
 
 <script>
+// ==========================================
+// WebMCP Imperative API Registration
+// For AI Agent direct tool invocation
+// ==========================================
+if (typeof window.webmcp !== 'undefined') {
+  // Tool: getLatestPolicies
+  window.webmcp.registerTool('getLatestPolicies', {
+    description: 'Get latest crypto policy events from APAC regions',
+    parameters: {
+      region: { type: 'string', description: 'Region code (HK, SG, JP, KR, AU, CN, IN, TH, ID)' },
+      topic: { type: 'string', description: 'Topic filter (Stablecoin, Exchange, DeFi, ETF, Licensing)' },
+      days: { type: 'number', description: 'Events from last N days', default: 30 }
+    },
+    async execute(params) {
+      const res = await fetch('/data/policy-events.json');
+      const data = await res.json();
+      let events = data.events;
+      
+      if (params.region) {
+        events = events.filter(e => e.regions.includes(params.region));
+      }
+      if (params.topic) {
+        events = events.filter(e => e.topics.includes(params.topic));
+      }
+      if (params.days) {
+        const cutoff = new Date();
+        cutoff.setDate(cutoff.getDate() - params.days);
+        events = events.filter(e => new Date(e.date) >= cutoff);
+      }
+      
+      return events.map(e => ({
+        id: e.id,
+        date: e.date,
+        title: e.title,
+        regions: e.regions,
+        topics: e.topics,
+        summary: e.summary,
+        impact: e.impact || 'medium'
+      }));
+    }
+  });
+
+  // Tool: getRegionOverview
+  window.webmcp.registerTool('getRegionOverview', {
+    description: 'Get regulatory overview for a specific APAC region',
+    parameters: {
+      region: { type: 'string', required: true, description: 'Region code (HK, SG, JP, KR, AU, CN)' }
+    },
+    async execute(params) {
+      const res = await fetch('/data/region-overviews.json');
+      const data = await res.json();
+      return data.regions[params.region] || { error: 'Region not found' };
+    }
+  });
+
+  // Tool: comparePolicies
+  window.webmcp.registerTool('comparePolicies', {
+    description: 'Compare crypto policies across multiple APAC regions',
+    parameters: {
+      regions: { type: 'array', description: 'Array of region codes to compare' },
+      topic: { type: 'string', description: 'Topic to compare (Stablecoin, Exchange, Licensing)' }
+    },
+    async execute(params) {
+      const res = await fetch('/data/region-overviews.json');
+      const data = await res.json();
+      
+      const comparison = params.regions.map(r => {
+        const region = data.regions[r];
+        if (!region) return { region: r, error: 'Not found' };
+        
+        return {
+          region: r,
+          name: region.name,
+          regulator: region.regulator,
+          framework: region.framework,
+          exchangeLicensing: region.exchangeLicensing,
+          stablecoinRules: region.stablecoinRules,
+          status: region.status
+        };
+      });
+      
+      return { topic: params.topic || 'General', comparison };
+    }
+  });
+
+  console.log('[WebMCP] APAC FINSTAB tools registered: getLatestPolicies, getRegionOverview, comparePolicies');
+}
+
+// ==========================================
+// Main Application Code
+// ==========================================
 const regionEmojis = {
   HK: '🇭🇰', SG: '🇸🇬', JP: '🇯🇵', KR: '🇰🇷', CN: '🇨🇳',
   AU: '🇦🇺', IN: '🇮🇳', TH: '🇹🇭', ID: '🇮🇩', VN: '🇻🇳',
