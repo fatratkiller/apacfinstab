@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-14T10:00:00+08:00",
-    "totalEvents": 42,
+    "lastUpdated": "2026-02-15T10:00:00+08:00",
+    "totalEvents": 45,
     "version": "1.0"
   },
   "dimensions": {
@@ -89,13 +89,66 @@
   },
   "events": [
     {
+      "id": "evt-2026-0215-001",
+      "date": "2026-02-15",
+      "title": "US CFTC Launches Innovation Advisory Committee with Crypto CEOs",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [
+        "Coinbase"
+      ],
+      "summary": "CFTC Chairman launches Innovation Advisory Committee including Coinbase CEO Brian Armstrong and betting platform executives. Critics warn of regulatory capture. CFTC enforcement division in Chicago reportedly gutted with entire litigation team resigned or laid off.",
+      "impact": "high",
+      "source": "https://asiatimes.com/2026/02/trump-stacks-key-regulatory-body-panel-with-crypto-gambling-ceos/"
+    },
+    {
+      "id": "evt-2026-0215-002",
+      "date": "2026-02-15",
+      "title": "Crypto Industry Rift Over CLARITY Act Deepens",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin"
+      ],
+      "entities": [
+        "Coinbase"
+      ],
+      "summary": "Industry groups warn Congress that removing certain exemptions from CLARITY Act would stifle domestic innovation and undermine dollar dominance. Treasury Secretary Bessent accuses some firms of preferring no bill to compromise.",
+      "impact": "medium",
+      "source": "https://beincrypto.com/crypto-group-clarity-act-warning-us-congress/"
+    },
+    {
       "id": "evt-2026-0214-002",
       "date": "2026-02-14",
       "title": "US Treasury Secretary Bessent: CLARITY Act Should Pass This Spring",
-      "protocols": ["USDT", "USDC"],
-      "regions": ["US"],
-      "topics": ["Regulation", "Stablecoin"],
-      "entities": ["Coinbase"],
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin"
+      ],
+      "entities": [
+        "Coinbase"
+      ],
       "summary": "Treasury Secretary Bessent tells Reuters the CLARITY Act should pass this spring to give 'great comfort to the market' amid volatility. Warns some crypto industry players resisting 'very good regulation.'",
       "impact": "high",
       "source": "https://www.reuters.com/sustainability/boards-policy-regulation/bessent-says-congress-should-pass-crypto-regulation-bill-this-spring-2026-02-13/"
@@ -104,10 +157,21 @@
       "id": "evt-2026-0214-001",
       "date": "2026-02-14",
       "title": "South Korea FSS Grants Critical Exemption for Market Integrity Reporting",
-      "protocols": ["BTC", "ETH"],
-      "regions": ["KR"],
-      "topics": ["Regulation", "Exchange"],
-      "entities": ["Bithumb", "Korbit"],
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Bithumb",
+        "Korbit"
+      ],
       "summary": "South Korea's Financial Supervisory Service grants critical exemption allowing crypto exchanges to delay market integrity reporting requirements. FSS continues AI-powered VISTA platform upgrades for real-time manipulation detection.",
       "impact": "medium",
       "source": "https://bitcoinethereumnews.com/tech/south-koreas-fss-grants-critical-exemption-for-market-integrity-reporting/"
