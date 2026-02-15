@@ -1,5 +1,5 @@
 {
-  "name": "@apacfinstab/mcp-server",
+  "name": "@apac-finstab/mcp-server",
   "version": "1.0.0",
   "description": "MCP Server for APAC FINSTAB - Crypto regulatory intelligence for Asia-Pacific",
   "type": "module",
