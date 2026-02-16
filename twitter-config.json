@@ -1,0 +1,17 @@
+{
+  "account": {
+    "handle": "APACFinStab",
+    "positioning": "APAC Crypto Policy Intelligence Platform",
+    "language": "English"
+  },
+  "api": {
+    "api_key": "待填入",
+    "api_secret": "待填入",
+    "access_token": "待填入",
+    "access_token_secret": "待填入"
+  },
+  "pending_tweet": {
+    "content": "🤖 AI Agent Developers:\n\nCan your agent read Chinese, Japanese, Korean crypto regulations?\n\nWe just shipped WebMCP tool layer:\n- 42+ APAC policy events (real-time)\n- 13 regions covered\n- 4 callable tools\n\nYour competitor's agent can't read Asian policy documents.\nYours can.\n\nIntegration guide: https://apacfinstab.com/docs/webmcp-integration.md\n\n#WebMCP #AIAgent #CryptoRegulation #APAC",
+    "status": "waiting_for_credentials"
+  }
+}

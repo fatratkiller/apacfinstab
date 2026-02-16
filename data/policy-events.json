@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-15T10:00:00+08:00",
-    "totalEvents": 45,
+    "lastUpdated": "2026-02-16T10:05:00+08:00",
+    "totalEvents": 46,
     "version": "1.0"
   },
   "dimensions": {
@@ -88,6 +88,36 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0216-001",
+      "date": "2026-02-16",
+      "title": "Hong Kong SFC Unveils Detailed Perpetual Futures Regulatory Framework",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Regulation",
+        "DeFi",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Hong Kong SFC establishes comprehensive regulatory framework for cryptocurrency perpetual futures, targeting professional investors only. Framework requires strict disclosure mandates, internal risk management systems, and regular reporting. Exchanges must implement position limits, volatility-based margin requirements, and circuit breakers. Licensed brokers may offer BTC/ETH-collateralized margin products. HKMA confirms first stablecoin licenses in March 2026.",
+      "impact": "high",
+      "source": "https://bitcoinworld.co.in/hong-kong-crypto-perpetual-futures-regulation-2/",
+      "keywords": [
+        "perpetual futures",
+        "professional investor",
+        "derivatives",
+        "SFC",
+        "stablecoin license",
+        "HKMA",
+        "margin products"
+      ]
+    },
     {
       "id": "evt-2026-0215-001",
       "date": "2026-02-15",
@@ -571,7 +601,7 @@
       "entities": [
         "Tether"
       ],
-      "summary": "USDT briefly depegged to $0.998—its lowest level in 5 years—during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
+      "summary": "USDT briefly depegged to $0.998\u2014its lowest level in 5 years\u2014during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
       "impact": "high",
       "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
