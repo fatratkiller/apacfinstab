@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-16T10:05:00+08:00",
-    "totalEvents": 46,
+    "lastUpdated": "2026-02-17T16:00:00+08:00",
+    "totalEvents": 47,
     "version": "1.0"
   },
   "dimensions": {
@@ -88,6 +88,26 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0217-001",
+      "date": "2026-02-17",
+      "title": "Hong Kong SFC Grants Crypto License to Victory Fintech",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Licensing",
+        "Exchange"
+      ],
+      "entities": [],
+      "summary": "Hong Kong Securities and Futures Commission (SFC) has approved Victory Fintech for a crypto trading license, signaling renewed momentum in HKs push to become a digital asset hub. This approval continues the citys regulatory progress following the perpetual futures framework announced last week.",
+      "impact": "high",
+      "source": "https://bitcoinethereumnews.com/tech/sfcs-pivotal-approval-for-victory-fintech-signals-renewed-momentum/"
+    },
     {
       "id": "evt-2026-0216-001",
       "date": "2026-02-16",
