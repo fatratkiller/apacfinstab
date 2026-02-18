@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-17T16:00:00+08:00",
-    "totalEvents": 47,
+    "lastUpdated": "2026-02-18T10:00:00+08:00",
+    "totalEvents": 49,
     "version": "1.0"
   },
   "dimensions": {
@@ -64,7 +64,9 @@
       "Bithumb",
       "BlackRock",
       "Tether",
-      "Circle"
+      "Circle",
+      "Banxa",
+      "TON Foundation"
     ]
   },
   "regionNames": {
@@ -88,6 +90,66 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0218-001",
+      "date": "2026-02-18",
+      "title": "TON Foundation Partners with Banxa for APAC Stablecoin Payments",
+      "protocols": [
+        "TON",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "HK",
+        "SG",
+        "AU"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Licensing"
+      ],
+      "entities": [
+        "TON Foundation",
+        "Banxa",
+        "OSL"
+      ],
+      "summary": "TON Foundation and Banxa (OSL subsidiary) announce partnership to enable stablecoin payments for APAC SMEs using TON blockchain infrastructure. OSL raised $200M in January 2026 for digital asset expansion. Banxa operates under 40+ licenses globally including APAC markets. TON Pay SDK offers sub-second settlement and fees below $0.01.",
+      "impact": "high",
+      "source": "https://www.theblock.co/post/390138/ton-foundation-osl-banxa-stablecoin-payments",
+      "keywords": [
+        "stablecoin payments",
+        "SME",
+        "TON Pay",
+        "APAC merchants",
+        "Telegram mini apps"
+      ]
+    },
+    {
+      "id": "evt-2026-0218-002",
+      "date": "2026-02-18",
+      "title": "Japan Emerges as APAC's Leading Local Stablecoin Market",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "JP"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Japan quietly becomes APAC's top local (non-USD) stablecoin market. Aggregate APAC local stablecoin supply rebounded from $40M low in mid-2025 to nearly $58-60M by early 2026. Marks significant shift in where non-USD stablecoin activity concentrates, supported by Japan's progressive regulatory framework.",
+      "impact": "medium",
+      "source": "https://bitcoinethereumnews.com/tech/japan-quietly-becomes-apacs-top-local-stablecoin-market/",
+      "keywords": [
+        "JPY stablecoin",
+        "local currency",
+        "non-USD",
+        "FSA"
+      ]
+    },
     {
       "id": "evt-2026-0217-001",
       "date": "2026-02-17",
@@ -621,7 +683,7 @@
       "entities": [
         "Tether"
       ],
-      "summary": "USDT briefly depegged to $0.998\u2014its lowest level in 5 years\u2014during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
+      "summary": "USDT briefly depegged to $0.998—its lowest level in 5 years—during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
       "impact": "high",
       "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
