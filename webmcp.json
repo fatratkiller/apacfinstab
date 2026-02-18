@@ -146,6 +146,12 @@
   ],
   "dataEndpoints": {
     "policyEvents": "/data/policy-events.json",
-    "api": "/api/v1/"
+    "regionOverviews": "/data/region-overviews.json",
+    "complianceRequirements": "/data/compliance-requirements.json"
+  },
+  "implementation": {
+    "type": "static-json",
+    "note": "Tools operate on static JSON data. Agent should fetch data files and filter client-side.",
+    "refreshInterval": "daily"
   }
 }

@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "lastUpdated": "2026-02-18T22:30:00+08:00",
+    "version": "1.0",
+    "disclaimer": "For reference only. Consult legal counsel for actual compliance."
+  },
+  "businessTypes": {
+    "exchange": {
+      "name": "Crypto Exchange",
+      "description": "Platform for buying, selling, and trading crypto assets",
+      "regions": {
+        "HK": {
+          "licensingRequired": true,
+          "licenseType": "Type 1 & Type 7 SFC License + VASP License",
+          "capitalRequirement": "HKD 5,000,000 minimum",
+          "timeline": "6-12 months",
+          "keyRequirements": [
+            "Fit and proper management",
+            "Robust AML/KYC systems",
+            "Client asset segregation",
+            "Insurance coverage",
+            "Local office requirement"
+          ],
+          "regulator": "SFC",
+          "difficulty": "high"
+        },
+        "SG": {
+          "licensingRequired": true,
+          "licenseType": "Major Payment Institution (MPI) License",
+          "capitalRequirement": "SGD 250,000 base + risk-based capital",
+          "timeline": "12-18 months",
+          "keyRequirements": [
+            "Local director requirement",
+            "AML/CFT compliance program",
+            "Technology risk management",
+            "Business continuity plan",
+            "Restricted marketing to retail"
+          ],
+          "regulator": "MAS",
+          "difficulty": "high"
+        },
+        "JP": {
+          "licensingRequired": true,
+          "licenseType": "Crypto Asset Exchange Service Provider (CAESP)",
+          "capitalRequirement": "JPY 10,000,000 minimum",
+          "timeline": "6-12 months",
+          "keyRequirements": [
+            "JVCEA membership",
+            "Cold wallet storage requirements",
+            "User protection fund contribution",
+            "Local incorporation required",
+            "Annual audits"
+          ],
+          "regulator": "FSA/JFSA",
+          "difficulty": "medium"
+        },
+        "AU": {
+          "licensingRequired": true,
+          "licenseType": "AUSTRAC DCE Registration + AFSL (for certain products)",
+          "capitalRequirement": "Varies by license type",
+          "timeline": "3-6 months DCE, 12+ months AFSL",
+          "keyRequirements": [
+            "AML/CTF program",
+            "AUSTRAC registration",
+            "AFSL for financial product advice",
+            "Dispute resolution scheme membership"
+          ],
+          "regulator": "AUSTRAC/ASIC",
+          "difficulty": "medium"
+        },
+        "KR": {
+          "licensingRequired": true,
+          "licenseType": "Virtual Asset Service Provider Registration",
+          "capitalRequirement": "KRW 3,000,000,000 minimum",
+          "timeline": "6-9 months",
+          "keyRequirements": [
+            "Real-name bank account partnership",
+            "ISMS certification",
+            "User asset protection measures",
+            "Travel rule compliance"
+          ],
+          "regulator": "FSC/FSS",
+          "difficulty": "high"
+        }
+      }
+    },
+    "stablecoin_issuer": {
+      "name": "Stablecoin Issuer",
+      "description": "Entity issuing fiat-pegged or asset-backed stablecoins",
+      "regions": {
+        "HK": {
+          "licensingRequired": true,
+          "licenseType": "HKMA Stablecoin Issuer License",
+          "capitalRequirement": "HKD 25,000,000 minimum (proposed)",
+          "timeline": "12-18 months",
+          "keyRequirements": [
+            "1:1 reserve backing",
+            "Segregated reserve accounts",
+            "Monthly attestation reports",
+            "Redemption guarantee",
+            "HK incorporation or branch"
+          ],
+          "regulator": "HKMA",
+          "difficulty": "high",
+          "status": "Framework effective 2025"
+        },
+        "SG": {
+          "licensingRequired": true,
+          "licenseType": "MAS-regulated Stablecoin Issuer",
+          "capitalRequirement": "SGD 1,000,000 minimum",
+          "timeline": "12-18 months",
+          "keyRequirements": [
+            "100% reserve in cash or cash equivalents",
+            "Daily reserve reporting",
+            "Independent audit",
+            "Redemption within 5 business days",
+            "SG-pegged or G10 currency only for MAS-regulated label"
+          ],
+          "regulator": "MAS",
+          "difficulty": "high",
+          "status": "Active since Aug 2023"
+        },
+        "JP": {
+          "licensingRequired": true,
+          "licenseType": "Electronic Payment Instruments Issuer",
+          "capitalRequirement": "Varies by structure",
+          "timeline": "6-12 months",
+          "keyRequirements": [
+            "Must be bank, trust company, or funds transfer service",
+            "Full reserve backing",
+            "Yen-denominated or foreign currency",
+            "AML/CFT compliance"
+          ],
+          "regulator": "FSA",
+          "difficulty": "high",
+          "status": "Active since June 2023"
+        }
+      }
+    },
+    "defi_protocol": {
+      "name": "DeFi Protocol",
+      "description": "Decentralized finance protocol or DAO",
+      "regions": {
+        "HK": {
+          "licensingRequired": false,
+          "licenseType": "N/A - Currently unregulated",
+          "capitalRequirement": "N/A",
+          "timeline": "N/A",
+          "keyRequirements": [
+            "SFC may regulate if securities-like",
+            "Caution on marketing to HK residents",
+            "Monitor regulatory developments"
+          ],
+          "regulator": "SFC (monitoring)",
+          "difficulty": "low",
+          "status": "Unregulated but watched"
+        },
+        "SG": {
+          "licensingRequired": false,
+          "licenseType": "Case-by-case assessment",
+          "capitalRequirement": "N/A",
+          "timeline": "N/A",
+          "keyRequirements": [
+            "Technology-neutral approach",
+            "May trigger PSA if payment services",
+            "May trigger SFA if securities dealing"
+          ],
+          "regulator": "MAS",
+          "difficulty": "low",
+          "status": "Activity-based regulation"
+        },
+        "JP": {
+          "licensingRequired": false,
+          "licenseType": "Potential DAO LLC structure (under consideration)",
+          "capitalRequirement": "N/A",
+          "timeline": "N/A",
+          "keyRequirements": [
+            "DAO legal framework being developed",
+            "May need CAESP if exchange functions",
+            "Token classification matters"
+          ],
+          "regulator": "FSA",
+          "difficulty": "medium",
+          "status": "Evolving - DAO LLC proposal 2024"
+        }
+      }
+    },
+    "custodian": {
+      "name": "Crypto Custodian",
+      "description": "Entity providing safekeeping services for crypto assets",
+      "regions": {
+        "HK": {
+          "licensingRequired": true,
+          "licenseType": "Type 1 License (SFC) for custody of securities tokens",
+          "capitalRequirement": "HKD 5,000,000 minimum",
+          "timeline": "6-12 months",
+          "keyRequirements": [
+            "Segregated client assets",
+            "Cold storage requirements",
+            "Insurance coverage",
+            "Business continuity planning"
+          ],
+          "regulator": "SFC",
+          "difficulty": "high"
+        },
+        "SG": {
+          "licensingRequired": true,
+          "licenseType": "CMS License for custody of capital markets products",
+          "capitalRequirement": "Risk-based",
+          "timeline": "12-18 months",
+          "keyRequirements": [
+            "Custody safeguards",
+            "Client asset protection",
+            "Technology risk management",
+            "Operational resilience"
+          ],
+          "regulator": "MAS",
+          "difficulty": "high"
+        }
+      }
+    },
+    "payment_service": {
+      "name": "Crypto Payment Service",
+      "description": "Payment processing using crypto assets",
+      "regions": {
+        "HK": {
+          "licensingRequired": true,
+          "licenseType": "Money Service Operator (MSO) License + potential VASP",
+          "capitalRequirement": "Varies",
+          "timeline": "3-6 months MSO",
+          "keyRequirements": [
+            "Customs and Excise Department license",
+            "AML/CFT program",
+            "May need SFC license if trading involved"
+          ],
+          "regulator": "C&ED / SFC",
+          "difficulty": "medium"
+        },
+        "SG": {
+          "licensingRequired": true,
+          "licenseType": "Standard Payment Institution or Major Payment Institution",
+          "capitalRequirement": "SGD 100,000 (SPI) to SGD 250,000 (MPI)",
+          "timeline": "6-12 months",
+          "keyRequirements": [
+            "Payment services license",
+            "AML/CFT compliance",
+            "Safeguarding requirements",
+            "Transaction limits for SPI"
+          ],
+          "regulator": "MAS",
+          "difficulty": "medium"
+        },
+        "AU": {
+          "licensingRequired": true,
+          "licenseType": "AUSTRAC DCE Registration",
+          "capitalRequirement": "N/A for DCE registration",
+          "timeline": "3-6 months",
+          "keyRequirements": [
+            "AML/CTF program",
+            "Transaction reporting",
+            "Customer identification"
+          ],
+          "regulator": "AUSTRAC",
+          "difficulty": "low"
+        }
+      }
+    }
+  }
+}
