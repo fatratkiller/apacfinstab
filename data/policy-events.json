@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-18T10:00:00+08:00",
-    "totalEvents": 49,
+    "lastUpdated": "2026-02-19T10:00:00+08:00",
+    "totalEvents": 51,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,32 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0219-002",
+      "date": "2026-02-19",
+      "title": "Crypto Lobby Forms Prediction Market Regulatory Working Group",
+      "protocols": ["BTC", "ETH"],
+      "regions": ["US"],
+      "topics": ["Regulation", "DeFi"],
+      "entities": [],
+      "summary": "Major crypto industry players establish dedicated working group to pursue regulatory clarity for prediction markets. Initiative comes amid broader momentum for crypto market structure legislation.",
+      "impact": "medium",
+      "source": "https://cryptonews.com/news/crypto-lobby-prediction-market-working-group/",
+      "keywords": ["prediction markets", "regulatory clarity", "lobbying", "DeFi"]
+    },
+    {
+      "id": "evt-2026-0219-001",
+      "date": "2026-02-19",
+      "title": "CLARITY Act Nears Final Passage with SEC-CFTC Alignment",
+      "protocols": ["BTC", "ETH", "USDT", "USDC"],
+      "regions": ["US"],
+      "topics": ["Regulation", "Stablecoin"],
+      "entities": ["Coinbase"],
+      "summary": "CFTC Chair Michael Selig confirms CLARITY Act is close to becoming law. SEC Chair Paul Atkins supports the bill, describing joint SEC-CFTC effort 'Project Crypto.' Senate Agriculture Committee passed related version in January 2026. Fairshake PAC holds $193M for 2026 midterms. Banking industry opposition to stablecoin yield loopholes continues but momentum remains strong.",
+      "impact": "high",
+      "source": "https://www.ccn.com/news/crypto/clarity-act-gains-momentum-sec-cftc-senate-crypto-market-structure/",
+      "keywords": ["CLARITY Act", "market structure", "SEC", "CFTC", "stablecoin yield", "Fairshake PAC"]
+    },
     {
       "id": "evt-2026-0218-001",
       "date": "2026-02-18",
