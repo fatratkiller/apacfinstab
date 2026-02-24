@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-22T10:05:00+08:00",
-    "totalEvents": 57,
+    "lastUpdated": "2026-02-24T10:05:00+08:00",
+    "totalEvents": 61,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,126 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0224-001",
+      "date": "2026-02-24",
+      "title": "South Korea FSC Confirms 15-20% Shareholder Cap for Crypto Exchanges",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Bithumb",
+        "Korbit"
+      ],
+      "summary": "South Korea's Financial Services Commission (FSC) firmly reconfirms controversial plan to cap major shareholder stakes at 15-20% for cryptocurrency exchanges. The Digital Asset Basic Act also mandates bank-led consortiums holding 50%+ stakes, strict liability rules for exchanges, and mandatory quarterly external audits. Implementation expected over 12-18 months, potentially reducing active exchanges from 35 to 15-20 compliant operators.",
+      "impact": "high",
+      "source": "https://bitcoinworld.co.in/south-korea-fsc-crypto-regulation-meeting/",
+      "keywords": [
+        "South Korea",
+        "FSC",
+        "shareholder cap",
+        "Digital Asset Basic Act",
+        "bank consortium",
+        "exchange regulation"
+      ]
+    },
+    {
+      "id": "evt-2026-0224-002",
+      "date": "2026-02-24",
+      "title": "Pantera-Backed Solana Firm Launches APAC Staking Infrastructure",
+      "protocols": [
+        "SOL"
+      ],
+      "regions": [
+        "SG",
+        "JP",
+        "KR",
+        "AU"
+      ],
+      "topics": [
+        "Staking",
+        "DeFi"
+      ],
+      "entities": [],
+      "summary": "Pantera Capital-backed Solana infrastructure firm announces major APAC staking network buildout. Construction begins immediately with performance optimization and new technology integration planned for H2 2026. Move signals growing institutional interest in APAC-based validator infrastructure and staking services.",
+      "impact": "medium",
+      "source": "https://www.tronweekly.com/pantera-backed-solana-firm-unveils-apac-staking/",
+      "keywords": [
+        "Pantera Capital",
+        "Solana",
+        "APAC",
+        "staking",
+        "infrastructure",
+        "validators"
+      ]
+    },
+    {
+      "id": "evt-2026-0224-003",
+      "date": "2026-02-24",
+      "title": "Brazil Central Bank Advances Institutional VASP Regulation Timeline to 2027",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "BR"
+      ],
+      "topics": [
+        "Regulation",
+        "Stablecoin",
+        "Custody"
+      ],
+      "entities": [],
+      "summary": "Central Bank of Brazil announces plan to advance institutional VASP (Virtual Asset Service Provider) regulatory framework by 2027. Focus on organizations operating crypto infrastructure and providing services to other institutions. Part of broader regulatory push following MERGE São Paulo 2026 discussions.",
+      "impact": "medium",
+      "source": "https://coinspectator.com/bitcoin-com/2026/02/23/central-bank-of-brazil-to-advance-institutional-vasp-regulation-by-2027/",
+      "keywords": [
+        "Brazil",
+        "VASP",
+        "institutional",
+        "central bank",
+        "regulation",
+        "custody"
+      ]
+    },
+    {
+      "id": "evt-2026-0224-004",
+      "date": "2026-02-24",
+      "title": "Crypto.com Receives Conditional OCC National Trust Bank Charter",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Licensing",
+        "Custody"
+      ],
+      "entities": [],
+      "summary": "Crypto.com receives conditional approval from US Office of the Comptroller of the Currency (OCC) for a national trust bank charter. Upon full approval, Crypto.com National Trust Bank will operate as a qualified custodian for digital assets under direct OCC supervision. Significant milestone for institutional crypto custody in US market with implications for APAC operations.",
+      "impact": "high",
+      "source": "https://www.banklesstimes.com/articles/2026/02/23/crypto-com-receives-conditional-occ-approval-for-national-trust-bank-charter/",
+      "keywords": [
+        "Crypto.com",
+        "OCC",
+        "trust bank",
+        "custody",
+        "institutional",
+        "US regulation"
+      ]
+    },
     {
       "id": "evt-2026-0222-001",
       "date": "2026-02-22",

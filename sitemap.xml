@@ -27,13 +27,13 @@
   <!-- Policy Tracker (Data-Driven) -->
   <url>
     <loc>https://apacfinstab.com/tracker/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://apacfinstab.com/data/policy-events.json</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
