@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | APAC FINSTAB - Crypto Regulatory Alerts</title>
+    <meta name="description" content="Get instant alerts when APAC crypto regulations change. Join 200+ compliance teams who never miss a policy update.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Subscribe to APAC FINSTAB Alerts">
+    <meta property="og:description" content="Real-time APAC crypto regulatory intelligence delivered to your inbox.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apacfinstab.com/subscribe">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .benefits {
+            text-align: left;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit:last-child {
+            margin-bottom: 0;
+        }
+        
+        .benefit-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-text h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .benefit-text p {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        
+        .form-container {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        input[type="email"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+        
+        input::placeholder {
+            color: #666;
+        }
+        
+        select {
+            cursor: pointer;
+        }
+        
+        select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+        
+        button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+        
+        .privacy {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .privacy a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .back-link {
+            margin-top: 2rem;
+        }
+        
+        .back-link a {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .back-link a:hover {
+            color: #00d9ff;
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">APAC FINSTAB</div>
+        <h1>🔔 Never Miss a Policy Change</h1>
+        <p class="subtitle">Real-time APAC crypto regulatory intelligence delivered to your inbox</p>
+        
+        <div class="benefits">
+            <div class="benefit">
+                <span class="benefit-icon">⚡</span>
+                <div class="benefit-text">
+                    <h3>Instant Alerts</h3>
+                    <p>Get notified within hours when major policies are announced</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">🌏</span>
+                <div class="benefit-text">
+                    <h3>12+ APAC Jurisdictions</h3>
+                    <p>Hong Kong, Singapore, Japan, Korea, Australia, and more</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">📊</span>
+                <div class="benefit-text">
+                    <h3>Weekly Deep Dives</h3>
+                    <p>Curated analysis of the most impactful regulatory developments</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <form id="subscribe-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="hidden" name="ref" id="ref-input" value="">
+                <input type="hidden" name="source" value="website">
+                
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <select name="role">
+                        <option value="">What's your role? (optional)</option>
+                        <option value="compliance">Compliance / Legal</option>
+                        <option value="fund">Fund Manager / Investor</option>
+                        <option value="exchange">Exchange / VASP</option>
+                        <option value="regulator">Regulator / Policy</option>
+                        <option value="researcher">Researcher / Academic</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select name="regions">
+                        <option value="">Which regions interest you? (optional)</option>
+                        <option value="hk-sg">Hong Kong & Singapore</option>
+                        <option value="jp-kr">Japan & Korea</option>
+                        <option value="sea">Southeast Asia</option>
+                        <option value="au-nz">Australia & New Zealand</option>
+                        <option value="all">All APAC</option>
+                    </select>
+                </div>
+                
+                <button type="submit">Subscribe for Free →</button>
+                
+                <p class="privacy">
+                    No spam. Unsubscribe anytime. 
+                    <a href="/privacy">Privacy Policy</a>
+                </p>
+            </form>
+            
+            <div class="success-message" id="success-message">
+                <h3>✅ You're in!</h3>
+                <p>Check your inbox for a confirmation email. Welcome to the APAC FINSTAB community!</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number" id="subscriber-count">200+</div>
+                <div class="stat-label">Subscribers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">61</div>
+                <div class="stat-label">Policy Events Tracked</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Jurisdictions</div>
+            </div>
+        </div>
+        
+        <div class="back-link">
+            <a href="/">← Back to APAC FINSTAB</a>
+        </div>
+    </div>
+    
+    <script>
+        // 获取URL参数中的ref
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref');
+        if (ref) {
+            document.getElementById('ref-input').value = ref;
+            // 追踪MCP referral
+            if (ref.startsWith('mcp-')) {
+                gtag('event', 'mcp_referral', {
+                    'ref_source': ref
+                });
+            }
+        }
+        
+        // 表单提交处理
+        document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('success-message').classList.add('show');
+                    
+                    // 追踪转化
+                    gtag('event', 'subscribe', {
+                        'ref': ref || 'direct',
+                        'role': formData.get('role'),
+                        'regions': formData.get('regions')
+                    });
+                } else {
+                    alert('Oops! Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Oops! Something went wrong. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
