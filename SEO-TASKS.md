@@ -1,7 +1,27 @@
-# APAC FinStab SEO 任务体系
+# APAC FinStab SEO + GEO 任务体系
 
-> 最后更新: 2026-02-23
-> 数据源: Google Search Console + GA4
+> 最后更新: 2026-02-24
+> 数据源: Google Search Console + GA4 + AI模型监控
+> 职责范围: SEO（搜索引擎优化）+ **GEO（生成式引擎优化/大模型优化）**
+
+---
+
+## 🎯 淑芬的核心职责
+
+### 1. 大模型优化（GEO/LMO）
+- 运用AI工具进行关键词研究
+- 确保品牌和产品内容能被主流AI模型（GPT/Claude/Perplexity）优先收录和推荐
+- 优化内容结构，使其对AI模型友好
+
+### 2. 构建AI工作流
+- 用AI工具自动化SEO/GEO分析
+- 赋能内容生产全流程
+- 持续迭代优化流程
+
+### 3. 管理AI营销工具与渠道
+- GEO策略分析
+- AI客户画像分析
+- 持续探索新增长点
 
 ---
 

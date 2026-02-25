@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HK SFC Compliance MCP Schema v0.1",
+  "description": "香港证监会合规数据Schema - 支持VASP牌照申请和OTC衍生品报告",
+  "version": "0.1.0",
+  "lastUpdated": "2026-02-25",
+  
+  "definitions": {
+    "RegulationType": {
+      "enum": ["VASP_LICENSE", "OTC_DERIVATIVES", "TYPE_9_LICENSE", "ANNUAL_RETURN"]
+    },
+    
+    "ComplianceStatus": {
+      "enum": ["NOT_STARTED", "IN_PROGRESS", "SUBMITTED", "UNDER_REVIEW", "APPROVED", "REJECTED", "AMENDMENT_REQUIRED"]
+    },
+
+    "RiskLevel": {
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    }
+  },
+
+  "mcpTools": {
+    "getComplianceRequirements": {
+      "description": "获取特定业务场景的合规要求清单",
+      "input": {
+        "type": "object",
+        "properties": {
+          "businessType": {
+            "type": "string",
+            "description": "业务类型: crypto_exchange | otc_trading | custody | advisory"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "default": "HK",
+            "description": "管辖区域"
+          },
+          "clientTypes": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "客户类型: retail | professional | institutional"
+          }
+        },
+        "required": ["businessType"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "requirements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/schemas/ComplianceRequirement"
+            }
+          },
+          "estimatedTimeline": {"type": "string"},
+          "estimatedCost": {"type": "object"},
+          "relatedCases": {"type": "array"}
+        }
+      }
+    },
+
+    "checkVASPEligibility": {
+      "description": "检查VASP牌照申请资格",
+      "input": {
+        "type": "object",
+        "properties": {
+          "companyInfo": {
+            "type": "object",
+            "properties": {
+              "registeredInHK": {"type": "boolean"},
+              "paidUpCapital": {"type": "number", "description": "实缴资本(HKD)"},
+              "liquidCapital": {"type": "number", "description": "流动资金(HKD)"},
+              "yearsInOperation": {"type": "number"},
+              "hasComplianceOfficer": {"type": "boolean"},
+              "hasMLRO": {"type": "boolean"},
+              "keyPersonnelInHK": {"type": "boolean"}
+            }
+          },
+          "businessPlan": {
+            "type": "object",
+            "properties": {
+              "targetClients": {"type": "array", "items": {"type": "string"}},
+              "tradingPairs": {"type": "array", "items": {"type": "string"}},
+              "custodyArrangement": {"type": "string"},
+              "amlProcedures": {"type": "boolean"}
+            }
+          }
+        },
+        "required": ["companyInfo"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "eligible": {"type": "boolean"},
+          "score": {"type": "number", "minimum": 0, "maximum": 100},
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "requirement": {"type": "string"},
+                "currentStatus": {"type": "string"},
+                "requiredAction": {"type": "string"},
+                "priority": {"$ref": "#/definitions/RiskLevel"}
+              }
+            }
+          },
+          "recommendations": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+
+    "getFilingDeadlines": {
+      "description": "获取申报截止日期",
+      "input": {
+        "type": "object",
+        "properties": {
+          "licenseTypes": {
+            "type": "array",
+            "items": {"$ref": "#/definitions/RegulationType"}
+          },
+          "lookAheadDays": {"type": "number", "default": 90}
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "deadlines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "filingType": {"type": "string"},
+                "deadline": {"type": "string", "format": "date"},
+                "daysRemaining": {"type": "number"},
+                "penalty": {"type": "string"},
+                "requiredDocuments": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "generateFilingChecklist": {
+      "description": "生成申报材料清单",
+      "input": {
+        "type": "object",
+        "properties": {
+          "filingType": {"$ref": "#/definitions/RegulationType"},
+          "companyProfile": {"type": "object"}
+        },
+        "required": ["filingType"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "checklist": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "item": {"type": "string"},
+                "mandatory": {"type": "boolean"},
+                "format": {"type": "string"},
+                "template": {"type": "string"},
+                "notes": {"type": "string"}
+              }
+            }
+          },
+          "totalItems": {"type": "number"},
+          "mandatoryItems": {"type": "number"}
+        }
+      }
+    },
+
+    "searchEnforcementCases": {
+      "description": "搜索相关执法案例",
+      "input": {
+        "type": "object",
+        "properties": {
+          "keywords": {"type": "array", "items": {"type": "string"}},
+          "violationType": {"type": "string"},
+          "dateRange": {
+            "type": "object",
+            "properties": {
+              "from": {"type": "string", "format": "date"},
+              "to": {"type": "string", "format": "date"}
+            }
+          },
+          "limit": {"type": "number", "default": 10}
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "cases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "caseId": {"type": "string"},
+                "date": {"type": "string", "format": "date"},
+                "entity": {"type": "string"},
+                "violation": {"type": "string"},
+                "penalty": {"type": "string"},
+                "summary": {"type": "string"},
+                "lessonsLearned": {"type": "array", "items": {"type": "string"}},
+                "sourceUrl": {"type": "string", "format": "uri"}
+              }
+            }
+          },
+          "totalFound": {"type": "number"}
+        }
+      }
+    },
+
+    "predictRegulatoryTrend": {
+      "description": "预测监管趋势 (苏格拉底式 - 提问而非断言)",
+      "input": {
+        "type": "object",
+        "properties": {
+          "topic": {"type": "string"},
+          "region": {"type": "string", "default": "HK"},
+          "relatedRegions": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["topic"]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "historicalPattern": {
+            "type": "object",
+            "properties": {
+              "similarPolicies": {"type": "array"},
+              "avgFollowUpDays": {"type": "number"},
+              "followUpProbability": {"type": "number"}
+            }
+          },
+          "question": {
+            "type": "string",
+            "description": "苏格拉底式问题 - 帮用户思考而非给答案"
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "signal": {"type": "string"},
+                "source": {"type": "string"},
+                "confidence": {"type": "number"}
+              }
+            }
+          },
+          "monitorSuggestion": {"type": "string"}
+        }
+      }
+    }
+  },
+
+  "schemas": {
+    "ComplianceRequirement": {
+      "type": "object",
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "legalBasis": {"type": "string"},
+        "applicableTo": {"type": "array", "items": {"type": "string"}},
+        "deadline": {"type": "string"},
+        "penalty": {"type": "string"},
+        "documents": {"type": "array", "items": {"type": "string"}},
+        "relatedCases": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

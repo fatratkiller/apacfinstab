@@ -1,0 +1,17 @@
+# APAC FINSTAB MCP Server - Cloudflare Workers配置
+# 免费版部署
+
+name = "apacfinstab-mcp"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+SITE_URL = "https://apacfinstab.com"
+
+# 免费版限制：100k请求/天，10ms CPU时间
+# 足够早期流量
+
+# 路由配置 (需要自定义域名后启用)
+# routes = [
+#   { pattern = "mcp.apacfinstab.com/*", zone_name = "apacfinstab.com" }
+# ]
