@@ -139,9 +139,51 @@ function loadData() {
   // regionOverviews = JSON.parse(fs.readFileSync('../data/region-overviews.json'));
 }
 
+// 统计追踪 + 转化引导
+function generateRefId() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+}
+
+function createConversionCTA(tool, region) {
+  const refId = generateRefId();
+  const regionParam = region ? `&region=${region}` : '';
+  return {
+    subscribe: {
+      message: "🔔 Get instant alerts when APAC regulations change",
+      url: `https://apacfinstab.com/subscribe?ref=mcp-${tool}-${refId}${regionParam}`,
+      benefit: "Join 200+ compliance teams who never miss a policy update"
+    },
+    tracker: {
+      message: "📊 See the full policy timeline with interactive filters",
+      url: `https://apacfinstab.com/tracker/?ref=mcp-${tool}-${refId}${regionParam}`
+    }
+  };
+}
+
+// 记录调用统计（Cloudflare KV）
+async function logCall(tool, args, env) {
+  if (env?.ANALYTICS) {
+    const event = {
+      t: Date.now(),
+      tool,
+      region: args.region || 'all',
+      topic: args.topic || 'all'
+    };
+    try {
+      await env.ANALYTICS.put(`call:${Date.now()}`, JSON.stringify(event), {
+        expirationTtl: 86400 * 30 // 保留30天
+      });
+    } catch (e) {
+      // 静默失败，不影响主流程
+    }
+  }
+}
+
 // 工具实现
 const toolHandlers = {
-  getLatestPolicies: async (args) => {
+  getLatestPolicies: async (args, env) => {
+    await logCall('getLatestPolicies', args, env);
+    
     let events = [...policyEvents];
     
     // 按地区筛选
@@ -164,42 +206,66 @@ const toolHandlers = {
     const limit = args.limit || 10;
     events = events.slice(0, limit);
     
+    const cta = createConversionCTA('policies', args.region);
+    
     return {
       count: events.length,
       events: events,
-      source: "https://apacfinstab.com/tracker/",
-      note: "For full data and real-time updates, visit apacfinstab.com"
+      _meta: {
+        source: "APAC FINSTAB - apacfinstab.com",
+        updated: new Date().toISOString().split('T')[0],
+        totalInDatabase: policyEvents.length
+      },
+      _cta: cta
     };
   },
 
-  getRegionOverview: async (args) => {
+  getRegionOverview: async (args, env) => {
+    await logCall('getRegionOverview', args, env);
+    
     const overview = regionOverviews[args.region];
     if (!overview) {
       return { error: `Region ${args.region} not found` };
     }
+    
+    const cta = createConversionCTA('region', args.region);
+    
     return {
-      ...overview,
-      source: `https://apacfinstab.com/tracker/?region=${args.region}`,
-      note: "For detailed analysis, visit apacfinstab.com"
+      region: args.region,
+      overview: overview,
+      _meta: {
+        source: "APAC FINSTAB - apacfinstab.com",
+        regionsAvailable: Object.keys(regionOverviews)
+      },
+      _cta: cta
     };
   },
 
-  comparePolicies: async (args) => {
+  comparePolicies: async (args, env) => {
+    await logCall('comparePolicies', args, env);
+    
     const comparison = {};
     for (const region of args.regions) {
       comparison[region] = regionOverviews[region] || { status: "No data" };
     }
     
+    const cta = createConversionCTA('compare', args.regions[0]);
+    
     return {
       regions: args.regions,
       topic: args.topic || "General",
       comparison: comparison,
-      source: "https://apacfinstab.com/tracker/",
-      note: "For interactive comparison, visit apacfinstab.com"
+      _meta: {
+        source: "APAC FINSTAB - apacfinstab.com",
+        note: "For interactive side-by-side comparison"
+      },
+      _cta: cta
     };
   },
 
-  askSocrates: async (args) => {
+  askSocrates: async (args, env) => {
+    await logCall('askSocrates', args, env);
+    
     // 苏格拉底式 - 不给答案，只提问题
     const questions = [
       `If ${args.region || 'this region'} implements this policy, how might neighboring jurisdictions respond?`,
@@ -208,12 +274,17 @@ const toolHandlers = {
       `Is this a signal of tightening or loosening? What comes next?`
     ];
     
+    const cta = createConversionCTA('socrates', args.region);
+    
     return {
       context: args.context,
       questions: questions,
-      historicalPatterns: "Visit apacfinstab.com/tracker/ for historical policy data",
-      note: "I ask questions, not give answers. The judgment is yours.",
-      source: "https://apacfinstab.com"
+      _philosophy: "I ask questions, not give answers. The judgment is yours.",
+      _meta: {
+        source: "APAC FINSTAB - apacfinstab.com",
+        historicalData: "Full policy timeline at apacfinstab.com/tracker/"
+      },
+      _cta: cta
     };
   }
 };
