@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://apacfinstab.com/</loc>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -27,102 +27,17 @@
   <!-- Policy Tracker (Data-Driven) -->
   <url>
     <loc>https://apacfinstab.com/tracker/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://apacfinstab.com/data/policy-events.json</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Weekly Dashboards (each is a unique content page) -->
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0126-0202.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0119-0125.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0113-0119.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1229-0105.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1222-1228.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1216-1222.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1208-1214.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1201-1207.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1124-1130.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/apacfinreg1117-1123.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/apacfinreg1110-1116.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/apacfinreg1110.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://apacfinstab.com/dashboards/regulation-weekly-2025-11-03.html</loc>
-    <lastmod>2026-02-12</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.5</priority>
-  </url>
   <!-- REN - Regulatory Engagement Navigator -->
   <url>
     <loc>https://apacfinstab.com/ren/</loc>
@@ -138,18 +53,52 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-</urlset>
 
-  <!-- pSEO Region Pages (Generated 2026-02-25) -->
-  <url><loc>https://apacfinstab.com/regions/hk.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/sg.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/jp.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/kr.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/cn.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/au.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/in.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/th.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/id.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/vn.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/ph.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://apacfinstab.com/regions/my.html</loc><lastmod>2026-02-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <!-- Subscribe Page -->
+  <url>
+    <loc>https://apacfinstab.com/subscribe.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- pSEO Region Pages -->
+  <url><loc>https://apacfinstab.com/regions/hk.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/sg.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/jp.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/kr.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/cn.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/au.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/in.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/th.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/id.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/vn.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/ph.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/regions/my.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- pSEO Topic Pages (Generated 2026-02-26) -->
+  <url><loc>https://apacfinstab.com/topics/stablecoin.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/exchange.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/etf.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/defi.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/custody.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/taxation.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/cbdc.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://apacfinstab.com/topics/licensing.html</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Weekly Dashboards -->
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0126-0202.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0119-0125.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0113-0119.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.8</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1229-0105.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1222-1228.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1216-1222.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1208-1214.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1201-1207.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_1124-1130.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/apacfinreg1117-1123.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/apacfinreg1110-1116.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/apacfinreg1110.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
+  <url><loc>https://apacfinstab.com/dashboards/regulation-weekly-2025-11-03.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
+</urlset>
