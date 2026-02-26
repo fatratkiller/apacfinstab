@@ -129,14 +129,16 @@
 
 ## ✅ 执行计划
 
-### 今日 (02-26) ✅
+### 今日 (02-26) ✅ 全部完成
 - [x] 完成关键词调研
 - [x] 创建 /hk/license-cost.html
 - [x] 创建 /hk/licensed-platforms.html
+- [x] 创建 /sg/mas-license-guide.html
+- [x] 创建 /compare/hk-vs-sg.html
 
 ### 明日 (02-27)
-- [ ] 创建 /sg/mas-license-guide.html
-- [ ] 创建 /compare/hk-vs-sg.html
+- [ ] 创建 /jp/fsa-license-guide.html
+- [ ] 创建 /kr/daba-2026.html
 
 ### 本周内 (02-28前)
 - [ ] 创建 /compare/hk-vs-sg.html
