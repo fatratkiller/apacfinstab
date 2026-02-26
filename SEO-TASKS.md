@@ -141,19 +141,77 @@
 
 ---
 
-## 📈 目标关键词
+## 📈 目标关键词 (2026-02-26更新)
 
-### 主要关键词 (竞争)
-- APAC crypto regulation
-- Asia cryptocurrency policy
-- Hong Kong stablecoin license
-- Singapore MAS crypto
+### 🔥 热点关键词 (时效窗口)
+> 2026年3月香港稳定币牌照发放在即，抢占搜索流量
 
-### 长尾关键词 (低竞争优先)
-- APAC DeFi compliance 2026
-- Asia Pacific fintech regulation tracker
-- Hong Kong crypto exchange license requirements
-- China digital yuan CBDC updates
+| 关键词 | 搜索意图 | 优先级 | 内容状态 |
+|--------|----------|--------|----------|
+| Hong Kong stablecoin license 2026 | 牌照申请指南 | P0 | ⬜ 待创建 |
+| SFC stablecoin licensing March 2026 | 时间线追踪 | P0 | ⬜ 待创建 |
+| Hong Kong VASP license requirements | 牌照要求详解 | P0 | ⬜ 待创建 |
+| SFC ASPIRe roadmap | SFC监管路线图 | P1 | ⬜ 待创建 |
+| Hong Kong crypto dealer license 2026 | 经销商牌照 | P1 | ⬜ 待创建 |
+| Hong Kong crypto custodian regulation | 托管规则 | P1 | ⬜ 待创建 |
+
+### 🎯 核心关键词 (长期SEO)
+
+| 关键词 | 月搜索量估 | 竞争度 | 优先级 |
+|--------|-----------|--------|--------|
+| APAC crypto regulation | 中 | 高 | P1 |
+| Asia cryptocurrency policy | 中 | 中 | P1 |
+| Hong Kong SFC crypto | 高 | 中 | P0 |
+| Singapore MAS crypto regulation | 中 | 中 | P1 |
+| Asia fintech compliance AI | 中 | 低 | P0 |
+
+### 📊 长尾关键词矩阵 (pSEO批量)
+
+**模式: [地区] + [主题] + [年份/regulation/license]**
+
+| 地区 | 主题组合 |
+|------|----------|
+| Hong Kong | stablecoin, VASP, exchange, custodian, SFC |
+| Singapore | MAS, payment, DPT, licensing |
+| Japan | FSA, stablecoin issuer, exchange |
+| South Korea | crypto exchange, shareholder cap, FSC |
+| Australia | ASIC, crypto regulation, licensing |
+| Thailand | SEC, digital asset |
+
+**生成页面示例:**
+- `/hk/stablecoin-license-2026/`
+- `/hk/vasp-requirements/`
+- `/sg/mas-crypto-licensing/`
+- `/jp/stablecoin-issuer-license/`
+- `/kr/exchange-shareholder-rules/`
+
+### 🤖 GEO优化关键词 (AI搜索)
+
+> 让AI搜索引擎引用我们
+
+| 问题形式关键词 | 目标页面 |
+|----------------|----------|
+| What are Hong Kong VASP license requirements | /hk/vasp-requirements/ |
+| How to apply for SFC crypto license | /hk/sfc-license-guide/ |
+| Asia crypto regulation comparison 2026 | /compare/ |
+| Which APAC countries allow crypto exchanges | /regions/ |
+
+---
+
+## 📅 关键词执行计划 (本周)
+
+### 2026-02-26 (今天)
+- [x] 关键词规划完成
+- [ ] 创建Hong Kong稳定币牌照页面 (热点窗口)
+- [ ] 更新sitemap
+
+### 2026-02-27
+- [ ] 创建VASP牌照要求页面
+- [ ] SFC ASPIRe路线图页面
+
+### 2026-02-28
+- [ ] 地区对比页面优化
+- [ ] 批量生成长尾页面模板测试
 
 ---
 
