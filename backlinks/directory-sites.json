@@ -1,0 +1,272 @@
+{
+  "product": {
+    "name": "APAC FINSTAB",
+    "url": "https://apacfinstab.com",
+    "tagline": "Real-time regulatory intelligence tracking crypto regulation across 12+ Asia-Pacific markets",
+    "description": "APAC FINSTAB provides comprehensive regulatory intelligence for cryptocurrency and digital asset compliance. Track stablecoin frameworks, VASP licensing, CBDC policies from Hong Kong, Singapore, Japan, Korea and more.",
+    "email": "apacfinstab@outlook.com",
+    "categories": ["Finance", "Fintech", "Compliance", "Crypto", "RegTech"],
+    "pricing": "free"
+  },
+  "directories": [
+    {
+      "id": "saashub",
+      "name": "SaaSHub",
+      "url": "https://www.saashub.com/services/submit",
+      "status": "submitted",
+      "submitted_date": "2026-02-26",
+      "da": 65,
+      "monthly_traffic": "500K+",
+      "approval_time": "up to 21 days",
+      "notes": "Free tier, auto-fetches site info"
+    },
+    {
+      "id": "alternativeto",
+      "name": "AlternativeTo",
+      "url": "https://alternativeto.net/contribute/add-app/",
+      "status": "pending",
+      "da": 80,
+      "monthly_traffic": "5M+",
+      "approval_time": "1-7 days",
+      "notes": "High DA, large traffic"
+    },
+    {
+      "id": "producthunt",
+      "name": "Product Hunt",
+      "url": "https://www.producthunt.com/posts/new",
+      "status": "blocked",
+      "da": 91,
+      "monthly_traffic": "10M+",
+      "approval_time": "same day",
+      "notes": "Needs account login - BLOCKED"
+    },
+    {
+      "id": "betalist",
+      "name": "BetaList",
+      "url": "https://betalist.com/submit",
+      "status": "pending",
+      "da": 60,
+      "monthly_traffic": "200K+",
+      "approval_time": "1-2 weeks",
+      "notes": "Good for startups"
+    },
+    {
+      "id": "crunchbase",
+      "name": "Crunchbase",
+      "url": "https://www.crunchbase.com/add-new",
+      "status": "pending",
+      "da": 91,
+      "monthly_traffic": "30M+",
+      "approval_time": "1-3 days",
+      "notes": "Very high DA, business directory"
+    },
+    {
+      "id": "g2",
+      "name": "G2",
+      "url": "https://www.g2.com/products/new",
+      "status": "pending",
+      "da": 92,
+      "monthly_traffic": "50M+",
+      "approval_time": "1-2 weeks",
+      "notes": "Top B2B software directory"
+    },
+    {
+      "id": "capterra",
+      "name": "Capterra",
+      "url": "https://www.capterra.com/vendors/sign-up",
+      "status": "pending",
+      "da": 93,
+      "monthly_traffic": "40M+",
+      "approval_time": "1-2 weeks",
+      "notes": "Top B2B directory, Gartner owned"
+    },
+    {
+      "id": "getapp",
+      "name": "GetApp",
+      "url": "https://www.getapp.com/submit",
+      "status": "pending",
+      "da": 85,
+      "monthly_traffic": "10M+",
+      "approval_time": "1-2 weeks",
+      "notes": "Gartner owned"
+    },
+    {
+      "id": "softwareadvice",
+      "name": "Software Advice",
+      "url": "https://www.softwareadvice.com/vendors/",
+      "status": "pending",
+      "da": 80,
+      "monthly_traffic": "5M+",
+      "approval_time": "1-2 weeks",
+      "notes": "Gartner owned"
+    },
+    {
+      "id": "sourceforge",
+      "name": "SourceForge",
+      "url": "https://sourceforge.net/create/",
+      "status": "pending",
+      "da": 92,
+      "monthly_traffic": "30M+",
+      "approval_time": "instant",
+      "notes": "High DA, instant approval for software"
+    },
+    {
+      "id": "slant",
+      "name": "Slant",
+      "url": "https://www.slant.co/",
+      "status": "pending",
+      "da": 70,
+      "monthly_traffic": "2M+",
+      "approval_time": "1-3 days",
+      "notes": "Comparison site"
+    },
+    {
+      "id": "trustpilot",
+      "name": "Trustpilot",
+      "url": "https://business.trustpilot.com/",
+      "status": "pending",
+      "da": 93,
+      "monthly_traffic": "100M+",
+      "approval_time": "instant",
+      "notes": "Review site, very high DA"
+    },
+    {
+      "id": "startupstash",
+      "name": "Startup Stash",
+      "url": "https://startupstash.com/add-listing/",
+      "status": "pending",
+      "da": 55,
+      "monthly_traffic": "100K+",
+      "approval_time": "1-2 weeks",
+      "notes": "Good for startups"
+    },
+    {
+      "id": "toolify",
+      "name": "Toolify.ai",
+      "url": "https://www.toolify.ai/submit",
+      "status": "blocked",
+      "da": 60,
+      "monthly_traffic": "1M+",
+      "approval_time": "1 week",
+      "notes": "Paid only $99 - BLOCKED"
+    },
+    {
+      "id": "futurepedia",
+      "name": "Futurepedia",
+      "url": "https://www.futurepedia.io/submit-tool",
+      "status": "pending",
+      "da": 65,
+      "monthly_traffic": "2M+",
+      "approval_time": "1-2 weeks",
+      "notes": "AI tools directory"
+    },
+    {
+      "id": "theresanaiforthat",
+      "name": "There's An AI For That",
+      "url": "https://theresanaiforthat.com/submit/",
+      "status": "pending",
+      "da": 70,
+      "monthly_traffic": "3M+",
+      "approval_time": "1-2 weeks",
+      "notes": "Popular AI directory"
+    },
+    {
+      "id": "aitoolsdirectory",
+      "name": "AI Tools Directory",
+      "url": "https://aitoolsdirectory.com/submit",
+      "status": "pending",
+      "da": 50,
+      "monthly_traffic": "200K+",
+      "approval_time": "1 week",
+      "notes": "AI focused"
+    },
+    {
+      "id": "pitchwall",
+      "name": "PitchWall",
+      "url": "https://pitchwall.co/submit",
+      "status": "pending",
+      "da": 40,
+      "monthly_traffic": "50K+",
+      "approval_time": "1-3 days",
+      "notes": "Startup showcase"
+    },
+    {
+      "id": "launching_next",
+      "name": "Launching Next",
+      "url": "https://www.launchingnext.com/submit/",
+      "status": "pending",
+      "da": 45,
+      "monthly_traffic": "30K+",
+      "approval_time": "1-2 weeks",
+      "notes": "Startup directory"
+    },
+    {
+      "id": "sideprojectors",
+      "name": "SideProjectors",
+      "url": "https://www.sideprojectors.com/",
+      "status": "pending",
+      "da": 50,
+      "monthly_traffic": "100K+",
+      "approval_time": "instant",
+      "notes": "Side project showcase"
+    },
+    {
+      "id": "f6s",
+      "name": "F6S",
+      "url": "https://www.f6s.com/",
+      "status": "pending",
+      "da": 70,
+      "monthly_traffic": "2M+",
+      "approval_time": "instant",
+      "notes": "Startup network"
+    },
+    {
+      "id": "angel_list",
+      "name": "AngelList / Wellfound",
+      "url": "https://wellfound.com/",
+      "status": "pending",
+      "da": 90,
+      "monthly_traffic": "10M+",
+      "approval_time": "1-3 days",
+      "notes": "Very high DA, startup ecosystem"
+    },
+    {
+      "id": "indiehackers",
+      "name": "Indie Hackers",
+      "url": "https://www.indiehackers.com/products",
+      "status": "blocked",
+      "da": 75,
+      "monthly_traffic": "1M+",
+      "approval_time": "instant",
+      "notes": "Needs account - BLOCKED"
+    },
+    {
+      "id": "hackernews",
+      "name": "Hacker News (Show HN)",
+      "url": "https://news.ycombinator.com/submit",
+      "status": "blocked",
+      "da": 90,
+      "monthly_traffic": "10M+",
+      "approval_time": "instant",
+      "notes": "Needs account - BLOCKED"
+    },
+    {
+      "id": "devhunt",
+      "name": "DevHunt",
+      "url": "https://devhunt.org/",
+      "status": "pending",
+      "da": 45,
+      "monthly_traffic": "50K+",
+      "approval_time": "1-3 days",
+      "notes": "Dev tools showcase"
+    }
+  ],
+  "submission_log": [
+    {
+      "date": "2026-02-26",
+      "site": "saashub",
+      "status": "submitted",
+      "notes": "Submitted via browser automation"
+    }
+  ]
+}
