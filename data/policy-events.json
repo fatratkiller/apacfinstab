@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-24T10:05:00+08:00",
-    "totalEvents": 61,
+    "lastUpdated": "2026-02-26T02:11:06.761Z",
+    "totalEvents": 64,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,92 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0225-001",
+      "date": "2026-02-25",
+      "title": "Hong Kong to Award First Stablecoin Licenses in March, Expand to Dealers & Custodians",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Licensing",
+        "Custody"
+      ],
+      "entities": [],
+      "summary": "Hong Kong confirms first stablecoin licenses will be awarded in March 2026. Financial Secretary Paul Chan announces legislation for dealers and custodian service providers to broaden regulatory framework beyond existing rules for trading platforms. The city is racing to compete with Singapore and Dubai for regional crypto infrastructure business.",
+      "impact": "high",
+      "source": "https://www.blockhead.co/2026/02/25/hong-kong-to-award-stablecoin-licenses-in-march-expand-crypto-regulation/",
+      "keywords": [
+        "Hong Kong",
+        "stablecoin",
+        "license",
+        "HKMA",
+        "dealer",
+        "custodian",
+        "March 2026"
+      ]
+    },
+    {
+      "id": "evt-2026-0225-002",
+      "date": "2026-02-25",
+      "title": "Pakistan Senate Committee Approves Virtual Asset Act 2026",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "PK"
+      ],
+      "topics": [
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Pakistan Senate committee approves draft Virtual Asset Act 2026, paving way for legal crypto trade. Pakistan Virtual Assets Regulatory Authority (PVARA) to grant licenses for crypto coin issuance and regulate crypto exchanges under new law. Follows PVARA regulatory sandbox launch earlier this month.",
+      "impact": "high",
+      "source": "https://www.arabnews.pk/node/2634414/pakistan",
+      "keywords": [
+        "Pakistan",
+        "Virtual Asset Act 2026",
+        "PVARA",
+        "Senate",
+        "crypto regulation",
+        "licensing"
+      ]
+    },
+    {
+      "id": "evt-2026-0225-003",
+      "date": "2026-02-25",
+      "title": "Australian Crypto Leaders Warn Government: Act or Fall Behind APAC Peers",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "AU"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Australian crypto industry leaders urge government to take decisive action on digital asset regulation or risk falling behind APAC peers. Industry calls for policymakers to review digital payments developments through international lens as growing number of private and public sector actors integrate alternative payment systems.",
+      "impact": "medium",
+      "source": "https://www.investordaily.com.au/crypto-leaders-warn-australian-government-act-or-fall-behind/",
+      "keywords": [
+        "Australia",
+        "crypto regulation",
+        "digital payments",
+        "APAC",
+        "policy"
+      ]
+    },
     {
       "id": "evt-2026-0224-001",
       "date": "2026-02-24",
