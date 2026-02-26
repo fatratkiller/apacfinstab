@@ -26,11 +26,16 @@
 - **产出:** 8个主题页面（stablecoin/exchange/etf/defi/custody/taxation/cbdc/licensing） + sitemap.xml修复更新
 
 ### TICKET-002: MCP Server部署到Cloudflare
-- **状态:** 🔴 TODO
+- **状态:** ⏸️ BLOCKED
 - **来源:** 2026-02-25 GEO策略
 - **描述:** 部署MCP Server让AI Agent能调用
 - **验收标准:** WebMCP可访问 + 测试通过
 - **截止:** 2026-02-28
+- **进展:** 
+  - ✅ Workers代码已完成 (`mcp-server/workers/`)
+  - ✅ 依赖已安装
+  - ✅ 部署文档已写好 (`mcp-server/workers/DEPLOY.md`)
+- **阻塞原因:** 需老板执行 `npx wrangler login` 登录Cloudflare并部署
 
 ### TICKET-003: 提交到MCP工具目录
 - **状态:** 🔴 TODO
@@ -146,13 +151,13 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 2 |
+| 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
 | 🟢 DONE | 4 |
-| ⏸️ BLOCKED | 5 |
+| ⏸️ BLOCKED | 6 |
 
-**🔥 下一优先执行:** TICKET-002 (MCP Server部署到Cloudflare)
+**🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
 
 ---
 
-*最后更新: 2026-02-26 18:01*
+*最后更新: 2026-02-26 22:00*
