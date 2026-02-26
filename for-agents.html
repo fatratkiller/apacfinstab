@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://apacfinstab.com/for-agents.html" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <!-- Primary Meta Tags -->
+  <title>For AI Agents | APAC FINSTAB MCP Server - Regulatory Context API</title>
+  <meta name="description" content="Integrate APAC regulatory intelligence into your AI agents. MCP Server providing regulatory context awareness for crypto compliance across Asia-Pacific markets." />
+  <meta name="keywords" content="MCP server, AI agent compliance, regulatory API, crypto compliance API, Web3 AI integration, APAC regulation API" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://apacfinstab.com/for-agents.html" />
+  <meta property="og:title" content="For AI Agents | APAC FINSTAB MCP Server" />
+  <meta property="og:description" content="Integrate APAC regulatory intelligence into your AI agents with our MCP Server." />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@APACFinStab" />
+  <meta name="twitter:title" content="For AI Agents | APAC FINSTAB MCP Server" />
+  
+  <!-- WebMCP Manifest -->
+  <link rel="webmcp-manifest" href="/webmcp.json" />
+
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-light: #ffa366;
+      --brand-orange-dark: #ff6b1a;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #12172b;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --accent-blue: #3b82f6;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --border-strong: rgba(255, 140, 66, 0.2);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 40px var(--brand-orange-glow);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1425 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.6);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+    
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #fff;
+      border-radius: 50%;
+    }
+    
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 2.5px;
+      height: 20px;
+      background: #fff;
+    }
+    
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    
+    .logo-text .brand {
+      font-weight: 800;
+      font-size: 19px;
+      color: var(--text-primary);
+    }
+    
+    .logo-text .tagline {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--brand-orange);
+      font-weight: 700;
+    }
+    
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+    
+    nav a {
+      padding: 10px 18px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    
+    nav a:hover {
+      color: var(--text-primary);
+      background: rgba(255, 140, 66, 0.1);
+    }
+    
+    nav a.active {
+      color: var(--brand-orange);
+      background: rgba(255, 140, 66, 0.15);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.1) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      color: #a78bfa;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 700px;
+    }
+
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: var(--brand-orange);
+    }
+
+    .section h3 {
+      font-size: 1.1rem;
+      margin: 24px 0 12px;
+      color: var(--text-primary);
+    }
+
+    .section p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .code-block {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin: 16px 0;
+    }
+
+    .code-block .comment { color: var(--text-muted); }
+    .code-block .string { color: var(--accent-green); }
+    .code-block .key { color: var(--accent-purple); }
+    .code-block .number { color: var(--brand-orange); }
+
+    .tool-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 12px 0;
+    }
+
+    .tool-card h4 {
+      font-size: 1rem;
+      color: var(--accent-blue);
+      margin-bottom: 8px;
+      font-family: 'SF Mono', monospace;
+    }
+
+    .tool-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.15) 0%, rgba(255, 140, 66, 0.05) 100%);
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-box h3 {
+      margin: 0 0 12px;
+      color: var(--text-primary);
+    }
+
+    .cta-box p {
+      margin: 0 0 20px;
+      color: var(--text-secondary);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .api-response {
+      background: var(--bg-primary);
+      border-left: 3px solid var(--accent-green);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-clear { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+    .status-review { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+    .status-risk { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    @media (max-width: 768px) {
+      main { padding: 40px 20px; }
+      h1 { font-size: 1.8rem; }
+      .section { padding: 24px; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo-container">
+        <div class="logo-icon" role="img" aria-label="APAC FINSTAB Logo"></div>
+        <div class="logo-text">
+          <span class="brand">APAC FINSTAB</span>
+          <span class="tagline">Regulatory Intelligence</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/ren/">REN</a>
+        <a href="/learn/">Learn</a>
+        <a href="/blog.html">Insights</a>
+        <a href="/for-agents.html" class="active">For AI</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="hero-badge">🤖 MCP Server</span>
+    <h1>Regulatory Context API for AI Agents</h1>
+    <p class="subtitle">Give your AI agents regulatory awareness for Asia-Pacific crypto markets. We tell you what environment you're in — not what decision to make.</p>
+
+    <div class="section">
+      <h2>🎯 What We Do (And Don't Do)</h2>
+      <p>APAC FINSTAB provides a <strong>regulatory context layer</strong> — we're L1.5, sitting between raw data and human judgment.</p>
+      
+      <div style="display: grid; gap: 16px; margin-top: 20px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: var(--accent-green); font-size: 20px;">✅</span>
+          <div>
+            <strong>We tell you:</strong> confidence levels, risk flags, relevant regulations, questions to ask
+          </div>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          <span style="color: var(--accent-red); font-size: 20px;">❌</span>
+          <div>
+            <strong>We don't:</strong> return true/false compliance verdicts, replace legal counsel, make final decisions
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">Think of us like a car's lane departure warning — we alert you when something needs attention, but you're still driving.</p>
+    </div>
+
+    <div class="section">
+      <h2>📡 API Response Example</h2>
+      <p>When you ask about launching a staking product in Hong Kong:</p>
+      
+      <div class="code-block">
+<span class="key">check_regulatory_context</span>({
+  <span class="key">"action"</span>: <span class="string">"launch_staking_product"</span>,
+  <span class="key">"jurisdiction"</span>: <span class="string">"HK"</span>,
+  <span class="key">"entity_type"</span>: <span class="string">"VASP"</span>
+})
+      </div>
+
+      <div class="api-response">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <strong>Response</strong>
+          <span class="status-badge status-review">NEEDS_REVIEW</span>
+        </div>
+<pre style="color: var(--text-secondary); font-size: 13px; margin: 0;">{
+  "confidence": 0.73,
+  "status": "NEEDS_REVIEW",
+  "flags": [
+    "SFC may classify as regulated activity — have you confirmed the activity definition?",
+    "Check if this falls under Type 1 license scope"
+  ],
+  "references": ["SFC FAQ Q12", "VASP Guideline 4.3"],
+  "suggested_actions": ["Review with legal counsel"]
+}</pre>
+      </div>
+
+      <p><em>Notice: We give you confidence + flags + references. We don't say "yes" or "no".</em></p>
+    </div>
+
+    <div class="section">
+      <h2>🔧 Available Tools</h2>
+      
+      <div class="tool-card">
+        <h4>getLatestPolicies()</h4>
+        <p>Get latest crypto policy events from APAC regions. Filter by region, topic, and date range.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>getRegionOverview()</h4>
+        <p>Get regulatory overview for a specific APAC region — regulator, framework, licensing requirements.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>comparePolicies()</h4>
+        <p>Compare crypto policies across multiple APAC regions for stablecoins, exchanges, DeFi, ETFs.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>checkCompliance()</h4>
+        <p>Check compliance requirements for a business model in specific regions. Returns flags, not verdicts.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🚀 Quick Start</h2>
+      
+      <h3>1. WebMCP Integration</h3>
+      <p>Add our manifest to your agent's configuration:</p>
+      <div class="code-block">
+<span class="comment">// WebMCP manifest URL</span>
+<span class="string">https://apacfinstab.com/webmcp.json</span>
+      </div>
+
+      <h3>2. Direct Data Access</h3>
+      <p>Fetch our JSON data endpoints directly:</p>
+      <div class="code-block">
+<span class="comment">// Policy events (updated daily)</span>
+<span class="string">https://apacfinstab.com/data/policy-events.json</span>
+
+<span class="comment">// Region overviews</span>
+<span class="string">https://apacfinstab.com/data/region-overviews.json</span>
+      </div>
+
+      <h3>3. MCP Server (Coming Soon)</h3>
+      <p>Hosted MCP endpoint with full tool support and usage analytics.</p>
+    </div>
+
+    <div class="section">
+      <h2>🎓 Design Philosophy: Socratic AI</h2>
+      <p>We believe compliance decisions should stay with humans. Our API is designed to:</p>
+      <ul style="color: var(--text-secondary); margin-left: 20px; margin-top: 12px;">
+        <li>Ask the right questions, not give answers</li>
+        <li>Surface relevant context, not make judgments</li>
+        <li>Flag potential issues, not block actions</li>
+        <li>Provide references, not legal opinions</li>
+      </ul>
+      <p style="margin-top: 16px;">This protects you legally and builds trust with regulators who want humans in the loop.</p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Ready to integrate?</h3>
+      <p>Get started with our WebMCP manifest or reach out for custom integration support.</p>
+      <a href="/webmcp.json" class="btn-primary" target="_blank">📄 View WebMCP Manifest</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 APAC FINSTAB. Regulatory intelligence for AI agents.</p>
+    <p style="margin-top: 8px;">
+      <a href="/" style="color: var(--brand-orange); text-decoration: none;">Dashboard</a> · 
+      <a href="/contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
