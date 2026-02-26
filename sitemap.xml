@@ -16,6 +16,14 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- For AI Agents - MCP Integration -->
+  <url>
+    <loc>https://apacfinstab.com/for-agents.html</loc>
+    <lastmod>2026-02-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
   <!-- Blog Index Page -->
   <url>
     <loc>https://apacfinstab.com/blog.html</loc>
