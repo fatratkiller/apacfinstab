@@ -81,16 +81,17 @@
 - **截止:** 待定
 
 ### TICKET-009: 🔥 监管情境感知API设计文档
-- **状态:** 🔴 TODO
+- **状态:** 🟢 DONE
 - **来源:** 2026-02-26 产品定位讨论
 - **优先级:** P0
 - **描述:** 设计check_compliance_context() API规格
 - **验收标准:** 
-  - API接口定义完成
-  - confidence计算逻辑文档
-  - flags生成规则文档
-  - 示例响应文档
-- **截止:** 2026-02-28
+  - ✅ API接口定义完成 (Request/Response TypeScript接口)
+  - ✅ confidence计算逻辑文档 (三层置信度 + 调整因子)
+  - ✅ flags生成规则文档 (5类触发逻辑)
+  - ✅ 示例响应文档 (香港稳定币发行完整示例)
+- **完成时间:** 2026-02-26 14:12
+- **产出:** `docs/api/check-compliance-context.md` (10KB完整API设计文档)
 
 ### TICKET-010: 置信度计算规则库
 - **状态:** 🔴 TODO
@@ -107,6 +108,15 @@
 ---
 
 ## ✅ Completed Tickets
+
+### TICKET-009: 监管情境感知API设计文档
+- **状态:** 🟢 DONE
+- **完成时间:** 2026-02-26 14:12
+- **产出:** `docs/api/check-compliance-context.md` — 完整API规格文档，包含:
+  - TypeScript接口定义 (Request/Response)
+  - 置信度三层计算模型 (hard 0.9-1.0 / threshold 0.8-0.95 / principle 0.5-0.7)
+  - 5类Flag触发规则
+  - 香港稳定币发行完整示例响应
 
 ### TICKET-001: pSEO第二批页面（主题页）
 - **状态:** 🟢 DONE
@@ -125,13 +135,13 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 4 |
+| 🔴 TODO | 3 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 2 |
+| 🟢 DONE | 3 |
 | ⏸️ BLOCKED | 5 |
 
-**🔥 下一优先执行:** TICKET-009 (监管情境感知API设计) — 核心产品定位实现
+**🔥 下一优先执行:** TICKET-010 (置信度计算规则库) — 依赖TICKET-009已完成，可以开始
 
 ---
 
-*最后更新: 2026-02-26 09:50*
+*最后更新: 2026-02-26 14:12*
