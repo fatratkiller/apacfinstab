@@ -41,7 +41,7 @@
 
 ## 📊 当前覆盖状态
 
-### 已完成页面 (12页)
+### 已完成页面 (14页)
 
 | 地区 | 页面 | URL | 创建日期 |
 |------|------|-----|----------|
@@ -58,13 +58,14 @@
 | 🇹🇭 TH | SEC License Guide | /th/sec-license-guide.html | 2026-02-27 |
 | 🇮🇩 ID | OJK License Guide | /id/ojk-license-guide.html | 2026-02-27 |
 | 🇵🇭 PH | BSP VASP Guide | /ph/bsp-license-guide.html | 2026-02-27 |
+| Compare | Cheapest License | /compare/cheapest-license.html | 2026-02-27 |
 
 ### 待创建队列
 
 | 优先级 | 页面 | 目标URL | 目标关键词 |
 |--------|------|---------|-----------|
 | ✅ | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
-| P1 | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
+| ✅ | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
 | P2 | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
 | P2 | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
 | P2 | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | Asia stablecoin regulation |
@@ -96,6 +97,11 @@
 ---
 
 ## 📝 更新日志
+
+### 2026-02-27 (14:06 PM)
+- ✅ 新增Cheapest License APAC对比页面: /compare/cheapest-license.html
+- ✅ 覆盖10个地区成本对比，含FAQ Schema
+- ✅ 总页面数: 14
 
 ### 2026-02-27
 - ✅ 新增3个东南亚页面: Thailand, Indonesia, Philippines

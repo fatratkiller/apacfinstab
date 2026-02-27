@@ -119,6 +119,14 @@
 - **完成时间:** 2026-02-27 10:16
 - **产出:** `compare/sg-vs-au.html` (21KB完整对比页面含FAQ Schema)
 
+### TICKET-012: pSEO对比页面 - Cheapest License APAC
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md 待创建队列 P1
+- **描述:** 创建APAC各地区牌照成本对比页面
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-02-27 14:06
+- **产出:** `compare/cheapest-license.html` (19KB完整成本对比页面，含10地区成本表格、FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -161,7 +169,7 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 5 |
+| 🟢 DONE | 6 |
 | ⏸️ BLOCKED | 6 |
 
 **🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
@@ -170,4 +178,4 @@
 
 ---
 
-*最后更新: 2026-02-27 10:16*
+*最后更新: 2026-02-27 14:06*
