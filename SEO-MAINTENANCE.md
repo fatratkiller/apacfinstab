@@ -41,7 +41,7 @@
 
 ## 📊 当前覆盖状态
 
-### 已完成页面 (9页)
+### 已完成页面 (12页)
 
 | 地区 | 页面 | URL | 创建日期 |
 |------|------|-----|----------|
@@ -54,14 +54,14 @@
 | 🇰🇷 KR | DABA 2026 | /kr/daba-2026.html | 2026-02-26 |
 | 🇦🇺 AU | Crypto License Guide | /au/crypto-license-guide.html | 2026-02-26 |
 | Compare | HK vs SG | /compare/hk-vs-sg.html | 2026-02-26 |
+| 🇹🇭 TH | SEC License Guide | /th/sec-license-guide.html | 2026-02-27 |
+| 🇮🇩 ID | OJK License Guide | /id/ojk-license-guide.html | 2026-02-27 |
+| 🇵🇭 PH | BSP VASP Guide | /ph/bsp-license-guide.html | 2026-02-27 |
 
 ### 待创建队列
 
 | 优先级 | 页面 | 目标URL | 目标关键词 |
 |--------|------|---------|-----------|
-| P1 | Thailand SEC Guide | /th/sec-license-guide.html | Thailand crypto license |
-| P1 | Indonesia OJK Guide | /id/ojk-license-guide.html | Indonesia crypto regulation |
-| P1 | Philippines BSP Guide | /ph/bsp-license-guide.html | Philippines crypto license |
 | P1 | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
 | P1 | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
 | P2 | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
@@ -95,6 +95,10 @@
 ---
 
 ## 📝 更新日志
+
+### 2026-02-27
+- ✅ 新增3个东南亚页面: Thailand, Indonesia, Philippines
+- ✅ 总页面数: 12
 
 ### 2026-02-26
 - ✅ 初始创建9个深度页面
