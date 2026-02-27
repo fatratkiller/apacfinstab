@@ -60,6 +60,7 @@
 | 🇵🇭 PH | BSP VASP Guide | /ph/bsp-license-guide.html | 2026-02-27 |
 | Compare | Cheapest License | /compare/cheapest-license.html | 2026-02-27 |
 | 🇲🇾 MY | SC License Guide | /my/sc-license-guide.html | 2026-02-27 |
+| 🇻🇳 VN | SBV Regulation Guide | /vn/sbv-regulation.html | 2026-02-27 |
 
 ### 待创建队列
 
@@ -68,7 +69,7 @@
 | ✅ | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
 | ✅ | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
 | ✅ | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
-| P2 | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
+| ✅ | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
 | P2 | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | Asia stablecoin regulation |
 | P2 | APAC Tax Comparison | /compare/crypto-tax-apac.html | crypto tax Asia comparison |
 
@@ -138,6 +139,11 @@
 ---
 
 ## 📝 更新日志
+
+### 2026-02-27 (22:00 PM)
+- ✅ 新增Vietnam SBV Regulation Guide: /vn/sbv-regulation.html
+- ✅ 包含监管机构、政策时间线、税务概况、预期框架、FAQ Schema
+- ✅ 总页面数: 16
 
 ### 2026-02-27 (18:01 PM)
 - ✅ 新增Malaysia SC License Guide: /my/sc-license-guide.html

@@ -135,6 +135,14 @@
 - **完成时间:** 2026-02-27 18:01
 - **产出:** `my/sc-license-guide.html` (17KB完整Malaysia DAX牌照指南，含成本表格、持牌交易所列表、FAQ Schema)
 
+### TICKET-014: pSEO页面 - Vietnam SBV Regulation Guide
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md 待创建队列 P2
+- **描述:** 创建Vietnam State Bank (SBV) 虚拟资产监管指南
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-02-27 22:00
+- **产出:** `vn/sbv-regulation.html` (30KB完整越南监管指南，含监管机构、时间线、税务、预期框架、FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -177,7 +185,7 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 7 |
+| 🟢 DONE | 8 |
 | ⏸️ BLOCKED | 6 |
 
 **🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
@@ -186,4 +194,4 @@
 
 ---
 
-*最后更新: 2026-02-27 18:01*
+*最后更新: 2026-02-27 22:00*
