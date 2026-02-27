@@ -111,6 +111,14 @@
 - **完成时间:** 2026-02-26 18:01
 - **产出:** `docs/rules/confidence-rules-hk.md` (8.9KB完整规则库)
 
+### TICKET-011: pSEO对比页面 - SG vs AU
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md 待创建队列 P1
+- **描述:** 创建Singapore vs Australia crypto license对比页面
+- **验收标准:** 页面上线 + sitemap更新
+- **完成时间:** 2026-02-27 10:16
+- **产出:** `compare/sg-vs-au.html` (21KB完整对比页面含FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -153,11 +161,13 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 4 |
+| 🟢 DONE | 5 |
 | ⏸️ BLOCKED | 6 |
 
 **🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
 
+**⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
+
 ---
 
-*最后更新: 2026-02-26 22:00*
+*最后更新: 2026-02-27 10:16*

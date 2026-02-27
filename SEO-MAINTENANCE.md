@@ -54,6 +54,7 @@
 | 🇰🇷 KR | DABA 2026 | /kr/daba-2026.html | 2026-02-26 |
 | 🇦🇺 AU | Crypto License Guide | /au/crypto-license-guide.html | 2026-02-26 |
 | Compare | HK vs SG | /compare/hk-vs-sg.html | 2026-02-26 |
+| Compare | SG vs AU | /compare/sg-vs-au.html | 2026-02-27 |
 | 🇹🇭 TH | SEC License Guide | /th/sec-license-guide.html | 2026-02-27 |
 | 🇮🇩 ID | OJK License Guide | /id/ojk-license-guide.html | 2026-02-27 |
 | 🇵🇭 PH | BSP VASP Guide | /ph/bsp-license-guide.html | 2026-02-27 |
@@ -62,7 +63,7 @@
 
 | 优先级 | 页面 | 目标URL | 目标关键词 |
 |--------|------|---------|-----------|
-| P1 | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
+| ✅ | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
 | P1 | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
 | P2 | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
 | P2 | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
@@ -99,6 +100,10 @@
 ### 2026-02-27
 - ✅ 新增3个东南亚页面: Thailand, Indonesia, Philippines
 - ✅ 总页面数: 12
+
+### 2026-02-27 (10:16 AM)
+- ✅ 新增SG vs AU对比页面: /compare/sg-vs-au.html
+- ✅ 总页面数: 13
 
 ### 2026-02-26
 - ✅ 初始创建9个深度页面
