@@ -1,0 +1,40 @@
+{
+  "date": "2026-02-27",
+  "checkedAt": "2026-02-27T10:02:00+08:00",
+  "rankings": {
+    "APAC crypto regulation tracker": {
+      "position": null,
+      "note": "Not in top 10. Atlantic Council tracker ranks #3. Law.asia and FinTech Singapore also ranking.",
+      "competitors": [
+        "Atlantic Council Crypto Regulation Tracker",
+        "law.asia",
+        "fintechnews.sg",
+        "thepaypers.com"
+      ]
+    },
+    "Hong Kong crypto stablecoin license 2026": {
+      "position": null,
+      "note": "Not in top 10. Major crypto news sites dominating: CoinDesk, TheBlock, crypto.news",
+      "competitors": [
+        "coindesk.com",
+        "theblock.co",
+        "crypto.news",
+        "bitcoinethereumnews.com",
+        "crowdfundinsider.com"
+      ]
+    }
+  },
+  "observations": [
+    "Atlantic Council's crypto regulation tracker dominates generic 'tracker' queries",
+    "Major crypto news outlets (CoinDesk, TheBlock) dominate breaking news searches",
+    "Law.asia ranking well for APAC-specific queries",
+    "FinTech Singapore has good coverage - potential collaboration opportunity",
+    "Need more backlinks and timely content to compete with news outlets",
+    "Consider guest posting on crypto.news or fintechnews.sg for exposure"
+  ],
+  "actionItems": [
+    "Create breaking news content within 24h of major policy announcements",
+    "Submit to ProductHunt and crypto directories",
+    "Reach out to fintechnews.sg for potential collaboration"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-26T02:11:06.761Z",
-    "totalEvents": 64,
+    "lastUpdated": "2026-02-27T02:03:39.935Z",
+    "totalEvents": 68,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,120 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0227-001",
+      "date": "2026-02-27",
+      "title": "South Korea Virtual Asset Act Extends to Influencer Disclosure Requirements",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "South Korea expands Virtual Asset Act to require crypto influencers to disclose material holdings and paid promotions. The regulation aims to address accountability gaps in crypto marketing and may become a global standard for influencer transparency in the digital asset space.",
+      "impact": "medium",
+      "source": "https://bitcoinethereumnews.com/crypto/crypto-regulation-south-korea-moves-to-regulate-influencers-with-disclosure-rules/",
+      "keywords": [
+        "South Korea",
+        "influencer",
+        "disclosure",
+        "Virtual Asset Act",
+        "marketing regulation"
+      ]
+    },
+    {
+      "id": "evt-2026-0226-001",
+      "date": "2026-02-26",
+      "title": "APAC Digital Asset Firms Face Heightened Regulatory Risk Despite Licensing",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK",
+        "SG"
+      ],
+      "topics": [
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Industry analysis highlights that APAC digital asset firms with Hong Kong or Singapore licenses should not assume compliance burden ends at approval. Ongoing regulatory risk management and operational compliance remain critical as regulatory frameworks continue to evolve.",
+      "impact": "medium",
+      "source": "https://www.continuuminsure.com/articles/regulatory-risk-for-digital-asset-firms-in-apac/",
+      "keywords": [
+        "APAC",
+        "regulatory risk",
+        "licensing",
+        "compliance",
+        "Hong Kong",
+        "Singapore"
+      ]
+    },
+    {
+      "id": "evt-2026-0226-002",
+      "date": "2026-02-26",
+      "title": "Binance Selects Greece as EU MiCA Compliance Hub",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "BNB"
+      ],
+      "regions": [
+        "HK",
+        "SG"
+      ],
+      "topics": [
+        "Licensing",
+        "Exchange"
+      ],
+      "entities": [
+        "Binance"
+      ],
+      "summary": "Binance positions Greece as its gateway to the European Union ahead of July 2026 MiCA deadline. The move has implications for APAC operations as Binance restructures global compliance architecture to meet regional regulatory requirements.",
+      "impact": "medium",
+      "source": "https://www.tradingview.com/news/invezz:fc069baa8094b:0-binance-selects-greece-as-eu-base-under-mica-crypto-rules/",
+      "keywords": [
+        "Binance",
+        "MiCA",
+        "Greece",
+        "EU",
+        "licensing",
+        "compliance"
+      ]
+    },
+    {
+      "id": "evt-2026-0226-003",
+      "date": "2026-02-26",
+      "title": "US OCC Advances GENIUS Act Rulemaking Ahead of 2027 Deadline",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "US Office of the Comptroller of the Currency launches GENIUS Act rulemaking and requests public feedback. The law takes effect no later than January 18, 2027, outlining a structured stablecoin regulation framework. Banks and crypto firms must prepare for stricter compliance requirements with implications for APAC stablecoin issuers.",
+      "impact": "high",
+      "source": "https://coinfomania.com/occ-advances-crypto-oversight-ahead-of-2027-genius-act-rollout/",
+      "keywords": [
+        "OCC",
+        "GENIUS Act",
+        "stablecoin",
+        "rulemaking",
+        "US regulation"
+      ]
+    },
     {
       "id": "evt-2026-0225-001",
       "date": "2026-02-25",
