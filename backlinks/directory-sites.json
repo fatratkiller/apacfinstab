@@ -24,11 +24,11 @@
       "id": "alternativeto",
       "name": "AlternativeTo",
       "url": "https://alternativeto.net/contribute/add-app/",
-      "status": "pending",
+      "status": "blocked",
       "da": 80,
       "monthly_traffic": "5M+",
       "approval_time": "1-7 days",
-      "notes": "High DA, large traffic"
+      "notes": "Needs account login - submit URL 404"
     },
     {
       "id": "producthunt",
@@ -38,17 +38,17 @@
       "da": 91,
       "monthly_traffic": "10M+",
       "approval_time": "same day",
-      "notes": "Needs account login - BLOCKED"
+      "notes": "Needs account login"
     },
     {
       "id": "betalist",
       "name": "BetaList",
       "url": "https://betalist.com/submit",
-      "status": "pending",
+      "status": "blocked",
       "da": 60,
       "monthly_traffic": "200K+",
       "approval_time": "1-2 weeks",
-      "notes": "Good for startups"
+      "notes": "Needs account login - redirects to sign_in"
     },
     {
       "id": "crunchbase",
@@ -74,11 +74,11 @@
       "id": "capterra",
       "name": "Capterra",
       "url": "https://www.capterra.com/vendors/sign-up",
-      "status": "pending",
+      "status": "blocked",
       "da": 93,
       "monthly_traffic": "40M+",
       "approval_time": "1-2 weeks",
-      "notes": "Top B2B directory, Gartner owned"
+      "notes": "Submit URL returns 404"
     },
     {
       "id": "getapp",
@@ -104,11 +104,11 @@
       "id": "sourceforge",
       "name": "SourceForge",
       "url": "https://sourceforge.net/create/",
-      "status": "pending",
+      "status": "blocked",
       "da": 92,
       "monthly_traffic": "30M+",
       "approval_time": "instant",
-      "notes": "High DA, instant approval for software"
+      "notes": "Needs account login to create project"
     },
     {
       "id": "slant",
@@ -148,27 +148,27 @@
       "da": 60,
       "monthly_traffic": "1M+",
       "approval_time": "1 week",
-      "notes": "Paid only $99 - BLOCKED"
+      "notes": "Paid only $99"
     },
     {
       "id": "futurepedia",
       "name": "Futurepedia",
       "url": "https://www.futurepedia.io/submit-tool",
-      "status": "pending",
+      "status": "blocked",
       "da": 65,
       "monthly_traffic": "2M+",
       "approval_time": "1-2 weeks",
-      "notes": "AI tools directory"
+      "notes": "Paid only - Basic $247, Verified $497"
     },
     {
       "id": "theresanaiforthat",
       "name": "There's An AI For That",
       "url": "https://theresanaiforthat.com/submit/",
-      "status": "pending",
+      "status": "blocked",
       "da": 70,
       "monthly_traffic": "3M+",
       "approval_time": "1-2 weeks",
-      "notes": "Popular AI directory"
+      "notes": "Paid only - Basic $49, Featured $347"
     },
     {
       "id": "aitoolsdirectory",
@@ -214,11 +214,11 @@
       "id": "f6s",
       "name": "F6S",
       "url": "https://www.f6s.com/",
-      "status": "pending",
+      "status": "blocked",
       "da": 70,
       "monthly_traffic": "2M+",
       "approval_time": "instant",
-      "notes": "Startup network"
+      "notes": "Needs account login to add company"
     },
     {
       "id": "angel_list",
@@ -238,7 +238,7 @@
       "da": 75,
       "monthly_traffic": "1M+",
       "approval_time": "instant",
-      "notes": "Needs account - BLOCKED"
+      "notes": "Needs account login"
     },
     {
       "id": "hackernews",
@@ -248,7 +248,7 @@
       "da": 90,
       "monthly_traffic": "10M+",
       "approval_time": "instant",
-      "notes": "Needs account - BLOCKED"
+      "notes": "Needs account login"
     },
     {
       "id": "devhunt",
@@ -267,6 +267,48 @@
       "site": "saashub",
       "status": "submitted",
       "notes": "Submitted via browser automation"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "capterra",
+      "status": "blocked",
+      "notes": "Submit URL returns 404"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "sourceforge",
+      "status": "blocked",
+      "notes": "Requires account login"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "alternativeto",
+      "status": "blocked",
+      "notes": "Submit URL 404, needs login"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "betalist",
+      "status": "blocked",
+      "notes": "Redirects to login"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "futurepedia",
+      "status": "blocked",
+      "notes": "Paid only - $247 minimum"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "theresanaiforthat",
+      "status": "blocked",
+      "notes": "Paid only - $49 minimum"
+    },
+    {
+      "date": "2026-02-27",
+      "site": "f6s",
+      "status": "blocked",
+      "notes": "Requires account login"
     }
   ]
 }
