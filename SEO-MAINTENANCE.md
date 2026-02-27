@@ -41,7 +41,7 @@
 
 ## 📊 当前覆盖状态
 
-### 已完成页面 (14页)
+### 已完成页面 (15页)
 
 | 地区 | 页面 | URL | 创建日期 |
 |------|------|-----|----------|
@@ -59,6 +59,7 @@
 | 🇮🇩 ID | OJK License Guide | /id/ojk-license-guide.html | 2026-02-27 |
 | 🇵🇭 PH | BSP VASP Guide | /ph/bsp-license-guide.html | 2026-02-27 |
 | Compare | Cheapest License | /compare/cheapest-license.html | 2026-02-27 |
+| 🇲🇾 MY | SC License Guide | /my/sc-license-guide.html | 2026-02-27 |
 
 ### 待创建队列
 
@@ -66,7 +67,7 @@
 |--------|------|---------|-----------|
 | ✅ | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
 | ✅ | Cheapest License APAC | /compare/cheapest-license.html | cheapest crypto license Asia |
-| P2 | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
+| ✅ | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
 | P2 | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
 | P2 | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | Asia stablecoin regulation |
 | P2 | APAC Tax Comparison | /compare/crypto-tax-apac.html | crypto tax Asia comparison |
@@ -96,7 +97,52 @@
 
 ---
 
+---
+
+## 🔍 招聘情报追踪 (每周)
+
+> **目的:** 通过追踪大公司合规岗位招聘，探测行业趋势
+> **频率:** 每周一次
+> **负责人:** 淑芬
+
+### 追踪目标公司
+| 类型 | 公司 |
+|------|------|
+| 交易所 | Coinbase, Binance, OKX, Kraken, Bybit |
+| AI公司 | Anthropic, OpenAI, Google DeepMind |
+| 协议 | Hyperliquid, SUI, Circle, Uniswap |
+| 传统金融 | JPMorgan (crypto team), Goldman |
+
+### 追踪关键词
+- Compliance Officer / Counsel
+- AML/BSA Specialist
+- Regulatory Affairs
+- AI Governance
+- Trade Compliance
+- Policy Lead
+
+### 追踪渠道
+- LinkedIn Jobs
+- 公司官网Careers页
+- Greenhouse/Lever招聘页
+
+### 本周执行日志
+| 日期 | 发现 |
+|------|------|
+| 2026-02-23 | Coinbase BSA/AML Officer $280K+, Anthropic Trade Compliance Counsel |
+| 2026-02-27 | 229+ crypto compliance岗位, OKX被罚$505M后重建合规, Anthropic 448岗位含policy |
+
+### 详细报告
+- `research/hiring-intel/2026-02-27.md`
+
+---
+
 ## 📝 更新日志
+
+### 2026-02-27 (18:01 PM)
+- ✅ 新增Malaysia SC License Guide: /my/sc-license-guide.html
+- ✅ 包含DAX牌照要求、成本表格、持牌交易所列表、FAQ Schema
+- ✅ 总页面数: 15
 
 ### 2026-02-27 (14:06 PM)
 - ✅ 新增Cheapest License APAC对比页面: /compare/cheapest-license.html

@@ -127,6 +127,14 @@
 - **完成时间:** 2026-02-27 14:06
 - **产出:** `compare/cheapest-license.html` (19KB完整成本对比页面，含10地区成本表格、FAQ Schema)
 
+### TICKET-013: pSEO页面 - Malaysia SC License Guide
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md 待创建队列 P2
+- **描述:** 创建Malaysia Securities Commission (SC) 数字资产牌照指南
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-02-27 18:01
+- **产出:** `my/sc-license-guide.html` (17KB完整Malaysia DAX牌照指南，含成本表格、持牌交易所列表、FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -169,7 +177,7 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 6 |
+| 🟢 DONE | 7 |
 | ⏸️ BLOCKED | 6 |
 
 **🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
@@ -178,4 +186,4 @@
 
 ---
 
-*最后更新: 2026-02-27 14:06*
+*最后更新: 2026-02-27 18:01*
