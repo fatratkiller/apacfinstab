@@ -150,8 +150,9 @@
     "complianceRequirements": "/data/compliance-requirements.json"
   },
   "implementation": {
-    "type": "static-json",
-    "note": "Tools operate on static JSON data. Agent should fetch data files and filter client-side.",
-    "refreshInterval": "daily"
+    "type": "mcp-server",
+    "serverUrl": "https://apacfinstab-mcp.kyleleo2018.workers.dev",
+    "note": "MCP Server hosted on Cloudflare Workers. Supports JSON-RPC calls.",
+    "refreshInterval": "realtime"
   }
 }
