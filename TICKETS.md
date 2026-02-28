@@ -168,6 +168,15 @@
 - **完成时间:** 2026-02-28 18:02
 - **产出:** `in/crypto-regulation-guide.html` (33KB完整印度监管指南，含税率表、FIU-IND要求、时间线、6条FAQ Schema)
 
+### TICKET-018: pSEO页面 - Taiwan FSC Regulation Guide
+- **状态:** 🟢 DONE
+- **来源:** 4h轮询内容扩展
+- **优先级:** P2
+- **描述:** 创建台湾FSC加密货币监管深度指南（VASP Act、STO规则、稳定币框架等）
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-03-01 06:03
+- **产出:** `tw/fsc-regulation-guide.html` (26KB完整台湾监管指南，含VASP Act、STO两级框架、税收、6条FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -210,13 +219,13 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 11 |
+| 🟢 DONE | 12 |
 | ⏸️ BLOCKED | 6 |
 
-**✅ 上轮完成:** TICKET-017 (印度Crypto Regulation Guide)
+**✅ 上轮完成:** TICKET-018 (台湾FSC Regulation Guide)
 
 **⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
 
 ---
 
-*最后更新: 2026-02-28 14:08*
+*最后更新: 2026-03-01 06:03*
