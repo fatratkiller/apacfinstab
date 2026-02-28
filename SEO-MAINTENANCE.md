@@ -63,6 +63,7 @@
 | 🇻🇳 VN | SBV Regulation Guide | /vn/sbv-regulation.html | 2026-02-27 |
 | Topics | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | 2026-02-28 |
 | Compare | APAC Crypto Tax Comparison | /compare/crypto-tax-apac.html | 2026-02-28 |
+| 🇮🇳 IN | Crypto Regulation Guide | /in/crypto-regulation-guide.html | 2026-02-28 |
 
 ### 待创建队列
 
@@ -141,6 +142,11 @@
 ---
 
 ## 📝 更新日志
+
+### 2026-02-28 (18:02 PM)
+- ✅ 新增India Crypto Regulation Guide: /in/crypto-regulation-guide.html
+- ✅ 包含30%税率详解、FIU-IND注册要求、PMLA合规、监管时间线、6条FAQ Schema
+- ✅ 总页面数: 19
 
 ### 2026-02-28 (14:08 PM)
 - ✅ 新增APAC Crypto Tax Comparison: /compare/crypto-tax-apac.html

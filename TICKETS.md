@@ -159,6 +159,15 @@
 - **完成时间:** 2026-02-28 14:08
 - **产出:** `compare/crypto-tax-apac.html` (28KB完整税收对比，含12地区对比表、税率层级分析、6条FAQ Schema)
 
+### TICKET-017: pSEO页面 - India Crypto Regulation Guide
+- **状态:** 🟢 DONE
+- **来源:** 4h轮询内容扩展
+- **优先级:** P2
+- **描述:** 创建印度加密货币监管深度指南（RBI政策、税收、PMLA要求等）
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-02-28 18:02
+- **产出:** `in/crypto-regulation-guide.html` (33KB完整印度监管指南，含税率表、FIU-IND要求、时间线、6条FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -201,10 +210,10 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 10 |
+| 🟢 DONE | 11 |
 | ⏸️ BLOCKED | 6 |
 
-**🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
+**✅ 上轮完成:** TICKET-017 (印度Crypto Regulation Guide)
 
 **⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
 
