@@ -1,0 +1,53 @@
+{
+  "date": "2026-02-28",
+  "checkedAt": "2026-02-28T10:02:00+08:00",
+  "rankings": {
+    "APAC crypto regulation tracker": {
+      "position": null,
+      "note": "Not in top 10. Search API rate limited. Based on yesterday: Atlantic Council tracker still dominant.",
+      "competitors": [
+        "Atlantic Council Crypto Regulation Tracker",
+        "law.asia",
+        "fintechnews.sg"
+      ]
+    },
+    "Hong Kong Solana ETF": {
+      "position": null,
+      "note": "New keyword - breaking news. Major outlets dominating: blocklist.co.kr, theblock, coindesk",
+      "competitors": [
+        "blocklist.co.kr",
+        "theblock.co",
+        "coindesk.com"
+      ]
+    },
+    "APAC stablecoin regulation 2026": {
+      "position": null,
+      "note": "CoinGecko Learn article ranking well. Outlook India also appearing.",
+      "competitors": [
+        "coingecko.com/learn",
+        "outlookindia.com",
+        "pymnts.com"
+      ]
+    }
+  },
+  "observations": [
+    "Search API rate limited - partial data today",
+    "Hong Kong Solana ETF is breaking news - content opportunity",
+    "Australia de-banking crisis getting coverage - timely topic",
+    "CoinGecko 2026 Asia Stablecoin Market Overview ranking well - competitive content",
+    "Korea investor flight to overseas exchanges - underreported angle"
+  ],
+  "newEvents": [
+    "Australia de-banking crisis (OKX CEO comments)",
+    "Hong Kong Solana ETF approval",
+    "Huaying Group first SFC-approved structured options",
+    "Korea investor capital flight overseas",
+    "Hong Kong 2026 budget dealer/custodian licensing"
+  ],
+  "actionItems": [
+    "Create content on Australia de-banking crisis",
+    "Update Hong Kong page with Solana ETF news",
+    "Write comparison piece: HK vs SG stablecoin licensing",
+    "Submit to 1 crypto directory today"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-02-27T02:03:39.935Z",
-    "totalEvents": 68,
+    "lastUpdated": "2026-02-28T02:03:43.831Z",
+    "totalEvents": 73,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,146 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0228-001",
+      "date": "2026-02-28",
+      "title": "Australia Crypto Industry Faces De-banking Crisis Amid Legislative Gridlock",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "AU"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "OKX"
+      ],
+      "summary": "Kate Cooper, CEO of OKX Australia, addressed the XRP Australia 2026 event in Sydney highlighting that banking service restrictions continue to hinder crypto exchange operations despite regulatory discussions. Industry leaders express frustration with financial institution policies toward cryptocurrency businesses as legislative progress stalls.",
+      "impact": "high",
+      "source": "https://cryptorank.io/news/feed/7cf6d-australian-crypto-regulation-debanking-legislation",
+      "keywords": [
+        "Australia",
+        "de-banking",
+        "OKX",
+        "legislative gridlock",
+        "banking restrictions"
+      ]
+    },
+    {
+      "id": "evt-2026-0228-002",
+      "date": "2026-02-28",
+      "title": "Hong Kong SFC Approves First Solana Spot ETF",
+      "protocols": [
+        "SOL"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "ETF",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Hong Kong Securities and Futures Commission approves Solana spot ETF, expanding crypto ETF offerings beyond Bitcoin and Ethereum. The approval aligns with Hong Kongs broader regulatory roadmap which includes enabling staking services for ETFs and licensed platforms. In April 2025, SFC permitted staking of up to 30% of Ethereum holdings in spot ETH ETFs.",
+      "impact": "high",
+      "source": "https://blocklist.co.kr/2026/02/27/hong-kong-expands-crypto-etf-market-with-new-approval-latest-insights/amp/",
+      "keywords": [
+        "Hong Kong",
+        "Solana ETF",
+        "SFC",
+        "ETF approval",
+        "staking"
+      ]
+    },
+    {
+      "id": "evt-2026-0228-003",
+      "date": "2026-02-28",
+      "title": "Huaying Group Launches Asia First SFC-Approved Virtual Asset Structured Options",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Huaying Group AXG becomes the first brokerage firm in Hong Kong to issue virtual asset structured products under the SFC regulatory framework. This milestone signifies maturation of Hong Kongs institutional crypto derivatives market.",
+      "impact": "medium",
+      "source": "https://news.futunn.com/en/post/69330466/huaying-group-axg-launches-asia-s-first-sfc-hong-kong",
+      "keywords": [
+        "Huaying Group",
+        "structured options",
+        "SFC",
+        "derivatives",
+        "institutional"
+      ]
+    },
+    {
+      "id": "evt-2026-0228-004",
+      "date": "2026-02-28",
+      "title": "South Korea Regulatory Focus Drives Crypto Investors Overseas",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Binance"
+      ],
+      "summary": "Domestic regulation constraints drive Korean crypto investors to overseas exchanges. Binance and other global platforms capture approximately 75% of trading volume with futures, options, and perpetual futures products unavailable on domestic exchanges. Fee outflow to foreign platforms accelerates.",
+      "impact": "medium",
+      "source": "https://biz.chosun.com/en/en-finance/2026/02/27/OKMYMQJDSJHDJGBI4EV4LZYHAI/",
+      "keywords": [
+        "South Korea",
+        "overseas exchanges",
+        "Binance",
+        "fee outflow",
+        "regulation"
+      ]
+    },
+    {
+      "id": "evt-2026-0228-005",
+      "date": "2026-02-28",
+      "title": "Hong Kong 2026 Budget Confirms Digital Asset Dealer and Custodian Licensing",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Licensing",
+        "Custody",
+        "Taxation"
+      ],
+      "entities": [],
+      "summary": "Hong Kong 2026-27 Budget confirms legislation this year to license digital asset dealers and custodians, including OTC brokers and custody service providers. The budget also sweetens tax regime to attract crypto-friendly family offices as part of broader digital asset hub strategy.",
+      "impact": "high",
+      "source": "https://www.blockhead.co/2026/02/26/hong-kong-sweetens-tax-regime-to-lure-crypto-friendly-family-offices/",
+      "keywords": [
+        "Hong Kong",
+        "2026 budget",
+        "dealer license",
+        "custodian",
+        "family office",
+        "tax"
+      ]
+    },
     {
       "id": "evt-2026-0227-001",
       "date": "2026-02-27",
