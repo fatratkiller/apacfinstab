@@ -64,11 +64,11 @@
       "id": "g2",
       "name": "G2",
       "url": "https://www.g2.com/products/new",
-      "status": "pending",
+      "status": "blocked",
       "da": 92,
       "monthly_traffic": "50M+",
       "approval_time": "1-2 weeks",
-      "notes": "Top B2B software directory"
+      "notes": "Captcha verification required"
     },
     {
       "id": "capterra",
@@ -124,21 +124,21 @@
       "id": "trustpilot",
       "name": "Trustpilot",
       "url": "https://business.trustpilot.com/",
-      "status": "pending",
+      "status": "blocked",
       "da": 93,
       "monthly_traffic": "100M+",
       "approval_time": "instant",
-      "notes": "Review site, very high DA"
+      "notes": "Requires account registration to claim business"
     },
     {
       "id": "startupstash",
       "name": "Startup Stash",
       "url": "https://startupstash.com/add-listing/",
-      "status": "pending",
+      "status": "blocked",
       "da": 55,
       "monthly_traffic": "100K+",
       "approval_time": "1-2 weeks",
-      "notes": "Good for startups"
+      "notes": "Typeform submission closed"
     },
     {
       "id": "toolify",
@@ -173,32 +173,34 @@
     {
       "id": "aitoolsdirectory",
       "name": "AI Tools Directory",
-      "url": "https://aitoolsdirectory.com/submit",
-      "status": "pending",
+      "url": "https://aitoolsdirectory.com/submit-tool",
+      "status": "submitted",
+      "submitted_date": "2026-02-28",
       "da": 50,
       "monthly_traffic": "200K+",
       "approval_time": "1 week",
-      "notes": "AI focused"
+      "notes": "AI focused, free submission"
     },
     {
       "id": "pitchwall",
       "name": "PitchWall",
       "url": "https://pitchwall.co/submit",
-      "status": "pending",
+      "status": "blocked",
       "da": 40,
       "monthly_traffic": "50K+",
       "approval_time": "1-3 days",
-      "notes": "Startup showcase"
+      "notes": "Requires OAuth login (Google/GitHub/etc)"
     },
     {
       "id": "launching_next",
       "name": "Launching Next",
       "url": "https://www.launchingnext.com/submit/",
-      "status": "pending",
+      "status": "submitted",
+      "submitted_date": "2026-02-28",
       "da": 45,
       "monthly_traffic": "30K+",
-      "approval_time": "1-2 weeks",
-      "notes": "Startup directory"
+      "approval_time": "up to 4 months (free), 1 day ($99)",
+      "notes": "Free submission, standard review"
     },
     {
       "id": "sideprojectors",
@@ -254,11 +256,11 @@
       "id": "devhunt",
       "name": "DevHunt",
       "url": "https://devhunt.org/",
-      "status": "pending",
+      "status": "blocked",
       "da": 45,
       "monthly_traffic": "50K+",
       "approval_time": "1-3 days",
-      "notes": "Dev tools showcase"
+      "notes": "Requires account login to submit"
     }
   ],
   "submission_log": [
@@ -309,6 +311,48 @@
       "site": "f6s",
       "status": "blocked",
       "notes": "Requires account login"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "launching_next",
+      "status": "submitted",
+      "notes": "Free submission, standard review (up to 4 months)"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "aitoolsdirectory",
+      "status": "submitted",
+      "notes": "Free submission, manual review"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "trustpilot",
+      "status": "blocked",
+      "notes": "Requires account registration"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "g2",
+      "status": "blocked",
+      "notes": "Captcha verification blocked automation"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "startupstash",
+      "status": "blocked",
+      "notes": "Typeform submission closed"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "devhunt",
+      "status": "blocked",
+      "notes": "Requires account login"
+    },
+    {
+      "date": "2026-02-28",
+      "site": "pitchwall",
+      "status": "blocked",
+      "notes": "Requires OAuth login"
     }
   ]
 }
