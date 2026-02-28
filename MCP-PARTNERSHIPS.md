@@ -37,9 +37,21 @@
 
 | 项目 | 类型 | 用户量 | MCP支持 | 提交方式 | 状态 |
 |------|------|--------|---------|----------|------|
+| **Smithery** | MCP目录 | 高 | ✅ 原生 | CLI发布 | ⚠️ 需登录 |
 | **MetaMask** | 钱包 | 30M+ | 待确认 | 待调研 | 🎯 目标 |
-| **Coinbase Wallet** | 钱包 | 10M+ | 待确认 | 待调研 | 🎯 目标 |
+| **Coinbase Wallet** | 钱包 | 10M+ | ❌ 不匹配 | agentic-wallet-skills | ❌ 否决 |
 | **OKX Wallet** | 钱包 | 5M+ | 待确认 | 待调研 | 🎯 目标 |
+
+**Coinbase否决原因 (2026-02-28)：** 
+- `agentic-wallet-skills`仓库专注钱包操作(发送/交易/资金)
+- 我们的监管信息查询skill与其定位不符
+- 可能被拒绝，不浪费时间
+
+**Smithery发布命令：**
+```bash
+npx @smithery/cli auth login
+npx @smithery/cli mcp publish "https://apacfinstab-mcp.kyleleo2018.workers.dev" -n apacfinstab/regulatory-intelligence
+```
 
 ### Tier 2 - 中优先级（Solana/DeFi生态）
 
