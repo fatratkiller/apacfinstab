@@ -1,0 +1,35 @@
+{
+  "name": "@apacfinstab/mcp-server",
+  "version": "1.0.0",
+  "description": "APAC FINSTAB MCP Server - Real-time regulatory intelligence for crypto businesses in Asia-Pacific",
+  "main": "dist/index.js",
+  "bin": {
+    "apacfinstab-mcp": "./dist/index.js"
+  },
+  "mcpName": "io.github.fatratkiller/apacfinstab",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "crypto",
+    "regulation",
+    "compliance",
+    "asia-pacific",
+    "fintech"
+  ],
+  "author": "APAC FINSTAB",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fatratkiller/apacfinstab"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

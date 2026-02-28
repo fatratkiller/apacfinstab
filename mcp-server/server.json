@@ -1,0 +1,56 @@
+{
+  "$schema": "https://registry.modelcontextprotocol.io/schemas/server.json",
+  "name": "apacfinstab",
+  "namespace": "com.apacfinstab",
+  "version": "1.0.0",
+  "title": "APAC FINSTAB - Crypto Regulatory Intelligence",
+  "description": "Real-time regulatory intelligence for crypto businesses in Asia-Pacific. Track policy changes, compliance requirements, and licensing rules across 13 APAC jurisdictions.",
+  "author": {
+    "name": "APAC FINSTAB",
+    "url": "https://apacfinstab.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fatratkiller/apacfinstab"
+  },
+  "license": "MIT",
+  "categories": [
+    "finance",
+    "compliance",
+    "data"
+  ],
+  "tags": [
+    "crypto",
+    "regulation",
+    "compliance",
+    "asia-pacific",
+    "policy-tracker",
+    "licensing",
+    "fintech"
+  ],
+  "runtime": {
+    "type": "http",
+    "url": "https://apacfinstab-mcp.kyleleo2018.workers.dev"
+  },
+  "tools": [
+    {
+      "name": "getLatestPolicies",
+      "description": "Get latest crypto policy events from APAC regions. Filter by region, topic, and time range."
+    },
+    {
+      "name": "getRegionOverview",
+      "description": "Get comprehensive regulatory overview for a specific APAC region including licensing, stablecoin rules, and compliance framework."
+    },
+    {
+      "name": "comparePolicies",
+      "description": "Compare crypto policies across multiple APAC regions by topic."
+    },
+    {
+      "name": "checkCompliance",
+      "description": "Check compliance requirements for a business model in specific regions."
+    }
+  ],
+  "regions": [
+    "HK", "SG", "JP", "KR", "AU", "CN", "IN", "TH", "ID", "VN", "PH", "MY", "TW"
+  ]
+}
