@@ -62,6 +62,7 @@
 | 🇲🇾 MY | SC License Guide | /my/sc-license-guide.html | 2026-02-27 |
 | 🇻🇳 VN | SBV Regulation Guide | /vn/sbv-regulation.html | 2026-02-27 |
 | Topics | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | 2026-02-28 |
+| Compare | APAC Crypto Tax Comparison | /compare/crypto-tax-apac.html | 2026-02-28 |
 
 ### 待创建队列
 
@@ -72,7 +73,7 @@
 | ✅ | Malaysia SC Guide | /my/sc-license-guide.html | Malaysia crypto regulation |
 | ✅ | Vietnam SBV Guide | /vn/sbv-regulation.html | Vietnam crypto regulation |
 | ✅ | APAC Stablecoin Comparison | /topics/stablecoin-apac.html | Asia stablecoin regulation |
-| P2 | APAC Tax Comparison | /compare/crypto-tax-apac.html | crypto tax Asia comparison |
+| ✅ | APAC Tax Comparison | /compare/crypto-tax-apac.html | crypto tax Asia comparison |
 
 ---
 
@@ -140,6 +141,11 @@
 ---
 
 ## 📝 更新日志
+
+### 2026-02-28 (14:08 PM)
+- ✅ 新增APAC Crypto Tax Comparison: /compare/crypto-tax-apac.html
+- ✅ 覆盖12个地区税收对比，含税率层级、国家详解、FAQ Schema
+- ✅ 总页面数: 18
 
 ### 2026-02-28 (06:10 AM)
 - ✅ 新增APAC Stablecoin Comparison: /topics/stablecoin-apac.html

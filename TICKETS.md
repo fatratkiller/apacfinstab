@@ -151,6 +151,14 @@
 - **完成时间:** 2026-02-28 06:10
 - **产出:** `topics/stablecoin-apac.html` (29KB完整稳定币监管对比，含11地区对比表、储备要求表、6条FAQ Schema)
 
+### TICKET-016: pSEO页面 - APAC Crypto Tax Comparison
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md 待创建队列 P2
+- **描述:** 创建APAC各地区加密货币税收对比页面
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-02-28 14:08
+- **产出:** `compare/crypto-tax-apac.html` (28KB完整税收对比，含12地区对比表、税率层级分析、6条FAQ Schema)
+
 ---
 
 ## ✅ Completed Tickets
@@ -193,7 +201,7 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 9 |
+| 🟢 DONE | 10 |
 | ⏸️ BLOCKED | 6 |
 
 **🔥 下一优先执行:** TICKET-003 (提交到MCP工具目录) - 依赖TICKET-002解除阻塞
@@ -202,4 +210,4 @@
 
 ---
 
-*最后更新: 2026-02-28 06:10*
+*最后更新: 2026-02-28 14:08*
