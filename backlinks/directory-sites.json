@@ -54,11 +54,11 @@
       "id": "crunchbase",
       "name": "Crunchbase",
       "url": "https://www.crunchbase.com/add-new",
-      "status": "pending",
+      "status": "blocked",
       "da": 91,
       "monthly_traffic": "30M+",
       "approval_time": "1-3 days",
-      "notes": "Very high DA, business directory"
+      "notes": "Requires account login to edit/add profiles"
     },
     {
       "id": "g2",
@@ -84,21 +84,21 @@
       "id": "getapp",
       "name": "GetApp",
       "url": "https://www.getapp.com/submit",
-      "status": "pending",
+      "status": "blocked",
       "da": 85,
       "monthly_traffic": "10M+",
       "approval_time": "1-2 weeks",
-      "notes": "Gartner owned"
+      "notes": "HTTP error - possible geo-restriction or URL invalid"
     },
     {
       "id": "softwareadvice",
       "name": "Software Advice",
       "url": "https://www.softwareadvice.com/vendors/",
-      "status": "pending",
+      "status": "blocked",
       "da": 80,
       "monthly_traffic": "5M+",
       "approval_time": "1-2 weeks",
-      "notes": "Gartner owned"
+      "notes": "Paid lead generation service, not free directory"
     },
     {
       "id": "sourceforge",
@@ -114,11 +114,11 @@
       "id": "slant",
       "name": "Slant",
       "url": "https://www.slant.co/",
-      "status": "pending",
+      "status": "blocked",
       "da": 70,
       "monthly_traffic": "2M+",
       "approval_time": "1-3 days",
-      "notes": "Comparison site"
+      "notes": "Q&A comparison site - no direct product submission"
     },
     {
       "id": "trustpilot",
@@ -206,11 +206,11 @@
       "id": "sideprojectors",
       "name": "SideProjectors",
       "url": "https://www.sideprojectors.com/",
-      "status": "pending",
+      "status": "blocked",
       "da": 50,
       "monthly_traffic": "100K+",
       "approval_time": "instant",
-      "notes": "Side project showcase"
+      "notes": "Requires account login to submit"
     },
     {
       "id": "f6s",
@@ -226,11 +226,11 @@
       "id": "angel_list",
       "name": "AngelList / Wellfound",
       "url": "https://wellfound.com/",
-      "status": "pending",
+      "status": "blocked",
       "da": 90,
       "monthly_traffic": "10M+",
       "approval_time": "1-3 days",
-      "notes": "Very high DA, startup ecosystem"
+      "notes": "Recruiting platform - requires login, not a product directory"
     },
     {
       "id": "indiehackers",
@@ -353,6 +353,42 @@
       "site": "pitchwall",
       "status": "blocked",
       "notes": "Requires OAuth login"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "crunchbase",
+      "status": "blocked",
+      "notes": "Requires account login to edit/add profiles"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "angel_list",
+      "status": "blocked",
+      "notes": "Recruiting platform - requires login, not a product directory"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "getapp",
+      "status": "blocked",
+      "notes": "HTTP error - possible geo-restriction"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "softwareadvice",
+      "status": "blocked",
+      "notes": "Paid lead generation service, not free directory"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "slant",
+      "status": "blocked",
+      "notes": "Q&A comparison site - no direct product submission"
+    },
+    {
+      "date": "2026-03-01",
+      "site": "sideprojectors",
+      "status": "blocked",
+      "notes": "Requires account login to submit"
     }
   ]
 }
