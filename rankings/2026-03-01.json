@@ -1,0 +1,31 @@
+{
+  "date": "2026-03-01",
+  "checkedAt": "2026-03-01T02:03:00Z",
+  "keywords": {
+    "APAC crypto regulation": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited - manual check needed"
+    },
+    "Hong Kong SFC crypto": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited"
+    },
+    "Singapore MAS crypto": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited"
+    },
+    "Asia Pacific crypto policy": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Indexed, tracking"
+    }
+  },
+  "notes": "Brave Search API rate limited (429). Unable to perform full keyword ranking check. New policy event added: Ripple XRP Asia APAC Hub announcement.",
+  "newContent": {
+    "policyEvents": 1,
+    "eventId": "evt-2026-0301-001"
+  }
+}
