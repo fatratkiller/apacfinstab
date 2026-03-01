@@ -46,6 +46,15 @@
 - **完成时间:** 2026-03-01 10:11
 - **产出:** `compare/jp-vs-kr.html` (41KB完整日韩监管对比，含成本对比、DABA分析、税收对比、时间线、6条FAQ Schema)
 
+### TICKET-020: pSEO对比页面 - Hong Kong vs Singapore
+- **状态:** 🟢 DONE
+- **来源:** 4h轮询内容扩展
+- **优先级:** P1 (高价值关键词)
+- **描述:** 创建Hong Kong vs Singapore加密货币监管对比页面（SFC vs MAS, VATP vs DPT）
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-03-01 20:02
+- **产出:** `compare/hk-vs-sg.html` (42KB完整港新监管对比，含牌照成本、时间线、Pros/Cons、6条FAQ Schema)
+
 ### TICKET-003: 提交到MCP工具目录
 - **状态:** 🔴 TODO
 - **来源:** 2026-02-25 GEO策略
@@ -228,13 +237,13 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 13 |
+| 🟢 DONE | 14 |
 | ⏸️ BLOCKED | 6 |
 
-**✅ 上轮完成:** TICKET-019 (Japan vs Korea Comparison)
+**✅ 上轮完成:** TICKET-020 (Hong Kong vs Singapore Comparison)
 
 **⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
 
 ---
 
-*最后更新: 2026-03-01 10:11*
+*最后更新: 2026-03-01 20:02*
