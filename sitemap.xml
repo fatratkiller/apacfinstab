@@ -145,4 +145,10 @@
   <url><loc>https://apacfinstab.com/dashboards/apacfinreg1110-1116.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://apacfinstab.com/dashboards/apacfinreg1110.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
   <url><loc>https://apacfinstab.com/dashboards/regulation-weekly-2025-11-03.html</loc><lastmod>2026-02-12</lastmod><changefreq>never</changefreq><priority>0.5</priority></url>
+    <url>
+        <loc>https://apacfinstab.com/compare/jp-vs-kr.html</loc>
+        <lastmod>2026-03-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

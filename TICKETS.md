@@ -37,6 +37,15 @@
   - ✅ 部署文档已写好 (`mcp-server/workers/DEPLOY.md`)
 - **阻塞原因:** 需老板执行 `npx wrangler login` 登录Cloudflare并部署
 
+### TICKET-019: pSEO对比页面 - Japan vs Korea
+- **状态:** 🟢 DONE
+- **来源:** 4h轮询内容扩展
+- **优先级:** P2
+- **描述:** 创建Japan vs Korea加密货币监管对比页面（FSA vs FSC/FIU, DABA影响等）
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-03-01 10:11
+- **产出:** `compare/jp-vs-kr.html` (41KB完整日韩监管对比，含成本对比、DABA分析、税收对比、时间线、6条FAQ Schema)
+
 ### TICKET-003: 提交到MCP工具目录
 - **状态:** 🔴 TODO
 - **来源:** 2026-02-25 GEO策略
@@ -219,13 +228,13 @@
 |------|------|
 | 🔴 TODO | 1 |
 | 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 12 |
+| 🟢 DONE | 13 |
 | ⏸️ BLOCKED | 6 |
 
-**✅ 上轮完成:** TICKET-018 (台湾FSC Regulation Guide)
+**✅ 上轮完成:** TICKET-019 (Japan vs Korea Comparison)
 
 **⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
 
 ---
 
-*最后更新: 2026-03-01 06:03*
+*最后更新: 2026-03-01 10:11*

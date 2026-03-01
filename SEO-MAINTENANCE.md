@@ -143,6 +143,11 @@
 
 ## 📝 更新日志
 
+### 2026-03-01 (10:11 AM)
+- ✅ 新增Japan vs Korea Comparison: /compare/jp-vs-kr.html
+- ✅ 覆盖监管机构对比、牌照要求、成本分析、稳定币、税收、DABA分析、6条FAQ Schema
+- ✅ 总页面数: 20
+
 ### 2026-02-28 (18:02 PM)
 - ✅ 新增India Crypto Regulation Guide: /in/crypto-regulation-guide.html
 - ✅ 包含30%税率详解、FIU-IND注册要求、PMLA合规、监管时间线、6条FAQ Schema
