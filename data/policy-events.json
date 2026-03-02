@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-01T02:04:51.349928Z",
-    "totalEvents": 74,
+    "lastUpdated": "2026-03-02T02:05:53.558230Z",
+    "totalEvents": 76,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,60 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0302-002",
+      "date": "2026-03-02",
+      "title": "JPMorgan: Crypto Market Structure Bill Could Spark H2 Rally",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "JPMorgan analysts report that approval of the crypto market structure bill by mid-year could serve as a positive catalyst for crypto markets in H2 2026. Despite weak sentiment across digital assets, analysts remain constructive on the sectors outlook for the year.",
+      "impact": "medium",
+      "source": "https://bitcoinethereumnews.com/crypto/crypto-market-structure-bill-approval-by-mid-year-could-spark-second-half-rally-jpmorgan-says/",
+      "keywords": [
+        "JPMorgan",
+        "market structure",
+        "CLARITY Act",
+        "regulation",
+        "institutional"
+      ]
+    },
+    {
+      "id": "evt-2026-0302-001",
+      "date": "2026-03-02",
+      "title": "HSBC Signals Intent to Join Hong Kong Stablecoin Regime",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "HK"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "HSBC CEO Georges Elhedery confirmed the bank is in active discussions with HKMA regarding stablecoin issuer licenses. HSBC expressed interest in participating in Hong Kongs digital asset ecosystem, emphasizing the citys comprehensive regulatory environment. HKMA is expected to issue first batch of stablecoin licenses in March 2026.",
+      "impact": "high",
+      "source": "https://www.scmp.com/business/banking-finance/article/3345047/hsbc-signals-intent-join-hong-kongs-stablecoin-regime-amid-digital-innovation-push",
+      "keywords": [
+        "HSBC",
+        "stablecoin",
+        "HKMA",
+        "Hong Kong",
+        "licensing",
+        "digital assets"
+      ]
+    },
     {
       "id": "evt-2026-0301-001",
       "date": "2026-03-01",
