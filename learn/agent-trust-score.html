@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <title>What is Agent Trust Score? The Rating Infrastructure for Autonomous AI Agents | APAC FINSTAB</title>
+  <meta name="description" content="Agent Trust Score is a regulatory context rating for autonomous AI agents operating in APAC financial markets. Like Moody's for agents — scene-specific, transparent, no conflicts of interest.">
+  <meta name="keywords" content="Agent Trust Score, AI agent compliance, autonomous agent rating, AI governance, regulatory API, agent Moody's, APAC fintech, MCP compliance">
+  
+  <link rel="canonical" href="https://apacfinstab.com/learn/agent-trust-score.html">
+  <link rel="webmcp-manifest" href="/webmcp.json">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What is Agent Trust Score? Rating Infrastructure for Autonomous AI">
+  <meta property="og:description" content="Like Moody's for AI agents. Scene-specific compliance ratings without conflicts of interest.">
+  <meta property="og:url" content="https://apacfinstab.com/learn/agent-trust-score.html">
+  <meta property="og:site_name" content="APAC FINSTAB">
+  <meta property="article:published_time" content="2026-03-02">
+  <meta property="article:author" content="APAC FINSTAB Research">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@APACFinStab">
+  <meta name="twitter:title" content="What is Agent Trust Score? The Moody's for AI Agents">
+  <meta name="twitter:description" content="Regulatory context ratings for autonomous AI agents. No conflicts of interest. Scene-specific. Transparent track record.">
+  
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What is Agent Trust Score? The Rating Infrastructure for Autonomous AI Agents",
+    "description": "Agent Trust Score provides scene-specific regulatory context ratings for AI agents operating in APAC financial markets.",
+    "author": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB Research"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB",
+      "url": "https://apacfinstab.com"
+    },
+    "datePublished": "2026-03-02",
+    "mainEntityOfPage": "https://apacfinstab.com/learn/agent-trust-score.html"
+  }
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --accent-purple: #8b5cf6;
+      --accent-yellow: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { 
+      font-weight: 800; 
+      font-size: 20px; 
+      color: var(--text-primary); 
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--brand-orange); }
+    
+    /* Article Container */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    
+    /* Article Header */
+    .article-header {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .article-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-purple), var(--brand-orange));
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .article-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-subtitle {
+      font-size: 20px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    /* Article Content */
+    .article-content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .article-content h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: var(--brand-orange);
+    }
+    .article-content p {
+      margin-bottom: 20px;
+      font-size: 17px;
+      color: var(--text-secondary);
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+    .article-content li {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+    .article-content strong {
+      color: var(--text-primary);
+    }
+    .article-content a {
+      color: var(--brand-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Highlight Box */
+    .highlight-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--brand-orange);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .highlight-box.purple {
+      border-left-color: var(--accent-purple);
+    }
+    .highlight-box.green {
+      border-left-color: var(--accent-green);
+    }
+    .highlight-box p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .highlight-box .title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Code Block */
+    .code-block {
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .code-block .comment { color: var(--text-muted); }
+    .code-block .key { color: var(--accent-purple); }
+    .code-block .string { color: var(--accent-green); }
+    .code-block .number { color: var(--brand-orange); }
+    
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      margin: 32px 0;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .comparison-table th {
+      background: var(--bg-card);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .comparison-table td {
+      color: var(--text-secondary);
+    }
+    .comparison-table tr:hover td {
+      background: rgba(255, 140, 66, 0.05);
+    }
+    .yes { color: var(--accent-green); }
+    .no { color: var(--accent-red); }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent-purple), var(--brand-orange));
+      border-radius: 16px;
+      padding: 48px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .cta-section h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: white;
+    }
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--bg-primary);
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Waitlist Form */
+    .waitlist-form {
+      background: var(--bg-card);
+      border: 2px solid var(--brand-orange);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .waitlist-form h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .waitlist-form p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .waitlist-input-group {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .waitlist-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 2px solid var(--border-subtle);
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      font-size: 16px;
+    }
+    .waitlist-input:focus {
+      outline: none;
+      border-color: var(--brand-orange);
+    }
+    .waitlist-submit {
+      padding: 14px 28px;
+      background: var(--brand-orange);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .waitlist-submit:hover {
+      transform: scale(1.05);
+    }
+    .waitlist-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    @media (max-width: 768px) {
+      .article-title { font-size: 28px; }
+      .article-container { padding: 40px 16px; }
+      .waitlist-input-group { flex-direction: column; }
+      .article-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">APAC FINSTAB</a>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/mcp/">MCP</a>
+        <a href="/learn/">Learn</a>
+        <a href="/blog.html">Insights</a>
+      </nav>
+    </div>
+  </header>
+  
+  <article class="article-container">
+    <div class="article-header">
+      <span class="article-badge">New Concept</span>
+      <h1 class="article-title">What is Agent Trust Score?</h1>
+      <p class="article-subtitle">The rating infrastructure for autonomous AI agents operating in financial markets. Like Moody's, but for agents.</p>
+      <div class="article-meta">
+        <span>📅 March 2, 2026</span>
+        <span>⏱️ 8 min read</span>
+        <span>🏷️ AI Governance</span>
+      </div>
+    </div>
+    
+    <div class="article-content">
+      <p><strong>The Problem:</strong> Autonomous AI agents are becoming economic actors. They trade, they negotiate, they execute. But who rates their trustworthiness? Who tells you if an agent will honor its commitments, stay within regulatory boundaries, and behave predictably?</p>
+      
+      <p><strong>The Answer:</strong> Agent Trust Score — a scene-specific rating system that provides regulatory context for autonomous AI agents operating in APAC financial markets.</p>
+      
+      <div class="highlight-box">
+        <div class="title">Core Insight</div>
+        <p>Traditional credit ratings rate <em>entities</em>. Agent Trust Score rates <em>agents in specific scenes</em>. The same agent might score differently when processing a HK stablecoin transaction vs. a SG cross-border payment.</p>
+      </div>
+      
+      <h2>Why Agents Need Ratings</h2>
+      
+      <p>As AI agents become more autonomous, three trust problems emerge:</p>
+      
+      <ol>
+        <li><strong>Counter-party Risk:</strong> If I'm negotiating with an AI agent, how do I know it will honor the deal? Does it have a track record?</li>
+        <li><strong>Regulatory Compliance:</strong> Will this agent's actions trigger regulatory issues? Is it operating within allowed boundaries?</li>
+        <li><strong>Predictability:</strong> Can I predict how this agent will behave in edge cases? Has it been tested in similar scenarios?</li>
+      </ol>
+      
+      <p>Today, there's no standard way to answer these questions. Every AI product company reinvents compliance checks. Every agent is a black box to its counter-parties.</p>
+      
+      <h2>The "Agent Moody's" Vision</h2>
+      
+      <p>Credit rating agencies (Moody's, S&P, Fitch) solved a similar problem for financial entities. Before ratings, lenders had to individually assess every borrower. Ratings created a standardized trust layer.</p>
+      
+      <p>Agent Trust Score brings this infrastructure to autonomous AI:</p>
+      
+      <div class="highlight-box purple">
+        <div class="title">Key Difference from Traditional Ratings</div>
+        <p><strong>Moody's rates entities.</strong> An entity gets one rating (AAA, BB+, etc.) that applies everywhere.<br><br>
+        <strong>Agent Trust Score rates scenes.</strong> The same agent might be "High Confidence" for HK VASP transactions but "Needs Review" for JP stablecoin issuance. Context matters.</p>
+      </div>
+      
+      <h3>Scene-Specific Ratings</h3>
+      
+      <p>Regulatory environments differ dramatically across APAC jurisdictions. An agent operating in Hong Kong faces different rules than one in Singapore or Japan. Agent Trust Score provides context-aware ratings:</p>
+      
+      <div class="code-block">
+<span class="comment">// Request a trust score for a specific scene</span>
+GET /v1/trust-score
+{
+  <span class="key">"agent_id"</span>: <span class="string">"agent_xyz_123"</span>,
+  <span class="key">"scene"</span>: {
+    <span class="key">"action"</span>: <span class="string">"process_staking_deposit"</span>,
+    <span class="key">"jurisdiction"</span>: <span class="string">"HK"</span>,
+    <span class="key">"asset_type"</span>: <span class="string">"stablecoin"</span>,
+    <span class="key">"amount_usd"</span>: <span class="number">50000</span>
+  }
+}
+
+<span class="comment">// Response</span>
+{
+  <span class="key">"trust_score"</span>: <span class="string">"B+"</span>,
+  <span class="key">"confidence"</span>: <span class="number">0.78</span>,
+  <span class="key">"flags"</span>: [
+    <span class="string">"SFC may classify as regulated activity"</span>,
+    <span class="string">"Agent has 12 verified transactions in similar scenes"</span>
+  ],
+  <span class="key">"track_record"</span>: {
+    <span class="key">"total_transactions"</span>: <span class="number">156</span>,
+    <span class="key">"dispute_rate"</span>: <span class="number">0.02</span>,
+    <span class="key">"regulatory_incidents"</span>: <span class="number">0</span>
+  }
+}
+      </div>
+      
+      <h2>How It Works</h2>
+      
+      <p>Agent Trust Score operates on a two-phase mechanism:</p>
+      
+      <h3>Phase 1: Context Check (Before Action)</h3>
+      <p>Before an agent executes an action, it (or its operator) queries the Trust Score API to understand the regulatory context. The API returns:</p>
+      <ul>
+        <li><strong>Trust Score</strong> — A letter grade (AAA to D) indicating overall trustworthiness for this scene</li>
+        <li><strong>Confidence Level</strong> — How certain we are about the rating (based on rule clarity and track record)</li>
+        <li><strong>Flags</strong> — Specific regulatory considerations (Socratic questions, not answers)</li>
+        <li><strong>Track Record</strong> — Historical performance data for this agent in similar scenes</li>
+      </ul>
+      
+      <h3>Phase 2: Outcome Reporting (After Action)</h3>
+      <p>After the action completes, operators report the outcome. This builds the agent's track record:</p>
+      <ul>
+        <li>Transaction completed successfully?</li>
+        <li>Any disputes or incidents?</li>
+        <li>Regulatory feedback received?</li>
+      </ul>
+      
+      <p>This creates a feedback loop that improves rating accuracy over time.</p>
+      
+      <div class="highlight-box green">
+        <div class="title">The Trust Paradox Solved</div>
+        <p>New agents face a cold-start problem: no track record → no trust → no transactions → no track record. Agent Trust Score solves this by combining regulatory context analysis (available from day one) with outcome tracking (builds over time).</p>
+      </div>
+      
+      <h2>No Conflicts of Interest</h2>
+      
+      <p>Traditional credit ratings have a fundamental conflict: the rated entity pays for its rating. This creates incentive misalignment that contributed to the 2008 financial crisis.</p>
+      
+      <p>Agent Trust Score takes a different approach:</p>
+      
+      <table class="comparison-table">
+        <tr>
+          <th>Aspect</th>
+          <th>Traditional Ratings</th>
+          <th>Agent Trust Score</th>
+        </tr>
+        <tr>
+          <td>Who pays?</td>
+          <td>Rated entity (issuer-pays model)</td>
+          <td>Querying party (subscriber-pays model)</td>
+        </tr>
+        <tr>
+          <td>Conflict?</td>
+          <td class="no">Yes — incentive to inflate ratings</td>
+          <td class="yes">No — rated agents don't pay us</td>
+        </tr>
+        <tr>
+          <td>Transparency</td>
+          <td>Methodology often opaque</td>
+          <td>Public track record, open post-mortems</td>
+        </tr>
+        <tr>
+          <td>Accountability</td>
+          <td>Limited liability for wrong ratings</td>
+          <td>Failed predictions publicly disclosed</td>
+        </tr>
+      </table>
+      
+      <p><strong>We charge the parties querying trust scores, not the agents being rated.</strong> This ensures our incentive is accurate ratings, not happy customers who want inflated scores.</p>
+      
+      <h2>The Socratic Approach</h2>
+      
+      <p>Agent Trust Score doesn't tell you "yes" or "no". It asks the right questions.</p>
+      
+      <p>This is intentional. Regulatory compliance ultimately requires human judgment. Our role is to surface the relevant considerations — not to replace compliance teams.</p>
+      
+      <p>Example flags:</p>
+      <ul>
+        <li>"SFC may view this as a Type 1 regulated activity — have you confirmed your license coverage?"</li>
+        <li>"Similar transactions in Singapore required prior MAS notification — does HK have equivalent requirements?"</li>
+        <li>"This agent's dispute rate (2%) is higher than market average (0.5%) — acceptable for your risk profile?"</li>
+      </ul>
+      
+      <p>We flag risks. You make decisions. This keeps the accountability where it belongs.</p>
+      
+      <h2>Who Needs This?</h2>
+      
+      <h3>AI Product Companies</h3>
+      <p>Building agents that operate in financial contexts? You need compliance guardrails that work at agent speed. Agent Trust Score provides pre-built regulatory context so you don't reinvent compliance from scratch.</p>
+      
+      <h3>Financial Institutions</h3>
+      <p>Partnering with or deploying AI agents? You need to assess agent risk before integration. Agent Trust Score gives you standardized ratings to compare agents and monitor ongoing risk.</p>
+      
+      <h3>Agent Developers</h3>
+      <p>Building an agent that needs to be trusted? Agent Trust Score lets you build a verifiable track record. Good behavior gets recognized; bad actors get flagged.</p>
+      
+      <h2>Current Scope: APAC</h2>
+      
+      <p>Agent Trust Score currently covers regulatory contexts across Asia-Pacific:</p>
+      
+      <ul>
+        <li>🇭🇰 <strong>Hong Kong</strong> — SFC, HKMA, VASP regime</li>
+        <li>🇸🇬 <strong>Singapore</strong> — MAS, PSA framework</li>
+        <li>🇯🇵 <strong>Japan</strong> — FSA, JFSA regulations</li>
+        <li>🇰🇷 <strong>South Korea</strong> — FSC, DABA framework</li>
+        <li>🇦🇺 <strong>Australia</strong> — ASIC, AUSTRAC</li>
+        <li>🇹🇭 <strong>Thailand</strong> — SEC Thailand</li>
+        <li>🇮🇩 <strong>Indonesia</strong> — OJK, Bappebti</li>
+        <li>🇵🇭 <strong>Philippines</strong> — BSP, SEC Philippines</li>
+      </ul>
+      
+      <p>More jurisdictions coming. Global expansion planned for 2027.</p>
+      
+      <!-- Waitlist Form -->
+      <div class="waitlist-form" id="waitlist">
+        <h3>🚀 Join the Waitlist</h3>
+        <p>Agent Trust Score is launching in Q2 2026. Get early access and help shape the rating infrastructure for autonomous AI.</p>
+        <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+          <div class="waitlist-input-group">
+            <input type="email" class="waitlist-input" placeholder="your@email.com" required id="waitlistEmail">
+            <button type="submit" class="waitlist-submit">Join Waitlist</button>
+          </div>
+        </form>
+        <p class="waitlist-note">No spam. Only product updates and early access invitations.</p>
+      </div>
+      
+      <h2>What's Next</h2>
+      
+      <p>We're building Agent Trust Score with these principles:</p>
+      
+      <ol>
+        <li><strong>Start with context, not judgment</strong> — Regulatory scene awareness first, ratings build from there</li>
+        <li><strong>Track record over promises</strong> — Actual outcomes matter more than marketing claims</li>
+        <li><strong>Open post-mortems</strong> — When we're wrong, we explain why publicly</li>
+        <li><strong>No conflicts</strong> — Queriers pay, rated agents don't</li>
+      </ol>
+      
+      <p>The agent economy is coming. Trust infrastructure needs to be ready.</p>
+      
+      <div class="cta-section">
+        <h3>Build with Agent Trust Score</h3>
+        <p>Integrate regulatory context into your AI agents via MCP or REST API.</p>
+        <a href="/mcp/" class="cta-button">Explore MCP Integration →</a>
+      </div>
+      
+    </div>
+  </article>
+  
+  <footer>
+    <p>APAC FINSTAB | Regulatory Intelligence for APAC Digital Assets</p>
+    <p style="margin-top:8px">Making Something Agents Want™</p>
+  </footer>
+  
+  <script>
+    function submitWaitlist(e) {
+      e.preventDefault();
+      const email = document.getElementById('waitlistEmail').value;
+      
+      // Track in GA
+      gtag('event', 'waitlist_signup', {
+        'event_category': 'conversion',
+        'event_label': 'agent_trust_score_waitlist',
+        'value': email
+      });
+      
+      // Simple localStorage tracking (replace with actual backend later)
+      const waitlist = JSON.parse(localStorage.getItem('ats_waitlist') || '[]');
+      waitlist.push({ email, timestamp: new Date().toISOString(), source: 'agent-trust-score-blog' });
+      localStorage.setItem('ats_waitlist', JSON.stringify(waitlist));
+      
+      // Show success
+      document.getElementById('waitlistForm').innerHTML = '<p style="color: var(--accent-green); font-size: 18px; font-weight: 700;">✅ You\'re on the list! We\'ll be in touch.</p>';
+    }
+  </script>
+</body>
+</html>
