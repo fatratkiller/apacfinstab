@@ -1,6 +1,8 @@
 # GitHub Safety Rules - 防止被flagged
 
-> 2026-03-01 事件后制定
+> ⚠️ 2026-03-01 血的教训：账号被flagged，网站404，紧急迁移GitLab
+> 
+> **绝不能再犯！**
 
 ## 🚨 根本原因
 - 短时间大量自动commit/push

@@ -2,9 +2,10 @@
 
 > 2026-03-01 GitHub账号被flagged事件
 
-## 当前状态：观察期
+## 当前状态：✅ 已恢复GitHub
 
-**截止日期：2026-03-08（下周一）**
+**GitHub解禁时间：2026-03-01 20:35**
+**DNS切回GitHub Pages：2026-03-01 20:48**
 
 ### 已完成
 - [x] GitLab仓库创建：https://gitlab.com/kyleleo2018-group/apacfinstab

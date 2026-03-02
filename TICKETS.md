@@ -26,16 +26,16 @@
 - **产出:** 8个主题页面（stablecoin/exchange/etf/defi/custody/taxation/cbdc/licensing） + sitemap.xml修复更新
 
 ### TICKET-002: MCP Server部署到Cloudflare
-- **状态:** ⏸️ BLOCKED
+- **状态:** 🟢 DONE
 - **来源:** 2026-02-25 GEO策略
 - **描述:** 部署MCP Server让AI Agent能调用
 - **验收标准:** WebMCP可访问 + 测试通过
-- **截止:** 2026-02-28
-- **进展:** 
-  - ✅ Workers代码已完成 (`mcp-server/workers/`)
-  - ✅ 依赖已安装
-  - ✅ 部署文档已写好 (`mcp-server/workers/DEPLOY.md`)
-- **阻塞原因:** 需老板执行 `npx wrangler login` 登录Cloudflare并部署
+- **完成时间:** 2026-03-01 11:41
+- **产出:** 
+  - ✅ Cloudflare Workers部署完成
+  - ✅ 域名: `apacfinstab.kyleleo2018.workers.dev`
+  - ✅ 自定义域名绑定: `apacfinstab.com` → Workers
+  - ✅ GitLab CI/CD配置完成
 
 ### TICKET-019: pSEO对比页面 - Japan vs Korea
 - **状态:** 🟢 DONE
@@ -56,12 +56,19 @@
 - **产出:** `compare/hk-vs-sg.html` (42KB完整港新监管对比，含牌照成本、时间线、Pros/Cons、6条FAQ Schema)
 
 ### TICKET-003: 提交到MCP工具目录
-- **状态:** 🔴 TODO
+- **状态:** 🟡 IN_PROGRESS
 - **来源:** 2026-02-25 GEO策略
 - **描述:** 提交到Smithery、MCP Hub等目录
-- **依赖:** TICKET-002
+- **依赖:** ~~TICKET-002~~ ✅ 已完成
 - **验收标准:** 至少2个目录收录
 - **截止:** 2026-03-03
+- **进度 (2026-03-02):**
+  - ✅ 提交材料准备完成 (`docs/MCP-DIRECTORY-SUBMISSION.md`)
+  - ✅ GitHub README更新为专业MCP server介绍
+  - ⏸️ Smithery提交 - 需要API key (老板去 smithery.ai/account/api-keys 获取)
+  - ⏸️ mcpserverdirectory.org - 需要浏览器手动提交
+  - ⏸️ mcpserve.com - 需要浏览器手动提交
+- **备注:** 所有提交材料已就绪，复制粘贴即可！见 `docs/MCP-DIRECTORY-SUBMISSION.md`
 
 ### TICKET-004: Product Hunt发布
 - **状态:** ⏸️ BLOCKED
@@ -235,15 +242,15 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 1 |
-| 🟡 IN_PROGRESS | 0 |
-| 🟢 DONE | 14 |
-| ⏸️ BLOCKED | 6 |
+| 🔴 TODO | 0 |
+| 🟡 IN_PROGRESS | 1 |
+| 🟢 DONE | 15 |
+| ⏸️ BLOCKED | 5 |
 
-**✅ 上轮完成:** TICKET-020 (Hong Kong vs Singapore Comparison)
+**🟡 进行中:** TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 
-**⚠️ 阻塞提醒:** 6个tickets需要老板操作 (Cloudflare/PH/IH/Dev.to/GSC/IFTTT)
+**⚠️ 阻塞提醒:** 5个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT)
 
 ---
 
-*最后更新: 2026-03-01 20:02*
+*最后更新: 2026-03-02 08:04*
