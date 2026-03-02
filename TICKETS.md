@@ -238,14 +238,124 @@
 
 ---
 
+## 🎯 Grant申请专区 (2026-03-02 更新)
+
+> ⚠️ 2026-03-02 20:00 更新: Arbitrum Trailblazer已不活跃，已移除。新增经验证的活跃grants。
+
+### TICKET-G01: Pharos Incubator (RWA/Financial Infra)
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 CL Web3 Grants #29
+- **优先级:** P0 ⭐⭐⭐
+- **资助金额:** up to $10M fund
+- **截止:** Rolling basis
+- **Focus:** RWAs, Payments, DeFi, Financial Infrastructure
+- **Pitch角度:** "Regulatory compliance layer for institutional DeFi and RWA tokenization"
+- **行动步骤:**
+  - [ ] 研究Pharos生态具体需求
+  - [ ] 准备项目pitch deck
+  - [ ] 联系Pharos团队
+- **链接:** https://www.pharos.xyz/ecosystem
+- **验收标准:** 进入incubation或获得资助
+
+### TICKET-G02: Sui DeFi Moonshots Program
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 CL Web3 Grants #29
+- **优先级:** P0 ⭐⭐⭐
+- **资助金额:** up to $500,000
+- **截止:** Rolling basis
+- **Focus:** Category-defining DeFi projects
+- **Pitch角度:** "Compliance-aware DeFi primitives for APAC markets"
+- **行动步骤:**
+  - [ ] 研究Sui DeFi生态现状
+  - [ ] 设计Sui上的合规层方案
+  - [ ] 准备proposal
+- **链接:** https://blog.sui.io/defi-moonshots-program-announcement/
+- **验收标准:** Proposal提交成功
+
+### TICKET-G03: Virtuals ACP Revenue Network
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 研究
+- **优先级:** P0 ⭐⭐⭐
+- **资助金额:** Revenue sharing (无需申请，直接集成)
+- **截止:** 持续运行
+- **Pitch角度:** "Compliance-as-a-Service AI Agent"
+- **行动步骤:**
+  - [ ] 研究ACP SDK技术文档
+  - [ ] 设计PolicyPedia Agent的商业场景
+  - [ ] 集成ACP SDK
+  - [ ] 测试Agent-to-Agent调用
+- **链接:** https://whitepaper.virtuals.io/about-virtuals/agent-commerce-protocol-acp
+- **验收标准:** ACP集成完成 + 首笔收入产生
+
+### TICKET-G04: ChainGPT Web3 AI Grant
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 研究
+- **优先级:** P1 ⭐⭐
+- **资助金额:** Growth Grants up to $20K API + $10K cash
+- **截止:** Rolling basis
+- **要求:** 必须集成ChainGPT APIs/SDKs, MAU ≥20K
+- **Pitch角度:** "Regulatory compliance chatbot powered by ChainGPT"
+- **行动步骤:**
+  - [ ] 研究ChainGPT API集成要求
+  - [ ] 评估技术可行性
+  - [ ] 准备POC
+- **链接:** https://www.chaingpt.org/web3-ai-grant
+- **验收标准:** 进入申请流程
+
+### TICKET-G05: Optimism Season 9 Grants
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 CL Web3 Grants #29
+- **优先级:** P1 ⭐⭐
+- **资助金额:** TBD (生态资助)
+- **截止:** Season 9期间
+- **Focus:** Public Goods, Dev Tooling, Privacy & Security
+- **Pitch角度:** "Open-source regulatory knowledge infrastructure as public good"
+- **行动步骤:**
+  - [ ] 研究Season 9优先级
+  - [ ] 准备Public Goods叙事
+  - [ ] 提交到Atlas
+- **链接:** https://atlas.optimism.io/
+- **验收标准:** 提交成功
+
+### TICKET-G06: ASI Accelerator Programme
+- **状态:** 🔴 TODO
+- **来源:** 2026-03-02 CL Web3 Grants #29
+- **优先级:** P1 ⭐⭐
+- **资助金额:** Accelerator program (mentorship + support)
+- **截止:** Rolling basis
+- **Focus:** AI, Infrastructure, Enterprise-grade
+- **Pitch角度:** "Enterprise compliance AI infrastructure"
+- **行动步骤:**
+  - [ ] 研究ASI Accelerator要求
+  - [ ] 准备申请材料
+- **链接:** https://www.cudos.org/accelerator
+- **验收标准:** 进入Accelerator
+
+### ~~TICKET-G0X: Arbitrum Trailblazer AI Grant~~
+- **状态:** ❌ OBSOLETE
+- **原因:** 2026-03-02验证 - Program已标记为"Not Active"
+- **教训:** Grant信息需要定期验证活跃状态
+
+---
+
 ## 📊 Dashboard
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 0 |
+| 🔴 TODO | 6 (Grants) |
 | 🟡 IN_PROGRESS | 1 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
+
+**🎯 Grant申请优先级 (2026-03-02 验证更新):**
+| 优先级 | Ticket | 资助金额 | 状态 |
+|--------|--------|----------|------|
+| P0 | G01 Pharos Incubator | up to $10M | 🔴 TODO |
+| P0 | G02 Sui DeFi Moonshots | up to $500K | 🔴 TODO |
+| P0 | G03 Virtuals ACP | Revenue sharing | 🔴 TODO |
+| P1 | G04 ChainGPT AI Grant | $20K API + $10K | 🔴 TODO |
+| P1 | G05 Optimism S9 | TBD | 🔴 TODO |
+| P1 | G06 ASI Accelerator | Mentorship | 🔴 TODO |
 
 **🟡 进行中:** TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 
@@ -253,4 +363,4 @@
 
 ---
 
-*最后更新: 2026-03-02 08:04*
+*最后更新: 2026-03-02 20:05*

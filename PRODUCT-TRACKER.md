@@ -20,6 +20,7 @@
 | **信任机制** | **预测Track Record公开化** | **2026-02-27** | **🔒 锁定** |
 | **终极定位** | **"Agent穆迪" — 评级基础设施** | **2026-03-01** | **🔒 锁定** |
 | **商业模式** | **收查询方钱，不收被评方钱** | **2026-03-01** | **🔒 锁定** |
+| **产品形态** | **Compliance Preflight API** | **2026-03-02** | **🔒 锁定** |
 
 **⚠️ 任何新决定不得与上述核心定位矛盾**
 
@@ -251,18 +252,23 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 
 ---
 
-### Sprint 2: Agent Trust Score (2026-03-01 ~ 03-14) 🔥 当前
+### Sprint 2: Agent Trust Score + Compliance Preflight (2026-03-01 ~ 03-14) 🔥 当前
 
-> **目标：** 落地"Agent穆迪"定位，发布Trust Score概念
+> **目标：** 落地"Agent穆迪"定位 + Compliance Preflight API
 
 | 任务 | 优先级 | 状态 | 负责人 | 截止 |
 |------|--------|------|--------|------|
 | **"What is Agent Trust Score" 博客** | P0 | ✅ 完成 | 淑芬 | 03-02 |
+| **Compliance Preflight Spec** | P0 | ✅ 完成 | 志玲 | 03-02 |
 | **Context API 加 session_id** | P0 | 🔴 TODO | 淑芬 | 03-07 |
 | **Waitlist 页面/表单** | P0 | 🔴 TODO | 淑芬 | 03-07 |
+| **Preflight API 基础端点** | P0 | 🔴 TODO | 淑芬 | 03-10 |
+| **HK VASP Preflight规则** | P0 | 🔴 TODO | 志玲 | 03-10 |
 | Stablecoin场景数据整理 | P1 | 🔴 TODO | 志玲 | 03-14 |
+| **"Why AI Agents Need Preflight" 博客** | P1 | 🔴 TODO | 志玲 | 03-10 |
 | report_outcome 端点设计 | P2 | 🔴 TODO | 淑芬 | 03-21 |
 | Trust Score分级设计 (Basic/Premium) | P2 | 🔴 TODO | 淑芬 | 03-21 |
+| 联系Milady App / elizaOS团队 | P1 | 🔴 TODO | FK | 03-14 |
 
 **Sprint 2 核心交付物：**
 1. ✍️ 概念博客上线（定义Agent Trust Score）
@@ -329,6 +335,10 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 | **03-01** | **两阶段API机制** | **session_id + report_outcome** | **技术架构** |
 | **03-01** | **邀请制认证GTM** | **稀缺性 + 数据积累** | **GTM策略** |
 | **03-01** | **收查询方不收被评方** | **无利益冲突** | **商业模式** |
+| **03-02** | **Compliance Preflight API** | **参考Milady App preflight机制** | **🔥产品形态** |
+| **03-02** | **操作前合规预检** | **Agent执行金融操作前的风险检查** | **核心功能** |
+| **03-02** | **preflight_id可审计** | **提供法律保护证据** | **差异化** |
+| **03-02** | **GTM: elizaOS生态优先** | **AI Agent项目是核心客户** | **GTM策略** |
 
 ---
 
