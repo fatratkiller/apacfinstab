@@ -1,0 +1,42 @@
+{
+  "date": "2026-03-02",
+  "checkedAt": "2026-03-02T02:05:00Z",
+  "keywords": {
+    "APAC crypto regulation": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited - manual check needed"
+    },
+    "Hong Kong SFC crypto": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited"
+    },
+    "Singapore MAS crypto": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Search API rate limited"
+    },
+    "Asia Pacific crypto policy": {
+      "position": "monitoring",
+      "trend": "stable",
+      "notes": "Indexed, tracking"
+    },
+    "Hong Kong stablecoin license": {
+      "position": "monitoring",
+      "trend": "new keyword",
+      "notes": "Added - hot topic with HSBC news"
+    }
+  },
+  "notes": "Brave Search API rate limited (429). Added 2 new policy events: HSBC stablecoin interest, JPMorgan market structure analysis.",
+  "newContent": {
+    "policyEvents": 2,
+    "eventIds": ["evt-2026-0302-001", "evt-2026-0302-002"]
+  },
+  "seoChecks": {
+    "sitemap": "ok",
+    "robots": "ok",
+    "jsonLd": "ok",
+    "metaTags": "ok"
+  }
+}
