@@ -273,18 +273,27 @@
 - **验收标准:** Proposal提交成功
 
 ### TICKET-G03: Virtuals ACP Revenue Network
-- **状态:** 🔴 TODO
+- **状态:** 🟡 IN_PROGRESS
 - **来源:** 2026-03-02 研究
 - **优先级:** P0 ⭐⭐⭐
 - **资助金额:** Revenue sharing (无需申请，直接集成)
 - **截止:** 持续运行
 - **Pitch角度:** "Compliance-as-a-Service AI Agent"
 - **行动步骤:**
-  - [ ] 研究ACP SDK技术文档
-  - [ ] 设计PolicyPedia Agent的商业场景
-  - [ ] 集成ACP SDK
+  - [x] 研究ACP SDK技术文档 ✅ 2026-03-03
+  - [x] 设计PolicyPedia Agent的商业场景 ✅ 2026-03-03
+  - [ ] 在sandbox注册PolicyPedia agent
+  - [ ] 实现基础ACP client (Node.js)
+  - [ ] 集成MCP API endpoints
   - [ ] 测试Agent-to-Agent调用
 - **链接:** https://whitepaper.virtuals.io/about-virtuals/agent-commerce-protocol-acp
+- **技术文档:** 
+  - ACP Tech Playbook: https://whitepaper.virtuals.io/builders-hub/acp-tech-playbook
+  - Node SDK: https://www.npmjs.com/package/@virtuals-protocol/acp-node
+- **产出 (2026-03-03):**
+  - ✅ `docs/ACP-INTEGRATION-DESIGN.md` — 完整集成设计文档
+  - 定义3个服务: reg_lookup($0.01), compliance_check($0.05), license_compare($0.02)
+  - 3周实施计划: Sandbox → Integration → Graduation
 - **验收标准:** ACP集成完成 + 首笔收入产生
 
 ### TICKET-G04: ChainGPT Web3 AI Grant
@@ -342,25 +351,27 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 6 (Grants) |
-| 🟡 IN_PROGRESS | 1 |
+| 🔴 TODO | 5 (Grants) |
+| 🟡 IN_PROGRESS | 2 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
 
-**🎯 Grant申请优先级 (2026-03-02 验证更新):**
+**🎯 Grant申请优先级 (2026-03-03 更新):**
 | 优先级 | Ticket | 资助金额 | 状态 |
 |--------|--------|----------|------|
 | P0 | G01 Pharos Incubator | up to $10M | 🔴 TODO |
 | P0 | G02 Sui DeFi Moonshots | up to $500K | 🔴 TODO |
-| P0 | G03 Virtuals ACP | Revenue sharing | 🔴 TODO |
+| P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS |
 | P1 | G04 ChainGPT AI Grant | $20K API + $10K | 🔴 TODO |
 | P1 | G05 Optimism S9 | TBD | 🔴 TODO |
 | P1 | G06 ASI Accelerator | Mentorship | 🔴 TODO |
 
-**🟡 进行中:** TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
+**🟡 进行中:** 
+- TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
+- TICKET-G03 (Virtuals ACP集成 — 设计文档完成，下一步sandbox注册)
 
 **⚠️ 阻塞提醒:** 5个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT)
 
 ---
 
-*最后更新: 2026-03-02 20:05*
+*最后更新: 2026-03-03 08:02*
