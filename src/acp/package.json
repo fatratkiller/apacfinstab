@@ -1,0 +1,26 @@
+{
+  "name": "policypedia-acp-agent",
+  "version": "0.1.0",
+  "description": "PolicyPedia Compliance Agent for Virtuals ACP Network",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-client.js"
+  },
+  "dependencies": {
+    "@virtuals-protocol/acp-node": "^0.0.6",
+    "ethers": "^6.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "keywords": [
+    "acp",
+    "virtuals",
+    "compliance",
+    "regulatory",
+    "apac",
+    "crypto"
+  ],
+  "author": "APAC FINSTAB",
+  "license": "MIT"
+}

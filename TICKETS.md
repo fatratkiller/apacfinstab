@@ -282,8 +282,8 @@
 - **行动步骤:**
   - [x] 研究ACP SDK技术文档 ✅ 2026-03-03
   - [x] 设计PolicyPedia Agent的商业场景 ✅ 2026-03-03
-  - [ ] 在sandbox注册PolicyPedia agent
-  - [ ] 实现基础ACP client (Node.js)
+  - [x] 实现基础ACP client (Node.js) ✅ 2026-03-03 20:03
+  - [ ] 在sandbox注册PolicyPedia agent (⏸️ 需老板操作)
   - [ ] 集成MCP API endpoints
   - [ ] 测试Agent-to-Agent调用
 - **链接:** https://whitepaper.virtuals.io/about-virtuals/agent-commerce-protocol-acp
@@ -292,9 +292,11 @@
   - Node SDK: https://www.npmjs.com/package/@virtuals-protocol/acp-node
 - **产出 (2026-03-03):**
   - ✅ `docs/ACP-INTEGRATION-DESIGN.md` — 完整集成设计文档
+  - ✅ `src/acp/` — ACP Agent代码 (index.js, package.json, README.md)
   - 定义3个服务: reg_lookup($0.01), compliance_check($0.05), license_compare($0.02)
   - 3周实施计划: Sandbox → Integration → Graduation
 - **验收标准:** ACP集成完成 + 首笔收入产生
+- **⏸️ 阻塞:** 需老板去 https://sandbox.game.virtuals.io/ 注册PolicyPedia agent，获取SESSION_ENTITY_KEY_ID
 
 ### TICKET-G04: ChainGPT Web3 AI Grant
 - **状态:** 🔴 TODO
@@ -370,8 +372,8 @@
 - TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 - TICKET-G03 (Virtuals ACP集成 — 设计文档完成，下一步sandbox注册)
 
-**⚠️ 阻塞提醒:** 5个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT)
+**⚠️ 阻塞提醒:** 6个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox注册)
 
 ---
 
-*最后更新: 2026-03-03 08:02*
+*最后更新: 2026-03-03 20:03*
