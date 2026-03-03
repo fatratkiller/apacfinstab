@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Mar 3 - 9, 2026)</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, Hong Kong SFC, MCP compliance, AI agents">
+
+<!-- Open Graph -->
+<meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
+<meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apacfinstab.com">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APAC FinStab+ Dashboard">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "APAC FinStab+",
+  "description": "Weekly regulatory intelligence dashboard for APAC financial markets"
+}
+</script>
+
+<style>
+:root {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #151932;
+  --bg-card: #1a1f3a;
+  --text-primary: #e8edf4;
+  --text-secondary: #8b92ab;
+  --accent-green: #00d9a3;
+  --accent-blue: #4a9eff;
+  --accent-orange: #ff8c42;
+  --accent-red: #ff4757;
+  --accent-purple: #a55eea;
+  --accent-yellow: #ffd93d;
+  --border: rgba(255,255,255,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0f1329 100%);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 36px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.4;
+}
+
+.header-content { position: relative; z-index: 1; }
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header .subtitle { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.header .period {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(0,217,163,0.15);
+  border: 1px solid var(--accent-green);
+  border-radius: 24px;
+  font-size: 15px;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.kpi-card.blue::before { background: var(--accent-blue); }
+.kpi-card.orange::before { background: var(--accent-orange); }
+.kpi-card.red::before { background: var(--accent-red); }
+.kpi-card.purple::before { background: var(--accent-purple); }
+.kpi-card.yellow::before { background: var(--accent-yellow); }
+
+.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 12px 48px rgba(0,0,0,0.6); }
+
+.kpi-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.kpi-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); font-weight: 700; }
+.kpi-icon { font-size: 24px; opacity: 0.8; }
+.kpi-value { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+.kpi-change { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.kpi-change.up { color: var(--accent-green); }
+.kpi-change.down { color: var(--accent-red); }
+.kpi-change.neutral { color: var(--accent-yellow); }
+.kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.chart-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chart-title { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.chart-subtitle { font-size: 11px; color: var(--text-secondary); }
+
+.chart-badge { padding: 4px 12px; border-radius: 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.badge-high { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.badge-medium { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
+.badge-new { background: rgba(165,94,234,0.25); color: var(--accent-purple); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.data-table thead { background: rgba(74,158,255,0.08); }
+.data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+.data-table td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.data-table tr:hover { background: rgba(74,158,255,0.04); }
+
+.table-tag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.tag-critical { background: rgba(255,71,87,0.15); color: var(--accent-red); }
+.tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
+.tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
+.tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.tag-new { background: rgba(165,94,234,0.15); color: var(--accent-purple); }
+
+.alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
+.alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
+.alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
+.alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
+.alert-box.new { background: rgba(165,94,234,0.08); border-color: var(--accent-purple); }
+.alert-icon { font-size: 20px; line-height: 1; }
+.alert-content { flex: 1; }
+.alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+.alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+
+.progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
+.progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
+.progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
+.progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
+.progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
+.progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
+.progress-fill.purple { background: linear-gradient(90deg, var(--accent-purple) 0%, rgba(165,94,234,0.7) 100%); }
+
+.timeline { position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; padding-bottom: 20px; }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-blue); border: 2px solid var(--bg-card); }
+.timeline-date { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-bottom: 4px; }
+.timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
+
+.footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
+.footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
+.footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
+      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
+      <div class="period">📅 March 3 - 9, 2026</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 1 -->
+  <div class="grid-3">
+    <div class="kpi-card green">
+      <div class="kpi-header">
+        <div class="kpi-label">Hong Kong Stablecoin License Window</div>
+        <div class="kpi-icon">🇭🇰</div>
+      </div>
+      <div class="kpi-value">MARCH</div>
+      <div class="kpi-change up">↗ First Licenses Expected — HSBC Signals Intent to Join</div>
+      <div class="kpi-detail">Hong Kong HKMA confirmed first stablecoin issuer licenses to be awarded in March 2026. HSBC has signaled intent to join the regime, marking first major global bank entry into regulated stablecoin issuance. Expansion to HKD-pegged and multi-currency stablecoins on roadmap. This positions HK as the first major financial center with comprehensive stablecoin licensing framework.</div>
+    </div>
+
+    <div class="kpi-card blue">
+      <div class="kpi-header">
+        <div class="kpi-label">Policy Events Tracked</div>
+        <div class="kpi-icon">📊</div>
+      </div>
+      <div class="kpi-value">77</div>
+      <div class="kpi-change up">↗ +7 vs Last Week | 18 Jurisdictions Active</div>
+      <div class="kpi-detail">New events: HKMA-Shanghai blockchain MoU, HK Solana ETF approval, HK Budget digital asset dealer confirmation, Pakistan Virtual Asset Act, Australia de-banking crisis, Korea overseas investor migration, US GENIUS Act rulemaking. Coverage now spans: HK, SG, JP, KR, CN, AU, IN, TH, ID, VN, PH, MY, TW, US, UK, PK, BR, RU.</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">MCP Security Incidents (2025)</div>
+        <div class="kpi-icon">🔐</div>
+      </div>
+      <div class="kpi-value">9+</div>
+      <div class="kpi-change down">↘ Token Leaks, RCE, Supply Chain Attacks — Compliance Gap Emerging</div>
+      <div class="kpi-detail">Model Context Protocol (MCP) security breaches accelerating: WhatsApp exfiltration, GitHub prompt injection, Smithery registry supply chain attack (3000+ servers compromised), Anthropic sandbox escape. Financial regulators expected to require MCP usage disclosure within 12-18 months. New opportunity: MCP compliance audit and preflight services for AI agent operations.</div>
+    </div>
+  </div>
+
+  <!-- KPI Cards Row 2 -->
+  <div class="grid-3">
+    <div class="kpi-card orange">
+      <div class="kpi-header">
+        <div class="kpi-label">Hong Kong Solana ETF Approved</div>
+        <div class="kpi-icon">📈</div>
+      </div>
+      <div class="kpi-value">FIRST</div>
+      <div class="kpi-change up">↗ SFC Approves First SOL Spot ETF — Altcoin ETF Race Begins</div>
+      <div class="kpi-detail">Hong Kong SFC approved first Solana spot ETF on Feb 28, 2026. This follows HK's BTC and ETH spot ETF launches, positioning HK ahead of US in altcoin ETF approvals. Huaying Group simultaneously launched Asia's first SFC-approved virtual asset fund. Regulatory arbitrage opportunity for altcoin ETF issuers considering HK jurisdiction.</div>
+    </div>
+
+    <div class="kpi-card red">
+      <div class="kpi-header">
+        <div class="kpi-label">Australia De-banking Crisis</div>
+        <div class="kpi-icon">🏦</div>
+      </div>
+      <div class="kpi-value">ACTIVE</div>
+      <div class="kpi-change down">↘ Industry Faces Banking Access Challenges Amid Legislative Vacuum</div>
+      <div class="kpi-detail">Australian crypto industry facing severe de-banking as major banks refuse services. Industry bodies urging government to accelerate regulatory framework. Legislative vacuum creating operational uncertainty. Contrast with HK/SG where licensed entities have clear banking pathways. Australia risks losing competitive position in APAC digital asset hub race.</div>
+    </div>
+
+    <div class="kpi-card yellow">
+      <div class="kpi-header">
+        <div class="kpi-label">HKMA-Shanghai Blockchain MoU</div>
+        <div class="kpi-icon">🤝</div>
+      </div>
+      <div class="kpi-value">NEW</div>
+      <div class="kpi-change up">↗ Cross-Border Trade Finance Platform — Q3 Pilot</div>
+      <div class="kpi-detail">HKMA, Shanghai Data Bureau, and China National Blockchain Technology Innovation Center signed MoU for cross-border blockchain cargo data platform. Electronic bill of lading integration. Q3 2025 pilot, early 2026 commercial deployment. First major China-HK blockchain infrastructure collaboration with regulatory backing.</div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid-3">
+    <!-- Column 1: Regulatory Intensity -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📊 Regulatory Intensity Index</div>
+          <div class="chart-subtitle">Week-over-week regulatory activity by jurisdiction</div>
+        </div>
+        <span class="chart-badge badge-high">High Activity</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Jurisdiction</th>
+            <th>Latest Development</th>
+            <th>Intensity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Hong Kong</strong></td>
+            <td style="color: var(--accent-green);">Stablecoin Licenses March + Solana ETF + HKMA-Shanghai MoU</td>
+            <td><span class="table-tag tag-critical">8.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Australia</strong></td>
+            <td style="color: var(--accent-red);">De-banking Crisis + Legislative Vacuum</td>
+            <td><span class="table-tag tag-high">7.0</span></td>
+          </tr>
+          <tr>
+            <td><strong>South Korea</strong></td>
+            <td style="color: var(--accent-orange);">Virtual Asset Act Influencer Disclosure + Overseas Migration</td>
+            <td><span class="table-tag tag-high">6.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>USA</strong></td>
+            <td style="color: var(--accent-blue);">GENIUS Act Rulemaking + JPMorgan H2 Rally Prediction</td>
+            <td><span class="table-tag tag-medium">5.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Pakistan</strong></td>
+            <td style="color: var(--accent-green);">Senate Approves Virtual Asset Act 2026</td>
+            <td><span class="table-tag tag-medium">4.5</span></td>
+          </tr>
+          <tr>
+            <td><strong>Global (MCP)</strong></td>
+            <td style="color: var(--accent-purple);">AI Agent Security Crisis — Compliance Window Opening</td>
+            <td><span class="table-tag tag-new">NEW</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box success">
+        <div class="alert-icon">🇭🇰</div>
+        <div class="alert-content">
+          <div class="alert-title">Hong Kong Leading APAC Regulatory Innovation</div>
+          <div class="alert-desc">Three major developments in one week: stablecoin license window, Solana ETF approval, HKMA-Shanghai blockchain MoU. HK is executing a coordinated strategy to become the dominant APAC digital asset hub, with regulatory clarity as the competitive advantage.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: AI Agent Compliance Risk (NEW) -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🤖 AI Agent Compliance Risk</div>
+          <div class="chart-subtitle">MCP Security + Regulatory Preparedness</div>
+        </div>
+        <span class="chart-badge badge-new">Emerging Sector</span>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">MCP Token/Credential Exposure</span>
+          <span style="font-size: 11px; color: var(--accent-red);">85%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 85%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Supply Chain Attack Surface (MCP Registries)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">78%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 78%">Critical</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Regulatory Audit Trail Gap</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">65%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 65%">High Risk</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">x402 Payment Compliance Coverage</span>
+          <span style="font-size: 11px; color: var(--accent-purple);">15%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill purple" style="width: 15%">Emerging</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">ERC-8004 Agent Reputation Adoption</span>
+          <span style="font-size: 11px; color: var(--accent-green);">8%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 8%">Early</div>
+        </div>
+      </div>
+
+      <div class="alert-box new">
+        <div class="alert-icon">🔮</div>
+        <div class="alert-content">
+          <div class="alert-title">12-18 Month Compliance Window</div>
+          <div class="alert-desc">Financial regulators expected to require AI agent/MCP usage disclosure within 12-18 months. Existing third-party service provider frameworks (SFC outsourcing, MAS TRMG) will likely be extended to cover MCP connections. First-mover advantage for compliance tooling providers.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Key Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of March 3 - 9, 2026</div>
+        </div>
+        <span class="chart-badge badge-active">Live Tracking</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 3</div>
+          <div class="timeline-title">HKMA-Shanghai Blockchain MoU Signed</div>
+          <div class="timeline-desc">Cross-border trade finance platform, electronic bill of lading integration. Q3 pilot, 2026 commercial deployment.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 2</div>
+          <div class="timeline-title">HSBC Signals Stablecoin Regime Entry</div>
+          <div class="timeline-desc">First major global bank to indicate intent to join HK stablecoin licensing framework. Game-changer for institutional legitimacy.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 1</div>
+          <div class="timeline-title">Ripple XRP Asia Hub Launch</div>
+          <div class="timeline-desc">Dedicated APAC entity with localized compliance. Singapore-based, targeting SEA remittance corridors.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 28</div>
+          <div class="timeline-title">HK SFC Approves First Solana ETF</div>
+          <div class="timeline-desc">First altcoin spot ETF approval globally. HK leading US in crypto ETF product diversity.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 28</div>
+          <div class="timeline-title">Australia De-banking Crisis Escalates</div>
+          <div class="timeline-desc">Industry urges government action as banking access challenges intensify. Legislative vacuum risk.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Feb 25</div>
+          <div class="timeline-title">Pakistan Senate Approves Virtual Asset Act</div>
+          <div class="timeline-desc">First comprehensive crypto legislation in South Asia. Framework for licensing and AML compliance.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Critical Intelligence Summary -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🚨 Critical Intelligence Summary</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+      </div>
+      <span class="chart-badge badge-high">Priority Actions</span>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">1. Hong Kong Stablecoin License Window — First-Mover Deadline March</div>
+        <div class="alert-desc">HKMA confirmed first stablecoin licenses in March 2026. HSBC signaling entry represents first major global bank commitment to regulated stablecoin issuance. HKD-pegged and multi-currency stablecoins on roadmap. Action: Issuers targeting HK market should accelerate license applications. Banks considering stablecoin services should evaluate HSBC's approach as template.</div>
+      </div>
+    </div>
+
+    <div class="alert-box new">
+      <div class="alert-icon">🟣</div>
+      <div class="alert-content">
+        <div class="alert-title">2. MCP/AI Agent Compliance Gap — 12-18 Month Regulatory Window</div>
+        <div class="alert-desc">MCP security incidents (9+ in 2025) creating regulatory awareness. Token leaks, RCE vulnerabilities, supply chain attacks documented. Financial regulators will extend existing third-party service provider frameworks to cover AI agent operations. Action: Financial institutions using AI agents should begin MCP usage audits now. Compliance teams should assess ERC-8004 reputation integration for agent accountability.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">3. Australia Regulatory Vacuum — De-banking Creating Competitive Disadvantage</div>
+        <div class="alert-desc">Australian crypto industry facing banking access crisis while HK/SG licensed entities enjoy clear pathways. Industry groups urging government to accelerate framework. Australia risks losing APAC hub position. Action: APAC-focused firms should evaluate HK/SG incorporation for banking access. Monitor Australian Treasury announcements for framework timeline.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. South Korea Regulatory Pressure — Driving Investor Migration</div>
+        <div class="alert-desc">Virtual Asset Act influencer disclosure requirements and exchange restrictions driving Korean investors to overseas platforms. Regulatory stringency creating arbitrage flows. Action: Global exchanges should assess Korean user compliance requirements. Korean crypto businesses should evaluate offshore entity structures for service continuity.</div>
+      </div>
+    </div>
+
+    <div class="alert-box success">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <div class="alert-title">5. HKMA-China Blockchain Integration — Cross-Border Infrastructure</div>
+        <div class="alert-desc">HKMA-Shanghai MoU signals first major HK-China blockchain infrastructure collaboration with regulatory backing. Trade finance focus initially, likely expansion to capital markets. Action: Financial institutions in Greater Bay Area should monitor pilot participation opportunities. Cross-border settlement providers should assess integration pathways.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
+      Data Sources: SFC Hong Kong, HKMA, MAS Singapore, FSA Japan, FSC Korea, AUSTRAC Australia, RBI India, OCC/SEC USA, industry reports, on-chain analytics.<br/>
+      <em>77 policy events tracked across 18 jurisdictions. AI agent compliance monitoring now integrated.</em>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

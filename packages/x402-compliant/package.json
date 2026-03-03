@@ -1,0 +1,46 @@
+{
+  "name": "@apacfinstab/x402-compliant",
+  "version": "0.1.0",
+  "description": "x402 payment client with built-in regulatory compliance checks",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "x402",
+    "payment",
+    "compliance",
+    "regulatory",
+    "crypto",
+    "agent",
+    "ai"
+  ],
+  "author": "APAC FINSTAB",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apacfinstab/x402-compliant"
+  },
+  "homepage": "https://apacfinstab.com",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "x402": ">=0.1.0"
+  },
+  "peerDependenciesMeta": {
+    "x402": {
+      "optional": true
+    }
+  }
+}
