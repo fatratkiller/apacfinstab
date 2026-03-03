@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-02T02:05:53.558230Z",
-    "totalEvents": 76,
+    "lastUpdated": "2026-03-03T02:03:00.000000Z",
+    "totalEvents": 77,
     "version": "1.0"
   },
   "dimensions": {
@@ -90,6 +90,19 @@
     "PK": "Pakistan"
   },
   "events": [
+    {
+      "id": "evt-2026-0303-001",
+      "date": "2026-03-03",
+      "title": "HKMA-Shanghai Blockchain Trade Finance MoU Signed",
+      "protocols": ["ETH"],
+      "regions": ["HK", "CN"],
+      "topics": ["Tokenization", "Regulation"],
+      "entities": [],
+      "summary": "Hong Kong Monetary Authority (HKMA), Shanghai Data Bureau, and National Technology Innovation Center for Blockchain signed MoU on March 2 to develop cross-border blockchain platform linking cargo data and electronic bills of lading. Platform aims to cut trade finance friction and connect Chinese supply chains to global markets. Pilot testing scheduled for Q3 2025 with full commercial deployment in early 2026.",
+      "impact": "high",
+      "source": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/03/20260302-3/",
+      "keywords": ["HKMA", "Shanghai", "blockchain", "trade finance", "cargo data", "electronic bill of lading", "cross-border"]
+    },
     {
       "id": "evt-2026-0302-002",
       "date": "2026-03-02",
