@@ -243,7 +243,7 @@
 > ⚠️ 2026-03-02 20:00 更新: Arbitrum Trailblazer已不活跃，已移除。新增经验证的活跃grants。
 
 ### TICKET-G01: Pharos Incubator (RWA/Financial Infra)
-- **状态:** 🔴 TODO
+- **状态:** 🟡 IN_PROGRESS
 - **来源:** 2026-03-02 CL Web3 Grants #29
 - **优先级:** P0 ⭐⭐⭐
 - **资助金额:** up to $10M fund
@@ -251,10 +251,15 @@
 - **Focus:** RWAs, Payments, DeFi, Financial Infrastructure
 - **Pitch角度:** "Regulatory compliance layer for institutional DeFi and RWA tokenization"
 - **行动步骤:**
-  - [ ] 研究Pharos生态具体需求
-  - [ ] 准备项目pitch deck
-  - [ ] 联系Pharos团队
+  - [x] 研究Pharos生态具体需求 ✅ 2026-03-04
+  - [x] 准备项目pitch deck ✅ 2026-03-04
+  - [ ] 提交Google Form申请 (⏸️ 需老板操作)
 - **链接:** https://www.pharos.xyz/ecosystem
+- **申请链接:** https://docs.google.com/forms/d/e/1FAIpQLSeAH2AU2xSUMbU5bic8XQwlcszD8Gs6to7M0HTAImrhdcpH-g/viewform
+- **产出 (2026-03-04):**
+  - ✅ `docs/grants/PHAROS-INCUBATOR-APPLICATION.md` — 完整申请材料
+  - Pharos RealFi Alliance是完美匹配场景
+  - 请求金额: $50K-$100K
 - **验收标准:** 进入incubation或获得资助
 
 ### TICKET-G02: Sui DeFi Moonshots Program
@@ -353,15 +358,15 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 5 (Grants) |
-| 🟡 IN_PROGRESS | 2 |
+| 🔴 TODO | 4 (Grants) |
+| 🟡 IN_PROGRESS | 3 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
 
-**🎯 Grant申请优先级 (2026-03-03 更新):**
+**🎯 Grant申请优先级 (2026-03-04 更新):**
 | 优先级 | Ticket | 资助金额 | 状态 |
 |--------|--------|----------|------|
-| P0 | G01 Pharos Incubator | up to $10M | 🔴 TODO |
+| P0 | G01 Pharos Incubator | up to $10M | 🟡 IN_PROGRESS |
 | P0 | G02 Sui DeFi Moonshots | up to $500K | 🔴 TODO |
 | P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS |
 | P1 | G04 ChainGPT AI Grant | $20K API + $10K | 🔴 TODO |
@@ -370,10 +375,11 @@
 
 **🟡 进行中:** 
 - TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
-- TICKET-G03 (Virtuals ACP集成 — 设计文档完成，下一步sandbox注册)
+- TICKET-G01 (Pharos Incubator — 申请材料已备好，需老板提交Google Form)
+- TICKET-G03 (Virtuals ACP集成 — 设计文档完成，需老板sandbox注册)
 
-**⚠️ 阻塞提醒:** 6个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox注册)
+**⚠️ 阻塞提醒:** 7个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form)
 
 ---
 
-*最后更新: 2026-03-03 20:03*
+*最后更新: 2026-03-04 20:02*
