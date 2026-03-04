@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-04",
+  "timestamp": "2026-03-04T02:03:00.000Z",
+  "keywords": {
+    "hong kong crypto license": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Core target keyword"
+    },
+    "singapore crypto regulation": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Secondary market"
+    },
+    "apac crypto regulation": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Primary brand keyword"
+    },
+    "hong kong stablecoin license": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "High-value timely keyword - March 2026 licenses expected"
+    },
+    "vasp requirements hong kong": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Technical compliance keyword"
+    }
+  },
+  "indexedPages": 20,
+  "newContent": [],
+  "technicalIssues": [],
+  "notes": "Daily SEO check - policy events database updated with 2 new events (Turkey tax proposal, US ETF inflows)"
+}
