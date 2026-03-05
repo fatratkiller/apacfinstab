@@ -263,18 +263,27 @@
 - **验收标准:** 进入incubation或获得资助
 
 ### TICKET-G02: Sui DeFi Moonshots Program
-- **状态:** 🔴 TODO
+- **状态:** 🟡 IN_PROGRESS
 - **来源:** 2026-03-02 CL Web3 Grants #29
 - **优先级:** P0 ⭐⭐⭐
 - **资助金额:** up to $500,000
 - **截止:** Rolling basis
 - **Focus:** Category-defining DeFi projects
-- **Pitch角度:** "Compliance-aware DeFi primitives for APAC markets"
+- **Pitch角度:** "Regulatory Intelligence Layer - not KYC oracle, but WHY (not) compliant"
 - **行动步骤:**
-  - [ ] 研究Sui DeFi生态现状
-  - [ ] 设计Sui上的合规层方案
-  - [ ] 准备proposal
+  - [x] 研究Sui DeFi生态现状 ✅ 2026-03-05 (发现Netki DeFi Sentinel已部署)
+  - [x] 设计Sui上的合规层方案 ✅ 2026-03-05 (差异化: 监管推理引擎)
+  - [x] 准备proposal ✅ 2026-03-05
+  - [ ] 老板审核申请材料
+  - [ ] 创建Move prototype
+  - [ ] 提交Tally表单 (⏸️ 需老板操作)
 - **链接:** https://blog.sui.io/defi-moonshots-program-announcement/
+- **申请链接:** https://tally.so/r/MeRKJX
+- **产出 (2026-03-05):**
+  - ✅ `docs/grants/SUI-MOONSHOTS-APPLICATION.md` — 完整申请材料 (10KB)
+  - 差异化定位: Netki做KYC screening，我们做Regulatory Reasoning
+  - 技术方案: Move module + 12 APAC jurisdictions + confidence scoring
+  - 资金请求: $500K (分4个milestone)
 - **验收标准:** Proposal提交成功
 
 ### TICKET-G03: Virtuals ACP Revenue Network
@@ -358,17 +367,17 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 4 (Grants) |
-| 🟡 IN_PROGRESS | 3 |
+| 🔴 TODO | 3 (Grants) |
+| 🟡 IN_PROGRESS | 4 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
 
-**🎯 Grant申请优先级 (2026-03-04 更新):**
+**🎯 Grant申请优先级 (2026-03-05 更新):**
 | 优先级 | Ticket | 资助金额 | 状态 |
 |--------|--------|----------|------|
-| P0 | G01 Pharos Incubator | up to $10M | 🟡 IN_PROGRESS |
-| P0 | G02 Sui DeFi Moonshots | up to $500K | 🔴 TODO |
-| P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS |
+| P0 | G01 Pharos Incubator | up to $10M | 🟡 IN_PROGRESS (需老板提交) |
+| P0 | G02 Sui DeFi Moonshots | up to $500K | 🟡 IN_PROGRESS ✨NEW |
+| P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS (需老板sandbox注册) |
 | P1 | G04 ChainGPT AI Grant | $20K API + $10K | 🔴 TODO |
 | P1 | G05 Optimism S9 | TBD | 🔴 TODO |
 | P1 | G06 ASI Accelerator | Mentorship | 🔴 TODO |
@@ -376,10 +385,11 @@
 **🟡 进行中:** 
 - TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 - TICKET-G01 (Pharos Incubator — 申请材料已备好，需老板提交Google Form)
+- TICKET-G02 (Sui Moonshots — 申请材料已备好，需老板审核+提交) ✨NEW
 - TICKET-G03 (Virtuals ACP集成 — 设计文档完成，需老板sandbox注册)
 
-**⚠️ 阻塞提醒:** 7个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form)
+**⚠️ 阻塞提醒:** 8个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form/Sui Moonshots Form)
 
 ---
 
-*最后更新: 2026-03-04 20:02*
+*最后更新: 2026-03-05 08:01*
