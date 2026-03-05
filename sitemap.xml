@@ -39,6 +39,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  
+  <!-- MCP in Financial Services Article -->
+  <url>
+    <loc>https://apacfinstab.com/learn/mcp-financial-services.html</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
   <!-- Policy Tracker (Data-Driven) -->
   <url>
