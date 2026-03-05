@@ -313,18 +313,26 @@
 - **⏸️ 阻塞:** 需老板去 https://sandbox.game.virtuals.io/ 注册PolicyPedia agent，获取SESSION_ENTITY_KEY_ID
 
 ### TICKET-G04: ChainGPT Web3 AI Grant
-- **状态:** 🔴 TODO
+- **状态:** 🟡 IN_PROGRESS
 - **来源:** 2026-03-02 研究
 - **优先级:** P1 ⭐⭐
-- **资助金额:** Growth Grants up to $20K API + $10K cash
+- **资助金额:** Builder Grants up to $10K API + $5K cash (Growth需MAU≥20K，我们达不到)
 - **截止:** Rolling basis
-- **要求:** 必须集成ChainGPT APIs/SDKs, MAU ≥20K
-- **Pitch角度:** "Regulatory compliance chatbot powered by ChainGPT"
+- **策略调整:** 申请Builder Grants而非Growth Grants，无MAU要求
+- **Pitch角度:** "APAC regulatory knowledge layer for ChainGPT's Compliance AI roadmap"
 - **行动步骤:**
-  - [ ] 研究ChainGPT API集成要求
-  - [ ] 评估技术可行性
-  - [ ] 准备POC
+  - [x] 研究ChainGPT API集成要求 ✅ 2026-03-05
+  - [x] 评估技术可行性 ✅ 2026-03-05 (SDK完善，支持Context Injection)
+  - [x] 设计集成方案 ✅ 2026-03-05
+  - [ ] 老板注册ChainGPT账号 + 获取API Key (⏸️)
+  - [ ] 构建POC demo
+  - [ ] 提交申请
 - **链接:** https://www.chaingpt.org/web3-ai-grant
+- **技术文档:** https://docs.chaingpt.org/dev-docs-b2b-saas-api-and-sdk/web3-ai-chatbot-and-llm-api-and-sdk
+- **产出 (2026-03-05):**
+  - ✅ `docs/grants/CHAINGPT-GRANT-EVALUATION.md` — 完整评估文档 (4.6KB)
+  - 发现ChainGPT Q2 2025路线图有"Crypto Legal & Compliance AI"计划，完美契合！
+  - 技术方案：ChainGPT LLM + APAC FINSTAB Context Injection
 - **验收标准:** 进入申请流程
 
 ### TICKET-G05: Optimism Season 9 Grants
@@ -367,29 +375,30 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 3 (Grants) |
-| 🟡 IN_PROGRESS | 4 |
+| 🔴 TODO | 2 (Grants) |
+| 🟡 IN_PROGRESS | 5 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
 
-**🎯 Grant申请优先级 (2026-03-05 更新):**
+**🎯 Grant申请优先级 (2026-03-05 20:00 更新):**
 | 优先级 | Ticket | 资助金额 | 状态 |
 |--------|--------|----------|------|
 | P0 | G01 Pharos Incubator | up to $10M | 🟡 IN_PROGRESS (需老板提交) |
-| P0 | G02 Sui DeFi Moonshots | up to $500K | 🟡 IN_PROGRESS ✨NEW |
+| P0 | G02 Sui DeFi Moonshots | up to $500K | 🟡 IN_PROGRESS (需老板审核) |
 | P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS (需老板sandbox注册) |
-| P1 | G04 ChainGPT AI Grant | $20K API + $10K | 🔴 TODO |
+| P1 | G04 ChainGPT AI Grant | $10K API + $5K | 🟡 IN_PROGRESS ✨ 评估完成 |
 | P1 | G05 Optimism S9 | TBD | 🔴 TODO |
 | P1 | G06 ASI Accelerator | Mentorship | 🔴 TODO |
 
 **🟡 进行中:** 
 - TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 - TICKET-G01 (Pharos Incubator — 申请材料已备好，需老板提交Google Form)
-- TICKET-G02 (Sui Moonshots — 申请材料已备好，需老板审核+提交) ✨NEW
+- TICKET-G02 (Sui Moonshots — 申请材料已备好，需老板审核+提交)
 - TICKET-G03 (Virtuals ACP集成 — 设计文档完成，需老板sandbox注册)
+- TICKET-G04 (ChainGPT Grant — 评估完成，需老板注册账号获取API Key) ✨NEW
 
-**⚠️ 阻塞提醒:** 8个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form/Sui Moonshots Form)
+**⚠️ 阻塞提醒:** 9个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form/Sui Moonshots Form/ChainGPT账号)
 
 ---
 
-*最后更新: 2026-03-05 08:01*
+*最后更新: 2026-03-05 20:03*
