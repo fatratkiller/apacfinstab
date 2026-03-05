@@ -293,8 +293,23 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 
 **MVP核心功能：**
 1. MCP连接发现 — "你的环境里有哪些MCP server？"
-2. 审计日志 — "过去7天所有MCP调用记录"
-3. 风险评分 — 不解析payload，基于server/权限/频率
+2. **Call-Level审计日志** — 不只是session级别，而是每个tool call：
+   ```json
+   {
+     "call_id": "xxx",
+     "tool": "query_customer_data",
+     "input": { "customer_id": "xxx" },
+     "output": { "..." },
+     "injection_scan": "clean",
+     "timestamp": "2026-03-05T12:00:00Z",
+     "jurisdiction_flags": ["HK", "PDPO"],
+     "risk_level": "medium"
+   }
+   ```
+   **关键洞察(2026-03-05):** 
+   - Session-level ❌ "Agent accessed data" — 不够
+   - Call-level ✅ What queried + What returned + Injection check — 监管机构需要的证据
+3. 风险评分 — 基于server/权限/频率/input-output分析
 
 ---
 
@@ -393,6 +408,7 @@ Agent执行操作 → 我们的Preflight检查 → 生成Trust Score → 写入E
 | **03-03** | **窗口期12-18个月** | **大厂迟早会动，要快** | **时间压力** |
 | **03-03** | **先发博客建立话语权** | **不等MVP，竞对分析后先发** | **内容策略** |
 | **03-03** | **双轨战略：传统金融+Crypto Agent** | **两条腿走路** | **🔥战略扩展** |
+| **03-05** | **Call-Level Audit (非Session级)** | **Session级不够，监管需要每个call的input/output/injection_scan** | **🔥核心功能** |
 | **03-03** | **ERC-8004声誉整合** | **Trust Score写入链上** | **产品设计** |
 | **03-03** | **x402支付合规检查** | **Agent微支付的KYC/AML节点** | **产品设计** |
 | **03-03** | **Launchpad合规审计** | **Token发行pre-launch检查** | **新场景** |
@@ -427,7 +443,7 @@ Agent执行操作 → 我们的Preflight检查 → 生成Trust Score → 写入E
 
 | 日期 | 完成率 | 阻塞项 | 备注 |
 |------|--------|--------|------|
-| 03-05 | S2: 20% (2/10), S3: 33% (2/6), S3B: 40% (2/5) | 无 | MCP Financial Services博客发布 |
+| 03-05 | S2: 20% (2/10), S3: 33% (2/6), S3B: 40% (2/5) | 无 | MCP博客+X推广，Call-Level Audit确立为核心功能 |
 | 03-04 | S2: 20% (2/10), S3: 17% (1/6), S3B: 40% (2/5) | 无 | ERC-8004+x402研究完成，整合方案已设计 |
 | 03-03 | S2: 20% (2/10), S3: 17% (1/6) | 无 | MCP竞对分析完成，发现蓝海定位 |
 | 03-02 | 17% (1/6) | 无 | Agent Trust Score博客已发布 |
