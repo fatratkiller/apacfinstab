@@ -336,33 +336,39 @@
 - **验收标准:** 进入申请流程
 
 ### TICKET-G05: Optimism Season 9 Grants
-- **状态:** 🔴 TODO
+- **状态:** ❌ OBSOLETE
 - **来源:** 2026-03-02 CL Web3 Grants #29
-- **优先级:** P1 ⭐⭐
-- **资助金额:** TBD (生态资助)
-- **截止:** Season 9期间
-- **Focus:** Public Goods, Dev Tooling, Privacy & Security
-- **Pitch角度:** "Open-source regulatory knowledge infrastructure as public good"
-- **行动步骤:**
-  - [ ] 研究Season 9优先级
-  - [ ] 准备Public Goods叙事
-  - [ ] 提交到Atlas
-- **链接:** https://atlas.optimism.io/
-- **验收标准:** 提交成功
+- **原优先级:** P1
+- **评估结果 (2026-03-06):**
+  - Season 9 Grants Council专注DEX TVL/Fees，与我们的监管合规层完全不匹配
+  - 需要在Optimism上有产品/流动性工具
+  - 参见 `docs/grants/OPTIMISM-S9-EVALUATION.md`
+- **决定:** 不申请，等待可能的Season 10 Developer Tools类别
+- **替代:** 转向Deep Funding (G06-NEW)
 
-### TICKET-G06: ASI Accelerator Programme
-- **状态:** 🔴 TODO
-- **来源:** 2026-03-02 CL Web3 Grants #29
+### TICKET-G06: SingularityNET Deep Funding (原ASI Accelerator)
+- **状态:** 🟡 IN_PROGRESS
+- **来源:** 2026-03-06 Grant评估更新
 - **优先级:** P1 ⭐⭐
-- **资助金额:** Accelerator program (mentorship + support)
-- **截止:** Rolling basis
-- **Focus:** AI, Infrastructure, Enterprise-grade
-- **Pitch角度:** "Enterprise compliance AI infrastructure"
+- **资助金额:** Up to $100K (milestone-based)
+- **截止:** Rolling basis (funding rounds + RFPs)
+- **Focus:** Decentralized AI tools, services, integrations
+- **Pitch角度:** "Regulatory reasoning layer for AI agents in APAC financial markets"
+- **为什么更适合:**
+  - ✅ 聚焦AI工具/服务，不是GPU计算
+  - ✅ 支持开源项目
+  - ✅ 保持IP所有权
+  - ✅ 现金资助+指导
 - **行动步骤:**
-  - [ ] 研究ASI Accelerator要求
-  - [ ] 准备申请材料
-- **链接:** https://www.cudos.org/accelerator
-- **验收标准:** 进入Accelerator
+  - [x] 评估ASI Alliance三个计划 ✅ 2026-03-06
+  - [x] 确定Deep Funding最适合 ✅ 2026-03-06
+  - [ ] 研究当前RFPs和funding rounds
+  - [ ] 准备milestone plan
+  - [ ] 注册Deep Funding Portal (⏸️ 需老板操作)
+  - [ ] 提交申请
+- **链接:** https://deepfunding.ai/
+- **参考:** `docs/grants/ASI-DEEPFUNDING-EVALUATION.md`
+- **验收标准:** 进入funding round评审
 
 ### ~~TICKET-G0X: Arbitrum Trailblazer AI Grant~~
 - **状态:** ❌ OBSOLETE
@@ -375,30 +381,32 @@
 
 | 状态 | 数量 |
 |------|------|
-| 🔴 TODO | 2 (Grants) |
-| 🟡 IN_PROGRESS | 5 |
+| 🔴 TODO | 0 |
+| 🟡 IN_PROGRESS | 6 |
 | 🟢 DONE | 15 |
 | ⏸️ BLOCKED | 5 |
+| ❌ OBSOLETE | 1 |
 
-**🎯 Grant申请优先级 (2026-03-05 20:00 更新):**
+**🎯 Grant申请优先级 (2026-03-06 20:03 更新):**
 | 优先级 | Ticket | 资助金额 | 状态 |
 |--------|--------|----------|------|
 | P0 | G01 Pharos Incubator | up to $10M | 🟡 IN_PROGRESS (需老板提交) |
 | P0 | G02 Sui DeFi Moonshots | up to $500K | 🟡 IN_PROGRESS (需老板审核) |
 | P0 | G03 Virtuals ACP | Revenue sharing | 🟡 IN_PROGRESS (需老板sandbox注册) |
-| P1 | G04 ChainGPT AI Grant | $10K API + $5K | 🟡 IN_PROGRESS ✨ 评估完成 |
-| P1 | G05 Optimism S9 | TBD | 🔴 TODO |
-| P1 | G06 ASI Accelerator | Mentorship | 🔴 TODO |
+| P1 | G04 ChainGPT AI Grant | $10K API + $5K | 🟡 IN_PROGRESS (需老板账号) |
+| P1 | G06 Deep Funding | up to $100K | 🟡 IN_PROGRESS ✨NEW 评估完成 |
+| ❌ | ~~G05 Optimism S9~~ | - | OBSOLETE (DEX专注，不匹配) |
 
 **🟡 进行中:** 
 - TICKET-003 (MCP目录提交 — 材料已备好，需老板手动提交)
 - TICKET-G01 (Pharos Incubator — 申请材料已备好，需老板提交Google Form)
 - TICKET-G02 (Sui Moonshots — 申请材料已备好，需老板审核+提交)
 - TICKET-G03 (Virtuals ACP集成 — 设计文档完成，需老板sandbox注册)
-- TICKET-G04 (ChainGPT Grant — 评估完成，需老板注册账号获取API Key) ✨NEW
+- TICKET-G04 (ChainGPT Grant — 评估完成，需老板注册账号获取API Key)
+- TICKET-G06 (Deep Funding — 评估完成，优于原ASI Accelerator) ✨NEW
 
-**⚠️ 阻塞提醒:** 9个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form/Sui Moonshots Form/ChainGPT账号)
+**⚠️ 阻塞提醒:** 10个tickets需要老板操作 (PH/IH/Dev.to/GSC/IFTTT/ACP Sandbox/Pharos Form/Sui Moonshots Form/ChainGPT账号/Deep Funding Portal)
 
 ---
 
-*最后更新: 2026-03-05 20:03*
+*最后更新: 2026-03-06 20:03*
