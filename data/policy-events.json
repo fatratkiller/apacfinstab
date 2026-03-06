@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-04T02:03:00.000000Z",
-    "totalEvents": 79,
+    "lastUpdated": "2026-03-06T02:04:14.584Z",
+    "totalEvents": 87,
     "version": "1.0"
   },
   "dimensions": {
@@ -92,6 +92,218 @@
     "TR": "Turkey"
   },
   "events": [
+    {
+      "id": "evt-2026-0306-001",
+      "date": "2026-03-06",
+      "title": "Brazil Central Bank Mandates Daily Crypto Reserve Reporting from 2027",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "BR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange",
+        "Custody"
+      ],
+      "entities": [],
+      "summary": "Brazil's central bank introduced regulatory framework requiring licensed crypto exchanges to prove asset sufficiency daily starting January 1, 2027. Rules mandate strict segregation of company and client assets, specialized accounting standards for digital assets, and enhanced oversight of cross-border transfers with blockchain pathway reporting.",
+      "impact": "high",
+      "source": "https://dig.watch/updates/brazil-crypto-exchanges-regulation",
+      "keywords": [
+        "Brazil",
+        "reserve requirements",
+        "daily attestation",
+        "asset segregation",
+        "2027"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-002",
+      "date": "2026-03-05",
+      "title": "US Clarity Act Crypto Bill Hits Congressional Impasse",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "The US Clarity Act bill aimed at creating clear cryptocurrency regulations faces new impasse in Congress, raising doubts about its future. Industry experts warn banks will continue avoiding holding most crypto on their balance sheets until regulatory clarity is achieved.",
+      "impact": "high",
+      "source": "https://www.reuters.com/business/finance/crypto-bill-hits-new-impasse-raising-doubts-over-its-future-2026-03-05/",
+      "keywords": [
+        "Clarity Act",
+        "US Congress",
+        "regulatory impasse",
+        "market structure"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-003",
+      "date": "2026-02-25",
+      "title": "OCC Issues GENIUS Act Implementation Rules with $5M Capital Floor",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "OCC issued 376-page proposed rulemaking to implement GENIUS Act for federal qualified payment stablecoin issuers. Key provisions include $5M minimum capital floor for de novo issuers, rebuttable presumption on yield ban violations via affiliates, and capital/operational backstop framework. BSA/AML compliance deferred to separate Treasury rulemaking.",
+      "impact": "high",
+      "source": "https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-3.html",
+      "keywords": [
+        "OCC",
+        "GENIUS Act",
+        "stablecoin",
+        "capital requirements",
+        "$5 million"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-004",
+      "date": "2026-02-23",
+      "title": "SEC Grants 24/7 Tokenized Money Market Fund Trading Order",
+      "protocols": [
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Tokenization",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "SEC Division of Investment Management issued exemptive order permitting WisdomTree Government Money Market Digital Fund (WTGXX) 24/7 continuous trading of tokenized shares at fixed $1/share via USDC stablecoin settlement. First registered fund enabled for round-the-clock blockchain-based principal trading.",
+      "impact": "medium",
+      "source": "https://www.sec.gov/files/rules/ic/2026/ic-35968.pdf",
+      "keywords": [
+        "SEC",
+        "tokenized fund",
+        "WisdomTree",
+        "24/7 trading",
+        "USDC settlement"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-005",
+      "date": "2026-02-24",
+      "title": "Federal Reserve Proposes Elimination of Reputation Risk in Bank Supervision",
+      "protocols": [],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Federal Reserve proposed rule formally eliminating 'reputation risk' as bank supervision factor, codifying previous policy changes. Move targets ending 'debanking' practices against crypto firms and politically disfavored businesses. Follows June 2025 program removal and October 2025 joint OCC/FDIC proposal.",
+      "impact": "high",
+      "source": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260223a.htm",
+      "keywords": [
+        "Federal Reserve",
+        "reputation risk",
+        "debanking",
+        "crypto access"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-006",
+      "date": "2026-02-23",
+      "title": "Crypto.com Receives OCC Conditional Approval for National Trust Bank",
+      "protocols": [],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Licensing",
+        "Custody"
+      ],
+      "entities": [],
+      "summary": "Crypto.com received conditional OCC approval to charter Foris Dax National Trust Bank (d/b/a Crypto.com National Trust Bank). Planned services include institutional-grade custody, staking across blockchains including Cronos, and trade settlement under federal regulatory oversight.",
+      "impact": "medium",
+      "source": "https://crypto.com/us/company-news/cryptocom-receives-conditional-approval-from-occ-for-national-trust-bank-charter",
+      "keywords": [
+        "Crypto.com",
+        "OCC",
+        "trust bank",
+        "custody",
+        "staking"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-007",
+      "date": "2026-02-24",
+      "title": "OFAC Sanctions Russian Firm for Crypto-Based Stolen Tech Purchases",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US",
+        "RU"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "OFAC sanctioned Operation Zero, a Russian company, and affiliated individuals for purchasing stolen US cyber tools using cryptocurrency and reselling to hostile actors. First sanctions under Protecting American Intellectual Property Act. UAE-based affiliate STS also designated.",
+      "impact": "medium",
+      "source": "https://home.treasury.gov/news/press-releases/sb0404",
+      "keywords": [
+        "OFAC",
+        "sanctions",
+        "Russia",
+        "crypto payments",
+        "cyber weapons"
+      ]
+    },
+    {
+      "id": "evt-2026-0306-008",
+      "date": "2026-02-24",
+      "title": "Senator Blumenthal Opens Inquiry Into Binance Iran Transfers",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Exchange",
+        "Regulation"
+      ],
+      "entities": [
+        "Binance"
+      ],
+      "summary": "Senator Richard Blumenthal demanded records from Binance regarding alleged $1.7 billion in cryptocurrency transfers to Iranian government-linked entities including IRGC and Houthi militants. Inquiry follows exchange's 2023 guilty plea and $4.3B settlement, plus presidential pardon of CZ.",
+      "impact": "high",
+      "source": "https://www.blumenthal.senate.gov/newsroom/press/release/blumenthal-opens-inquiry-binance",
+      "keywords": [
+        "Binance",
+        "Iran",
+        "sanctions",
+        "IRGC",
+        "Senate inquiry",
+        "Blumenthal"
+      ]
+    },
     {
       "id": "evt-2026-0304-001",
       "date": "2026-03-04",

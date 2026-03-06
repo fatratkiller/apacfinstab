@@ -1,0 +1,47 @@
+{
+  "date": "2026-03-06",
+  "timestamp": "2026-03-06T02:03:00.000Z",
+  "keywords": {
+    "hong kong crypto license": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Core target keyword"
+    },
+    "singapore crypto regulation": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Secondary market"
+    },
+    "apac crypto regulation": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Primary brand keyword"
+    },
+    "hong kong stablecoin license": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "High-value timely keyword - March 2026 licenses expected"
+    },
+    "vasp requirements hong kong": {
+      "position": "monitoring",
+      "change": "stable",
+      "notes": "Technical compliance keyword"
+    },
+    "brazil crypto regulation 2027": {
+      "position": "new opportunity",
+      "change": "new",
+      "notes": "New reserve rules announced - content opportunity"
+    }
+  },
+  "indexedPages": 20,
+  "newContent": [
+    "8 new policy events added to database"
+  ],
+  "technicalIssues": [],
+  "backlinkOpportunities": [
+    "Reddit r/JapanFinance crypto tax thread",
+    "The Diplomat APAC sanctions article comments",
+    "Elliptic 2026 outlook discussions"
+  ],
+  "notes": "Daily SEO check - Major US regulatory developments (GENIUS Act, Clarity Act impasse, reputation risk rule). Brazil 2027 reserve requirements create content opportunity."
+}
