@@ -1,0 +1,2 @@
+timestamp,email,source,company,role,jurisdiction,business_type,capital_range,use_case,wallet_address,ref,status,notes,contacted_at,converted_at
+2026-03-06 09:30,example@test.com,vasp_test,Test Company,Founder,Hong Kong,Exchange,30M-50M,,,twitter,new,,
