@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <title>VASP License Success Rate Test | APAC FINSTAB</title>
+  <meta name="description" content="Test your Hong Kong VASP license application success rate in 60 seconds. Free assessment based on SFC guidelines.">
+  
+  <link rel="canonical" href="https://apacfinstab.com/vasp-advisor/">
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --accent-yellow: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .logo {
+      color: var(--brand-orange);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    
+    .alert-banner {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(255, 140, 66, 0.2));
+      border: 1px solid var(--accent-red);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .alert-banner h2 {
+      color: var(--accent-red);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    
+    .alert-banner p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .main-title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+    
+    /* Quiz Container */
+    .quiz-container {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 30px;
+    }
+    
+    .question {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .question.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .question-number {
+      color: var(--brand-orange);
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    
+    .question-title {
+      font-size: 1.3rem;
+      margin-bottom: 25px;
+    }
+    
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .option {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+    
+    .option:hover {
+      background: rgba(255, 140, 66, 0.1);
+      border-color: var(--brand-orange);
+    }
+    
+    .option.selected {
+      background: rgba(255, 140, 66, 0.2);
+      border-color: var(--brand-orange);
+    }
+    
+    .progress-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      margin-top: 30px;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background: var(--brand-orange);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    
+    /* Result */
+    .result-container {
+      display: none;
+      text-align: center;
+    }
+    
+    .result-container.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .score-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .score-circle::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(var(--score-color) calc(var(--score) * 1%), rgba(255,255,255,0.1) 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    
+    .score-number {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    
+    .score-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .result-title {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .gaps-list {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    
+    .gap-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    
+    .gap-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .gap-icon {
+      font-size: 1.2rem;
+    }
+    
+    .gap-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    .gap-text strong {
+      color: var(--text-primary);
+    }
+    
+    /* Email Form */
+    .email-form {
+      background: rgba(255, 140, 66, 0.1);
+      border: 1px solid var(--brand-orange);
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+    
+    .email-form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    
+    .email-form p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .form-row input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+    
+    .form-row input:focus {
+      outline: none;
+      border-color: var(--brand-orange);
+    }
+    
+    .submit-btn {
+      background: var(--brand-orange);
+      color: var(--bg-primary);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .privacy-note {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 10px;
+    }
+    
+    /* Thank you */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+    
+    .thank-you.active {
+      display: block;
+    }
+    
+    .thank-you h3 {
+      color: var(--accent-green);
+      margin-bottom: 15px;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    
+    footer a {
+      color: var(--brand-orange);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="/" class="logo">APAC FINSTAB</a>
+    </header>
+    
+    <div class="alert-banner">
+      <h2>🚨 Hong Kong VASP License Window Closing</h2>
+      <p>Applications not submitted by end of 2026 = Cannot operate in 2027</p>
+    </div>
+    
+    <h1 class="main-title">Test Your VASP License Success Rate</h1>
+    <p class="subtitle">60-second assessment based on SFC guidelines. Completely free.</p>
+    
+    <div class="quiz-container" id="quiz">
+      <!-- Question 1 -->
+      <div class="question active" data-question="1">
+        <div class="question-number">Question 1 of 4</div>
+        <h2 class="question-title">What type of business are you operating?</h2>
+        <div class="options">
+          <div class="option" data-value="exchange" data-score="25">Centralized Exchange (CEX)</div>
+          <div class="option" data-value="otc" data-score="20">OTC Trading Desk</div>
+          <div class="option" data-value="custody" data-score="22">Custody Service</div>
+          <div class="option" data-value="wallet" data-score="18">Wallet Provider</div>
+          <div class="option" data-value="defi" data-score="10">DeFi Protocol</div>
+          <div class="option" data-value="other" data-score="15">Other</div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+      </div>
+      
+      <!-- Question 2 -->
+      <div class="question" data-question="2">
+        <div class="question-number">Question 2 of 4</div>
+        <h2 class="question-title">What licenses do you currently hold?</h2>
+        <div class="options">
+          <div class="option" data-value="hk_mso" data-score="20">Hong Kong MSO (Money Service Operator)</div>
+          <div class="option" data-value="hk_tcsp" data-score="15">Hong Kong TCSP</div>
+          <div class="option" data-value="sg_mpi" data-score="18">Singapore MPI/MAS License</div>
+          <div class="option" data-value="other_license" data-score="12">Other jurisdiction license</div>
+          <div class="option" data-value="none" data-score="5">No licenses yet</div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 50%"></div></div>
+      </div>
+      
+      <!-- Question 3 -->
+      <div class="question" data-question="3">
+        <div class="question-number">Question 3 of 4</div>
+        <h2 class="question-title">What is your paid-up capital?</h2>
+        <div class="options">
+          <div class="option" data-value="under_5m" data-score="5">Under HKD 5 million</div>
+          <div class="option" data-value="5m_30m" data-score="15">HKD 5-30 million</div>
+          <div class="option" data-value="30m_50m" data-score="25">HKD 30-50 million</div>
+          <div class="option" data-value="over_50m" data-score="30">Over HKD 50 million</div>
+          <div class="option" data-value="prefer_not" data-score="10">Prefer not to say</div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+      </div>
+      
+      <!-- Question 4 -->
+      <div class="question" data-question="4">
+        <div class="question-number">Question 4 of 4</div>
+        <h2 class="question-title">Do you have a dedicated Responsible Officer (RO)?</h2>
+        <div class="options">
+          <div class="option" data-value="fulltime_ro" data-score="25">Yes, full-time RO with SFC experience</div>
+          <div class="option" data-value="parttime_ro" data-score="15">Yes, part-time consultant</div>
+          <div class="option" data-value="hiring_ro" data-score="10">No, but actively hiring</div>
+          <div class="option" data-value="no_ro" data-score="0">No</div>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+      </div>
+    </div>
+    
+    <!-- Result -->
+    <div class="result-container" id="result">
+      <div class="score-circle" id="scoreCircle">
+        <span class="score-number" id="scoreNumber">0</span>
+        <span class="score-label">Success Rate</span>
+      </div>
+      
+      <h2 class="result-title" id="resultTitle">Your Assessment</h2>
+      
+      <div class="gaps-list" id="gapsList">
+        <!-- Gaps will be inserted here -->
+      </div>
+      
+      <div class="email-form" id="emailForm">
+        <h3>📊 Get Your Full Analysis Report</h3>
+        <p>We'll send you a detailed breakdown with specific recommendations and next steps.</p>
+        
+        <form id="leadForm" action="/api/leads" method="POST">
+          <input type="hidden" name="source" value="vasp_test">
+          <input type="hidden" name="score" id="hiddenScore" value="">
+          <input type="hidden" name="answers" id="hiddenAnswers" value="">
+          <input type="hidden" name="ref" id="hiddenRef" value="">
+          
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Your email" required>
+          </div>
+          <div class="form-row">
+            <input type="text" name="company" placeholder="Company name (optional)">
+          </div>
+          <div class="form-row">
+            <select name="role" style="flex:1; padding:12px 15px; border:1px solid rgba(255,255,255,0.2); border-radius:8px; background:var(--bg-primary); color:var(--text-primary);">
+              <option value="">Your role (optional)</option>
+              <option value="founder">Founder / CEO</option>
+              <option value="compliance">Compliance Officer</option>
+              <option value="legal">Legal Counsel</option>
+              <option value="developer">Developer</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="submit-btn">Get Full Report →</button>
+          </div>
+          <p class="privacy-note">🔒 We respect your privacy. No spam, ever.</p>
+        </form>
+      </div>
+      
+      <div class="thank-you" id="thankYou">
+        <h3>✅ Report on its way!</h3>
+        <p>Check your inbox in the next few minutes.</p>
+        <p style="margin-top: 20px;"><a href="/">← Back to APAC FINSTAB</a></p>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Powered by <a href="/">APAC FINSTAB</a> | Asia-Pacific Crypto Regulatory Intelligence</p>
+    </footer>
+  </div>
+
+  <script>
+    // Quiz Logic
+    const quiz = document.getElementById('quiz');
+    const result = document.getElementById('result');
+    const questions = document.querySelectorAll('.question');
+    const options = document.querySelectorAll('.option');
+    
+    let currentQuestion = 1;
+    let totalScore = 0;
+    let answers = {};
+    
+    // Get ref from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref') || 'direct';
+    document.getElementById('hiddenRef').value = ref;
+    
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        // Mark selected
+        const siblings = option.parentElement.querySelectorAll('.option');
+        siblings.forEach(s => s.classList.remove('selected'));
+        option.classList.add('selected');
+        
+        // Record answer
+        const score = parseInt(option.dataset.score);
+        const value = option.dataset.value;
+        answers[`q${currentQuestion}`] = { value, score };
+        totalScore = Object.values(answers).reduce((sum, a) => sum + a.score, 0);
+        
+        // Next question after delay
+        setTimeout(() => {
+          if (currentQuestion < 4) {
+            questions[currentQuestion - 1].classList.remove('active');
+            currentQuestion++;
+            questions[currentQuestion - 1].classList.add('active');
+          } else {
+            showResult();
+          }
+        }, 300);
+      });
+    });
+    
+    function showResult() {
+      quiz.style.display = 'none';
+      result.classList.add('active');
+      
+      // Calculate final score (normalize to 100)
+      const maxScore = 100; // 25+20+30+25
+      const percentage = Math.round((totalScore / maxScore) * 100);
+      
+      // Update hidden fields
+      document.getElementById('hiddenScore').value = percentage;
+      document.getElementById('hiddenAnswers').value = JSON.stringify(answers);
+      
+      // Animate score
+      const scoreCircle = document.getElementById('scoreCircle');
+      const scoreNumber = document.getElementById('scoreNumber');
+      
+      let color;
+      if (percentage >= 70) color = '#10b981';
+      else if (percentage >= 40) color = '#f59e0b';
+      else color = '#ef4444';
+      
+      scoreCircle.style.setProperty('--score', percentage);
+      scoreCircle.style.setProperty('--score-color', color);
+      scoreNumber.style.color = color;
+      
+      let count = 0;
+      const interval = setInterval(() => {
+        count += 2;
+        if (count >= percentage) {
+          count = percentage;
+          clearInterval(interval);
+        }
+        scoreNumber.textContent = count + '%';
+      }, 20);
+      
+      // Generate gaps
+      const gapsList = document.getElementById('gapsList');
+      gapsList.innerHTML = generateGaps(answers, percentage);
+      
+      // Result title
+      const resultTitle = document.getElementById('resultTitle');
+      if (percentage >= 70) {
+        resultTitle.textContent = '🎉 Strong Position!';
+      } else if (percentage >= 40) {
+        resultTitle.textContent = '⚠️ Needs Improvement';
+      } else {
+        resultTitle.textContent = '🚨 Significant Gaps';
+      }
+    }
+    
+    function generateGaps(answers, score) {
+      let html = '';
+      
+      // Capital check
+      if (answers.q3 && ['under_5m', '5m_30m'].includes(answers.q3.value)) {
+        html += `<div class="gap-item">
+          <span class="gap-icon">❌</span>
+          <span class="gap-text"><strong>Capital Requirement:</strong> SFC requires minimum HKD 30M paid-up capital for VASP license.</span>
+        </div>`;
+      } else if (answers.q3 && answers.q3.value === '30m_50m') {
+        html += `<div class="gap-item">
+          <span class="gap-icon">✅</span>
+          <span class="gap-text"><strong>Capital:</strong> Meets minimum requirement.</span>
+        </div>`;
+      }
+      
+      // RO check
+      if (answers.q4 && ['no_ro', 'hiring_ro'].includes(answers.q4.value)) {
+        html += `<div class="gap-item">
+          <span class="gap-icon">⚠️</span>
+          <span class="gap-text"><strong>Responsible Officer:</strong> A qualified RO with SFC experience is critical for approval.</span>
+        </div>`;
+      } else if (answers.q4 && answers.q4.value === 'fulltime_ro') {
+        html += `<div class="gap-item">
+          <span class="gap-icon">✅</span>
+          <span class="gap-text"><strong>Responsible Officer:</strong> Having a full-time RO significantly improves chances.</span>
+        </div>`;
+      }
+      
+      // License check
+      if (answers.q2 && answers.q2.value === 'none') {
+        html += `<div class="gap-item">
+          <span class="gap-icon">⚠️</span>
+          <span class="gap-text"><strong>Prior Licensing:</strong> No existing license may extend review timeline.</span>
+        </div>`;
+      } else if (answers.q2 && answers.q2.value === 'hk_mso') {
+        html += `<div class="gap-item">
+          <span class="gap-icon">✅</span>
+          <span class="gap-text"><strong>Prior Licensing:</strong> Existing HK MSO is a positive signal.</span>
+        </div>`;
+      }
+      
+      // Business type
+      if (answers.q1 && answers.q1.value === 'defi') {
+        html += `<div class="gap-item">
+          <span class="gap-icon">❓</span>
+          <span class="gap-text"><strong>Business Model:</strong> DeFi protocols face regulatory uncertainty. Consider legal consultation.</span>
+        </div>`;
+      }
+      
+      return html;
+    }
+    
+    // Form submission
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      // Let Formspree handle it
+      setTimeout(() => {
+        document.getElementById('emailForm').style.display = 'none';
+        document.getElementById('thankYou').classList.add('active');
+      }, 100);
+    });
+  </script>
+</body>
+</html>
