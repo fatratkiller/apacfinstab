@@ -362,12 +362,18 @@
 - **行动步骤:**
   - [x] 评估ASI Alliance三个计划 ✅ 2026-03-06
   - [x] 确定Deep Funding最适合 ✅ 2026-03-06
-  - [ ] 研究当前RFPs和funding rounds
-  - [ ] 准备milestone plan
+  - [x] 研究当前RFPs和funding rounds ✅ 2026-03-07 (平台重构中，支持Rounds+RFPs)
+  - [x] 准备milestone plan ✅ 2026-03-07
   - [ ] 注册Deep Funding Portal (⏸️ 需老板操作)
   - [ ] 提交申请
-- **链接:** https://deepfunding.ai/
-- **参考:** `docs/grants/ASI-DEEPFUNDING-EVALUATION.md`
+- **链接:** https://deep-projects.ai/ (原deepfunding.ai已重定向)
+- **参考:** 
+  - `docs/grants/ASI-DEEPFUNDING-EVALUATION.md`
+  - `docs/grants/DEEP-FUNDING-APPLICATION.md` ✅ 完整申请材料
+- **产出 (2026-03-07):**
+  - ✅ 完整申请材料 (3.8KB)
+  - ✅ 3阶段Milestone Plan ($40K total)
+  - ⏸️ 等待老板注册deep-projects.ai账号并提交
 - **验收标准:** 进入funding round评审
 
 ### ~~TICKET-G0X: Arbitrum Trailblazer AI Grant~~
@@ -409,4 +415,4 @@
 
 ---
 
-*最后更新: 2026-03-06 20:03*
+*最后更新: 2026-03-07 08:03*
