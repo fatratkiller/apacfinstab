@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-06T02:04:14.584Z",
-    "totalEvents": 87,
+    "lastUpdated": "2026-03-07T02:10:55.747Z",
+    "totalEvents": 90,
     "version": "1.0"
   },
   "dimensions": {
@@ -92,6 +92,95 @@
     "TR": "Turkey"
   },
   "events": [
+    {
+      "id": "evt-2026-0307-001",
+      "date": "2026-03-06",
+      "title": "Pakistan Parliament Passes Virtual Assets Act 2026, Formalizes $300Bn Crypto Market",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "PK"
+      ],
+      "topics": [
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Pakistan's parliament passes the Virtual Assets Act 2026, giving PVARA (Pakistan Virtual Assets Regulatory Authority) permanent statutory authority to license crypto exchanges and regulate the virtual asset industry. The law includes criminal penalties including jail time for violations. Pakistan's crypto market is estimated at $300 billion in cumulative inflows, with over 40 million users. This positions Pakistan as one of the first South Asian nations with comprehensive crypto legislation, beating India to formal crypto law.",
+      "impact": "high",
+      "source": "https://coinpedia.org/news/virtual-assets-act-2026-pakistan-formalizes-its-300bn-crypto-market/",
+      "keywords": [
+        "Pakistan",
+        "Virtual Assets Act 2026",
+        "PVARA",
+        "crypto law",
+        "licensing",
+        "40 million users"
+      ]
+    },
+    {
+      "id": "evt-2026-0307-002",
+      "date": "2026-03-06",
+      "title": "India Mandates Crypto Holdings Reporting by Banks and Financial Institutions",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "IN"
+      ],
+      "topics": [
+        "Taxation",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "India's government notifies new rules requiring banks, financial institutions, and crypto service providers to report customer cryptocurrency holdings and transactions to the Income Tax Department. The reporting requirements align crypto with existing financial asset disclosure frameworks for bank deposits and mutual funds. The rules apply to cryptocurrency, digital wallets, and certain electronic money products.",
+      "impact": "high",
+      "source": "https://economictimes.indiatimes.com/industry/banking/finance/india-tightens-tax-compliance-on-crypto-and-digital-assets/articleshow/129171305.cms",
+      "keywords": [
+        "India",
+        "crypto tax",
+        "reporting requirements",
+        "Income Tax Department",
+        "financial disclosure"
+      ]
+    },
+    {
+      "id": "evt-2026-0307-003",
+      "date": "2026-03-06",
+      "title": "South Korea Digital Asset Basic Act Confirms 20% Exchange Ownership Cap",
+      "protocols": [
+        "BTC",
+        "ETH"
+      ],
+      "regions": [
+        "KR"
+      ],
+      "topics": [
+        "Regulation",
+        "Exchange"
+      ],
+      "entities": [
+        "Bithumb",
+        "Korbit"
+      ],
+      "summary": "Korea TechDesk reports policy implementation details of South Korea's Digital Asset Basic Act, confirming the controversial 20% ownership cap for major shareholders of cryptocurrency exchanges. The regulation aims to institutionalize the digital asset sector and align it with traditional financial oversight. The policy could accelerate governance restructuring across major exchanges including Bithumb and Korbit, potentially reshaping competitive dynamics in Korea's crypto trading market.",
+      "impact": "high",
+      "source": "https://koreatechdesk.com/korea-crypto-exchange-ownership-cap-digital-asset-basic-act",
+      "keywords": [
+        "South Korea",
+        "ownership cap",
+        "Digital Asset Basic Act",
+        "exchange regulation",
+        "20%"
+      ]
+    },
     {
       "id": "evt-2026-0306-001",
       "date": "2026-03-06",
