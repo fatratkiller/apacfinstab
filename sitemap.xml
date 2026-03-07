@@ -48,6 +48,14 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Why AI Agents Need Compliance Preflight -->
+  <url>
+    <loc>https://apacfinstab.com/learn/why-agents-need-preflight.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Policy Tracker (Data-Driven) -->
   <url>
     <loc>https://apacfinstab.com/tracker/</loc>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <title>Why AI Agents Need Compliance Preflight | APAC FINSTAB</title>
+  <meta name="description" content="AI agents executing financial operations need pre-flight compliance checks. Like pilots running preflight checklists before takeoff — but for regulatory risk.">
+  <meta name="keywords" content="compliance preflight, AI agent compliance, regulatory risk check, agent guardrails, APAC fintech, MCP compliance, autonomous agent safety">
+  
+  <link rel="canonical" href="https://apacfinstab.com/learn/why-agents-need-preflight.html">
+  <link rel="webmcp-manifest" href="/webmcp.json">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why AI Agents Need Compliance Preflight">
+  <meta property="og:description" content="Pre-flight regulatory risk checks for autonomous AI agents. Stop compliance disasters before they happen.">
+  <meta property="og:url" content="https://apacfinstab.com/learn/why-agents-need-preflight.html">
+  <meta property="og:site_name" content="APAC FINSTAB">
+  <meta property="article:published_time" content="2026-03-07">
+  <meta property="article:author" content="APAC FINSTAB Research">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@APACFinStab">
+  <meta name="twitter:title" content="Why AI Agents Need Compliance Preflight">
+  <meta name="twitter:description" content="Pre-flight regulatory checks for AI agents. Like pilots checking before takeoff — but for compliance.">
+  
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why AI Agents Need Compliance Preflight",
+    "description": "AI agents executing financial operations need pre-flight compliance checks before every action. Here's why.",
+    "author": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB Research"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB",
+      "url": "https://apacfinstab.com"
+    },
+    "datePublished": "2026-03-07",
+    "mainEntityOfPage": "https://apacfinstab.com/learn/why-agents-need-preflight.html"
+  }
+  </script>
+  
+  <style>
+    :root {
+      --brand-orange: #ff8c42;
+      --brand-orange-glow: rgba(255, 140, 66, 0.25);
+      --bg-primary: #0a0e1a;
+      --bg-card: #1a2035;
+      --bg-elevated: #222840;
+      --text-primary: #f5f7fa;
+      --text-secondary: #a8b2c1;
+      --text-muted: #6b7280;
+      --border-subtle: rgba(255, 140, 66, 0.08);
+      --accent-green: #10b981;
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --accent-purple: #8b5cf6;
+      --accent-yellow: #f59e0b;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    header {
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(26, 32, 53, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { 
+      font-weight: 800; 
+      font-size: 20px; 
+      color: var(--text-primary); 
+      text-decoration: none;
+    }
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--brand-orange); }
+    
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    
+    .article-header {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .article-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .article-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .article-subtitle {
+      font-size: 20px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .article-content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .article-content h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: var(--brand-orange);
+    }
+    .article-content p {
+      margin-bottom: 20px;
+      font-size: 17px;
+      color: var(--text-secondary);
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+    .article-content li {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+    .article-content strong {
+      color: var(--text-primary);
+    }
+    .article-content a {
+      color: var(--brand-orange);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    
+    .highlight-box {
+      background: var(--bg-card);
+      border-left: 4px solid var(--brand-orange);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .highlight-box.red {
+      border-left-color: var(--accent-red);
+    }
+    .highlight-box.green {
+      border-left-color: var(--accent-green);
+    }
+    .highlight-box.blue {
+      border-left-color: var(--accent-blue);
+    }
+    .highlight-box p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .highlight-box .title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .code-block {
+      background: var(--bg-elevated);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .code-block .comment { color: var(--text-muted); }
+    .code-block .key { color: var(--accent-purple); }
+    .code-block .string { color: var(--accent-green); }
+    .code-block .number { color: var(--brand-orange); }
+    .code-block .status-clear { color: var(--accent-green); }
+    .code-block .status-review { color: var(--accent-yellow); }
+    .code-block .status-risk { color: var(--accent-red); }
+    
+    .scenario-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 28px;
+      margin: 24px 0;
+      border: 1px solid var(--border-subtle);
+    }
+    .scenario-card .scenario-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .scenario-card .scenario-icon {
+      font-size: 28px;
+    }
+    .scenario-card .scenario-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .scenario-card .scenario-flow {
+      background: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+    .scenario-card .scenario-flow .user { color: var(--accent-blue); }
+    .scenario-card .scenario-flow .agent { color: var(--accent-purple); }
+    .scenario-card .scenario-flow .api { color: var(--accent-green); }
+    .scenario-card .scenario-flow .warning { color: var(--accent-yellow); }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 32px 0;
+    }
+    .comparison-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .comparison-box.without {
+      border: 2px solid var(--accent-red);
+    }
+    .comparison-box.with {
+      border: 2px solid var(--accent-green);
+    }
+    .comparison-box h4 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comparison-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comparison-box li {
+      padding: 8px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    
+    .timeline {
+      position: relative;
+      margin: 32px 0;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--brand-orange);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -32px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--brand-orange);
+      border: 3px solid var(--bg-primary);
+    }
+    .timeline-item h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .timeline-item p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      border-radius: 16px;
+      padding: 48px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .cta-section h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      color: white;
+    }
+    .cta-section p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--bg-primary);
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s;
+      margin: 8px;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    .cta-button.secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .waitlist-form {
+      background: var(--bg-card);
+      border: 2px solid var(--accent-green);
+      border-radius: 16px;
+      padding: 40px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .waitlist-form h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .waitlist-form p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .waitlist-input-group {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .waitlist-input {
+      flex: 1;
+      padding: 14px 20px;
+      border: 2px solid var(--border-subtle);
+      border-radius: 10px;
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      font-size: 16px;
+    }
+    .waitlist-input:focus {
+      outline: none;
+      border-color: var(--accent-green);
+    }
+    .waitlist-submit {
+      padding: 14px 28px;
+      background: var(--accent-green);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .waitlist-submit:hover {
+      transform: scale(1.05);
+    }
+    .waitlist-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+    
+    .related-articles {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .related-articles h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .related-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      transition: transform 0.2s, border-color 0.2s;
+      border: 1px solid var(--border-subtle);
+    }
+    .related-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-orange);
+    }
+    .related-card h4 {
+      font-size: 16px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .related-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    @media (max-width: 768px) {
+      .article-title { font-size: 28px; }
+      .article-container { padding: 40px 16px; }
+      .waitlist-input-group { flex-direction: column; }
+      .article-meta { flex-direction: column; gap: 8px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">APAC FINSTAB</a>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/mcp/">MCP</a>
+        <a href="/learn/">Learn</a>
+        <a href="/blog.html">Insights</a>
+      </nav>
+    </div>
+  </header>
+  
+  <article class="article-container">
+    <div class="article-header">
+      <span class="article-badge">Agent Safety</span>
+      <h1 class="article-title">Why AI Agents Need Compliance Preflight</h1>
+      <p class="article-subtitle">Pilots run preflight checklists before takeoff. AI agents executing financial operations need the same discipline — but for regulatory risk.</p>
+      <div class="article-meta">
+        <span>📅 March 7, 2026</span>
+        <span>⏱️ 10 min read</span>
+        <span>🏷️ Agent Safety</span>
+      </div>
+    </div>
+    
+    <div class="article-content">
+      <p><strong>The Speed Problem:</strong> AI agents operate at machine speed. An autonomous trading agent can execute thousands of transactions per hour. A customer service agent can process hundreds of requests simultaneously. Speed is the feature — and the risk.</p>
+      
+      <p><strong>The Compliance Gap:</strong> Traditional compliance workflows were designed for human speed. Review meetings. Legal sign-offs. Multi-week approval processes. These don't scale to agent speed. By the time a compliance team reviews an agent's action, the damage is done.</p>
+      
+      <p><strong>The Solution:</strong> Compliance Preflight — a pre-action regulatory risk check that runs at agent speed. Before executing any operation, the agent queries a compliance context API. In milliseconds, it gets back risk flags, regulatory considerations, and suggested questions. No human bottleneck. No post-facto scrambling.</p>
+      
+      <div class="highlight-box green">
+        <div class="title">The Preflight Analogy</div>
+        <p>Pilots don't skip preflight checklists because they're in a hurry. The checklist exists because <em>mistakes at takeoff are catastrophic</em>. For AI agents in financial contexts, regulatory violations are the equivalent of engine failure. Preflight checks prevent disasters — not by slowing down execution, but by catching problems before they escalate.</p>
+      </div>
+      
+      <h2>What Goes Wrong Without Preflight</h2>
+      
+      <p>Let's look at three scenarios where agents without compliance preflight create serious problems:</p>
+      
+      <div class="scenario-card">
+        <div class="scenario-header">
+          <span class="scenario-icon">🔥</span>
+          <span class="scenario-title">Scenario 1: The Unlicensed Swap</span>
+        </div>
+        <div class="scenario-flow">
+          <span class="user">User:</span> "Swap my 50,000 USDT to BTC"<br>
+          <span class="agent">Agent:</span> [Executes swap immediately]<br>
+          <span class="warning">⚠️ Problem: User is in Hong Kong. Platform doesn't hold VASP license.</span><br>
+          <span class="warning">⚠️ Result: SFC regulatory violation. Potential enforcement action.</span>
+        </div>
+      </div>
+      
+      <div class="scenario-card">
+        <div class="scenario-header">
+          <span class="scenario-icon">🔥</span>
+          <span class="scenario-title">Scenario 2: The Cross-Border Marketing</span>
+        </div>
+        <div class="scenario-flow">
+          <span class="user">Agent task:</span> "Promote our staking product to APAC users"<br>
+          <span class="agent">Agent:</span> [Sends promotional messages to HK, SG, JP users]<br>
+          <span class="warning">⚠️ Problem: Each jurisdiction has different rules for promoting crypto products.</span><br>
+          <span class="warning">⚠️ Result: Multiple regulatory violations. Fines in three countries.</span>
+        </div>
+      </div>
+      
+      <div class="scenario-card">
+        <div class="scenario-header">
+          <span class="scenario-icon">🔥</span>
+          <span class="scenario-title">Scenario 3: The Retail Investor Mistake</span>
+        </div>
+        <div class="scenario-flow">
+          <span class="user">User:</span> "Invest $100,000 in this DeFi yield product"<br>
+          <span class="agent">Agent:</span> [Processes investment]<br>
+          <span class="warning">⚠️ Problem: Hong Kong retail investors have restrictions on complex products.</span><br>
+          <span class="warning">⚠️ Result: SFC enforcement. Product provider banned from HK market.</span>
+        </div>
+      </div>
+      
+      <p>In each case, the agent did exactly what it was designed to do. The problem wasn't the agent's capability — it was the missing compliance context. The agent didn't know what it didn't know.</p>
+      
+      <h2>What Preflight Changes</h2>
+      
+      <p>With Compliance Preflight, every scenario changes:</p>
+      
+      <div class="comparison-grid">
+        <div class="comparison-box without">
+          <h4>❌ Without Preflight</h4>
+          <ul>
+            <li>→ Agent executes immediately</li>
+            <li>→ Violations discovered after the fact</li>
+            <li>→ Regulatory scrutiny, fines, bans</li>
+            <li>→ No audit trail for due diligence</li>
+            <li>→ "We didn't know" is not a defense</li>
+          </ul>
+        </div>
+        <div class="comparison-box with">
+          <h4>✅ With Preflight</h4>
+          <ul>
+            <li>→ Agent checks context first</li>
+            <li>→ Risk flags surfaced before action</li>
+            <li>→ Humans confirm edge cases</li>
+            <li>→ Audit trail proves due diligence</li>
+            <li>→ "We checked" is a valid defense</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h2>How Compliance Preflight Works</h2>
+      
+      <p>Preflight is a simple API call before any regulated action. The agent sends the action context; the API returns risk flags.</p>
+      
+      <div class="code-block">
+<span class="comment">// Step 1: Agent prepares to execute a swap</span>
+<span class="comment">// Step 2: Before executing, call Preflight API</span>
+
+POST /v1/preflight/check
+{
+  <span class="key">"action"</span>: <span class="string">"execute_swap"</span>,
+  <span class="key">"parameters"</span>: {
+    <span class="key">"from_token"</span>: <span class="string">"USDT"</span>,
+    <span class="key">"to_token"</span>: <span class="string">"BTC"</span>,
+    <span class="key">"amount"</span>: <span class="number">50000</span>,
+    <span class="key">"user_jurisdiction"</span>: <span class="string">"HK"</span>
+  },
+  <span class="key">"agent_id"</span>: <span class="string">"trading-agent-001"</span>
+}
+      </div>
+      
+      <div class="code-block">
+<span class="comment">// Preflight Response</span>
+{
+  <span class="key">"preflight_id"</span>: <span class="string">"pf_abc123"</span>,
+  <span class="key">"status"</span>: <span class="status-review">"REVIEW_REQUIRED"</span>,
+  <span class="key">"risk_level"</span>: <span class="string">"medium"</span>,
+  <span class="key">"flags"</span>: [
+    {
+      <span class="key">"code"</span>: <span class="string">"HK_VASP_LICENSE"</span>,
+      <span class="key">"severity"</span>: <span class="string">"high"</span>,
+      <span class="key">"message"</span>: <span class="string">"HK users require VASP-licensed platform"</span>,
+      <span class="key">"question"</span>: <span class="string">"Does the executing platform hold an SFC VASP license?"</span>
+    }
+  ],
+  <span class="key">"references"</span>: [
+    {<span class="key">"source"</span>: <span class="string">"SFC VASP Guidelines"</span>, <span class="key">"section"</span>: <span class="string">"4.2"</span>}
+  ],
+  <span class="key">"audit_hash"</span>: <span class="string">"0x..."</span>
+}
+      </div>
+      
+      <p>The agent now has three options:</p>
+      <ol>
+        <li><strong>Proceed</strong> — If the flag doesn't apply (platform is licensed)</li>
+        <li><strong>Escalate</strong> — Ask the user or compliance team to confirm</li>
+        <li><strong>Block</strong> — Refuse the action if risk is too high</li>
+      </ol>
+      
+      <p>Either way, the <code>preflight_id</code> creates an audit trail. If regulators ask "did you do due diligence?", the answer is documented.</p>
+      
+      <h2>The Socratic Approach</h2>
+      
+      <p>Compliance Preflight doesn't tell agents what to do. It asks the right questions.</p>
+      
+      <div class="highlight-box blue">
+        <div class="title">Why Questions, Not Answers?</div>
+        <p>Regulatory compliance requires human judgment. Preflight surfaces considerations; humans make decisions. This keeps accountability clear — the API provides context, operators make calls.</p>
+      </div>
+      
+      <p>Example questions Preflight might surface:</p>
+      
+      <ul>
+        <li><strong>"Does the executing platform hold an SFC VASP license?"</strong> — For HK crypto transactions</li>
+        <li><strong>"Is this user a Professional Investor (PI) under HK law?"</strong> — For retail investor restrictions</li>
+        <li><strong>"Has MAS notification been filed for this cross-border service?"</strong> — For SG operations</li>
+        <li><strong>"Is this staking product registered with the relevant securities authority?"</strong> — For yield products</li>
+      </ul>
+      
+      <p>These aren't yes/no compliance checks. They're prompts that ensure the right questions get asked before action is taken.</p>
+      
+      <h2>The Audit Trail Advantage</h2>
+      
+      <p>Every Preflight check generates a verifiable record:</p>
+      
+      <ul>
+        <li><code>preflight_id</code> — Unique identifier for this check</li>
+        <li><code>timestamp</code> — When the check was run</li>
+        <li><code>flags</code> — What risks were surfaced</li>
+        <li><code>audit_hash</code> — Cryptographic proof of the check</li>
+      </ul>
+      
+      <p>When regulators investigate, you have documentation showing:</p>
+      <ol>
+        <li>You ran a compliance check before action</li>
+        <li>You were aware of the relevant risks</li>
+        <li>You made an informed decision to proceed</li>
+      </ol>
+      
+      <p>This transforms "we didn't know" into "we checked, and here's the record."</p>
+      
+      <h2>Who Needs Compliance Preflight</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>AI Agent Developers</h4>
+          <p>Building agents that operate in financial contexts? Preflight is your compliance guardrail layer. Integrate once, get regulatory context for every action.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Crypto Trading Platforms</h4>
+          <p>Running trading bots or automated execution? Preflight checks jurisdiction-specific rules before every trade, preventing cross-border violations.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>DeFi Protocols</h4>
+          <p>Smart contracts don't check jurisdiction. Preflight adds a compliance layer at the user interface level, before transactions hit the chain.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Financial Service Providers</h4>
+          <p>Deploying AI assistants for customer service? Preflight ensures agents don't inadvertently give regulated advice or facilitate unauthorized transactions.</p>
+        </div>
+      </div>
+      
+      <h2>Implementation: Faster Than You Think</h2>
+      
+      <p>Preflight integration is minimal. It's a single API call before action execution:</p>
+      
+      <div class="code-block">
+<span class="comment">// Python example</span>
+<span class="key">from</span> apacfinstab <span class="key">import</span> PreflightClient
+
+client = PreflightClient(api_key=<span class="string">"your_key"</span>)
+
+<span class="comment"># Before executing any regulated action</span>
+check = client.preflight(
+    action=<span class="string">"execute_swap"</span>,
+    params={<span class="string">"user_jurisdiction"</span>: <span class="string">"HK"</span>, <span class="string">"amount"</span>: <span class="number">50000</span>}
+)
+
+<span class="key">if</span> check.status == <span class="string">"CLEAR"</span>:
+    execute_action()
+<span class="key">elif</span> check.status == <span class="string">"REVIEW_REQUIRED"</span>:
+    escalate_to_human(check.flags)
+<span class="key">else</span>:
+    block_action(check.reason)
+      </div>
+      
+      <p>Latency is sub-100ms. Your agents stay fast; your compliance stays intact.</p>
+      
+      <h2>Preflight vs. Post-Facto Compliance</h2>
+      
+      <p>Most compliance today is reactive. Something goes wrong → investigation → remediation → promises to do better. This cycle is expensive and reputation-damaging.</p>
+      
+      <p>Preflight inverts the model:</p>
+      
+      <div class="comparison-grid">
+        <div class="comparison-box without">
+          <h4>📉 Reactive Compliance</h4>
+          <ul>
+            <li>→ Problem occurs</li>
+            <li>→ Regulator investigates</li>
+            <li>→ Fines and penalties</li>
+            <li>→ Costly remediation</li>
+            <li>→ Reputation damage</li>
+            <li>→ "Lessons learned" reports</li>
+          </ul>
+        </div>
+        <div class="comparison-box with">
+          <h4>📈 Proactive Preflight</h4>
+          <ul>
+            <li>→ Risk surfaced before action</li>
+            <li>→ Human confirms edge cases</li>
+            <li>→ No violation occurs</li>
+            <li>→ Audit trail documents diligence</li>
+            <li>→ Reputation protected</li>
+            <li>→ Business continues smoothly</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p>Prevention costs less than cure. Preflight is prevention at machine speed.</p>
+      
+      <h2>Current Coverage: APAC</h2>
+      
+      <p>Compliance Preflight currently covers regulatory contexts across Asia-Pacific:</p>
+      
+      <ul>
+        <li>🇭🇰 <strong>Hong Kong</strong> — SFC VASP regime, stablecoin rules, retail restrictions</li>
+        <li>🇸🇬 <strong>Singapore</strong> — MAS framework, PSA requirements</li>
+        <li>🇯🇵 <strong>Japan</strong> — FSA/JFSA regulations</li>
+        <li>🇰🇷 <strong>South Korea</strong> — FSC DABA framework</li>
+        <li>🇦🇺 <strong>Australia</strong> — ASIC, AUSTRAC requirements</li>
+        <li>🇹🇭 <strong>Thailand</strong> — SEC Thailand rules</li>
+        <li>🇮🇩 <strong>Indonesia</strong> — OJK, Bappebti framework</li>
+        <li>🇵🇭 <strong>Philippines</strong> — BSP VASP licensing</li>
+      </ul>
+      
+      <p>More jurisdictions and scenarios added continuously. Global expansion planned.</p>
+      
+      <!-- Waitlist Form -->
+      <div class="waitlist-form" id="waitlist">
+        <h3>✈️ Join the Preflight Waitlist</h3>
+        <p>Compliance Preflight API is launching Q2 2026. Get early access and shape the future of agent compliance.</p>
+        <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+          <div class="waitlist-input-group">
+            <input type="email" class="waitlist-input" placeholder="your@email.com" required id="waitlistEmail">
+            <button type="submit" class="waitlist-submit">Join Waitlist</button>
+          </div>
+        </form>
+        <p class="waitlist-note">No spam. Only product updates and early access invitations.</p>
+      </div>
+      
+      <h2>What's Next</h2>
+      
+      <p>Compliance Preflight is the second layer of our agent trust infrastructure:</p>
+      
+      <ol>
+        <li><strong>Context API</strong> — Understand the regulatory environment (live now)</li>
+        <li><strong>Preflight API</strong> — Check risk before action (launching Q2)</li>
+        <li><strong>Outcome Reporting</strong> — Report results, build track record (coming later)</li>
+      </ol>
+      
+      <p>Together, these create a closed loop: agents understand context, check risk, execute, and report. The system gets smarter with every interaction.</p>
+      
+      <div class="cta-section">
+        <h3>Build Safer Agents</h3>
+        <p>Stop compliance disasters before they happen. Integrate Preflight into your agent stack.</p>
+        <a href="/mcp/" class="cta-button">Explore MCP Integration →</a>
+        <a href="/learn/agent-trust-score.html" class="cta-button secondary">Learn About Agent Trust Score →</a>
+      </div>
+      
+      <div class="related-articles">
+        <h3>Related Articles</h3>
+        <div class="related-grid">
+          <a href="/learn/agent-trust-score.html" class="related-card">
+            <h4>What is Agent Trust Score?</h4>
+            <p>The rating infrastructure for autonomous AI agents operating in financial markets.</p>
+          </a>
+          <a href="/learn/mcp-financial-services.html" class="related-card">
+            <h4>MCP in Financial Services</h4>
+            <p>Why Model Context Protocol needs compliance governance for regulated industries.</p>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </article>
+  
+  <footer>
+    <p>APAC FINSTAB | Regulatory Intelligence for APAC Digital Assets</p>
+    <p style="margin-top:8px">Making Something Agents Want™</p>
+  </footer>
+  
+  <script>
+    function submitWaitlist(e) {
+      e.preventDefault();
+      const email = document.getElementById('waitlistEmail').value;
+      
+      // Track in GA
+      gtag('event', 'waitlist_signup', {
+        'event_category': 'conversion',
+        'event_label': 'preflight_waitlist',
+        'value': email
+      });
+      
+      // Simple localStorage tracking (replace with actual backend later)
+      const waitlist = JSON.parse(localStorage.getItem('preflight_waitlist') || '[]');
+      waitlist.push({ email, timestamp: new Date().toISOString(), source: 'why-agents-need-preflight' });
+      localStorage.setItem('preflight_waitlist', JSON.stringify(waitlist));
+      
+      // Show success
+      document.getElementById('waitlistForm').innerHTML = '<p style="color: var(--accent-green); font-size: 18px; font-weight: 700;">✅ You\'re on the list! We\'ll notify you when Preflight launches.</p>';
+    }
+  </script>
+</body>
+</html>
