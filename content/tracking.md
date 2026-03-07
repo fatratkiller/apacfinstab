@@ -9,7 +9,7 @@
 
 | 日期 | 主题 | 关键词 | A/B变量 | 状态 |
 |------|------|--------|---------|------|
-| 3/8 (六) | AI Agent合规框架入门 | AI governance finance, agent compliance | 长度：12min | ⏳ |
+| 3/8 (六) | AI Agent合规框架入门 | AI governance finance, agent compliance | 长度：12min | ✅ 已发布3/7 |
 | 3/9 (日) | 香港VASP牌照完全指南 | Hong Kong VASP license guide | 长度：10min | ⏳ |
 | 3/10 (一) | 稳定币监管APAC对比 | Stablecoin regulation APAC comparison | 加infographic | ⏳ |
 | 3/11 (二) | MCP安全vs合规：本质区别 | MCP security vs compliance | 纯文字深度 | ⏳ |
@@ -26,6 +26,7 @@
 | 日期 | 主题 | URL | 字数 | 24h PV | 7d PV | A/B变量 |
 |------|------|-----|------|--------|-------|---------|
 | 3/5 | MCP in Financial Services | /learn/mcp-financial-services.html | ~3000 | 380 | TBD | 基准 |
+| 3/7 | AI Agent Compliance Framework | /learn/ai-agent-compliance-framework.html | ~3200 | TBD | TBD | 12min长度 |
 
 ---
 
@@ -106,4 +107,4 @@
 
 ---
 
-*最后更新: 2026-03-07*
+*最后更新: 2026-03-07 21:30*
