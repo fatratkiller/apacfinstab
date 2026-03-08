@@ -1,5 +1,10 @@
 /**
  * Cloudflare Workers入口
+ * 
+ * Session ID机制 (2026-03-08):
+ * - 所有API调用可选传入 session_id 追踪同一Agent会话
+ * - 没有传入时自动生成
+ * - 用于后续 report_outcome 关联操作结果
  */
 
 import { Hono } from 'hono';
@@ -9,8 +14,50 @@ const app = new Hono();
 
 app.use('*', cors());
 
+// Session ID生成器
+function generateSessionId() {
+  const timestamp = Date.now().toString(36);
+  const random = Math.random().toString(36).substr(2, 9);
+  return `sess_${timestamp}_${random}`;
+}
+
+// 提取或生成session_id的中间件辅助函数
+function getSessionId(params, headers) {
+  // 优先从params获取
+  if (params?.session_id) return params.session_id;
+  // 其次从header获取
+  if (headers?.get('x-session-id')) return headers.get('x-session-id');
+  // 否则生成新的
+  return generateSessionId();
+}
+
 // Health check
-app.get('/health', (c) => c.json({ status: 'ok', version: '0.1.0' }));
+app.get('/health', (c) => c.json({ status: 'ok', version: '0.2.0' }));
+
+// Session管理端点
+app.post('/v1/session/start', async (c) => {
+  const params = await c.req.json().catch(() => ({}));
+  const sessionId = params.session_id || generateSessionId();
+  
+  return c.json({
+    session_id: sessionId,
+    created_at: new Date().toISOString(),
+    expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(), // 24h
+    message: 'Session created. Use this session_id in subsequent preflight calls.'
+  });
+});
+
+app.get('/v1/session/:sessionId', async (c) => {
+  const sessionId = c.req.param('sessionId');
+  
+  // 在MVP阶段，返回session信息（后续可接入KV存储）
+  return c.json({
+    session_id: sessionId,
+    status: 'active',
+    preflight_count: 0, // TODO: 从KV读取
+    message: 'Session tracking active. Full history available in production.'
+  });
+});
 
 // ============ 数据 ============
 
@@ -46,6 +93,8 @@ app.post('/v1/preflight/x402', async (c) => {
   const params = await c.req.json();
   const { fromAddress, toAddress, amount, token, chain, fromJurisdiction, toJurisdiction } = params;
   
+  // Session追踪
+  const sessionId = getSessionId(params, c.req.header);
   const preflightId = `pf_x402_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   const flags = [];
   const references = [];
@@ -85,6 +134,7 @@ app.post('/v1/preflight/x402', async (c) => {
 
   return c.json({
     preflightId,
+    sessionId,  // Session追踪
     timestamp: new Date().toISOString(),
     status,
     riskLevel,
@@ -97,7 +147,10 @@ app.post('/v1/preflight/x402', async (c) => {
       token, 
       chain 
     },
-    suggestedActions: flags.length > 0 ? flags.map(f => f.question) : ['无需额外操作']
+    suggestedActions: flags.length > 0 ? flags.map(f => f.question) : ['无需额外操作'],
+    _links: {
+      reportOutcome: `/v1/session/${sessionId}/outcome`
+    }
   });
 });
 
@@ -107,6 +160,8 @@ app.post('/v1/preflight/token-launch', async (c) => {
   const params = await c.req.json();
   const { tokenName, tokenSymbol, totalSupply, distribution, creatorJurisdiction, hasRevenue, hasGovernance } = params;
   
+  // Session追踪
+  const sessionId = getSessionId(params, c.req.header);
   const preflightId = `pf_launch_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   const flags = [];
   const references = [];
@@ -171,6 +226,7 @@ app.post('/v1/preflight/token-launch', async (c) => {
 
   return c.json({
     preflightId,
+    sessionId,  // Session追踪
     timestamp: new Date().toISOString(),
     status,
     riskLevel,
@@ -180,7 +236,78 @@ app.post('/v1/preflight/token-launch', async (c) => {
     input: { tokenName, tokenSymbol, creatorJurisdiction },
     suggestedActions: flags.length > 0 
       ? ['咨询证券法律师评估Token分类', `检查${creatorJurisdiction}的Token发行许可要求`]
-      : ['基础检查通过']
+      : ['基础检查通过'],
+    _links: {
+      reportOutcome: `/v1/session/${sessionId}/outcome`
+    }
+  });
+});
+
+// ============ Outcome Report (Phase 2) ============
+
+app.post('/v1/session/:sessionId/outcome', async (c) => {
+  const sessionId = c.req.param('sessionId');
+  const params = await c.req.json();
+  const { preflightId, outcome, notes } = params;
+  
+  // MVP: 记录outcome用于后续Trust Score计算
+  // TODO: 存入KV或D1数据库
+  
+  return c.json({
+    sessionId,
+    preflightId,
+    outcomeRecorded: true,
+    timestamp: new Date().toISOString(),
+    message: 'Outcome recorded. This data improves Trust Score accuracy.',
+    // 未来: 返回更新后的Trust Score
+  });
+});
+
+// ============ Context API (带session追踪) ============
+
+app.post('/v1/context/check', async (c) => {
+  const params = await c.req.json();
+  const { action, jurisdiction, entityType } = params;
+  
+  // Session追踪
+  const sessionId = getSessionId(params, c.req.header);
+  const contextId = `ctx_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  
+  // 基础context检查逻辑
+  const flags = [];
+  let confidence = 0.5;
+  let status = 'NEEDS_REVIEW';
+  
+  // HK特定规则
+  if (jurisdiction === 'HK') {
+    if (action?.includes('staking') || action?.includes('yield')) {
+      flags.push('SFC可能视为regulated activity — 你确认过业务定义吗？');
+      flags.push('需确认是否符合Type 1牌照范围');
+      confidence = 0.73;
+    }
+    if (entityType === 'VASP') {
+      flags.push('VASP需要向SFC注册 — 是否已提交申请？');
+      confidence = 0.85;
+    }
+  }
+  
+  if (flags.length === 0) {
+    status = 'CLEAR';
+    confidence = 0.9;
+  }
+  
+  return c.json({
+    contextId,
+    sessionId,
+    timestamp: new Date().toISOString(),
+    confidence,
+    status,
+    flags,
+    references: jurisdiction === 'HK' ? ['SFC FAQ', 'VASP Guideline'] : [],
+    suggestedActions: flags.length > 0 ? ['Review with legal counsel'] : [],
+    _links: {
+      reportOutcome: `/v1/session/${sessionId}/outcome`
+    }
   });
 });
 

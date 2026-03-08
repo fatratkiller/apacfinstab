@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Waitlist | APAC FINSTAB - Compliance Preflight API for AI Agents</title>
+    <meta name="description" content="Get early access to Compliance Preflight API. Let your AI agents know regulatory risks before they act. Built for AI product companies.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Join the Compliance Preflight API Waitlist">
+    <meta property="og:description" content="Pre-action compliance checks for AI agents. Like a flight preflight checklist, but for regulatory risk.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apacfinstab.com/waitlist">
+    <meta property="og:image" content="https://apacfinstab.com/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Compliance Preflight API - Early Access">
+    <meta name="twitter:description" content="Pre-action compliance checks for AI agents. Join the waitlist.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .logo a {
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            color: #1a1a2e;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+        
+        .highlight {
+            color: #00d9ff;
+        }
+        
+        .value-props {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .value-prop {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        
+        .value-prop:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .prop-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .prop-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+        
+        .prop-content p {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            line-height: 1.4;
+        }
+        
+        .form-container {
+            background: rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .form-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: #a0a0a0;
+            margin-bottom: 0.5rem;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+        }
+        
+        select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+        
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(90deg, #00d9ff, #00ff88);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.3);
+        }
+        
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .social-proof {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+        
+        .use-cases {
+            background: rgba(0,217,255,0.1);
+            border: 1px solid rgba(0,217,255,0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .use-cases h3 {
+            color: #00d9ff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        
+        .use-case-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        
+        .use-case-item::before {
+            content: "→";
+            color: #00d9ff;
+            margin-right: 0.5rem;
+        }
+        
+        .api-preview {
+            background: #0d0d1a;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+        }
+        
+        .api-preview h4 {
+            color: #00ff88;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .api-preview pre {
+            font-family: 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .api-preview .key { color: #00d9ff; }
+        .api-preview .string { color: #feca57; }
+        .api-preview .number { color: #00ff88; }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .success-message h2 {
+            color: #00ff88;
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-message p {
+            color: #a0a0a0;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+        
+        .footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .use-case-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo"><a href="/">APAC FINSTAB</a></div>
+            <div class="badge">Early Access</div>
+            <h1>Compliance Preflight API<br>for <span class="highlight">AI Agents</span></h1>
+            <p class="subtitle">Let your AI agents know regulatory risks <em>before</em> they act. Not after.</p>
+        </div>
+        
+        <div class="value-props">
+            <div class="value-prop">
+                <span class="prop-icon">🛡️</span>
+                <div class="prop-content">
+                    <h3>Pre-Action Risk Check</h3>
+                    <p>Call our API before your agent executes financial operations. Get risk flags + regulatory references in &lt;200ms.</p>
+                </div>
+            </div>
+            <div class="value-prop">
+                <span class="prop-icon">🎯</span>
+                <div class="prop-content">
+                    <h3>Socratic, Not Prescriptive</h3>
+                    <p>We don't tell your agent what to do. We surface the right questions and relevant regulations. You decide.</p>
+                </div>
+            </div>
+            <div class="value-prop">
+                <span class="prop-icon">📋</span>
+                <div class="prop-content">
+                    <h3>Auditable preflight_id</h3>
+                    <p>Every check returns a unique ID. When regulators ask "did you check?", you have proof.</p>
+                </div>
+            </div>
+            <div class="value-prop">
+                <span class="prop-icon">🌏</span>
+                <div class="prop-content">
+                    <h3>APAC-First Coverage</h3>
+                    <p>Deep expertise in Hong Kong SFC, Singapore MAS, Japan FSA. We know the nuances.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="use-cases">
+            <h3>Built for AI Product Companies</h3>
+            <div class="use-case-grid">
+                <div class="use-case-item">Token launches</div>
+                <div class="use-case-item">x402 payments</div>
+                <div class="use-case-item">DeFi operations</div>
+                <div class="use-case-item">Stablecoin transfers</div>
+                <div class="use-case-item">Cross-border remit</div>
+                <div class="use-case-item">Staking products</div>
+            </div>
+        </div>
+        
+        <div class="api-preview">
+            <h4>API Response Preview</h4>
+            <pre>{
+  <span class="key">"preflightId"</span>: <span class="string">"pf_x402_1709856000_abc123"</span>,
+  <span class="key">"status"</span>: <span class="string">"REVIEW_REQUIRED"</span>,
+  <span class="key">"riskLevel"</span>: <span class="string">"medium"</span>,
+  <span class="key">"flags"</span>: [
+    {
+      <span class="key">"code"</span>: <span class="string">"KYC_THRESHOLD"</span>,
+      <span class="key">"question"</span>: <span class="string">"Has sender completed KYC?"</span>
+    }
+  ],
+  <span class="key">"references"</span>: [<span class="string">"HKMA AML Guidelines"</span>]
+}</pre>
+        </div>
+        
+        <div class="form-container" id="form-container">
+            <h3 class="form-title">Join the Waitlist</h3>
+            <form id="waitlist-form">
+                <div class="form-group">
+                    <label for="email">Work Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="you@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company / Project Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your AI product">
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Your Role</label>
+                    <select id="role" name="role">
+                        <option value="">Select...</option>
+                        <option value="founder">Founder / CEO</option>
+                        <option value="engineering">Engineering / Tech</option>
+                        <option value="product">Product</option>
+                        <option value="compliance">Compliance / Legal</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="use_case">What would you use Preflight for?</label>
+                    <textarea id="use_case" name="use_case" placeholder="e.g., Pre-check token launches, validate payment flows..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit" id="submit-btn">
+                    Get Early Access
+                </button>
+                
+                <p class="social-proof">Join 50+ AI builders on the waitlist</p>
+            </form>
+        </div>
+        
+        <div class="success-message" id="success-message">
+            <div class="success-icon">✅</div>
+            <h2>You're on the list!</h2>
+            <p>We'll reach out when your early access is ready.<br>Check your email for confirmation.</p>
+        </div>
+        
+        <div class="footer">
+            <p>Questions? <a href="mailto:contact@apacfinstab.com">contact@apacfinstab.com</a></p>
+            <p style="margin-top: 0.5rem">
+                <a href="/">Home</a> · 
+                <a href="/learn/why-agents-need-preflight.html">Why Preflight?</a> · 
+                <a href="/learn/agent-trust-score.html">Agent Trust Score</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const formContainer = document.getElementById('form-container');
+        const successMessage = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            const formData = new FormData(form);
+            const data = {
+                email: formData.get('email'),
+                company: formData.get('company'),
+                role: formData.get('role'),
+                use_case: formData.get('use_case'),
+                source: 'waitlist_page',
+                timestamp: new Date().toISOString()
+            };
+            
+            try {
+                // Submit to Google Sheets via webhook (configured in leads/webhook-worker.js)
+                const response = await fetch('https://apacfinstab-leads.fatratkiller.workers.dev/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    formContainer.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // Track conversion
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'waitlist_signup', {
+                            'event_category': 'conversion',
+                            'event_label': 'preflight_waitlist'
+                        });
+                    }
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Early Access';
+                alert('Something went wrong. Please try again or email us directly.');
+            }
+        });
+    </script>
+</body>
+</html>
