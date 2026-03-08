@@ -67,6 +67,20 @@
 
 ### 待创建队列
 
+#### AI Agent专题页面 (2026-03-09 优先)
+
+| 优先级 | 页面 | 目标URL | 目标关键词 | 状态 |
+|--------|------|---------|-----------|------|
+| P0 | Coinbase AgentKit | /agents/coinbase-agentkit/ | Coinbase AI agent, AgentKit, Based Agent | ⏳ |
+| P0 | Uniswap AI Skills | /agents/uniswap-ai/ | Uniswap AI agent, hooks, skills | ⏳ |
+| P0 | MetaMask AI Agent | /agents/metamask-ai-agent/ | MetaMask AI agent, SDK, Snaps | ⏳ |
+| P1 | AIXBT | /agents/aixbt/ | aixbt, Virtuals agent, crypto KOL AI | ⏳ |
+| P1 | Luna Virtuals | /agents/luna-virtuals/ | Luna AI, AI influencer, TikTok AI | ⏳ |
+| P1 | Binance Trading Bot | /agents/binance-trading-bot/ | Binance bot, AI trading | ⏳ |
+| P1 | OKX Trading Bot | /agents/okx-trading-bot/ | OKX bot, AI trading | ⏳ |
+
+#### 已完成队列
+
 | 优先级 | 页面 | 目标URL | 目标关键词 |
 |--------|------|---------|-----------|
 | ✅ | SG vs AU Comparison | /compare/sg-vs-au.html | Singapore vs Australia crypto |
