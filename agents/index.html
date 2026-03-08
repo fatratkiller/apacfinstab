@@ -13,17 +13,32 @@
     gtag('config', 'G-PX174NJW6M');
   </script>
   
-  <title>AI Agent Directory - Compare Compliance Scores | APAC FINSTAB</title>
-  <meta name="description" content="Browse and compare AI crypto agents by compliance score. Find trading bots, DeFi agents, and infrastructure platforms with regulatory risk ratings.">
-  <meta name="keywords" content="AI agents, crypto bots, DeFi agents, trading bots, compliance score, agent comparison, Virtuals, ai16z, Fetch.ai">
+  <title>AI Agent Directory - Compare 3000+ Crypto Agents by Compliance Score | APAC FINSTAB</title>
+  <meta name="description" content="Browse and compare 3000+ AI crypto agents by compliance score. Find trading bots, DeFi agents, and infrastructure platforms with regulatory risk ratings across APAC jurisdictions.">
+  <meta name="keywords" content="AI agents, crypto bots, DeFi agents, trading bots, compliance score, agent comparison, Virtuals, ai16z, Fetch.ai, best crypto agents 2026">
   
   <link rel="canonical" href="https://apacfinstab.com/agents/">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="AI Agent Directory - Compare Compliance Scores">
-  <meta property="og:description" content="Browse 100+ AI crypto agents. Compare compliance scores before you integrate.">
+  <meta property="og:title" content="AI Agent Directory - Compare 3000+ Crypto Agents">
+  <meta property="og:description" content="The largest AI crypto agent directory. Compare compliance scores before you integrate.">
   <meta property="og:url" content="https://apacfinstab.com/agents/">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Agent Directory",
+    "description": "Browse and compare AI crypto agents by compliance score",
+    "url": "https://apacfinstab.com/agents/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "APAC FINSTAB"
+    }
+  }
+  </script>
   
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -138,7 +153,7 @@
     .search-box {
       flex: 1;
       min-width: 200px;
-      max-width: 300px;
+      max-width: 400px;
       padding: 12px 16px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
@@ -150,6 +165,10 @@
     
     .search-box:focus {
       border-color: #00d4ff;
+    }
+    
+    .search-box::placeholder {
+      color: #666;
     }
     
     .filter-btn {
@@ -174,12 +193,24 @@
       color: #00d4ff;
     }
     
+    /* Sort */
+    .sort-select {
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #888;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+    }
+    
     /* Agent Grid */
     .agent-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 20px;
-      padding: 24px 0 60px;
+      padding: 24px 0 40px;
     }
     
     .agent-card {
@@ -199,11 +230,37 @@
       transform: translateY(-2px);
     }
     
+    .agent-card.hot {
+      border-color: rgba(255, 107, 107, 0.3);
+    }
+    
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 16px;
+    }
+    
+    .agent-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .agent-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .agent-info {
+      flex: 1;
     }
     
     .agent-name {
@@ -226,6 +283,7 @@
       border-radius: 8px;
       font-size: 14px;
       font-weight: 600;
+      white-space: nowrap;
     }
     
     .compliance-badge.high { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
@@ -237,6 +295,10 @@
       color: #888;
       margin-bottom: 16px;
       line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     
     .agent-tags {
@@ -259,6 +321,11 @@
       color: #ff6b6b;
     }
     
+    .tag.established {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+    
     .card-footer {
       display: flex;
       justify-content: space-between;
@@ -269,18 +336,66 @@
       color: #666;
     }
     
-    /* Footer */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      text-align: center;
-      font-size: 13px;
-      color: #444;
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 0 40px;
     }
     
-    footer a {
+    .page-btn {
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #888;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .page-btn:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    
+    .page-btn.active {
+      background: rgba(0, 212, 255, 0.15);
+      border-color: #00d4ff;
+      color: #00d4ff;
+    }
+    
+    .page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .page-info {
+      padding: 10px 16px;
       color: #666;
-      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 60px 0;
+      color: #666;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top-color: #00d4ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
     
     /* CTA Banner */
@@ -312,16 +427,61 @@
       border-radius: 8px;
       font-weight: 600;
       transition: transform 0.2s;
+      margin: 0 8px;
     }
     
     .cta-btn:hover {
       transform: translateY(-2px);
     }
     
+    .cta-btn.secondary {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    /* Subscribe */
+    .subscribe-box {
+      display: flex;
+      gap: 12px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .subscribe-input {
+      flex: 1;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    
+    .subscribe-input:focus {
+      border-color: #00d4ff;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+    }
+    
+    footer a {
+      color: #666;
+      text-decoration: none;
+    }
+    
     @media (max-width: 768px) {
       .hero h1 { font-size: 32px; }
       .stats-bar { gap: 24px; flex-wrap: wrap; }
       .agent-grid { grid-template-columns: 1fr; }
+      .filters { flex-direction: column; align-items: stretch; }
+      .search-box { max-width: none; }
     }
   </style>
 </head>
@@ -341,12 +501,12 @@
   <main class="container">
     <section class="hero">
       <h1>AI Agent <span>Directory</span></h1>
-      <p>Browse and compare AI crypto agents by compliance score. Know the regulatory risk before you integrate.</p>
+      <p>Browse and compare 3000+ AI crypto agents by compliance score. Know the regulatory risk before you integrate.</p>
     </section>
     
     <section class="stats-bar">
       <div class="stat">
-        <div class="stat-value" id="totalAgents">10</div>
+        <div class="stat-value" id="totalAgents">-</div>
         <div class="stat-label">Agents Tracked</div>
       </div>
       <div class="stat">
@@ -358,28 +518,53 @@
         <div class="stat-label">Jurisdictions</div>
       </div>
       <div class="stat">
-        <div class="stat-value">Daily</div>
-        <div class="stat-label">Updates</div>
+        <div class="stat-value" id="lastUpdated">-</div>
+        <div class="stat-label">Last Updated</div>
       </div>
     </section>
     
     <section class="filters">
-      <input type="text" class="search-box" placeholder="Search agents..." id="searchInput">
+      <input type="text" class="search-box" placeholder="Search agents by name, chain, or category..." id="searchInput">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="trading">📈 Trading</button>
       <button class="filter-btn" data-filter="infrastructure">🏗️ Infrastructure</button>
       <button class="filter-btn" data-filter="data">🔐 Data</button>
       <button class="filter-btn" data-filter="gaming">🎮 Gaming</button>
+      <button class="filter-btn" data-filter="social">💬 Social</button>
+      <select class="sort-select" id="sortSelect">
+        <option value="score-desc">Highest Score</option>
+        <option value="score-asc">Lowest Score</option>
+        <option value="name-asc">Name A-Z</option>
+        <option value="name-desc">Name Z-A</option>
+        <option value="hot">🔥 Hot First</option>
+      </select>
     </section>
     
     <section class="agent-grid" id="agentGrid">
-      <!-- Agents loaded dynamically -->
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading agents...</p>
+      </div>
+    </section>
+    
+    <section class="pagination" id="pagination">
+      <!-- Pagination buttons inserted by JS -->
     </section>
     
     <section class="cta-banner">
+      <h3>📬 Get New Agent Alerts</h3>
+      <p>Be the first to know when new AI agents get compliance scores.</p>
+      <form class="subscribe-box" id="subscribeForm">
+        <input type="email" class="subscribe-input" placeholder="Enter your email" required id="subscribeEmail">
+        <button type="submit" class="cta-btn">Subscribe</button>
+      </form>
+    </section>
+    
+    <section class="cta-banner" style="margin-top: 20px;">
       <h3>🤖 List Your Agent</h3>
-      <p>Get your AI agent listed in our directory and increase visibility to compliance-conscious integrators.</p>
-      <a href="/contact.html" class="cta-btn">Submit Agent →</a>
+      <p>Get your AI agent listed and increase visibility to compliance-conscious integrators.</p>
+      <a href="/agent-score/" class="cta-btn">Check Your Score →</a>
+      <a href="mailto:contact@apacfinstab.com" class="cta-btn secondary">Contact Us</a>
     </section>
   </main>
   
@@ -390,151 +575,162 @@
   </footer>
   
   <script>
-    // Agent data
-    const agents = [
-      {
-        id: "virtuals-protocol",
-        name: "Virtuals Protocol",
-        category: "trading",
-        chain: "Base",
-        description: "AI agent protocol for creating and trading virtual beings",
-        complianceScore: 45,
-        riskLevel: "high",
-        features: ["autonomous trading", "token creation", "staking"],
-        tvl: "$500M+",
-        tags: ["hot", "ai-agent", "base"]
-      },
-      {
-        id: "ai16z",
-        name: "ai16z (Eliza)",
-        category: "trading",
-        chain: "Solana",
-        description: "DAO-governed AI trading agent inspired by Marc Andreessen",
-        complianceScore: 35,
-        riskLevel: "high",
-        tvl: "$200M+",
-        tags: ["hot", "ai-agent", "solana", "dao"]
-      },
-      {
-        id: "spectral-syntax",
-        name: "Spectral Syntax",
-        category: "trading",
-        chain: "Ethereum",
-        description: "On-chain AI agent for automated DeFi strategies",
-        complianceScore: 55,
-        riskLevel: "medium",
-        tags: ["defi", "ai-agent", "ethereum"]
-      },
-      {
-        id: "fetch-ai",
-        name: "Fetch.ai",
-        category: "infrastructure",
-        chain: "Cosmos",
-        description: "Decentralized machine learning platform for autonomous agents",
-        complianceScore: 72,
-        riskLevel: "low",
-        tvl: "$100M+",
-        tags: ["established", "infrastructure", "enterprise"]
-      },
-      {
-        id: "autonolas",
-        name: "Autonolas (OLAS)",
-        category: "infrastructure",
-        chain: "Ethereum",
-        description: "Open-source framework for building autonomous AI services",
-        complianceScore: 68,
-        riskLevel: "medium",
-        tags: ["infrastructure", "open-source", "ethereum"]
-      },
-      {
-        id: "wayfinder",
-        name: "Wayfinder",
-        category: "gaming",
-        chain: "Solana",
-        description: "AI navigation agent for blockchain gaming",
-        complianceScore: 50,
-        riskLevel: "medium",
-        tags: ["gaming", "ai-agent", "solana"]
-      },
-      {
-        id: "morpheus-ai",
-        name: "Morpheus AI",
-        category: "infrastructure",
-        chain: "Ethereum",
-        description: "Decentralized AI network for Smart Agents",
-        complianceScore: 58,
-        riskLevel: "medium",
-        tags: ["infrastructure", "compute", "ethereum"]
-      },
-      {
-        id: "singularitynet",
-        name: "SingularityNET",
-        category: "infrastructure",
-        chain: "Ethereum/Cardano",
-        description: "Decentralized AI marketplace and AGI development platform",
-        complianceScore: 75,
-        riskLevel: "low",
-        tvl: "$50M+",
-        tags: ["established", "infrastructure", "enterprise", "agi"]
-      },
-      {
-        id: "ocean-protocol",
-        name: "Ocean Protocol",
-        category: "data",
-        chain: "Ethereum",
-        description: "Data exchange protocol for AI and data monetization",
-        complianceScore: 78,
-        riskLevel: "low",
-        tags: ["established", "data", "enterprise", "privacy"]
-      },
-      {
-        id: "bittensor",
-        name: "Bittensor",
-        category: "infrastructure",
-        chain: "Polkadot",
-        description: "Decentralized machine learning network",
-        complianceScore: 52,
-        riskLevel: "medium",
-        tvl: "$1B+",
-        tags: ["hot", "infrastructure", "ml", "mining"]
-      }
-    ];
-    
+    // State
+    let allAgents = [];
+    let filteredAgents = [];
+    let currentPage = 1;
+    const perPage = 48;
     let currentFilter = 'all';
+    let currentSort = 'score-desc';
     let searchQuery = '';
     
-    function renderAgents() {
-      const grid = document.getElementById('agentGrid');
-      const filtered = agents.filter(agent => {
+    // Fetch agents from JSON
+    async function loadAgents() {
+      try {
+        const res = await fetch('/data/agents.json');
+        const data = await res.json();
+        allAgents = data.agents || [];
+        
+        // Update stats
+        document.getElementById('totalAgents').textContent = allAgents.length.toLocaleString();
+        document.getElementById('lastUpdated').textContent = data.lastUpdated || 'Today';
+        
+        // Initial render
+        applyFilters();
+      } catch (err) {
+        console.error('Failed to load agents:', err);
+        document.getElementById('agentGrid').innerHTML = '<p style="text-align:center;color:#666;">Failed to load agents. Please refresh.</p>';
+      }
+    }
+    
+    // Filter and sort
+    function applyFilters() {
+      // Filter
+      filteredAgents = allAgents.filter(agent => {
         const matchesFilter = currentFilter === 'all' || agent.category === currentFilter;
-        const matchesSearch = agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                             agent.description.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesSearch = !searchQuery || 
+          agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (agent.chain && agent.chain.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (agent.category && agent.category.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (agent.description && agent.description.toLowerCase().includes(searchQuery.toLowerCase()));
         return matchesFilter && matchesSearch;
       });
       
-      grid.innerHTML = filtered.map(agent => `
-        <a href="/agents/${agent.id}/" class="agent-card" onclick="trackAgentClick('${agent.id}')">
-          <div class="card-header">
-            <div>
-              <div class="agent-name">${agent.name}</div>
-              <span class="agent-chain">${agent.chain}</span>
-            </div>
-            <div class="compliance-badge ${agent.riskLevel}">
-              ${agent.complianceScore}%
-            </div>
-          </div>
-          <div class="agent-desc">${agent.description}</div>
-          <div class="agent-tags">
-            ${agent.tags.map(tag => `<span class="tag ${tag === 'hot' ? 'hot' : ''}">${tag}</span>`).join('')}
-          </div>
-          <div class="card-footer">
-            <span>${agent.tvl || 'N/A'} TVL</span>
-            <span>View Details →</span>
-          </div>
-        </a>
-      `).join('');
+      // Sort
+      filteredAgents.sort((a, b) => {
+        switch (currentSort) {
+          case 'score-desc': return (b.complianceScore || 0) - (a.complianceScore || 0);
+          case 'score-asc': return (a.complianceScore || 0) - (b.complianceScore || 0);
+          case 'name-asc': return a.name.localeCompare(b.name);
+          case 'name-desc': return b.name.localeCompare(a.name);
+          case 'hot': return (b.hot ? 1 : 0) - (a.hot ? 1 : 0);
+          default: return 0;
+        }
+      });
       
-      document.getElementById('totalAgents').textContent = agents.length;
+      currentPage = 1;
+      renderAgents();
+      renderPagination();
+    }
+    
+    // Render agents
+    function renderAgents() {
+      const grid = document.getElementById('agentGrid');
+      const start = (currentPage - 1) * perPage;
+      const end = start + perPage;
+      const pageAgents = filteredAgents.slice(start, end);
+      
+      if (pageAgents.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;color:#666;padding:40px;">No agents found matching your criteria.</p>';
+        return;
+      }
+      
+      grid.innerHTML = pageAgents.map(agent => {
+        const riskClass = agent.riskLevel || (agent.complianceScore >= 70 ? 'low' : agent.complianceScore >= 40 ? 'medium' : 'high');
+        const tags = agent.tags || [];
+        const isHot = tags.includes('hot') || agent.hot;
+        const isEstablished = tags.includes('established') || agent.established;
+        
+        return `
+          <a href="/agents/${agent.id}/" class="agent-card ${isHot ? 'hot' : ''}" onclick="trackAgentClick('${agent.id}')">
+            <div class="card-header">
+              <div style="display:flex;align-items:center;">
+                <div class="agent-logo">
+                  ${agent.logo ? `<img src="${agent.logo}" alt="${agent.name}" onerror="this.parentElement.innerHTML='🤖'">` : '🤖'}
+                </div>
+                <div class="agent-info">
+                  <div class="agent-name">${agent.name}</div>
+                  <span class="agent-chain">${agent.chain || 'N/A'}</span>
+                </div>
+              </div>
+              <div class="compliance-badge ${riskClass}">
+                ${agent.complianceScore || 'N/A'}%
+              </div>
+            </div>
+            <div class="agent-desc">${agent.description || `${agent.category || 'AI'} agent on ${agent.chain || 'multiple chains'}.`}</div>
+            <div class="agent-tags">
+              ${isHot ? '<span class="tag hot">🔥 hot</span>' : ''}
+              ${isEstablished ? '<span class="tag established">✓ established</span>' : ''}
+              <span class="tag">${agent.category || 'agent'}</span>
+              ${agent.chain ? `<span class="tag">${agent.chain.toLowerCase()}</span>` : ''}
+            </div>
+            <div class="card-footer">
+              <span>${agent.tvl || agent.marketCap || 'N/A'} TVL</span>
+              <span>View Details →</span>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+    
+    // Render pagination
+    function renderPagination() {
+      const pagination = document.getElementById('pagination');
+      const totalPages = Math.ceil(filteredAgents.length / perPage);
+      
+      if (totalPages <= 1) {
+        pagination.innerHTML = '';
+        return;
+      }
+      
+      let html = '';
+      html += `<button class="page-btn" onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>← Prev</button>`;
+      
+      // Page numbers
+      const maxVisible = 5;
+      let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+      let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+      if (endPage - startPage < maxVisible - 1) {
+        startPage = Math.max(1, endPage - maxVisible + 1);
+      }
+      
+      if (startPage > 1) {
+        html += `<button class="page-btn" onclick="goToPage(1)">1</button>`;
+        if (startPage > 2) html += `<span class="page-info">...</span>`;
+      }
+      
+      for (let i = startPage; i <= endPage; i++) {
+        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
+      }
+      
+      if (endPage < totalPages) {
+        if (endPage < totalPages - 1) html += `<span class="page-info">...</span>`;
+        html += `<button class="page-btn" onclick="goToPage(${totalPages})">${totalPages}</button>`;
+      }
+      
+      html += `<span class="page-info">Showing ${((currentPage-1)*perPage)+1}-${Math.min(currentPage*perPage, filteredAgents.length)} of ${filteredAgents.length}</span>`;
+      html += `<button class="page-btn" onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next →</button>`;
+      
+      pagination.innerHTML = html;
+    }
+    
+    function goToPage(page) {
+      const totalPages = Math.ceil(filteredAgents.length / perPage);
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      renderAgents();
+      renderPagination();
+      window.scrollTo({ top: 300, behavior: 'smooth' });
     }
     
     function trackAgentClick(agentId) {
@@ -550,18 +746,56 @@
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentFilter = btn.dataset.filter;
-        renderAgents();
+        applyFilters();
       });
     });
     
-    // Search
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      renderAgents();
+    // Sort
+    document.getElementById('sortSelect').addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      applyFilters();
     });
     
-    // Initial render
-    renderAgents();
+    // Search with debounce
+    let searchTimeout;
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        searchQuery = e.target.value;
+        applyFilters();
+      }, 300);
+    });
+    
+    // Subscribe form
+    document.getElementById('subscribeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('subscribeEmail').value;
+      
+      try {
+        const res = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            source: 'agent_directory',
+            ref: new URLSearchParams(window.location.search).get('ref') || 'direct'
+          })
+        });
+        
+        if (res.ok) {
+          alert('🎉 Subscribed! You\'ll get notified about new agent scores.');
+          document.getElementById('subscribeEmail').value = '';
+          gtag('event', 'subscribe', { 'event_category': 'conversion', 'source': 'agent_directory' });
+        } else {
+          alert('Subscription failed. Please try again.');
+        }
+      } catch (err) {
+        alert('Subscription failed. Please try again.');
+      }
+    });
+    
+    // Load on page ready
+    loadAgents();
   </script>
 </body>
 </html>
