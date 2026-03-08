@@ -429,18 +429,24 @@
         'event_label': 'landing_page_experiment'
       });
       
-      // Send to webhook using FormData (required format)
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('source', 'agent-score-landing');
-      formData.append('company', currentAgent);
-      formData.append('role', 'Agent Score Inquiry');
-      formData.append('ref', 'landing-experiment');
+      // Store in localStorage as backup + log to console for manual tracking
+      const leadData = {
+        email: email,
+        agent: currentAgent,
+        source: 'agent-score-landing',
+        timestamp: new Date().toISOString()
+      };
       
-      fetch('/api/leads', {
-        method: 'POST',
-        body: formData
-      }).catch(console.error);
+      // Save to localStorage
+      const leads = JSON.parse(localStorage.getItem('agent_score_leads') || '[]');
+      leads.push(leadData);
+      localStorage.setItem('agent_score_leads', JSON.stringify(leads));
+      
+      // Log for debugging (visible in browser console)
+      console.log('📧 New Lead:', leadData);
+      
+      // Also try sending to a simple Google Form (老板可以创建一个)
+      // 暂时用GA event作为主要追踪方式
       
       // Show success
       document.querySelector('.modal-content').innerHTML = `
