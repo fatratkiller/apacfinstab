@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-07T02:10:55.747Z",
-    "totalEvents": 90,
+    "lastUpdated": "2026-03-08T02:04:14.000Z",
+    "totalEvents": 92,
     "version": "1.0"
   },
   "dimensions": {
@@ -92,6 +92,66 @@
     "TR": "Turkey"
   },
   "events": [
+    {
+      "id": "evt-2026-0308-001",
+      "date": "2026-03-07",
+      "title": "Dubai VARA Orders KuCoin to Halt Unlicensed Operations",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "BNB"
+      ],
+      "regions": [
+        "HK",
+        "SG"
+      ],
+      "topics": [
+        "Exchange",
+        "Regulation",
+        "Licensing"
+      ],
+      "entities": [],
+      "summary": "Dubai Virtual Assets Regulatory Authority (VARA) orders KuCoin to immediately halt all unlicensed operations in the UAE. The crackdown signals intensifying regulatory enforcement across MENA region with implications for APAC crypto exchanges operating without proper licensing. KuCoin must cease marketing and onboarding UAE residents until proper authorization is obtained.",
+      "impact": "high",
+      "source": "https://www.thecoinrepublic.com/2026/03/06/crypto-news-dubais-vara-cracks-down-on-kucoin-orders-halt-to-unlicensed-operations/",
+      "keywords": [
+        "Dubai",
+        "VARA",
+        "KuCoin",
+        "unlicensed",
+        "enforcement",
+        "MENA"
+      ]
+    },
+    {
+      "id": "evt-2026-0308-002",
+      "date": "2026-03-07",
+      "title": "US SEC Submits Comprehensive Crypto Guidance to White House",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "US Securities and Exchange Commission submits detailed guidance on cryptocurrency regulation to the White House. The guidance clarifies which crypto assets are treated as securities and outlines compliance requirements for firms. This represents a significant step toward regulatory clarity with global implications for APAC firms serving US customers.",
+      "impact": "high",
+      "source": "https://dig.watch/updates/sec-guidance-on-crypto-regulation-to-white-house",
+      "keywords": [
+        "SEC",
+        "White House",
+        "guidance",
+        "securities",
+        "compliance",
+        "regulatory clarity"
+      ]
+    },
     {
       "id": "evt-2026-0307-001",
       "date": "2026-03-06",
