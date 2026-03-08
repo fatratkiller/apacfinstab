@@ -18,6 +18,8 @@
 | 钱包 | Rainbow | ❓ 待查 | 中 |
 | 交易所 | Coinbase | ❓ 待查 | 高 |
 | 交易所 | Binance | ❓ 待查 | 高 |
+| 交易所 | **Crypto.com** | ✅ Agent Key (Mar 8) | 🔥 高 - 联邦监管+Agent API |
+| DEX | **Aster** | ✅ MCP+Skills (Mar 8) | ⭐⭐ 中 - 永续DEX |
 | 交易所 | **OKX** | ✅ 已推出 (Mar 3) | 🔥🔥 极高 - OnchainOS + MCP + x402 |
 | DEX | Uniswap | ❓ 待查 | 中 |
 | DEX | Jupiter | ❓ 待查 | 中 |
@@ -37,6 +39,44 @@
 ---
 
 ## 📅 每日探测日志
+
+### 2026-03-08 (14:00 更新)
+**探测结果:**
+
+**📊 MCP生态新动态:**
+
+- ✅ **Crypto.com "Agent Key"** 
+  - 来源: RWA Times (11小时前)
+  - **核心功能**: 安全API访问系统，允许AI agents交易
+  - **安全特性**: 周消费限额、权限范围控制
+  - **用户覆盖**: 支持零售和机构用户
+  - **合作评估**: ⭐⭐⭐ 中高
+    - 已获OCC联邦监管批准的平台
+    - Agent Key架构与我们的合规层理念一致
+    - 潜在切入: 合规风险评分嵌入Agent决策流程
+
+- ✅ **Aster (Perp DEX) 发布 MCP server + Agent Skills**
+  - 来源: RWA Times (11小时前)
+  - **类型**: 永续合约DEX
+  - 发布完整MCP server和agent skills
+  - **合作评估**: ⭐⭐ 中等
+    - 衍生品交易，监管敏感度高
+    - 合规层需求理论上更强
+
+- ✅ **ERC-8004 上线以太坊主网** (2026年1月29日)
+  - 来源: Whales.market分析 (19小时前)
+  - **定位**: Agent-to-Agent (A2A) + MCP标准
+  - 解决Agent间通信和工具访问
+  - **参考价值**: 链上Agent标准化趋势
+
+**无新发现:**
+- MetaMask/Binance/Coinbase: 无MCP相关公告
+- Trust Wallet/OKX: 无新动态
+- Uniswap/Jupiter/Polymarket: 无AI agent整合新闻
+
+**总结**: Crypto.com Agent Key是本周值得关注的新动态，结合其已获得的联邦监管批准，可能成为机构级AI交易的重要入口。Aster DEX的MCP发布显示衍生品赛道也在跟进Agent集成趋势。无需紧急汇报。
+
+---
 
 ### 2026-03-06 (14:00 更新)
 **探测结果:**
@@ -229,10 +269,12 @@
 | 项目 | 状态 | 联系方式 | 下一步 |
 |------|------|----------|--------|
 | **OKX** | 🔴 高优先 | onchainos.okx.com | 🔥 研究x402集成 + 合规API对接 |
+| **Crypto.com** | 🟡 新发现 | crypto.com/exchange/developers | 研究Agent Key架构 |
 | Trust Wallet | 🟡 研究中 | developer.trustwallet.com | 查看MCP文档 |
 | Bitget Wallet | 🟡 研究中 | bitget.com/developers | 研究Skill Beta + MCP API |
 | Dune | 🟡 新发现 | docs.dune.com | 评估数据合作可能 |
+| Aster | 🟢 观察 | - | 衍生品合规场景研究 |
 
 ---
 
-*最后更新: 2026-03-06 14:06*
+*最后更新: 2026-03-08 14:05*
