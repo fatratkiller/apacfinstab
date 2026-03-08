@@ -25,7 +25,7 @@ const AI_KEYWORDS = [
 
 // 手动维护的热门agent（确保收录）
 const CURATED_AGENTS = [
-  // Trading Agents
+  // ==================== Web3 Trading Agents ====================
   { id: 'virtuals-protocol', name: 'Virtuals Protocol', chain: 'Base', category: 'trading', hot: true },
   { id: 'ai16z', name: 'ai16z (Eliza)', chain: 'Solana', category: 'trading', hot: true },
   { id: 'griffain', name: 'Griffain', chain: 'Solana', category: 'trading', hot: true },
@@ -35,7 +35,7 @@ const CURATED_AGENTS = [
   { id: 'aixbt', name: 'AIXBT', chain: 'Base', category: 'social' },
   { id: 'truth-terminal', name: 'Truth Terminal', chain: 'Solana', category: 'social', hot: true },
   
-  // Infrastructure
+  // ==================== Web3 Infrastructure ====================
   { id: 'fetch-ai', name: 'Fetch.ai', chain: 'Cosmos', category: 'infrastructure', established: true },
   { id: 'singularitynet', name: 'SingularityNET', chain: 'Ethereum', category: 'infrastructure', established: true },
   { id: 'ocean-protocol', name: 'Ocean Protocol', chain: 'Ethereum', category: 'data', established: true },
@@ -45,13 +45,9 @@ const CURATED_AGENTS = [
   { id: 'vana', name: 'Vana', chain: 'Ethereum', category: 'data', hot: true },
   { id: 'ritual', name: 'Ritual', chain: 'Ethereum', category: 'infrastructure' },
   { id: 'nillion', name: 'Nillion', chain: 'Ethereum', category: 'infrastructure' },
-  
-  // Gaming/Social
   { id: 'wayfinder', name: 'Wayfinder', chain: 'Solana', category: 'gaming' },
   { id: 'spectral-syntax', name: 'Spectral Syntax', chain: 'Ethereum', category: 'trading' },
   { id: 'myshell', name: 'MyShell', chain: 'BSC', category: 'social' },
-  
-  // Emerging
   { id: 'goat', name: 'GOAT', chain: 'Solana', category: 'social', hot: true },
   { id: 'fartcoin', name: 'Fartcoin', chain: 'Solana', category: 'social', hot: true },
   { id: 'ai-rig-complex', name: 'AI Rig Complex', chain: 'Solana', category: 'infrastructure' },
@@ -62,7 +58,100 @@ const CURATED_AGENTS = [
   { id: 'render', name: 'Render Network', chain: 'Solana', category: 'infrastructure', established: true },
   { id: 'nosana', name: 'Nosana', chain: 'Solana', category: 'infrastructure' },
   { id: 'io-net', name: 'io.net', chain: 'Solana', category: 'infrastructure', hot: true },
+  
+  // ==================== MCP/Claude 生态 (OpenClaw) ====================
+  { id: 'clawdbot', name: 'Clawdbot (OpenClaw)', chain: 'MCP', category: 'infrastructure', hot: true, description: 'MCP-native AI agent orchestration platform. Gateway for Claude-powered agents with multi-channel deployment.' },
+  { id: 'claude-computer-use', name: 'Claude Computer Use', chain: 'MCP', category: 'infrastructure', hot: true, established: true, description: 'Anthropic official computer control agent. Can browse, code, and interact with desktop.' },
+  { id: 'mcp-filesystem', name: 'MCP Filesystem Server', chain: 'MCP', category: 'infrastructure', description: 'Official MCP server for local file system access.' },
+  { id: 'mcp-github', name: 'MCP GitHub Server', chain: 'MCP', category: 'infrastructure', description: 'Official MCP server for GitHub API integration.' },
+  { id: 'mcp-postgres', name: 'MCP PostgreSQL Server', chain: 'MCP', category: 'data', description: 'Official MCP server for PostgreSQL database access.' },
+  { id: 'mcp-puppeteer', name: 'MCP Puppeteer Server', chain: 'MCP', category: 'infrastructure', description: 'Browser automation via Puppeteer for MCP agents.' },
+  { id: 'mcp-slack', name: 'MCP Slack Server', chain: 'MCP', category: 'social', description: 'Slack integration for MCP-powered agents.' },
+  { id: 'mcp-brave-search', name: 'MCP Brave Search', chain: 'MCP', category: 'infrastructure', description: 'Web search capabilities via Brave API for MCP agents.' },
+  
+  // ==================== LangChain 生态 ====================
+  { id: 'langchain', name: 'LangChain', chain: 'Python', category: 'infrastructure', hot: true, established: true, description: 'Most popular framework for building LLM-powered applications and agents.' },
+  { id: 'langgraph', name: 'LangGraph', chain: 'Python', category: 'infrastructure', hot: true, description: 'Framework for building stateful, multi-actor LLM applications with cycles.' },
+  { id: 'langsmith', name: 'LangSmith', chain: 'Cloud', category: 'infrastructure', description: 'Platform for debugging, testing, evaluating, and monitoring LLM apps.' },
+  { id: 'langserve', name: 'LangServe', chain: 'Python', category: 'infrastructure', description: 'Deploy LangChain runnables and chains as REST APIs.' },
+  
+  // ==================== AutoGPT 生态 ====================
+  { id: 'autogpt', name: 'AutoGPT', chain: 'Python', category: 'infrastructure', hot: true, established: true, description: 'Autonomous GPT-4 agent that can self-prompt to achieve goals.' },
+  { id: 'agentgpt', name: 'AgentGPT', chain: 'Web', category: 'infrastructure', hot: true, description: 'Browser-based autonomous AI agent. Deploy AI agents with no code.' },
+  { id: 'babyagi', name: 'BabyAGI', chain: 'Python', category: 'infrastructure', established: true, description: 'Task-driven autonomous agent using OpenAI and vector databases.' },
+  { id: 'superagi', name: 'SuperAGI', chain: 'Python', category: 'infrastructure', description: 'Dev-first open source autonomous AI agent framework.' },
+  
+  // ==================== CrewAI 生态 ====================
+  { id: 'crewai', name: 'CrewAI', chain: 'Python', category: 'infrastructure', hot: true, description: 'Framework for orchestrating role-playing autonomous AI agents.' },
+  { id: 'crewai-tools', name: 'CrewAI Tools', chain: 'Python', category: 'infrastructure', description: 'Collection of tools for CrewAI agents including web scraping, file ops.' },
+  
+  // ==================== OpenAI 生态 ====================
+  { id: 'openai-assistants', name: 'OpenAI Assistants API', chain: 'Cloud', category: 'infrastructure', hot: true, established: true, description: 'OpenAI official API for building AI assistants with tools and memory.' },
+  { id: 'openai-gpts', name: 'OpenAI GPTs', chain: 'Cloud', category: 'social', hot: true, established: true, description: 'Custom versions of ChatGPT that can be shared and monetized.' },
+  { id: 'chatgpt-plugins', name: 'ChatGPT Plugins', chain: 'Cloud', category: 'infrastructure', established: true, description: 'Third-party plugins that extend ChatGPT capabilities.' },
+  { id: 'openai-swarm', name: 'OpenAI Swarm', chain: 'Python', category: 'infrastructure', hot: true, description: 'OpenAI experimental framework for multi-agent orchestration.' },
+  
+  // ==================== Microsoft/Azure 生态 ====================
+  { id: 'autogen', name: 'AutoGen (Microsoft)', chain: 'Python', category: 'infrastructure', hot: true, description: 'Microsoft framework for building multi-agent conversational systems.' },
+  { id: 'semantic-kernel', name: 'Semantic Kernel', chain: 'Multi', category: 'infrastructure', description: 'Microsoft SDK for integrating AI into apps with plugins and planners.' },
+  { id: 'copilot-studio', name: 'Microsoft Copilot Studio', chain: 'Cloud', category: 'infrastructure', established: true, description: 'Low-code platform for building custom copilots and AI agents.' },
+  { id: 'azure-ai-agent', name: 'Azure AI Agent Service', chain: 'Cloud', category: 'infrastructure', description: 'Azure managed service for deploying AI agents at scale.' },
+  
+  // ==================== Google 生态 ====================
+  { id: 'google-aistudio', name: 'Google AI Studio', chain: 'Cloud', category: 'infrastructure', established: true, description: 'Google platform for prototyping with Gemini models.' },
+  { id: 'vertex-ai-agents', name: 'Vertex AI Agents', chain: 'Cloud', category: 'infrastructure', description: 'Google Cloud platform for building and deploying AI agents.' },
+  { id: 'dialogflow-cx', name: 'Dialogflow CX', chain: 'Cloud', category: 'social', established: true, description: 'Google advanced conversational AI platform for virtual agents.' },
+  
+  // ==================== Hugging Face 生态 ====================
+  { id: 'huggingface-agents', name: 'Hugging Face Agents', chain: 'Python', category: 'infrastructure', hot: true, description: 'Transformers Agents for building AI agents with HF models.' },
+  { id: 'huggingface-spaces', name: 'Hugging Face Spaces', chain: 'Cloud', category: 'infrastructure', established: true, description: 'Platform for hosting and sharing ML demos and agents.' },
+  { id: 'smolagents', name: 'smolagents (HF)', chain: 'Python', category: 'infrastructure', hot: true, description: 'Hugging Face lightweight library for building agents with code execution.' },
+  
+  // ==================== 其他热门框架 ====================
+  { id: 'dify', name: 'Dify', chain: 'Web', category: 'infrastructure', hot: true, description: 'Open-source LLM app development platform with visual workflow builder.' },
+  { id: 'flowise', name: 'Flowise', chain: 'Web', category: 'infrastructure', description: 'Drag & drop UI to build LLM flows using LangChain.' },
+  { id: 'n8n-ai', name: 'n8n AI Agents', chain: 'Web', category: 'infrastructure', description: 'Workflow automation with AI agent capabilities.' },
+  { id: 'haystack', name: 'Haystack', chain: 'Python', category: 'infrastructure', description: 'NLP framework for building search and QA systems with LLMs.' },
+  { id: 'llama-index', name: 'LlamaIndex', chain: 'Python', category: 'infrastructure', hot: true, description: 'Data framework for LLM applications with RAG capabilities.' },
+  { id: 'phidata', name: 'Phidata', chain: 'Python', category: 'infrastructure', description: 'Framework for building AI assistants with memory and knowledge.' },
+  { id: 'taskweaver', name: 'TaskWeaver (Microsoft)', chain: 'Python', category: 'infrastructure', description: 'Code-first agent framework for data analytics tasks.' },
+  
+  // ==================== Coding Agents ====================
+  { id: 'cursor', name: 'Cursor', chain: 'Desktop', category: 'infrastructure', hot: true, description: 'AI-first code editor with built-in coding agent.' },
+  { id: 'github-copilot', name: 'GitHub Copilot', chain: 'Cloud', category: 'infrastructure', hot: true, established: true, description: 'AI pair programmer powered by OpenAI Codex.' },
+  { id: 'codeium', name: 'Codeium', chain: 'Cloud', category: 'infrastructure', description: 'Free AI-powered code completion and chat.' },
+  { id: 'tabnine', name: 'Tabnine', chain: 'Cloud', category: 'infrastructure', established: true, description: 'AI code assistant trained on your codebase.' },
+  { id: 'aider', name: 'Aider', chain: 'CLI', category: 'infrastructure', hot: true, description: 'AI pair programming in your terminal with git integration.' },
+  { id: 'continue', name: 'Continue', chain: 'IDE', category: 'infrastructure', description: 'Open-source AI code assistant for VS Code and JetBrains.' },
+  { id: 'cline', name: 'Cline (Claude Dev)', chain: 'IDE', category: 'infrastructure', hot: true, description: 'Autonomous coding agent in VS Code using Claude.' },
+  { id: 'codex-cli', name: 'Codex CLI', chain: 'CLI', category: 'infrastructure', description: 'OpenAI Codex-powered command line interface.' },
+  { id: 'devin', name: 'Devin (Cognition)', chain: 'Cloud', category: 'infrastructure', hot: true, description: 'First AI software engineer. Autonomous coding agent.' },
+  
+  // ==================== Voice/Multimodal Agents ====================
+  { id: 'elevenlabs-agents', name: 'ElevenLabs Conversational AI', chain: 'Cloud', category: 'social', hot: true, description: 'Build voice agents with realistic AI voices.' },
+  { id: 'vapi', name: 'Vapi', chain: 'Cloud', category: 'social', hot: true, description: 'Platform for building voice AI agents and phone bots.' },
+  { id: 'play-ai', name: 'PlayAI', chain: 'Cloud', category: 'social', description: 'Conversational AI agents with lifelike voices.' },
+  { id: 'hume-ai', name: 'Hume AI', chain: 'Cloud', category: 'social', description: 'Emotionally intelligent voice AI agents.' },
+  
+  // ==================== Research/Autonomous Agents ====================
+  { id: 'camel', name: 'CAMEL', chain: 'Python', category: 'infrastructure', description: 'Communicative agents for mind exploration of large-scale models.' },
+  { id: 'metagpt', name: 'MetaGPT', chain: 'Python', category: 'infrastructure', hot: true, description: 'Multi-agent framework assigning different GPT roles for software company simulation.' },
+  { id: 'chatdev', name: 'ChatDev', chain: 'Python', category: 'infrastructure', description: 'Communicative agents simulating software development company.' },
+  { id: 'gpt-researcher', name: 'GPT Researcher', chain: 'Python', category: 'infrastructure', hot: true, description: 'Autonomous agent for comprehensive online research.' },
+  { id: 'storm', name: 'STORM (Stanford)', chain: 'Python', category: 'infrastructure', description: 'Writing agent that generates Wikipedia-like articles.' },
 ];
+
+// Category映射补充 (for web2 agents)
+const WEB2_CATEGORIES = {
+  'MCP': 'infrastructure',
+  'Python': 'infrastructure', 
+  'Web': 'infrastructure',
+  'Cloud': 'infrastructure',
+  'Desktop': 'infrastructure',
+  'CLI': 'infrastructure',
+  'IDE': 'infrastructure',
+  'Multi': 'infrastructure'
+};
 
 // ============ 抓取函数 ============
 
