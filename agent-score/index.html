@@ -414,12 +414,17 @@
       }, 3000);
     }
     
-    function submitEmail() {
+    async function submitEmail() {
       const email = document.getElementById('emailInput').value.trim();
       if (!email || !email.includes('@')) {
         alert('Please enter a valid email');
         return;
       }
+      
+      // Disable button while submitting
+      const submitBtn = document.querySelector('#emailCapture button');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
       
       // Track conversion
       gtag('event', 'email_submit', {
@@ -429,24 +434,29 @@
         'event_label': 'landing_page_experiment'
       });
       
-      // Store in localStorage as backup + log to console for manual tracking
-      const leadData = {
-        email: email,
-        agent: currentAgent,
-        source: 'agent-score-landing',
-        timestamp: new Date().toISOString()
-      };
-      
-      // Save to localStorage
-      const leads = JSON.parse(localStorage.getItem('agent_score_leads') || '[]');
-      leads.push(leadData);
-      localStorage.setItem('agent_score_leads', JSON.stringify(leads));
-      
-      // Log for debugging (visible in browser console)
-      console.log('📧 New Lead:', leadData);
-      
-      // Also try sending to a simple Google Form (老板可以创建一个)
-      // 暂时用GA event作为主要追踪方式
+      // 发送到后端API（安全存储到Discord）
+      try {
+        const response = await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            agent: currentAgent,
+            source: 'agent_score',
+            ref: new URLSearchParams(window.location.search).get('ref') || 'direct'
+          })
+        });
+        
+        if (!response.ok) {
+          throw new Error('API error');
+        }
+      } catch (error) {
+        console.error('Lead API error:', error);
+        // 失败时备份到localStorage
+        const leads = JSON.parse(localStorage.getItem('agent_score_leads') || '[]');
+        leads.push({ email, agent: currentAgent, timestamp: new Date().toISOString() });
+        localStorage.setItem('agent_score_leads', JSON.stringify(leads));
+      }
       
       // Show success
       document.querySelector('.modal-content').innerHTML = `

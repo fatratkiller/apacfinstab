@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX174NJW6M');
+  </script>
+  
+  <title>AI Agent Directory - Compare Compliance Scores | APAC FINSTAB</title>
+  <meta name="description" content="Browse and compare AI crypto agents by compliance score. Find trading bots, DeFi agents, and infrastructure platforms with regulatory risk ratings.">
+  <meta name="keywords" content="AI agents, crypto bots, DeFi agents, trading bots, compliance score, agent comparison, Virtuals, ai16z, Fetch.ai">
+  
+  <link rel="canonical" href="https://apacfinstab.com/agents/">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Agent Directory - Compare Compliance Scores">
+  <meta property="og:description" content="Browse 100+ AI crypto agents. Compare compliance scores before you integrate.">
+  <meta property="og:url" content="https://apacfinstab.com/agents/">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: #00d4ff;
+    }
+    
+    nav a {
+      color: #888;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    
+    nav a:hover { color: #fff; }
+    nav a.active { color: #00d4ff; }
+    
+    /* Hero */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    
+    .hero h1 span {
+      background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      color: #888;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #00d4ff;
+    }
+    
+    .stat-label {
+      font-size: 13px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Filters */
+    .filters {
+      display: flex;
+      gap: 12px;
+      padding: 24px 0;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .search-box {
+      flex: 1;
+      min-width: 200px;
+      max-width: 300px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    
+    .search-box:focus {
+      border-color: #00d4ff;
+    }
+    
+    .filter-btn {
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #888;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .filter-btn:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    
+    .filter-btn.active {
+      background: rgba(0, 212, 255, 0.15);
+      border-color: #00d4ff;
+      color: #00d4ff;
+    }
+    
+    /* Agent Grid */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+      padding: 24px 0 60px;
+    }
+    
+    .agent-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .agent-card:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    
+    .agent-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .agent-chain {
+      font-size: 12px;
+      color: #666;
+      background: rgba(255,255,255,0.05);
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    .compliance-badge {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .compliance-badge.high { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+    .compliance-badge.medium { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+    .compliance-badge.low { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+    
+    .agent-desc {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    
+    .agent-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    
+    .tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      color: #888;
+    }
+    
+    .tag.hot {
+      background: rgba(255, 107, 107, 0.2);
+      color: #ff6b6b;
+    }
+    
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 12px;
+      color: #666;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 13px;
+      color: #444;
+    }
+    
+    footer a {
+      color: #666;
+      text-decoration: none;
+    }
+    
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 47, 247, 0.1));
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta-banner h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .cta-banner p {
+      color: #888;
+      margin-bottom: 20px;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #00d4ff, #7b2ff7);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.2s;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .stats-bar { gap: 24px; flex-wrap: wrap; }
+      .agent-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">APAC <span>FINSTAB</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/agents/" class="active">Agents</a>
+        <a href="/learn/">Learn</a>
+        <a href="/agent-score/">Check Score</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="hero">
+      <h1>AI Agent <span>Directory</span></h1>
+      <p>Browse and compare AI crypto agents by compliance score. Know the regulatory risk before you integrate.</p>
+    </section>
+    
+    <section class="stats-bar">
+      <div class="stat">
+        <div class="stat-value" id="totalAgents">10</div>
+        <div class="stat-label">Agents Tracked</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">14</div>
+        <div class="stat-label">Jurisdictions</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Daily</div>
+        <div class="stat-label">Updates</div>
+      </div>
+    </section>
+    
+    <section class="filters">
+      <input type="text" class="search-box" placeholder="Search agents..." id="searchInput">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="trading">📈 Trading</button>
+      <button class="filter-btn" data-filter="infrastructure">🏗️ Infrastructure</button>
+      <button class="filter-btn" data-filter="data">🔐 Data</button>
+      <button class="filter-btn" data-filter="gaming">🎮 Gaming</button>
+    </section>
+    
+    <section class="agent-grid" id="agentGrid">
+      <!-- Agents loaded dynamically -->
+    </section>
+    
+    <section class="cta-banner">
+      <h3>🤖 List Your Agent</h3>
+      <p>Get your AI agent listed in our directory and increase visibility to compliance-conscious integrators.</p>
+      <a href="/contact.html" class="cta-btn">Submit Agent →</a>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <a href="/">APAC FINSTAB</a> · Making Compliance a Competitive Advantage
+    </div>
+  </footer>
+  
+  <script>
+    // Agent data
+    const agents = [
+      {
+        id: "virtuals-protocol",
+        name: "Virtuals Protocol",
+        category: "trading",
+        chain: "Base",
+        description: "AI agent protocol for creating and trading virtual beings",
+        complianceScore: 45,
+        riskLevel: "high",
+        features: ["autonomous trading", "token creation", "staking"],
+        tvl: "$500M+",
+        tags: ["hot", "ai-agent", "base"]
+      },
+      {
+        id: "ai16z",
+        name: "ai16z (Eliza)",
+        category: "trading",
+        chain: "Solana",
+        description: "DAO-governed AI trading agent inspired by Marc Andreessen",
+        complianceScore: 35,
+        riskLevel: "high",
+        tvl: "$200M+",
+        tags: ["hot", "ai-agent", "solana", "dao"]
+      },
+      {
+        id: "spectral-syntax",
+        name: "Spectral Syntax",
+        category: "trading",
+        chain: "Ethereum",
+        description: "On-chain AI agent for automated DeFi strategies",
+        complianceScore: 55,
+        riskLevel: "medium",
+        tags: ["defi", "ai-agent", "ethereum"]
+      },
+      {
+        id: "fetch-ai",
+        name: "Fetch.ai",
+        category: "infrastructure",
+        chain: "Cosmos",
+        description: "Decentralized machine learning platform for autonomous agents",
+        complianceScore: 72,
+        riskLevel: "low",
+        tvl: "$100M+",
+        tags: ["established", "infrastructure", "enterprise"]
+      },
+      {
+        id: "autonolas",
+        name: "Autonolas (OLAS)",
+        category: "infrastructure",
+        chain: "Ethereum",
+        description: "Open-source framework for building autonomous AI services",
+        complianceScore: 68,
+        riskLevel: "medium",
+        tags: ["infrastructure", "open-source", "ethereum"]
+      },
+      {
+        id: "wayfinder",
+        name: "Wayfinder",
+        category: "gaming",
+        chain: "Solana",
+        description: "AI navigation agent for blockchain gaming",
+        complianceScore: 50,
+        riskLevel: "medium",
+        tags: ["gaming", "ai-agent", "solana"]
+      },
+      {
+        id: "morpheus-ai",
+        name: "Morpheus AI",
+        category: "infrastructure",
+        chain: "Ethereum",
+        description: "Decentralized AI network for Smart Agents",
+        complianceScore: 58,
+        riskLevel: "medium",
+        tags: ["infrastructure", "compute", "ethereum"]
+      },
+      {
+        id: "singularitynet",
+        name: "SingularityNET",
+        category: "infrastructure",
+        chain: "Ethereum/Cardano",
+        description: "Decentralized AI marketplace and AGI development platform",
+        complianceScore: 75,
+        riskLevel: "low",
+        tvl: "$50M+",
+        tags: ["established", "infrastructure", "enterprise", "agi"]
+      },
+      {
+        id: "ocean-protocol",
+        name: "Ocean Protocol",
+        category: "data",
+        chain: "Ethereum",
+        description: "Data exchange protocol for AI and data monetization",
+        complianceScore: 78,
+        riskLevel: "low",
+        tags: ["established", "data", "enterprise", "privacy"]
+      },
+      {
+        id: "bittensor",
+        name: "Bittensor",
+        category: "infrastructure",
+        chain: "Polkadot",
+        description: "Decentralized machine learning network",
+        complianceScore: 52,
+        riskLevel: "medium",
+        tvl: "$1B+",
+        tags: ["hot", "infrastructure", "ml", "mining"]
+      }
+    ];
+    
+    let currentFilter = 'all';
+    let searchQuery = '';
+    
+    function renderAgents() {
+      const grid = document.getElementById('agentGrid');
+      const filtered = agents.filter(agent => {
+        const matchesFilter = currentFilter === 'all' || agent.category === currentFilter;
+        const matchesSearch = agent.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                             agent.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesFilter && matchesSearch;
+      });
+      
+      grid.innerHTML = filtered.map(agent => `
+        <a href="/agents/${agent.id}/" class="agent-card" onclick="trackAgentClick('${agent.id}')">
+          <div class="card-header">
+            <div>
+              <div class="agent-name">${agent.name}</div>
+              <span class="agent-chain">${agent.chain}</span>
+            </div>
+            <div class="compliance-badge ${agent.riskLevel}">
+              ${agent.complianceScore}%
+            </div>
+          </div>
+          <div class="agent-desc">${agent.description}</div>
+          <div class="agent-tags">
+            ${agent.tags.map(tag => `<span class="tag ${tag === 'hot' ? 'hot' : ''}">${tag}</span>`).join('')}
+          </div>
+          <div class="card-footer">
+            <span>${agent.tvl || 'N/A'} TVL</span>
+            <span>View Details →</span>
+          </div>
+        </a>
+      `).join('');
+      
+      document.getElementById('totalAgents').textContent = agents.length;
+    }
+    
+    function trackAgentClick(agentId) {
+      gtag('event', 'agent_click', {
+        'agent_id': agentId,
+        'event_category': 'engagement'
+      });
+    }
+    
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderAgents();
+      });
+    });
+    
+    // Search
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderAgents();
+    });
+    
+    // Initial render
+    renderAgents();
+  </script>
+</body>
+</html>
