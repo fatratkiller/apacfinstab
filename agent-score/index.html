@@ -429,16 +429,17 @@
         'event_label': 'landing_page_experiment'
       });
       
-      // Send to webhook (same as waitlist)
-      fetch('https://apacfinstab.kyleleo2018.workers.dev/api/leads', {
+      // Send to webhook using FormData (required format)
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('source', 'agent-score-landing');
+      formData.append('company', currentAgent);
+      formData.append('role', 'Agent Score Inquiry');
+      formData.append('ref', 'landing-experiment');
+      
+      fetch('/api/leads', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          source: 'agent-score-landing',
-          email: email,
-          agent: currentAgent,
-          timestamp: new Date().toISOString()
-        })
+        body: formData
       }).catch(console.error);
       
       // Show success
