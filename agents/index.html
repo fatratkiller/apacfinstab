@@ -90,6 +90,13 @@
     nav a:hover { color: #fff; }
     nav a.active { color: #00d4ff; }
     
+    .tagline {
+      font-size: 10px;
+      color: #666;
+      display: block;
+      margin-top: 2px;
+    }
+    
     /* Hero */
     .hero {
       padding: 60px 0 40px;
@@ -488,12 +495,15 @@
 <body>
   <header>
     <div class="container header-inner">
-      <a href="/" class="logo">APAC <span>FINSTAB</span></a>
+      <a href="/" class="logo">APAC <span>FINSTAB</span><span class="tagline">Regulatory Intelligence</span></a>
       <nav>
-        <a href="/">Home</a>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
         <a href="/agents/" class="active">Agents</a>
         <a href="/learn/">Learn</a>
-        <a href="/agent-score/">Check Score</a>
+        <a href="/blog.html">Insights</a>
+        <a href="/for-agents/">For AI</a>
+        <a href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
