@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Mar 3 - 9, 2026)</title>
+<title>APAC FinStab+ | Regulatory Intelligence Dashboard (Mar 3 - Mar 9, 2026)</title>
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="APAC Financial Stability weekly regulatory intelligence dashboard covering central banks, stablecoins, Web3 policy across Asia-Pacific">
-<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, Hong Kong SFC, MCP compliance, AI agents">
+<meta name="keywords" content="APAC regulation, financial stability, crypto regulation, stablecoin policy, PBOC, Hong Kong SFC, DeFi compliance, tokenized securities, OCC charter, Clarity Act, ONDO ADGM, ICE OKX NYSE">
 
-<!-- Open Graph -->
+<!-- Open Graph (Social Media Sharing) -->
 <meta property="og:title" content="APAC FinStab+ | Regulatory Intelligence Dashboard">
 <meta property="og:description" content="Real-time APAC regulatory intelligence for crypto and Web3">
 <meta property="og:type" content="website">
@@ -59,6 +59,7 @@ body {
 
 .dashboard { max-width: 1920px; margin: 0 auto; padding: 24px; }
 
+/* Header */
 .header {
   text-align: center;
   margin-bottom: 32px;
@@ -104,6 +105,7 @@ body {
   font-weight: 700;
 }
 
+/* Grid */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -114,6 +116,7 @@ body {
 @media (max-width: 1400px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
 
+/* KPI Cards */
 .kpi-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -152,6 +155,7 @@ body {
 .kpi-change.neutral { color: var(--accent-yellow); }
 .kpi-detail { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
 
+/* Chart Card */
 .chart-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -170,8 +174,8 @@ body {
 .badge-low { background: rgba(0,217,163,0.15); color: var(--accent-green); }
 .badge-active { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
 .badge-critical { background: rgba(255,71,87,0.25); color: var(--accent-red); }
-.badge-new { background: rgba(165,94,234,0.25); color: var(--accent-purple); }
 
+/* Data Table */
 .data-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .data-table thead { background: rgba(74,158,255,0.08); }
 .data-table th { padding: 10px 12px; text-align: left; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
@@ -183,26 +187,26 @@ body {
 .tag-high { background: rgba(255,140,66,0.15); color: var(--accent-orange); }
 .tag-medium { background: rgba(0,217,163,0.15); color: var(--accent-green); }
 .tag-low { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
-.tag-new { background: rgba(165,94,234,0.15); color: var(--accent-purple); }
 
+/* Alert Box */
 .alert-box { padding: 16px; border-radius: 8px; margin-top: 16px; display: flex; align-items: flex-start; gap: 12px; border-left: 4px solid; }
 .alert-box.warning { background: rgba(255,140,66,0.08); border-color: var(--accent-orange); }
 .alert-box.critical { background: rgba(255,71,87,0.08); border-color: var(--accent-red); }
 .alert-box.success { background: rgba(0,217,163,0.08); border-color: var(--accent-green); }
-.alert-box.new { background: rgba(165,94,234,0.08); border-color: var(--accent-purple); }
 .alert-icon { font-size: 20px; line-height: 1; }
 .alert-content { flex: 1; }
 .alert-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
 .alert-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
 
+/* Progress Bar */
 .progress-bar { width: 100%; height: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; overflow: hidden; margin: 8px 0; }
 .progress-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; font-size: 11px; font-weight: 700; color: white; transition: width 1s ease-out; }
 .progress-fill.green { background: linear-gradient(90deg, var(--accent-green) 0%, rgba(0,217,163,0.7) 100%); }
 .progress-fill.blue { background: linear-gradient(90deg, var(--accent-blue) 0%, rgba(74,158,255,0.7) 100%); }
 .progress-fill.orange { background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(255,140,66,0.7) 100%); }
 .progress-fill.red { background: linear-gradient(90deg, var(--accent-red) 0%, rgba(255,71,87,0.7) 100%); }
-.progress-fill.purple { background: linear-gradient(90deg, var(--accent-purple) 0%, rgba(165,94,234,0.7) 100%); }
 
+/* Timeline */
 .timeline { position: relative; padding-left: 30px; }
 .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
 .timeline-item { position: relative; padding-bottom: 20px; }
@@ -211,19 +215,11 @@ body {
 .timeline-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .timeline-desc { font-size: 11px; color: var(--text-secondary); line-height: 1.4; }
 
+/* Footer */
 .footer { margin-top: 32px; padding: 24px; background: var(--bg-secondary); border-radius: 12px; text-align: center; border: 1px solid var(--border); }
 .footer-text { font-size: 11px; color: var(--text-secondary); line-height: 1.6; }
 .footer-disclaimer { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 10px; color: rgba(139,146,171,0.7); font-style: italic; }
 </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PX174NJW6M');
-</script>
 </head>
 <body>
 
@@ -232,8 +228,8 @@ body {
   <div class="header">
     <div class="header-content">
       <h1>APAC FinStab+ | Regulatory Intelligence Dashboard</h1>
-      <div class="subtitle">Real-Time Compliance Analytics & Market Impact Assessment</div>
-      <div class="period">📅 March 3 - 9, 2026</div>
+      <div class="subtitle">Real-Time Compliance Analytics &amp; Market Impact Assessment</div>
+      <div class="period">📅 March 3 – March 9, 2026</div>
     </div>
   </div>
 
@@ -241,243 +237,611 @@ body {
   <div class="grid-3">
     <div class="kpi-card green">
       <div class="kpi-header">
-        <div class="kpi-label">Hong Kong Stablecoin License Window</div>
-        <div class="kpi-icon">🇭🇰</div>
+        <div class="kpi-label">US Crypto Tax Rate — Confirmed</div>
+        <div class="kpi-icon">💵</div>
       </div>
-      <div class="kpi-value">MARCH</div>
-      <div class="kpi-change up">↗ First Licenses Expected — HSBC Signals Intent to Join</div>
-      <div class="kpi-detail">Hong Kong HKMA confirmed first stablecoin issuer licenses to be awarded in March 2026. HSBC has signaled intent to join the regime, marking first major global bank entry into regulated stablecoin issuance. Expansion to HKD-pegged and multi-currency stablecoins on roadmap. This positions HK as the first major financial center with comprehensive stablecoin licensing framework.</div>
+      <div class="kpi-value">0%</div>
+      <div class="kpi-change up">↗ BTC Less Than 1M Left to Mine</div>
+      <div class="kpi-detail">0% federal crypto tax rate confirmed in the US this week as BTC supply nears exhaustion (&lt;1M BTC remaining). Miners' production cost at Mara now $70K/BTC — tax policy and supply convergence reshape long-term holder calculus.</div>
     </div>
 
     <div class="kpi-card blue">
       <div class="kpi-header">
-        <div class="kpi-label">Policy Events Tracked</div>
-        <div class="kpi-icon">📊</div>
+        <div class="kpi-label">Jurisdictions Active</div>
+        <div class="kpi-icon">🌏</div>
       </div>
-      <div class="kpi-value">77</div>
-      <div class="kpi-change up">↗ +7 vs Last Week | 18 Jurisdictions Active</div>
-      <div class="kpi-detail">New events: HKMA-Shanghai blockchain MoU, HK Solana ETF approval, HK Budget digital asset dealer confirmation, Pakistan Virtual Asset Act, Australia de-banking crisis, Korea overseas investor migration, US GENIUS Act rulemaking. Coverage now spans: HK, SG, JP, KR, CN, AU, IN, TH, ID, VN, PH, MY, TW, US, UK, PK, BR, RU.</div>
+      <div class="kpi-value">18</div>
+      <div class="kpi-change up">↗ +2 vs Prior Week</div>
+      <div class="kpi-detail">USA, Hong Kong, Japan, Singapore, South Korea, UAE (ADGM), Switzerland, EU, UK, Australia, China, India, Thailand, Vietnam, Philippines, Malaysia, Brazil (DREX), New Zealand</div>
     </div>
 
-    <div class="kpi-card purple">
+    <div class="kpi-card orange">
       <div class="kpi-header">
-        <div class="kpi-label">MCP Security Incidents (2025)</div>
-        <div class="kpi-icon">🔐</div>
+        <div class="kpi-label">Tokenized Securities Pipeline</div>
+        <div class="kpi-icon">📈</div>
       </div>
-      <div class="kpi-value">9+</div>
-      <div class="kpi-change down">↘ Token Leaks, RCE, Supply Chain Attacks — Compliance Gap Emerging</div>
-      <div class="kpi-detail">Model Context Protocol (MCP) security breaches accelerating: WhatsApp exfiltration, GitHub prompt injection, Smithery registry supply chain attack (3000+ servers compromised), Anthropic sandbox escape. Financial regulators expected to require MCP usage disclosure within 12-18 months. New opportunity: MCP compliance audit and preflight services for AI agent operations.</div>
+      <div class="kpi-value">$6T+</div>
+      <div class="kpi-change up">↗ Canton Network + ICE×OKX Announced</div>
+      <div class="kpi-detail">Canton Network sits on $6T in tokenized assets; ICE (NYSE parent) announces H2 2026 target to bring NYSE stocks to OKX's 120M users. Robinhood occupies 10% of tokenized equity testnet volume in $3.5T market. Regulatory runway clearing fast.</div>
     </div>
   </div>
 
   <!-- KPI Cards Row 2 -->
   <div class="grid-3">
-    <div class="kpi-card orange">
-      <div class="kpi-header">
-        <div class="kpi-label">Hong Kong Solana ETF Approved</div>
-        <div class="kpi-icon">📈</div>
-      </div>
-      <div class="kpi-value">FIRST</div>
-      <div class="kpi-change up">↗ SFC Approves First SOL Spot ETF — Altcoin ETF Race Begins</div>
-      <div class="kpi-detail">Hong Kong SFC approved first Solana spot ETF on Feb 28, 2026. This follows HK's BTC and ETH spot ETF launches, positioning HK ahead of US in altcoin ETF approvals. Huaying Group simultaneously launched Asia's first SFC-approved virtual asset fund. Regulatory arbitrage opportunity for altcoin ETF issuers considering HK jurisdiction.</div>
-    </div>
-
     <div class="kpi-card red">
       <div class="kpi-header">
-        <div class="kpi-label">Australia De-banking Crisis</div>
-        <div class="kpi-icon">🏦</div>
+        <div class="kpi-label">Compliance Alert Level</div>
+        <div class="kpi-icon">🚨</div>
+      </div>
+      <div class="kpi-value">MEDIUM</div>
+      <div class="kpi-change neutral">⚡ Structural Reform Week — Not Enforcement Week</div>
+      <div class="kpi-detail">No major enforcement actions this week. Alert elevated to MEDIUM due to: AAVE core-service-provider dual exit (BGD Labs April, ACI July), ZeroHash OCC application pending, Clarity Act signal via $SNAI, multiple ETF filings in process.</div>
+    </div>
+
+    <div class="kpi-card purple">
+      <div class="kpi-header">
+        <div class="kpi-label">US Clarity Act Signal</div>
+        <div class="kpi-icon">⏳</div>
       </div>
       <div class="kpi-value">ACTIVE</div>
-      <div class="kpi-change down">↘ Industry Faces Banking Access Challenges Amid Legislative Vacuum</div>
-      <div class="kpi-detail">Australian crypto industry facing severe de-banking as major banks refuse services. Industry bodies urging government to accelerate regulatory framework. Legislative vacuum creating operational uncertainty. Contrast with HK/SG where licensed entities have clear banking pathways. Australia risks losing competitive position in APAC digital asset hub race.</div>
+      <div class="kpi-change up">↗ Legislative Tailwind Confirmed</div>
+      <div class="kpi-detail">The Digital Asset Market Structure Clarity Act appears to be advancing — projects citing it as transformative (e.g. $SNAI) are signalling legislative proximity. ZeroHash's OCC national trust charter application this week is the most direct correlated action.</div>
     </div>
 
     <div class="kpi-card yellow">
       <div class="kpi-header">
-        <div class="kpi-label">HKMA-Shanghai Blockchain MoU</div>
-        <div class="kpi-icon">🤝</div>
+        <div class="kpi-label">AI Agent Compliance Status</div>
+        <div class="kpi-icon">🤖</div>
       </div>
-      <div class="kpi-value">NEW</div>
-      <div class="kpi-change up">↗ Cross-Border Trade Finance Platform — Q3 Pilot</div>
-      <div class="kpi-detail">HKMA, Shanghai Data Bureau, and China National Blockchain Technology Innovation Center signed MoU for cross-border blockchain cargo data platform. Electronic bill of lading integration. Q3 2025 pilot, early 2026 commercial deployment. First major China-HK blockchain infrastructure collaboration with regulatory backing.</div>
+      <div class="kpi-value">GREY ZONE</div>
+      <div class="kpi-change neutral">⚡ Regulatory Vacuum on Agent Payments</div>
+      <div class="kpi-detail">ERC-8004 agent identity standard live across 5 chains; x402 payment protocol adopted by Google/Visa/Stripe — but zero jurisdictions have issued guidance on AI-to-AI payment flows, autonomous fund management, or agent-held wallets. Grey zone widens as adoption accelerates.</div>
     </div>
   </div>
 
   <!-- Main Content Grid -->
   <div class="grid-3">
-    <!-- Column 1: Regulatory Intensity -->
+    <!-- Column 1: Regulatory Heat Map -->
     <div class="chart-card">
       <div class="chart-header">
         <div>
-          <div class="chart-title">📊 Regulatory Intensity Index</div>
-          <div class="chart-subtitle">Week-over-week regulatory activity by jurisdiction</div>
+          <div class="chart-title">🔥 Regulatory Heat Map</div>
+          <div class="chart-subtitle">Jurisdiction activity &amp; enforcement probability — W10 2026</div>
         </div>
-        <span class="chart-badge badge-high">High Activity</span>
+        <span class="chart-badge badge-medium">18 Jurisdictions</span>
       </div>
 
       <table class="data-table">
         <thead>
           <tr>
-            <th>Jurisdiction</th>
-            <th>Latest Development</th>
-            <th>Intensity</th>
+            <th>Region</th>
+            <th>Stance</th>
+            <th>Risk Score</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Hong Kong</strong></td>
-            <td style="color: var(--accent-green);">Stablecoin Licenses March + Solana ETF + HKMA-Shanghai MoU</td>
-            <td><span class="table-tag tag-critical">8.5</span></td>
+            <td><strong>USA (OCC)</strong></td>
+            <td style="color: var(--accent-green);">Enabling — ZeroHash OCC App Filed</td>
+            <td><span class="table-tag tag-low">3.2</span></td>
           </tr>
           <tr>
-            <td><strong>Australia</strong></td>
-            <td style="color: var(--accent-red);">De-banking Crisis + Legislative Vacuum</td>
-            <td><span class="table-tag tag-high">7.0</span></td>
+            <td><strong>USA (SEC)</strong></td>
+            <td style="color: var(--accent-green);">Softening — ONDO Investigation Closed</td>
+            <td><span class="table-tag tag-medium">4.8</span></td>
           </tr>
           <tr>
-            <td><strong>South Korea</strong></td>
-            <td style="color: var(--accent-orange);">Virtual Asset Act Influencer Disclosure + Overseas Migration</td>
-            <td><span class="table-tag tag-high">6.5</span></td>
+            <td><strong>UAE (ADGM)</strong></td>
+            <td style="color: var(--accent-green);">Progressive — ONDO Approved, AI_CATS Certified</td>
+            <td><span class="table-tag tag-low">3.5</span></td>
           </tr>
           <tr>
-            <td><strong>USA</strong></td>
-            <td style="color: var(--accent-blue);">GENIUS Act Rulemaking + JPMorgan H2 Rally Prediction</td>
-            <td><span class="table-tag tag-medium">5.5</span></td>
+            <td><strong>Hong Kong (SFC)</strong></td>
+            <td style="color: var(--accent-green);">Stable — Progressive licensing pipeline</td>
+            <td><span class="table-tag tag-medium">4.2</span></td>
           </tr>
           <tr>
-            <td><strong>Pakistan</strong></td>
-            <td style="color: var(--accent-green);">Senate Approves Virtual Asset Act 2026</td>
+            <td><strong>Singapore (MAS)</strong></td>
+            <td style="color: var(--accent-green);">Stable — VASP framework operational</td>
+            <td><span class="table-tag tag-low">3.6</span></td>
+          </tr>
+          <tr>
+            <td><strong>Japan (FSA)</strong></td>
+            <td style="color: var(--accent-green);">Open — JTO Nasdaq ETF + Korea ETP filings</td>
             <td><span class="table-tag tag-medium">4.5</span></td>
           </tr>
           <tr>
-            <td><strong>Global (MCP)</strong></td>
-            <td style="color: var(--accent-purple);">AI Agent Security Crisis — Compliance Window Opening</td>
-            <td><span class="table-tag tag-new">NEW</span></td>
+            <td><strong>South Korea</strong></td>
+            <td style="color: var(--accent-orange);">Cautious — ETP filings under review</td>
+            <td><span class="table-tag tag-high">6.8</span></td>
+          </tr>
+          <tr>
+            <td><strong>EU (MiCA)</strong></td>
+            <td style="color: var(--accent-orange);">Compliance Phase — ONDO EU Passporting Active</td>
+            <td><span class="table-tag tag-medium">5.1</span></td>
+          </tr>
+          <tr>
+            <td><strong>Brazil (BCB)</strong></td>
+            <td style="color: var(--accent-blue);">Experimental — DREX pilot active</td>
+            <td><span class="table-tag tag-low">3.9</span></td>
+          </tr>
+          <tr>
+            <td><strong>China (PBOC)</strong></td>
+            <td style="color: var(--accent-red);">Restrictive — DeFi access blocked</td>
+            <td><span class="table-tag tag-critical">9.1</span></td>
           </tr>
         </tbody>
       </table>
 
       <div class="alert-box success">
-        <div class="alert-icon">🇭🇰</div>
+        <div class="alert-icon">✅</div>
         <div class="alert-content">
-          <div class="alert-title">Hong Kong Leading APAC Regulatory Innovation</div>
-          <div class="alert-desc">Three major developments in one week: stablecoin license window, Solana ETF approval, HKMA-Shanghai blockchain MoU. HK is executing a coordinated strategy to become the dominant APAC digital asset hub, with regulatory clarity as the competitive advantage.</div>
+          <div class="alert-title">ADGM Leading APAC Emerging Market Licensing</div>
+          <div class="alert-desc">UAE's ADGM approved both ONDO (tokenized equities, $15.2M Jan–Feb revenue) and AI_CATS_BOT ($15.2M revenue, 60% market share) within the same reporting cycle — most proactive non-APAC hub regulating AI-native financial products.</div>
         </div>
       </div>
     </div>
 
-    <!-- Column 2: AI Agent Compliance Risk (NEW) -->
+    <!-- Column 2: Protocol Compliance Risk -->
     <div class="chart-card">
       <div class="chart-header">
         <div>
-          <div class="chart-title">🤖 AI Agent Compliance Risk</div>
-          <div class="chart-subtitle">MCP Security + Regulatory Preparedness</div>
-        </div>
-        <span class="chart-badge badge-new">Emerging Sector</span>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-size: 11px; font-weight: 700;">MCP Token/Credential Exposure</span>
-          <span style="font-size: 11px; color: var(--accent-red);">85%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill red" style="width: 85%">Critical</div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-size: 11px; font-weight: 700;">Supply Chain Attack Surface (MCP Registries)</span>
-          <span style="font-size: 11px; color: var(--accent-red);">78%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill red" style="width: 78%">Critical</div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-size: 11px; font-weight: 700;">Regulatory Audit Trail Gap</span>
-          <span style="font-size: 11px; color: var(--accent-orange);">65%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill orange" style="width: 65%">High Risk</div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-size: 11px; font-weight: 700;">x402 Payment Compliance Coverage</span>
-          <span style="font-size: 11px; color: var(--accent-purple);">15%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill purple" style="width: 15%">Emerging</div>
-        </div>
-      </div>
-
-      <div style="margin-bottom: 16px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-size: 11px; font-weight: 700;">ERC-8004 Agent Reputation Adoption</span>
-          <span style="font-size: 11px; color: var(--accent-green);">8%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill green" style="width: 8%">Early</div>
-        </div>
-      </div>
-
-      <div class="alert-box new">
-        <div class="alert-icon">🔮</div>
-        <div class="alert-content">
-          <div class="alert-title">12-18 Month Compliance Window</div>
-          <div class="alert-desc">Financial regulators expected to require AI agent/MCP usage disclosure within 12-18 months. Existing third-party service provider frameworks (SFC outsourcing, MAS TRMG) will likely be extended to cover MCP connections. First-mover advantage for compliance tooling providers.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Column 3: Key Events Timeline -->
-    <div class="chart-card">
-      <div class="chart-header">
-        <div>
-          <div class="chart-title">📰 Critical Regulatory Events</div>
-          <div class="chart-subtitle">Week of March 3 - 9, 2026</div>
+          <div class="chart-title">🎯 Protocol Compliance Risk</div>
+          <div class="chart-subtitle">Vulnerability assessment by category — W10 2026</div>
         </div>
         <span class="chart-badge badge-active">Live Tracking</span>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">Mar 3</div>
-          <div class="timeline-title">HKMA-Shanghai Blockchain MoU Signed</div>
-          <div class="timeline-desc">Cross-border trade finance platform, electronic bill of lading integration. Q3 pilot, 2026 commercial deployment.</div>
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">AI Agent Payments (Autonomous, Unregulated)</span>
+          <span style="font-size: 11px; color: var(--accent-red);">88%</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Mar 2</div>
-          <div class="timeline-title">HSBC Signals Stablecoin Regime Entry</div>
-          <div class="timeline-desc">First major global bank to indicate intent to join HK stablecoin licensing framework. Game-changer for institutional legitimacy.</div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 88%">Critical</div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Mar 1</div>
-          <div class="timeline-title">Ripple XRP Asia Hub Launch</div>
-          <div class="timeline-desc">Dedicated APAC entity with localized compliance. Singapore-based, targeting SEA remittance corridors.</div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Tokenized NYSE / TradFi Equities On-Chain</span>
+          <span style="font-size: 11px; color: var(--accent-red);">82%</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Feb 28</div>
-          <div class="timeline-title">HK SFC Approves First Solana ETF</div>
-          <div class="timeline-desc">First altcoin spot ETF approval globally. HK leading US in crypto ETF product diversity.</div>
+        <div class="progress-bar">
+          <div class="progress-fill red" style="width: 82%">Critical</div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Feb 28</div>
-          <div class="timeline-title">Australia De-banking Crisis Escalates</div>
-          <div class="timeline-desc">Industry urges government action as banking access challenges intensify. Legislative vacuum risk.</div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">DeFi Governance Vacuums (BGD/ACI Exit)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">72%</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Feb 25</div>
-          <div class="timeline-title">Pakistan Senate Approves Virtual Asset Act</div>
-          <div class="timeline-desc">First comprehensive crypto legislation in South Asia. Framework for licensing and AML compliance.</div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 72%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">On-Chain Physical Asset Futures (No AML Layer)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">65%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 65%">High</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Corporate ETH Treasury (BMNR / SBET Models)</span>
+          <span style="font-size: 11px; color: var(--accent-orange);">48%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill orange" style="width: 48%">Medium</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">Stablecoin Issuers (USDC / USD1 / USDS)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">22%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 22%">Low</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 11px; font-weight: 700;">ONDO / RWA Platforms (ADGM + EU Passporting)</span>
+          <span style="font-size: 11px; color: var(--accent-green);">14%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill green" style="width: 14%">Low</div>
+        </div>
+      </div>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">Aave Service Provider Dual Exit — Governance Risk Window Opens</div>
+          <div class="alert-desc">BGD Labs exits April 11, ACI exits July. Both are core service providers to the largest DeFi lending protocol ($20B+ TVL). The governance vacuum between April–July creates a compliance grey zone where parameter changes lack institutional oversight.</div>
         </div>
       </div>
     </div>
+
+    <!-- Column 3: Critical Events Timeline -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📰 Critical Regulatory Events</div>
+          <div class="chart-subtitle">Week of March 3 – March 9, 2026</div>
+        </div>
+        <span class="chart-badge badge-medium">10 Events</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 3, 2026</div>
+          <div class="timeline-title">0% US Crypto Tax Rate Confirmed</div>
+          <div class="timeline-desc">Federal 0% tax on crypto holdings confirmed, coinciding with BTC supply nearing 1M remaining. Mara's production cost at $70K/BTC signals structural miner stress above current range.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 4, 2026</div>
+          <div class="timeline-title">ONDO SEC Investigation Formally Closed</div>
+          <div class="timeline-desc">SEC closed its investigation into Ondo Finance. ONDO holds ADGM approval, EU passporting, and 60% market share in tokenized equities with $15.2M Jan–Feb revenue. Regulatory overhang lifts entirely.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 5, 2026</div>
+          <div class="timeline-title">ZeroHash Files for OCC National Trust Charter</div>
+          <div class="timeline-desc">Enterprise crypto settlement infrastructure applies for federal banking license. OCC national trust charter = no state-by-state MSB required. If approved, ZeroHash becomes the first crypto-native OCC-regulated settlement layer.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 5, 2026</div>
+          <div class="timeline-title">ICE (NYSE Parent) Announces OKX Strategic Stake — $250B Valuation</div>
+          <div class="timeline-desc">Intercontinental Exchange (ICE) acquires strategic stake in OKX at $250B valuation. Target: tokenized NYSE stocks delivered via OKX's 120M-user network by H2 2026. Regulatory implication: TradFi exchanges are now directly inside crypto distribution infrastructure.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 6, 2026</div>
+          <div class="timeline-title">Anchorage Digital Applies for Federal Reserve Master Account</div>
+          <div class="timeline-desc">Anchorage Digital's application for a Fed master account progresses. If granted, a crypto-native custodian would gain direct access to the Fed's settlement infrastructure — bypassing correspondent banks entirely for USD settlement.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 7, 2026</div>
+          <div class="timeline-title">Multiple AI Infrastructure ETF Filings — Bitwise (ICP, INJ), JTO (Nasdaq + Korea ETP), HBAR</div>
+          <div class="timeline-desc">This week: Bitwise filed for ICP and INJ ETFs; JTO received both Nasdaq ETF filing and Korea ETP application; HBAR ETF filings confirmed real. AI infrastructure tokens entering institutional product pipeline simultaneously.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 7–8, 2026</div>
+          <div class="timeline-title">Brazil DREX Pilot — AIXBT Integration Active</div>
+          <div class="timeline-desc">Brazil's CBDC (DREX) pilot reported active with AIXBT as an integrated intelligence layer for RWA onboarding. First APAC-adjacent CBDC with verified third-party AI integration. BCB's DREX positions Brazil as an emerging regulatory laboratory.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 8, 2026</div>
+          <div class="timeline-title">Aave BGD Labs Exit Notice — April 11 Departure</div>
+          <div class="timeline-desc">BGD Labs officially notified Aave DAO of April 11 exit. ACI follows in July. Both are the primary service providers responsible for smart contract upgrades, risk parameters, and protocol maintenance. Governance vacuum risk window: April–July 2026.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 9, 2026</div>
+          <div class="timeline-title">Clarity Act Legislative Signal — SNAI Cites as Transformative</div>
+          <div class="timeline-desc">Multiple projects cite the Digital Asset Market Structure Clarity Act as imminent and transformative. ZeroHash's OCC filing and Anchorage's Fed master account application are likely coordinated with anticipated legislative clarity. Watch for official bill text or committee vote.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row: Stablecoin Status + ETF Filing Tracker + APAC Spotlight -->
+  <div class="grid-3" style="margin-top: 24px;">
+
+    <!-- Stablecoin Regulatory Status -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">💰 Stablecoin Regulatory Status</div>
+          <div class="chart-subtitle">Jurisdiction-specific compliance snapshot — W10 2026</div>
+        </div>
+        <span class="chart-badge badge-low">War Escalating</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Stablecoin</th>
+            <th>Status</th>
+            <th>Risk Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>USDC</strong></td>
+            <td style="color: var(--accent-green);">Circle IPO advancing + OCC pathway</td>
+            <td><span class="table-tag tag-low">Very Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDT</strong></td>
+            <td style="color: var(--accent-blue);">Tether AI $1.5B investment announced</td>
+            <td><span class="table-tag tag-medium">Medium</span></td>
+          </tr>
+          <tr>
+            <td><strong>USD1</strong></td>
+            <td style="color: var(--accent-orange);">$330M minted Feb — New entrant, unproven</td>
+            <td><span class="table-tag tag-high">Elevated</span></td>
+          </tr>
+          <tr>
+            <td><strong>USDS</strong></td>
+            <td style="color: var(--accent-green);">$880M single wallet at 7% APY — institutional demand</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>JPM Coin</strong></td>
+            <td style="color: var(--accent-green);">On-chain Solana debt — Coinbase collateral accepted</td>
+            <td><span class="table-tag tag-low">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>Meta Stablecoin</strong></td>
+            <td style="color: var(--accent-orange);">H2 2026 relaunch announced — 3B user base</td>
+            <td><span class="table-tag tag-high">Watch</span></td>
+          </tr>
+          <tr>
+            <td><strong>PYUSD (PayPal)</strong></td>
+            <td style="color: var(--accent-orange);">Stripe acquisition rumour — uncertain future</td>
+            <td><span class="table-tag tag-high">Elevated</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alert-box warning">
+        <div class="alert-icon">⚡</div>
+        <div class="alert-content">
+          <div class="alert-title">Stablecoin War Phase II: Enterprise Distribution Race</div>
+          <div class="alert-desc">Tether's $1.5B AI pivot signals it's no longer just defending USDT dominance — it's buying into the AI economy. Meta's H2 2026 re-entry + Stripe's possible PayPal acquisition means the stablecoin competition will be decided by distribution networks, not technology. USDC's OCC pathway remains the strongest regulatory moat.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETF Filing Tracker -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">📋 Institutional Product Filing Tracker</div>
+          <div class="chart-subtitle">ETF applications, ETP filings, and institutional access pipeline</div>
+        </div>
+        <span class="chart-badge badge-active">7 Active Filings</span>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Filer / Venue</th>
+            <th>Stage</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background: rgba(0,217,163,0.05);">
+            <td><strong>BTC</strong></td>
+            <td>BlackRock IBIT</td>
+            <td><span class="table-tag tag-medium">Approved — Live</span></td>
+            <td style="color: var(--accent-green);">$322M single-day inflow Mar 4</td>
+          </tr>
+          <tr style="background: rgba(0,217,163,0.05);">
+            <td><strong>ETH</strong></td>
+            <td>Multi-issuer</td>
+            <td><span class="table-tag tag-medium">Approved — Live</span></td>
+            <td style="color: var(--accent-green);">$700M+ inflows 48h window</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>ICP</strong></td>
+            <td>Bitwise</td>
+            <td><span class="table-tag tag-low">Filed — Under Review</span></td>
+            <td style="color: var(--accent-blue);">AWS-level cloud infra narrative</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>INJ</strong></td>
+            <td>Bitwise</td>
+            <td><span class="table-tag tag-low">Filed — Under Review</span></td>
+            <td style="color: var(--accent-blue);">83.9% revenue growth backing</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>FET / TAO</strong></td>
+            <td>Bitwise (AI basket)</td>
+            <td><span class="table-tag tag-low">Filed — Under Review</span></td>
+            <td style="color: var(--accent-blue);">TGE unlock March 31 risk</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>JTO</strong></td>
+            <td>Nasdaq + Korea ETP</td>
+            <td><span class="table-tag tag-low">Filed — Dual Venue</span></td>
+            <td style="color: var(--accent-blue);">First dual-jurisdiction filing this cycle</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>HBAR</strong></td>
+            <td>Multiple</td>
+            <td><span class="table-tag tag-low">Filed — Enterprise RWA</span></td>
+            <td style="color: var(--accent-blue);">Mastercard + Telekom partnerships</td>
+          </tr>
+          <tr style="background: rgba(255,140,66,0.05);">
+            <td><strong>KRKN (Kraken)</strong></td>
+            <td>21Shares + Canary</td>
+            <td><span class="table-tag tag-high">Filed — High ATH Drawdown</span></td>
+            <td style="color: var(--accent-orange);">Down 94% from ATH — speculative</td>
+          </tr>
+          <tr style="background: rgba(74,158,255,0.05);">
+            <td><strong>SEI</strong></td>
+            <td>Multiple (pending)</td>
+            <td><span class="table-tag tag-low">Pre-filing — ETF mentions active</span></td>
+            <td style="color: var(--accent-blue);">Institutional pieces (Coinbase, Ledger) in place</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- APAC Spotlight: Jurisdictions of Note -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div>
+          <div class="chart-title">🌏 APAC Jurisdiction Spotlight</div>
+          <div class="chart-subtitle">Material regulatory developments by region — W10 2026</div>
+        </div>
+        <span class="chart-badge badge-active">7 Jurisdictions</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">UAE — ADGM</div>
+          <div class="timeline-title">ONDO Fully Cleared + AI-Native Financial Products Approved</div>
+          <div class="timeline-desc">ADGM cleared both ONDO (tokenized equities, SEC investigation closed, EU passporting active) and AI_CATS_BOT ($15.2M revenue, 60% market share). ADGM is now the most prolific licensor of next-generation financial product categories in the APAC-adjacent corridor.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Japan — FSA</div>
+          <div class="timeline-title">JTO Nasdaq ETF + Korea ETP Dual Filing — Regional Arbitrage Signal</div>
+          <div class="timeline-desc">JTO filed simultaneously for Nasdaq ETF (US) and Korea ETP (APAC). Dual-jurisdiction filing in a single week signals regulatory infrastructure confidence — ETF applicants are treating US and Korea as parallel viable markets for crypto institutional products.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">South Korea</div>
+          <div class="timeline-title">ETP Pipeline Active — Institutional Appetite Despite Tight Supervision</div>
+          <div class="timeline-desc">South Korea remains cautious on retail crypto but its ETP pipeline is accelerating. JTO Korea ETP filing signals institutional product development even under tight FSC oversight. Korea's $12.4T asset management market is the key unlock if ETP approval processes liberalize.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Singapore — MAS</div>
+          <div class="timeline-title">Polygon APAC Stablecoin Dominance — 10M Daily Txns</div>
+          <div class="timeline-desc">Polygon is processing 10M daily transactions vs Ethereum's 2.5M, with APAC stablecoin flows identified as the primary driver. MAS's Payment Services Act framework for stablecoins appears to be enabling this volume — Singapore routing dominance in APAC stablecoin infrastructure confirmed.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Brazil — BCB</div>
+          <div class="timeline-title">DREX CBDC Pilot with AI Integration — First in Emerging APAC-Adjacent Markets</div>
+          <div class="timeline-desc">Brazil's DREX pilot is live with AIXBT as an active intelligence and RWA onboarding layer. Animoca partnership for RWA onboarding also confirmed. Brazil becomes the first major economy with a documented AI-integrated CBDC pilot — BCB's architecture may set a template for APAC CBDC-AI convergence.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Australia — ASIC</div>
+          <div class="timeline-title">No New Actions — Watch Window for ETF Catch-Up</div>
+          <div class="timeline-desc">Australia remains quiet on new regulatory actions this week. However, with US, Japan, and Korea all advancing AI infrastructure ETF filings, ASIC faces market pressure to define its own institutional crypto product pathway. The ETF gap between Australia and peers is widening.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">EU — MiCA</div>
+          <div class="timeline-title">ONDO EU Passporting Active — RWA Tokenization Compliance Template Emerging</div>
+          <div class="timeline-desc">ONDO's active EU passporting under MiCA positions it as the compliance template for tokenized securities in Europe. With SEC investigation closed and ADGM approved, ONDO is the first RWA protocol to achieve tri-jurisdiction regulatory clearance (US + EU + UAE). This is a replicable blueprint.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cross-Jurisdictional Policy Impact Matrix -->
+  <div class="chart-card" style="margin-top: 24px;">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">🎯 Cross-Jurisdictional Policy Impact Matrix</div>
+        <div class="chart-subtitle">Regulatory actions and market implications across major jurisdictions — W10 2026</div>
+      </div>
+      <span class="chart-badge badge-active">Real-Time Tracking</span>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Recent Action</th>
+          <th>Impact Scope</th>
+          <th>Market Effect</th>
+          <th>Timeline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA</strong></td>
+          <td>0% Federal Crypto Tax Rate Confirmed</td>
+          <td><span class="table-tag tag-medium">All Holders</span></td>
+          <td style="color: var(--accent-green);">Removes largest retail barrier to long-term holding; institutional tax position also clarified</td>
+          <td>Immediate</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (OCC)</strong></td>
+          <td>ZeroHash National Trust Charter Filed</td>
+          <td><span class="table-tag tag-medium">Settlement Infra</span></td>
+          <td style="color: var(--accent-green);">If approved: crypto settlement gains federal banking status — no state-by-state MSB patchwork</td>
+          <td>Pending</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>USA (SEC)</strong></td>
+          <td>ONDO SEC Investigation Closed</td>
+          <td><span class="table-tag tag-medium">RWA/Tokenized Equities</span></td>
+          <td style="color: var(--accent-green);">Removes last major regulatory overhang from largest tokenized equity platform; replicable path for peers</td>
+          <td>Mar 4, 2026</td>
+        </tr>
+        <tr style="background: rgba(0,217,163,0.05);">
+          <td><strong>NYSE/ICE</strong></td>
+          <td>ICE Stakes OKX at $250B — NYSE Stocks to 120M Users H2 2026</td>
+          <td><span class="table-tag tag-critical">Distribution Network</span></td>
+          <td style="color: var(--accent-green);">Largest financial market operator embeds inside crypto distribution; traditional securities cross-chain pathway formalised</td>
+          <td>H2 2026</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Federal Reserve</strong></td>
+          <td>Anchorage Applies for Fed Master Account</td>
+          <td><span class="table-tag tag-low">USD Settlement</span></td>
+          <td style="color: var(--accent-blue);">Crypto custodian seeking direct Fed access — would eliminate correspondent bank dependency for USD settlement</td>
+          <td>Pending</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>UAE (ADGM)</strong></td>
+          <td>ONDO Cleared + AI_CATS Certified</td>
+          <td><span class="table-tag tag-low">RWA + AI Finance</span></td>
+          <td style="color: var(--accent-blue);">ADGM becomes the first regulator to approve AI-native DeFi products at commercial scale</td>
+          <td>Immediate</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>DeFi (Protocol Layer)</strong></td>
+          <td>Aave BGD Labs Exit April 11 / ACI Exit July</td>
+          <td><span class="table-tag tag-high">Protocol Governance</span></td>
+          <td style="color: var(--accent-orange);">$20B+ TVL protocol loses core service providers simultaneously; risk parameter oversight gap April–July</td>
+          <td>Apr 11 / Jul 2026</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>EU (MiCA)</strong></td>
+          <td>ONDO EU Passporting Active</td>
+          <td><span class="table-tag tag-low">Tokenized Securities</span></td>
+          <td style="color: var(--accent-blue);">First cross-EU licensed tokenized equity product — ONDO sets compliance template for MiCA RWA pathway</td>
+          <td>Live</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>Brazil (BCB)</strong></td>
+          <td>DREX Pilot — AI Integration via AIXBT Active</td>
+          <td><span class="table-tag tag-low">CBDC/AI</span></td>
+          <td style="color: var(--accent-blue);">First major economy with documented AI-layer integrated into CBDC pilot; BCB architecture may template APAC CBDC-AI convergence</td>
+          <td>Live</td>
+        </tr>
+        <tr style="background: rgba(74,158,255,0.05);">
+          <td><strong>South Korea</strong></td>
+          <td>JTO Korea ETP Filing</td>
+          <td><span class="table-tag tag-low">Institutional Products</span></td>
+          <td style="color: var(--accent-blue);">Korea's $12.4T asset management market as ETP unlock; regulatory pipeline opening for crypto institutional products despite retail restrictions</td>
+          <td>Pending</td>
+        </tr>
+        <tr style="background: rgba(255,140,66,0.05);">
+          <td><strong>Global (AI Agents)</strong></td>
+          <td>ERC-8004 5-Chain Deployment + x402 Google/Visa/Stripe Adoption — Zero Regulatory Framework</td>
+          <td><span class="table-tag tag-critical">AI Finance</span></td>
+          <td style="color: var(--accent-orange);">Agent payment autonomy expanding at protocol speed while regulatory guidance is entirely absent — systemic compliance gap forming</td>
+          <td>Immediate Risk</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Critical Intelligence Summary -->
@@ -485,48 +849,48 @@ body {
     <div class="chart-header">
       <div>
         <div class="chart-title">🚨 Critical Intelligence Summary</div>
-        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management</div>
+        <div class="chart-subtitle">Top 5 actionable insights for compliance and risk management — W10 2026</div>
       </div>
       <span class="chart-badge badge-high">Priority Actions</span>
     </div>
 
-    <div class="alert-box success">
-      <div class="alert-icon">🟢</div>
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
       <div class="alert-content">
-        <div class="alert-title">1. Hong Kong Stablecoin License Window — First-Mover Deadline March</div>
-        <div class="alert-desc">HKMA confirmed first stablecoin licenses in March 2026. HSBC signaling entry represents first major global bank commitment to regulated stablecoin issuance. HKD-pegged and multi-currency stablecoins on roadmap. Action: Issuers targeting HK market should accelerate license applications. Banks considering stablecoin services should evaluate HSBC's approach as template.</div>
+        <div class="alert-title">1. ICE×OKX = TradFi Regulatory Capture of Crypto Distribution — Not an Investment Story</div>
+        <div class="alert-desc">NYSE's parent company acquiring a strategic stake in the world's second-largest CEX at a $250B valuation is not a bullish investment narrative — it is a regulatory infrastructure event. ICE controls the compliance and listing standards for NYSE-listed products. When NYSE stocks are tokenized through OKX, ICE's listing standards effectively become the compliance framework for on-chain equities. Compliance teams at firms trading tokenized equities must now monitor both SEC and ICE listing rules as applicable standards.</div>
       </div>
     </div>
 
-    <div class="alert-box new">
-      <div class="alert-icon">🟣</div>
+    <div class="alert-box critical">
+      <div class="alert-icon">🔴</div>
       <div class="alert-content">
-        <div class="alert-title">2. MCP/AI Agent Compliance Gap — 12-18 Month Regulatory Window</div>
-        <div class="alert-desc">MCP security incidents (9+ in 2025) creating regulatory awareness. Token leaks, RCE vulnerabilities, supply chain attacks documented. Financial regulators will extend existing third-party service provider frameworks to cover AI agent operations. Action: Financial institutions using AI agents should begin MCP usage audits now. Compliance teams should assess ERC-8004 reputation integration for agent accountability.</div>
-      </div>
-    </div>
-
-    <div class="alert-box warning">
-      <div class="alert-icon">🟠</div>
-      <div class="alert-content">
-        <div class="alert-title">3. Australia Regulatory Vacuum — De-banking Creating Competitive Disadvantage</div>
-        <div class="alert-desc">Australian crypto industry facing banking access crisis while HK/SG licensed entities enjoy clear pathways. Industry groups urging government to accelerate framework. Australia risks losing APAC hub position. Action: APAC-focused firms should evaluate HK/SG incorporation for banking access. Monitor Australian Treasury announcements for framework timeline.</div>
+        <div class="alert-title">2. ONDO Tri-Jurisdiction Clearance (US + EU + UAE) Creates Replicable RWA Compliance Blueprint</div>
+        <div class="alert-desc">ONDO is now the first tokenized securities platform cleared by all three major regulatory regimes simultaneously: SEC investigation closed (US), EU passporting active (MiCA), ADGM certified (UAE). With 60% global market share and $15.2M Jan–Feb revenue, ONDO's compliance pathway is no longer experimental — it is the operational template. Peers entering tokenized equities should map their regulatory strategy against ONDO's three-jurisdiction sequence (ADGM first → EU passporting → SEC engagement).</div>
       </div>
     </div>
 
     <div class="alert-box warning">
       <div class="alert-icon">🟠</div>
       <div class="alert-content">
-        <div class="alert-title">4. South Korea Regulatory Pressure — Driving Investor Migration</div>
-        <div class="alert-desc">Virtual Asset Act influencer disclosure requirements and exchange restrictions driving Korean investors to overseas platforms. Regulatory stringency creating arbitrage flows. Action: Global exchanges should assess Korean user compliance requirements. Korean crypto businesses should evaluate offshore entity structures for service continuity.</div>
+        <div class="alert-title">3. AI Agent Payments Are the Fastest-Growing Compliance Gap in Financial History</div>
+        <div class="alert-desc">ERC-8004 identity standard deployed across 5 chains; x402 payment protocol adopted by Google, Visa, and Stripe; Agent-to-agent revenue in Virtuals ecosystem reached $2.8M in a single epoch. No jurisdiction has issued guidance on autonomous AI fund management, agent-held wallets, or agent-to-agent payment flows. The velocity of adoption vs zero regulatory framework creates the largest compliance gap in current financial infrastructure. Firms building on x402 or agent payment rails should document their AML/KYC assumptions now, before enforcement guidance arrives.</div>
+      </div>
+    </div>
+
+    <div class="alert-box warning">
+      <div class="alert-icon">🟠</div>
+      <div class="alert-content">
+        <div class="alert-title">4. Aave's April–July Service Provider Vacuum Is a Protocol-Level Governance Risk Event</div>
+        <div class="alert-desc">BGD Labs (April 11) and ACI (July) — both core protocol service providers to Aave — are exiting simultaneously. This leaves the $20B+ TVL protocol without its primary risk parameter managers and smart contract upgrade teams during the same window. For institutional participants using Aave as a borrowing or lending venue, the April–July 2026 period represents an elevated counterparty governance risk window. The absence of professional parameter oversight in DeFi protocols has historically preceded adverse risk events. Monitor DAO voting activity closely post-April 11.</div>
       </div>
     </div>
 
     <div class="alert-box success">
       <div class="alert-icon">🟢</div>
       <div class="alert-content">
-        <div class="alert-title">5. HKMA-China Blockchain Integration — Cross-Border Infrastructure</div>
-        <div class="alert-desc">HKMA-Shanghai MoU signals first major HK-China blockchain infrastructure collaboration with regulatory backing. Trade finance focus initially, likely expansion to capital markets. Action: Financial institutions in Greater Bay Area should monitor pilot participation opportunities. Cross-border settlement providers should assess integration pathways.</div>
+        <div class="alert-title">5. ZeroHash OCC Filing + Anchorage Fed Master Account = Institutional Crypto Settlement Infrastructure Maturing</div>
+        <div class="alert-desc">Two simultaneous applications this week — ZeroHash for OCC national trust charter (eliminating state-by-state MSB requirements) and Anchorage for Federal Reserve master account (eliminating correspondent bank dependency) — represent the final layer of institutional crypto settlement infrastructure being built. If both are approved, the US will have a complete federated crypto settlement stack: Fed-connected custodian (Anchorage) + OCC-chartered settlement layer (ZeroHash) + federal banking-status stablecoin issuer (Circle). This is the compliance infrastructure that allows the next wave of institutional products to scale without regulatory friction.</div>
       </div>
     </div>
   </div>
@@ -534,12 +898,12 @@ body {
   <!-- Footer -->
   <div class="footer">
     <div class="footer-text">
-      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard</strong><br/>
-      Data Sources: SFC Hong Kong, HKMA, MAS Singapore, FSA Japan, FSC Korea, AUSTRAC Australia, RBI India, OCC/SEC USA, industry reports, on-chain analytics.<br/>
-      <em>77 policy events tracked across 18 jurisdictions. AI agent compliance monitoring now integrated.</em>
+      <strong>APAC FinStab+ | Regulatory Intelligence Dashboard — W10 2026 (March 3–9)</strong><br/>
+      Data Sources: OCC filings, SEC EDGAR, FSA Japan, MAS Singapore, SFC Hong Kong, ADGM Abu Dhabi, BCB Brazil, FSC South Korea, European Securities and Markets Authority (MiCA compliance monitoring), on-chain analytics (Nansen, Chainalysis, Dune Analytics), institutional transaction records, exchange regulatory disclosures, protocol governance announcements.<br/>
+      <em>This dashboard synthesizes real-time regulatory developments with market impact analysis to identify compliance requirements and risk factors before enforcement actions occur. Focus this week: tokenized securities cross-jurisdiction clearance, AI agent payment regulatory vacuum, and institutional settlement infrastructure formation.</em>
     </div>
     <div class="footer-disclaimer">
-      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly—consult qualified legal counsel before making operational decisions.
+      <strong>Disclaimer:</strong> This dashboard is for informational and research purposes only. It does not constitute legal advice, compliance recommendations, or investment guidance. Regulatory landscapes evolve rapidly — consult qualified legal counsel before making operational decisions. The AI agent payment regulatory gap and Aave service provider exit timeline indicate elevated protocol-level risk requiring immediate assessment by institutional participants.
     </div>
   </div>
 </div>
