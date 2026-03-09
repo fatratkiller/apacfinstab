@@ -72,6 +72,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Stablecoin Regulation APAC Comparison -->
+  <url>
+    <loc>https://apacfinstab.com/learn/stablecoin-regulation-apac-comparison.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Policy Tracker (Data-Driven) -->
   <url>
     <loc>https://apacfinstab.com/tracker/</loc>
