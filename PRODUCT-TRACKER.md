@@ -266,7 +266,7 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 | **"What is Agent Trust Score" 博客** | P0 | ✅ 完成 | 淑芬 | 03-02 |
 | **Compliance Preflight Spec** | P0 | ✅ 完成 | 志玲 | 03-02 |
 | **Preflight API 基础端点** | P0 | ✅ 完成 | 淑芬 | 03-08 |
-| **HK VASP Preflight规则** | P0 | 🔴 TODO | 志玲 | 03-10 |
+| **HK VASP Preflight规则** | P0 | ✅ 完成 | 志玲 | 03-09 |
 | Stablecoin场景数据整理 | P1 | 🔴 TODO | 志玲 | 03-14 |
 | **"Why AI Agents Need Preflight" 博客** | P1 | ✅ 完成 | 志玲 | 03-07 |
 | **Context API 加 session_id** | P0 | ✅ 完成 | 淑芬 | 03-08 |
@@ -443,6 +443,7 @@ Agent执行操作 → 我们的Preflight检查 → 生成Trust Score → 写入E
 
 | 日期 | 完成率 | 阻塞项 | 备注 |
 |------|--------|--------|------|
+| 03-09 | S2: 80% (8/10), S3: 50% (3/6), S3B: 40% (2/5) | 无 | HK VASP Preflight规则完成，API端点已添加 |
 | 03-08 | S2: 70% (7/10), S3: 50% (3/6), S3B: 40% (2/5) | 无 | session_id+waitlist+preflight端点+report_outcome全部完成 |
 | 03-07 | S2: 30% (3/10), S3: 50% (3/6), S3B: 40% (2/5) | 淑芬任务到期 | "Why Agents Need Preflight"博客完成 |
 | 03-06 | S2: 20% (2/10), S3: 50% (3/6), S3B: 40% (2/5) | 无 | MVP Spec完成，Sidecar技术方案已定义 |
