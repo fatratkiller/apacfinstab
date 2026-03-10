@@ -286,9 +286,9 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 | **MCP安全生态竞对分析** | P0 | ✅ 完成 | 志玲 | 03-03 |
 | **"MCP in Financial Services"博客** | P0 | ✅ 完成 | 志玲 | 03-05 |
 | **MVP Spec (发现+日志+风险评分)** | P0 | ✅ 完成 | 志玲 | 03-06 |
-| **Sidecar技术选型** | P1 | 🔴 TODO | 淑芬 | 03-10 |
+| **Sidecar技术选型** | P1 | ✅ 完成 | 淑芬 | 03-10 |
 | **MVP开发** | P1 | 🔴 TODO | 淑芬 | 03-14 |
-| **博客发布+waitlist** | P1 | 🔴 TODO | 志玲 | 03-10 |
+| **博客发布+waitlist** | P1 | ✅ 完成 | 志玲 | 03-10 |
 | **LinkedIn推广** | P2 | 🔴 TODO | FK | 03-14 |
 
 **MVP核心功能：**
@@ -322,7 +322,7 @@ Phase 3 (1年后): 预测准确率成为核心卖点
 | **ERC-8004技术规范研究** | P0 | ✅ 完成 | 志玲 | 03-07 |
 | **x402 Protocol分析** | P0 | ✅ 完成 | 志玲 | 03-07 |
 | **Trust Score → ERC-8004写入方案** | P1 | 🔴 TODO | 淑芬 | 03-14 |
-| **Bankrbot/Launchpad合规需求分析** | P1 | 🔴 TODO | 志玲 | 03-10 |
+| **Bankrbot/Launchpad合规需求分析** | P1 | ✅ 完成 | 志玲 | 03-10 |
 | **x402支付合规Preflight设计** | P2 | 🔴 TODO | 淑芬 | 03-21 |
 
 **Crypto整合路径：**
@@ -443,6 +443,7 @@ Agent执行操作 → 我们的Preflight检查 → 生成Trust Score → 写入E
 
 | 日期 | 完成率 | 阻塞项 | 备注 |
 |------|--------|--------|------|
+| 03-10 | S2: 80% (8/10), S3: 67% (4/6), S3B: 60% (3/5) | 无 | Sidecar技术选型完成(Node.js+MCP SDK+SQLite)，MCP博客+waitlist上线，Bankrbot合规分析完成 |
 | 03-09 | S2: 80% (8/10), S3: 50% (3/6), S3B: 40% (2/5) | 无 | HK VASP Preflight规则完成，API端点已添加 |
 | 03-08 | S2: 70% (7/10), S3: 50% (3/6), S3B: 40% (2/5) | 无 | session_id+waitlist+preflight端点+report_outcome全部完成 |
 | 03-07 | S2: 30% (3/10), S3: 50% (3/6), S3B: 40% (2/5) | 淑芬任务到期 | "Why Agents Need Preflight"博客完成 |
@@ -479,4 +480,4 @@ Agent执行操作 → 我们的Preflight检查 → 生成Trust Score → 写入E
 
 ---
 
-*最后更新: 2026-03-06 10:35*
+*最后更新: 2026-03-10 10:35*
