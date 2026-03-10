@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-09T02:09:02.000Z",
-    "totalEvents": 94,
+    "lastUpdated": "2026-03-10T02:08:00.000Z",
+    "totalEvents": 95,
     "version": "1.0"
   },
   "dimensions": {
@@ -92,6 +92,36 @@
     "TR": "Turkey"
   },
   "events": [
+    {
+      "id": "evt-2026-0310-001",
+      "date": "2026-03-10",
+      "title": "India Expands Financial Account Reporting to Include Crypto Assets",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "IN"
+      ],
+      "topics": [
+        "Taxation",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "India CBDT formally notifies expansion of income tax rules to cover crypto assets, CBDCs, and electronic money products in financial account reporting framework. The updated rules require crypto asset service providers and financial institutions to report transactions and balances to tax authorities. This positions India alongside OECD CARF adopters in creating comprehensive crypto tax reporting infrastructure.",
+      "impact": "high",
+      "source": "https://www.theaccountant-online.com/news/india-to-include-crypto-assets/",
+      "keywords": [
+        "India",
+        "CBDT",
+        "crypto tax",
+        "financial reporting",
+        "CARF",
+        "AML"
+      ]
+    },
     {
       "id": "evt-2026-0309-001",
       "date": "2026-03-08",
