@@ -383,13 +383,28 @@
 
 ---
 
+### TICKET-021: AI Agent专题页面 - Coinbase AgentKit
+- **状态:** 🟢 DONE
+- **来源:** SEO-MAINTENANCE.md AI Agent专题队列 P0
+- **优先级:** P0
+- **描述:** 创建Coinbase AgentKit合规指南页面（KYT, x402, APAC监管要求）
+- **验收标准:** 页面上线 + sitemap更新 + FAQ Schema
+- **完成时间:** 2026-03-10 08:01
+- **产出:** 
+  - ✅ `/agents/coinbase-agentkit.html` (22KB完整合规指南)
+  - ✅ `/agents/index.html` (AI Agent Guides索引页)
+  - ✅ sitemap.xml更新
+  - ✅ Dashboard GA代码修复
+
+---
+
 ## 📊 Dashboard
 
 | 状态 | 数量 |
 |------|------|
 | 🔴 TODO | 0 |
 | 🟡 IN_PROGRESS | 6 |
-| 🟢 DONE | 15 |
+| 🟢 DONE | 16 |
 | ⏸️ BLOCKED | 5 |
 | ❌ OBSOLETE | 1 |
 
@@ -415,4 +430,4 @@
 
 ---
 
-*最后更新: 2026-03-07 20:02*
+*最后更新: 2026-03-10 08:01*
