@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://apacfinstab.com/agents/uniswap-ai/" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PX174NJW6M');
+</script>
+
+<!-- Primary Meta Tags -->
+<title>Uniswap AI Agent Skills Compliance Guide 2026 | v4 Hooks, Autonomous Swaps & APAC Regulations</title>
+<meta name="description" content="Complete regulatory compliance guide for Uniswap's 7 AI Agent Skills in APAC. Covers swap-integration, liquidity-planner, v4 hooks security, and licensing requirements across Hong Kong, Singapore, Japan, and Australia.">
+<meta name="keywords" content="Uniswap AI agent, Uniswap skills, v4 hooks compliance, AI DeFi regulation, swap-integration, liquidity-planner, autonomous trading regulation, MAS DeFi AI, SFC agent guidelines, APAC crypto compliance">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Uniswap AI Agent Skills Compliance Guide 2026 | APAC FINSTAB">
+<meta property="og:description" content="Regulatory compliance guide for Uniswap's 7 AI Agent Skills across Asia-Pacific jurisdictions. Covers v4 hooks, autonomous execution, and licensing requirements.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apacfinstab.com/agents/uniswap-ai/">
+<meta property="article:published_time" content="2026-03-11">
+<meta property="article:modified_time" content="2026-03-11">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Uniswap AI Agent Skills Compliance Guide 2026">
+<meta name="twitter:description" content="AI Agent regulatory compliance for Uniswap v4 hooks and autonomous DeFi execution">
+<meta name="twitter:site" content="@APACFinStab">
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Uniswap's 7 AI Agent Skills?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uniswap released 7 AI Agent Skills in February 2026: v4-security-foundations, configurator, deployer, viem-integration, swap-integration, liquidity-planner, and swap-planner. These enable AI agents to execute autonomous on-chain swaps, manage liquidity, and interact with v4 hooks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Uniswap AI agents need a license in Hong Kong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI agents executing swaps on behalf of Hong Kong users may trigger VATP licensing requirements. If the agent operator actively markets to HK users or provides custody services, SFC VASP license is required. Pure non-custodial front-ends face less scrutiny, but regulatory clarity is evolving."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do Uniswap v4 hooks affect compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "V4 hooks enable custom logic before/after swaps, which can include compliance checks like OFAC screening or transaction limits. However, hooks that automate financial decisions without human oversight may face regulatory scrutiny under AI governance frameworks being developed across APAC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are autonomous AI trading agents legal in Singapore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Singapore's MAS requires DPT service providers to be licensed. AI agents facilitating token trades may fall under Payment Services Act 2019. MAS has indicated AI systems in financial services require accountability and human oversight mechanisms. Operators should assess licensing obligations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What audit requirements apply to AI agent DeFi operations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Regulators across APAC increasingly expect comprehensive audit trails for AI-driven financial services. Japan FSA requires transaction logging. HKMA guidelines emphasize model governance. Uniswap agents should implement logging for swap execution, liquidity changes, and decision rationale to meet evolving compliance standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does APAC FINSTAB help with AI agent compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APAC FINSTAB provides regulatory intelligence, compliance frameworks, and MCP integration for AI agents operating in Asia-Pacific. Our Agent Trust Score helps assess compliance readiness. We offer pre-flight checks that verify transactions against OFAC/sanctions lists before execution."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Uniswap AI Agent Skills Compliance Guide 2026",
+  "description": "Complete regulatory compliance guide for Uniswap's 7 AI Agent Skills across APAC jurisdictions",
+  "author": {
+    "@type": "Organization",
+    "name": "APAC FINSTAB Research"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "APAC FINSTAB",
+    "url": "https://apacfinstab.com"
+  },
+  "datePublished": "2026-03-11",
+  "dateModified": "2026-03-11",
+  "mainEntityOfPage": "https://apacfinstab.com/agents/uniswap-ai/"
+}
+</script>
+
+<style>
+  :root {
+    --brand-orange: #ff8c42;
+    --brand-orange-glow: rgba(255, 140, 66, 0.25);
+    --bg-primary: #0a0e1a;
+    --bg-card: #1a2035;
+    --bg-elevated: #222840;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --accent-blue: #3b82f6;
+    --uniswap-pink: #ff007a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+  }
+  
+  header {
+    background: linear-gradient(180deg, rgba(10, 14, 26, 0.98), rgba(10, 14, 26, 0.95));
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--brand-orange);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  
+  nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--brand-orange); }
+  
+  .article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  
+  .article-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--uniswap-pink), var(--brand-orange));
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  
+  .article-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  
+  .article-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  
+  .article-meta {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+  
+  .tldr-box {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+    border: 2px solid var(--uniswap-pink);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 32px 0;
+  }
+  
+  .tldr-box h3 {
+    color: var(--uniswap-pink);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 16px 0;
+  }
+  
+  .tldr-box ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  .tldr-box li {
+    color: var(--text-primary);
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  
+  .article-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 48px 0 20px;
+    color: var(--text-primary);
+  }
+  
+  .article-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 36px 0 16px;
+    color: var(--text-primary);
+  }
+  
+  .article-content p {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    font-size: 17px;
+  }
+  
+  .article-content ul, .article-content ol {
+    margin: 20px 0;
+    padding-left: 24px;
+    color: var(--text-secondary);
+  }
+  
+  .article-content li {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+  
+  .article-content strong {
+    color: var(--text-primary);
+  }
+  
+  .article-content a {
+    color: var(--uniswap-pink);
+    text-decoration: none;
+  }
+  
+  .article-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  
+  .skill-card:hover {
+    border-color: var(--uniswap-pink);
+  }
+  
+  .skill-card h4 {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  
+  .skill-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  
+  .compliance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+  
+  .compliance-table th {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--uniswap-pink);
+  }
+  
+  .compliance-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+  
+  .compliance-table tr:hover td {
+    background: var(--bg-card);
+  }
+  
+  .status-chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .status-chip.caution { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+  .status-chip.evolving { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+  .status-chip.developing { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
+  
+  .warning-box {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--accent-red);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+  
+  .warning-box .title {
+    color: var(--accent-red);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .warning-box p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+  
+  .cta-box {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated));
+    border: 1px solid var(--brand-orange);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .cta-box h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+  
+  .cta-box p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: var(--brand-orange);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--brand-orange-glow);
+  }
+  
+  .source-citation {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    margin: 16px 0;
+    border-left: 3px solid var(--uniswap-pink);
+  }
+  
+  footer {
+    background: var(--bg-card);
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  
+  @media (max-width: 768px) {
+    .article-title { font-size: 28px; }
+    .article-container { padding: 40px 16px; }
+    .article-meta { flex-direction: column; gap: 8px; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">APAC FINSTAB</a>
+      <nav>
+        <a href="/">Dashboard</a>
+        <a href="/tracker/">Policy Tracker</a>
+        <a href="/agents/">Agents</a>
+        <a href="/mcp/">MCP</a>
+        <a href="/learn/">Learn</a>
+        <a href="/blog.html">Insights</a>
+      </nav>
+    </div>
+  </header>
+  
+  <article class="article-container">
+    <div class="article-header">
+      <span class="article-badge">AI Agent Compliance</span>
+      <h1 class="article-title">Uniswap AI Agent Skills: Compliance Guide for APAC</h1>
+      <p class="article-subtitle">What the 7 new agent skills mean for autonomous DeFi execution, v4 hooks integration, and regulatory obligations in Hong Kong, Singapore, Japan, and Australia.</p>
+      <div class="article-meta">
+        <span>📅 March 11, 2026</span>
+        <span>⏱️ 12 min read</span>
+        <span>🏷️ AI Agent Regulation</span>
+      </div>
+    </div>
+    
+    <div class="article-content">
+      
+      <div class="tldr-box">
+        <h3>⚡ TL;DR — Key Takeaways</h3>
+        <ul>
+          <li><strong>7 new AI skills released</strong> by Uniswap Labs (Feb 21, 2026) for autonomous on-chain execution</li>
+          <li><strong>No built-in compliance layer</strong> — audit trail gaps noted by security researchers</li>
+          <li><strong>Licensing likely required</strong> in HK (SFC) and SG (MAS) for operators serving retail users</li>
+          <li><strong>V4 hooks enable custom compliance</strong> — can embed OFAC checks, rate limits, KYT screening</li>
+          <li><strong>Human oversight required</strong> — Japan FSA and MAS both emphasize accountability for AI financial services</li>
+        </ul>
+      </div>
+      
+      <h2>What Are Uniswap's 7 AI Agent Skills?</h2>
+      
+      <p>On February 21, 2026, Uniswap Labs shipped seven "skills" designed for AI agents to interact with Uniswap V4. These skills transform Uniswap from a human-facing DEX into machine-native execution infrastructure.</p>
+      
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>🔐 v4-security-foundations</h4>
+          <p>Core security primitives for safe hook interactions and agent authentication</p>
+        </div>
+        <div class="skill-card">
+          <h4>⚙️ configurator</h4>
+          <p>Pool configuration management for AI-driven liquidity strategies</p>
+        </div>
+        <div class="skill-card">
+          <h4>🚀 deployer</h4>
+          <p>Autonomous pool deployment with customizable hook parameters</p>
+        </div>
+        <div class="skill-card">
+          <h4>🔗 viem-integration</h4>
+          <p>TypeScript/JavaScript client library integration for agent frameworks</p>
+        </div>
+        <div class="skill-card">
+          <h4>🔄 swap-integration</h4>
+          <p>Execute token swaps with slippage protection and routing optimization</p>
+        </div>
+        <div class="skill-card">
+          <h4>📊 liquidity-planner</h4>
+          <p>Automated liquidity position management and rebalancing</p>
+        </div>
+        <div class="skill-card">
+          <h4>📈 swap-planner</h4>
+          <p>Quote generation, route optimization, and execution planning</p>
+        </div>
+      </div>
+      
+      <div class="source-citation">
+        📰 Source: <a href="https://coinfomania.com/uniswap-launches-seven-ai-agent-skills-for-onchain-trading/" target="_blank">Uniswap Launches Seven AI Agent Skills for Onchain Trading</a> (Coinfomania, Feb 2026)
+      </div>
+      
+      <h2>Regulatory Implications by Jurisdiction</h2>
+      
+      <p>AI agents executing swaps raise novel regulatory questions. Traditional financial regulation assumes human actors. Autonomous agents blur accountability lines.</p>
+      
+      <table class="compliance-table">
+        <tr>
+          <th>Jurisdiction</th>
+          <th>Regulatory Stance</th>
+          <th>Key Requirements</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>🇭🇰 Hong Kong</td>
+          <td>SFC VASP regime applies</td>
+          <td>License if operating exchange or marketing to HK users</td>
+          <td><span class="status-chip evolving">Evolving</span></td>
+        </tr>
+        <tr>
+          <td>🇸🇬 Singapore</td>
+          <td>MAS DPT framework</td>
+          <td>PSA license assessment; AI oversight mechanisms required</td>
+          <td><span class="status-chip caution">Caution Required</span></td>
+        </tr>
+        <tr>
+          <td>🇯🇵 Japan</td>
+          <td>FSA crypto-asset rules</td>
+          <td>Human-in-the-loop for financial decisions; JFSA registration</td>
+          <td><span class="status-chip caution">Caution Required</span></td>
+        </tr>
+        <tr>
+          <td>🇦🇺 Australia</td>
+          <td>ASIC developing guidance</td>
+          <td>Token Mapping exercise; AI-specific rules pending</td>
+          <td><span class="status-chip developing">Developing</span></td>
+        </tr>
+      </table>
+      
+      <h2>The Audit Trail Problem</h2>
+      
+      <p>Security researchers immediately flagged a critical gap: <strong>Uniswap's agent skills lack built-in compliance logging</strong>.</p>
+      
+      <div class="warning-box">
+        <div class="title">⚠️ Compliance Concern</div>
+        <p>"No audit trail — agents executing without logging = compliance nightmare" — Analysis from security researcher examining Uniswap agent skills (Feb 2026)</p>
+      </div>
+      
+      <p>For APAC operators, this creates significant risk:</p>
+      
+      <ul>
+        <li><strong>Hong Kong:</strong> SFC requires transaction monitoring and suspicious activity reporting</li>
+        <li><strong>Singapore:</strong> MAS expects comprehensive audit trails under TRM Guidelines</li>
+        <li><strong>Japan:</strong> FSA mandates transaction records retention for 7 years</li>
+        <li><strong>Australia:</strong> AUSTRAC requires CTF/AML record keeping</li>
+      </ul>
+      
+      <h3>Mitigation: Build Your Own Logging Layer</h3>
+      
+      <p>Operators deploying Uniswap AI agents in APAC must implement supplementary compliance infrastructure:</p>
+      
+      <ol>
+        <li><strong>Transaction logging:</strong> Record every swap execution with timestamps, amounts, counterparties</li>
+        <li><strong>Decision rationale:</strong> Log why the agent chose specific routes or timing</li>
+        <li><strong>Pre-flight screening:</strong> Integrate OFAC/sanctions checks before execution</li>
+        <li><strong>Rate limiting:</strong> Implement velocity controls to prevent suspicious patterns</li>
+      </ol>
+      
+      <h2>V4 Hooks: Compliance Opportunity</h2>
+      
+      <p>Uniswap V4's hook architecture provides a unique compliance integration point. Hooks execute custom logic before/after swaps, enabling:</p>
+      
+      <ul>
+        <li><strong>Pre-swap OFAC screening:</strong> Block transactions involving sanctioned addresses</li>
+        <li><strong>Transaction limits:</strong> Enforce per-user or per-agent value thresholds</li>
+        <li><strong>KYT integration:</strong> Real-time transaction risk scoring</li>
+        <li><strong>Geographic restrictions:</strong> Block execution from non-compliant jurisdictions</li>
+        <li><strong>Audit logging:</strong> Emit events for comprehensive compliance trails</li>
+      </ul>
+      
+      <p>The <code>v4-security-foundations</code> skill provides primitives for building compliant hooks, but the compliance logic itself must be implemented by operators.</p>
+      
+      <h2>Human-in-the-Loop Requirements</h2>
+      
+      <p>Regulators across APAC consistently emphasize human accountability for AI systems in financial services:</p>
+      
+      <ul>
+        <li><strong>Japan FSA:</strong> Explicitly requires human oversight for automated financial decisions</li>
+        <li><strong>Singapore MAS:</strong> FEAT principles mandate accountability and explainability</li>
+        <li><strong>Hong Kong SFC:</strong> AI governance guidelines emphasize senior management responsibility</li>
+        <li><strong>Australia ASIC:</strong> Responsible AI principles require human-meaningful control</li>
+      </ul>
+      
+      <p>Fully autonomous AI agents without human approval workflows may face regulatory challenge. Consider implementing:</p>
+      
+      <ol>
+        <li><strong>Approval thresholds:</strong> Large trades require human confirmation</li>
+        <li><strong>Kill switches:</strong> Human ability to halt agent operations instantly</li>
+        <li><strong>Periodic review:</strong> Regular human audit of agent strategies and performance</li>
+        <li><strong>Exception handling:</strong> Human escalation for unusual situations</li>
+      </ol>
+      
+      <h2>Common Misconceptions</h2>
+      
+      <div class="warning-box">
+        <div class="title">❌ Myth: "Non-custodial DEXs don't need licenses"</div>
+        <p>✅ Fact: Regulatory treatment varies. Hong Kong's SFC has indicated that actively marketing to HK users triggers licensing. Singapore's MAS assesses based on function, not architecture. Operating a front-end that facilitates trades may require licensing.</p>
+      </div>
+      
+      <div class="warning-box">
+        <div class="title">❌ Myth: "AI agents are just software tools"</div>
+        <p>✅ Fact: When AI agents autonomously execute financial transactions, regulators view the operator as responsible for the agent's actions. The agent's decisions are the operator's decisions. Full accountability applies.</p>
+      </div>
+      
+      <div class="warning-box">
+        <div class="title">❌ Myth: "V4 hooks handle compliance automatically"</div>
+        <p>✅ Fact: Hooks are programmable logic containers. They enable compliance but don't provide it out of the box. Operators must implement and maintain their own compliance checks within hooks.</p>
+      </div>
+      
+      <h2>Integration with APAC FINSTAB</h2>
+      
+      <p>APAC FINSTAB provides tools specifically designed for AI agents operating in regulated environments:</p>
+      
+      <ul>
+        <li><strong>MCP Integration:</strong> Pre-flight compliance checks via Model Context Protocol</li>
+        <li><strong>Agent Trust Score:</strong> Real-time compliance readiness assessment</li>
+        <li><strong>Regulatory Intel:</strong> Jurisdiction-specific guidance and updates</li>
+        <li><strong>Sanctions Screening:</strong> OFAC/UN/EU sanctions list verification</li>
+      </ul>
+      
+      <div class="cta-box">
+        <h3>Build Compliant AI Agents</h3>
+        <p>Get started with APAC FINSTAB's compliance infrastructure for Uniswap V4 integrations.</p>
+        <a href="/mcp/" class="cta-button">Explore MCP Integration →</a>
+      </div>
+      
+      <h2>Recommendations for Operators</h2>
+      
+      <ol>
+        <li><strong>Assess licensing requirements</strong> before deployment in each target jurisdiction</li>
+        <li><strong>Implement comprehensive logging</strong> to supplement Uniswap's skills</li>
+        <li><strong>Build compliance hooks</strong> for V4 pool interactions</li>
+        <li><strong>Establish human oversight</strong> mechanisms with clear escalation paths</li>
+        <li><strong>Monitor regulatory developments</strong> — AI agent regulation is rapidly evolving</li>
+        <li><strong>Engage legal counsel</strong> familiar with crypto and AI regulation in each jurisdiction</li>
+      </ol>
+      
+      <p>The launch of Uniswap AI Agent Skills marks a significant step toward machine-native DeFi. For APAC operators, the opportunity is real — but so are the compliance obligations. Building with regulation in mind from day one will be the differentiator.</p>
+      
+    </div>
+  </article>
+  
+  <footer>
+    <p>© 2026 APAC FINSTAB. Regulatory intelligence for AI-native financial services.</p>
+    <p style="margin-top: 8px;">This content is for informational purposes only and does not constitute legal advice.</p>
+  </footer>
+</body>
+</html>
