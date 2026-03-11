@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-10T02:08:00.000Z",
-    "totalEvents": 95,
+    "lastUpdated": "2026-03-11T02:06:19.448325Z",
+    "totalEvents": 98,
     "version": "1.0"
   },
   "dimensions": {
@@ -92,6 +92,87 @@
     "TR": "Turkey"
   },
   "events": [
+    {
+      "id": "evt-2026-0311-003",
+      "date": "2026-03-11",
+      "title": "India Crypto Volume Shift: 70% Moves Offshore Despite Tax Enforcement",
+      "protocols": [
+        "BTC",
+        "ETH",
+        "USDT"
+      ],
+      "regions": [
+        "IN"
+      ],
+      "topics": [
+        "Taxation",
+        "Exchange",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "Analysis reveals over 70% of Indian crypto trading volume has shifted to offshore exchanges despite tighter tax compliance rules. The country ranks first globally in crypto adoption per Chainalysis 2025 report with 69% YoY growth in APAC region. The policy divergence between adoption and enforcement creates regulatory arbitrage opportunities.",
+      "impact": "high",
+      "source": "https://www.cryptotimes.io/2026/03/10/indias-crypto-crackdown-is-working-perfectly-thats-exactly-the-problem/",
+      "keywords": [
+        "India",
+        "offshore exchanges",
+        "tax arbitrage",
+        "crypto adoption",
+        "APAC"
+      ]
+    },
+    {
+      "id": "evt-2026-0311-002",
+      "date": "2026-03-11",
+      "title": "US Clarity Act Stalled - Senators Propose Stablecoin Yield Compromise",
+      "protocols": [
+        "USDT",
+        "USDC"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "Stablecoin",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "US senators attempt to advance the stalled crypto Clarity Act through a compromise on stablecoin yield provisions. Prediction markets place passage odds at 18% for 2026. The legislative uncertainty affects APAC exchanges seeking US market access and influences regional regulatory timelines.",
+      "impact": "medium",
+      "source": "https://www.coindesk.com/policy/2026/03/10/senators-try-to-unlock-stalled-crypto-clarity-act-with-compromise-on-stablecoin-yield",
+      "keywords": [
+        "Clarity Act",
+        "stablecoin yield",
+        "US Congress",
+        "crypto legislation"
+      ]
+    },
+    {
+      "id": "evt-2026-0311-001",
+      "date": "2026-03-11",
+      "title": "CFTC Chair Outlines DeFi and Prediction Market Rulemaking Plans",
+      "protocols": [
+        "ETH"
+      ],
+      "regions": [
+        "US"
+      ],
+      "topics": [
+        "DeFi",
+        "Regulation"
+      ],
+      "entities": [],
+      "summary": "CFTC Chair Michael Selig detailed plans for guidance on DeFi developers, event contracts and crypto derivatives regulation at FIA Boca Raton conference. The framework will clarify how decentralized protocols should comply with commodity regulations, potentially setting global precedent for APAC regulators developing DeFi oversight.",
+      "impact": "high",
+      "source": "https://www.coindesk.com/policy/2026/03/10/cftc-chair-highlights-wide-crypto-agenda-including-rules-on-defi-prediction-markets",
+      "keywords": [
+        "CFTC",
+        "DeFi",
+        "prediction markets",
+        "derivatives",
+        "US regulation"
+      ]
+    },
     {
       "id": "evt-2026-0310-001",
       "date": "2026-03-10",
@@ -1125,7 +1206,7 @@
         "Custody"
       ],
       "entities": [],
-      "summary": "Central Bank of Brazil announces plan to advance institutional VASP (Virtual Asset Service Provider) regulatory framework by 2027. Focus on organizations operating crypto infrastructure and providing services to other institutions. Part of broader regulatory push following MERGE São Paulo 2026 discussions.",
+      "summary": "Central Bank of Brazil announces plan to advance institutional VASP (Virtual Asset Service Provider) regulatory framework by 2027. Focus on organizations operating crypto infrastructure and providing services to other institutions. Part of broader regulatory push following MERGE S\u00e3o Paulo 2026 discussions.",
       "impact": "medium",
       "source": "https://coinspectator.com/bitcoin-com/2026/02/23/central-bank-of-brazil-to-advance-institutional-vasp-regulation-by-2027/",
       "keywords": [
@@ -1987,7 +2068,7 @@
       "entities": [
         "Tether"
       ],
-      "summary": "USDT briefly depegged to $0.998—its lowest level in 5 years—during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
+      "summary": "USDT briefly depegged to $0.998\u2014its lowest level in 5 years\u2014during Feb 6 crash. First real-world stress test for FATF stablecoin risk framework. USDC holders grew 60% YoY as flight-to-quality.",
       "impact": "high",
       "source": "https://apacfinstab.com/dashboards/APAC_FinStab_Dashboard_0203-0209.html"
     },
@@ -2444,3 +2525,8 @@
     }
   ]
 }
+--- Added 3 new events ---
++ CFTC Chair Outlines DeFi and Prediction Market Rulemaking Plans
++ US Clarity Act Stalled - Senators Propose Stablecoin Yield Compromise
++ India Crypto Volume Shift: 70% Moves Offshore Despite Tax Enforcement
+
