@@ -2,7 +2,6 @@
   "name": "apacfinstab",
   "compatibility_date": "2026-03-12",
   "assets": {
-    "directory": ".",
-    "exclude": [".git", "node_modules", "*.log", "*.md", "*.sh", "scripts", "seo-scripts", "research", "prompts", "packages", "niuge-diary", "mcp", "grants-opportunities", "docs", "arc-protocol"]
+    "directory": "."
   }
 }
