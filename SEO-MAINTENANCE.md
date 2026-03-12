@@ -157,6 +157,12 @@
 
 ## 📝 更新日志
 
+### 2026-03-12 (15:00 PM) — GEO优化日
+- ✅ 检查 `learn/hong-kong-crypto-license-2026.html` GEO格式（已符合）
+- ✅ 创建外部发布版本: `external-content/medium-hk-crypto-license-2026.md`
+- ⚠️ Perplexity API密钥无效，需配置才能追踪AI引用
+- 📋 待办: Medium/dev.to发布，stablecoin外部版本
+
 ### 2026-03-01 (10:11 AM)
 - ✅ 新增Japan vs Korea Comparison: /compare/jp-vs-kr.html
 - ✅ 覆盖监管机构对比、牌照要求、成本分析、稳定币、税收、DABA分析、6条FAQ Schema
