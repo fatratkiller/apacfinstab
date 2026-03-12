@@ -1,0 +1,82 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # 第一步：验证关键文件存在
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: 🔍 验证关键文件
+        run: |
+          echo "检查关键文件..."
+          files=("index.html" "sitemap.xml" "robots.txt")
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ 缺少关键文件: $file"
+              exit 1
+            fi
+            echo "✅ $file 存在"
+          done
+          
+      - name: 📊 统计资源
+        run: |
+          echo "HTML文件数量: $(find . -name '*.html' | wc -l)"
+          echo "agents目录: $(ls agents/ 2>/dev/null | wc -l) 个子目录"
+
+  # 第二步：部署到Cloudflare Pages
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🚀 部署到 Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: apacfinstab
+          directory: .
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # PR时创建预览部署，合并main时部署生产
+          branch: ${{ github.head_ref || github.ref_name }}
+
+  # 第三步：部署后健康检查
+  health-check:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: ⏳ 等待部署生效
+        run: sleep 30
+        
+      - name: 🏥 健康检查
+        run: |
+          urls=(
+            "https://apacfinstab.com"
+            "https://apacfinstab.com/sitemap.xml"
+            "https://apacfinstab.com/agents/"
+          )
+          
+          for url in "${urls[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" "$url" --max-time 10)
+            if [ "$status" != "200" ]; then
+              echo "❌ $url 返回 $status"
+              exit 1
+            fi
+            echo "✅ $url 返回 200"
+          done
+          
+      - name: 📢 部署成功通知
+        if: success()
+        run: echo "🎉 部署成功，所有健康检查通过！"
