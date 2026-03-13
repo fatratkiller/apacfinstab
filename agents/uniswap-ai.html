@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://apacfinstab.com/agents/uniswap-ai.html" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PX174NJW6M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PX174NJW6M');
+</script>
+
+<!-- Primary Meta Tags -->
+<title>Uniswap AI Agent Skills & Hooks Compliance Guide 2026 | DeFi Agent Regulation APAC</title>
+<meta name="description" content="Complete regulatory guide for Uniswap AI agents, skills, and hooks in APAC. Covers autonomous trading compliance, v4 hooks regulation, liquidity management AI, and DeFi agent licensing across Hong Kong, Singapore, Japan, and Australia.">
+<meta name="keywords" content="Uniswap AI agent, Uniswap hooks, AI trading agent, DeFi compliance, autonomous liquidity, v4 hooks regulation, MAS DeFi, SFC crypto AI, Uniswap skills, AI swap agent">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Uniswap AI Agent Skills & Hooks Compliance Guide 2026 | APAC FINSTAB">
+<meta property="og:description" content="Regulatory compliance guide for Uniswap AI agents and hooks across Asia-Pacific jurisdictions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://apacfinstab.com/agents/uniswap-ai.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Uniswap AI Skills & Hooks Compliance Guide 2026">
+<meta name="twitter:description" content="DeFi AI Agent regulatory compliance across APAC jurisdictions">
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are AI agents executing Uniswap trades legal in Hong Kong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hong Kong SFC has not issued specific guidance on AI trading agents. However, any agent executing trades involving securities tokens would fall under SFC's Type 1 (dealing in securities) license requirements. For utility tokens, the current VATP regime applies to platforms, not individual trading tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Uniswap v4 hooks require regulatory approval in Singapore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under MAS guidelines, hooks that execute autonomous financial transactions may trigger DPT service provider requirements. The key factors are: volume of transactions, custody of user funds, and whether the hook operator profits from the activity. Pure infrastructure hooks without custody typically don't require licensing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI liquidity management agents operate in Japan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Japan's FSA requires any entity providing investment advice or managing assets to register as a Financial Instruments Business Operator. AI-driven liquidity agents may need Type II Financial Instruments Business registration if they manage user funds or provide automated investment strategies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What compliance measures do Uniswap AI agents need in Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ASIC classifies crypto assets based on function. AI agents trading crypto financial products require an AFS license. With ASIC's June 2026 deadline for crypto firms, operators of trading agents should assess whether their activities constitute providing financial services under the Corporations Act."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do MEV protection hooks affect regulatory compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MEV protection hooks that optimize trade execution may be viewed favorably by regulators as consumer protection measures. However, if the hook operator extracts value (backrunning, arbitrage), this could trigger market manipulation concerns under existing securities laws in jurisdictions like Singapore and Hong Kong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are autonomous LP management agents considered robo-advisors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in most APAC jurisdictions. AI agents that automatically rebalance liquidity positions based on market conditions function similarly to robo-advisors. Singapore MAS, Hong Kong SFC, and Japan FSA all have robo-advisor frameworks that may apply to autonomous LP management tools."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fafafa; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+header { background: linear-gradient(135deg, #ff007a 0%, #ff6b9d 100%); color: white; padding: 60px 0; }
+header h1 { font-size: 2.4rem; margin-bottom: 12px; }
+header p { font-size: 1.2rem; opacity: 0.95; }
+nav { background: #1a1a2e; padding: 16px 0; }
+nav a { color: white; text-decoration: none; margin-right: 20px; font-size: 0.95rem; }
+nav a:hover { text-decoration: underline; }
+.breadcrumb { padding: 20px 0; font-size: 0.9rem; color: #666; }
+.breadcrumb a { color: #ff007a; text-decoration: none; }
+main { padding: 40px 0; }
+section { background: white; border-radius: 12px; padding: 32px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+h2 { color: #1a1a2e; font-size: 1.6rem; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #ff007a; }
+h3 { color: #333; font-size: 1.2rem; margin: 24px 0 12px; }
+p { margin-bottom: 16px; color: #444; }
+ul, ol { margin: 16px 0 16px 24px; }
+li { margin-bottom: 10px; color: #444; }
+.highlight-box { background: linear-gradient(135deg, #fff0f5 0%, #ffe4ed 100%); border-left: 4px solid #ff007a; padding: 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+.warning-box { background: #fff8e6; border-left: 4px solid #ffa500; padding: 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+.info-box { background: #f0f7ff; border-left: 4px solid #3498db; padding: 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+th, td { padding: 14px; text-align: left; border-bottom: 1px solid #eee; }
+th { background: #f8f9fa; font-weight: 600; color: #1a1a2e; }
+tr:hover { background: #fafafa; }
+.status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+.status-strict { background: #fee; color: #c00; }
+.status-moderate { background: #fff3cd; color: #856404; }
+.status-permissive { background: #d4edda; color: #155724; }
+.status-emerging { background: #e7e9fd; color: #4a5568; }
+code { background: #f4f4f4; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; }
+pre { background: #1a1a2e; color: #e0e0e0; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+pre code { background: none; color: inherit; padding: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 20px 0; }
+.grid-card { background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
+.grid-card h4 { color: #ff007a; margin-bottom: 10px; }
+footer { background: #1a1a2e; color: white; padding: 40px 0; margin-top: 60px; }
+footer a { color: #ff007a; }
+.toc { background: #f8f9fa; padding: 24px; border-radius: 8px; margin-bottom: 30px; }
+.toc h3 { margin-bottom: 12px; color: #1a1a2e; }
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 8px 0; }
+.toc a { color: #ff007a; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+@media (max-width: 768px) { header h1 { font-size: 1.8rem; } section { padding: 24px; } }
+</style>
+</head>
+
+<body>
+<nav>
+<div class="container">
+<a href="/">🏠 Home</a>
+<a href="/agents/">AI Agents</a>
+<a href="/topics/defi.html">DeFi</a>
+<a href="/regions/hk.html">Hong Kong</a>
+<a href="/regions/sg.html">Singapore</a>
+</div>
+</nav>
+
+<header>
+<div class="container">
+<h1>🦄 Uniswap AI Agent Skills & Hooks</h1>
+<p>Regulatory Compliance Guide for AI-Powered DeFi Trading in APAC</p>
+</div>
+</header>
+
+<div class="container">
+<div class="breadcrumb">
+<a href="/">APAC FINSTAB</a> → <a href="/agents/">AI Agents</a> → Uniswap AI Skills
+</div>
+
+<main>
+
+<div class="toc">
+<h3>📑 Table of Contents</h3>
+<ul>
+<li><a href="#overview">Overview: Uniswap AI & Hooks Ecosystem</a></li>
+<li><a href="#hooks-compliance">Uniswap v4 Hooks Compliance Matrix</a></li>
+<li><a href="#ai-skills">AI Skills Architecture & Regulatory Mapping</a></li>
+<li><a href="#jurisdiction">Jurisdiction-by-Jurisdiction Analysis</a></li>
+<li><a href="#use-cases">Common Use Cases & Compliance Requirements</a></li>
+<li><a href="#implementation">Implementation Guidelines</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</div>
+
+<section id="overview">
+<h2>Overview: Uniswap AI & Hooks Ecosystem</h2>
+
+<p>Uniswap v4's introduction of <strong>hooks</strong> and the emerging ecosystem of <strong>AI skills</strong> for DeFi agents create new regulatory considerations across APAC. This guide covers compliance requirements for developers and operators deploying AI-powered trading agents on Uniswap infrastructure.</p>
+
+<div class="highlight-box">
+<strong>🔑 Key Concepts:</strong>
+<ul style="margin-top: 10px;">
+<li><strong>Hooks:</strong> Smart contract modules that execute at specific points in the swap lifecycle (beforeSwap, afterSwap, etc.)</li>
+<li><strong>AI Skills:</strong> Modular capabilities enabling AI agents to interact with DeFi protocols programmatically</li>
+<li><strong>Autonomous LPs:</strong> AI-driven liquidity provision that adjusts positions without human intervention</li>
+</ul>
+</div>
+
+<h3>Regulatory Relevance</h3>
+<p>AI agents executing Uniswap trades raise several regulatory questions:</p>
+<ul>
+<li>Is the AI operator providing a <strong>financial service</strong>?</li>
+<li>Does autonomous trading constitute <strong>investment advice</strong>?</li>
+<li>Are hooks that extract value engaging in <strong>market manipulation</strong>?</li>
+<li>Do AI LP managers qualify as <strong>robo-advisors</strong>?</li>
+</ul>
+</section>
+
+<section id="hooks-compliance">
+<h2>Uniswap v4 Hooks Compliance Matrix</h2>
+
+<p>Different hook types carry different regulatory implications across APAC jurisdictions:</p>
+
+<table>
+<thead>
+<tr>
+<th>Hook Type</th>
+<th>Function</th>
+<th>HK 🇭🇰</th>
+<th>SG 🇸🇬</th>
+<th>JP 🇯🇵</th>
+<th>AU 🇦🇺</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dynamic Fees</strong></td>
+<td>Adjust LP fees based on volatility</td>
+<td><span class="status-moderate">⚠️ Review</span></td>
+<td><span class="status-permissive">✅ Clear</span></td>
+<td><span class="status-moderate">⚠️ Review</span></td>
+<td><span class="status-permissive">✅ Clear</span></td>
+</tr>
+<tr>
+<td><strong>MEV Protection</strong></td>
+<td>Protect users from frontrunning</td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+</tr>
+<tr>
+<td><strong>Limit Orders</strong></td>
+<td>Execute trades at target prices</td>
+<td><span class="status-strict">🔴 License</span></td>
+<td><span class="status-moderate">⚠️ Assess</span></td>
+<td><span class="status-strict">🔴 Register</span></td>
+<td><span class="status-moderate">⚠️ Assess</span></td>
+</tr>
+<tr>
+<td><strong>TWAP Execution</strong></td>
+<td>Time-weighted average price orders</td>
+<td><span class="status-strict">🔴 License</span></td>
+<td><span class="status-strict">🔴 DPT</span></td>
+<td><span class="status-strict">🔴 Register</span></td>
+<td><span class="status-moderate">⚠️ AFS</span></td>
+</tr>
+<tr>
+<td><strong>Auto-Rebalance LP</strong></td>
+<td>AI-driven position management</td>
+<td><span class="status-strict">🔴 License</span></td>
+<td><span class="status-strict">🔴 DPT/FA</span></td>
+<td><span class="status-strict">🔴 Register</span></td>
+<td><span class="status-strict">🔴 AFS</span></td>
+</tr>
+<tr>
+<td><strong>KYC Gating</strong></td>
+<td>Restrict access based on identity</td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+<td><span class="status-permissive">✅ Favorable</span></td>
+</tr>
+<tr>
+<td><strong>Oracle Integration</strong></td>
+<td>External price feeds</td>
+<td><span class="status-permissive">✅ Clear</span></td>
+<td><span class="status-permissive">✅ Clear</span></td>
+<td><span class="status-permissive">✅ Clear</span></td>
+<td><span class="status-permissive">✅ Clear</span></td>
+</tr>
+</tbody>
+</table>
+
+<div class="warning-box">
+<strong>⚠️ Key Finding:</strong> Hooks that automate trading decisions (limit orders, TWAP, rebalancing) are more likely to trigger licensing requirements than passive infrastructure hooks (dynamic fees, oracles).
+</div>
+</section>
+
+<section id="ai-skills">
+<h2>AI Skills Architecture & Regulatory Mapping</h2>
+
+<p>AI skills for Uniswap interaction typically fall into these categories:</p>
+
+<div class="grid-2">
+<div class="grid-card">
+<h4>📊 Market Data Skills</h4>
+<p><strong>Function:</strong> Query prices, liquidity depth, historical data</p>
+<p><strong>Regulatory Risk:</strong> Low</p>
+<p>Generally considered information services, not financial services.</p>
+</div>
+
+<div class="grid-card">
+<h4>🔄 Trade Execution Skills</h4>
+<p><strong>Function:</strong> Execute swaps on user's behalf</p>
+<p><strong>Regulatory Risk:</strong> Medium-High</p>
+<p>May constitute dealing in digital assets or providing execution services.</p>
+</div>
+
+<div class="grid-card">
+<h4>💧 LP Management Skills</h4>
+<p><strong>Function:</strong> Provide/withdraw liquidity, rebalance</p>
+<p><strong>Regulatory Risk:</strong> High</p>
+<p>Active management likely triggers asset management/robo-advisor rules.</p>
+</div>
+
+<div class="grid-card">
+<h4>🎯 Strategy Skills</h4>
+<p><strong>Function:</strong> Recommend trades, optimize positions</p>
+<p><strong>Regulatory Risk:</strong> High</p>
+<p>Investment advice in most APAC jurisdictions requires licensing.</p>
+</div>
+</div>
+
+<h3>Skill Chain Example</h3>
+<pre><code>// AI Agent Skill Chain for Uniswap
+const uniswapSkills = {
+  // Low risk - Information only
+  getPoolInfo: (poolAddress) => { /* Query pool state */ },
+  
+  // Medium risk - Execution (user-initiated)
+  executeSwap: (params, userSignature) => { /* Execute with user approval */ },
+  
+  // High risk - Autonomous decisions
+  autoRebalanceLP: (strategy) => { /* AI decides when/how to rebalance */ },
+  
+  // High risk - Investment advice
+  recommendTrade: (marketConditions) => { /* AI suggests trades */ }
+};</code></pre>
+</section>
+
+<section id="jurisdiction">
+<h2>Jurisdiction-by-Jurisdiction Analysis</h2>
+
+<h3>🇭🇰 Hong Kong</h3>
+
+<div class="info-box">
+<strong>Regulatory Framework:</strong> Securities and Futures Ordinance (SFO), AMLO
+<br><strong>Key Regulator:</strong> SFC (Securities and Futures Commission)
+</div>
+
+<p><strong>Current Position:</strong></p>
+<ul>
+<li>AI agents trading <strong>security tokens</strong> require Type 1 license (dealing in securities)</li>
+<li>Automated <strong>investment advice</strong> requires Type 4/9 license</li>
+<li>Pure utility token trading through VATP-licensed platforms has clearer path</li>
+<li>SFC exploring DeFi sandbox (announced Q3 2025) may provide clarity</li>
+</ul>
+
+<p><strong>Practical Guidance:</strong></p>
+<ul>
+<li>Partner with VATP-licensed entities (HashKey, OSL) for retail-facing services</li>
+<li>Implement KYT screening for all transactions</li>
+<li>Maintain human oversight controls for autonomous trading</li>
+</ul>
+
+<h3>🇸🇬 Singapore</h3>
+
+<div class="info-box">
+<strong>Regulatory Framework:</strong> Payment Services Act 2019 (PSA), Securities and Futures Act
+<br><strong>Key Regulator:</strong> MAS (Monetary Authority of Singapore)
+</div>
+
+<p><strong>Current Position:</strong></p>
+<ul>
+<li>DPT (Digital Payment Token) service providers require MAS license</li>
+<li>Autonomous AI trading may require <strong>Capital Markets Services License</strong></li>
+<li>Robo-advisory frameworks apply to AI-driven LP management</li>
+<li>MAS Technology Risk Management guidelines require audit trails</li>
+</ul>
+
+<p><strong>Practical Guidance:</strong></p>
+<ul>
+<li>Assess whether activities fall under "dealing in capital markets products"</li>
+<li>Implement robust logging for all AI trading decisions</li>
+<li>Consider sandbox application for innovative AI trading models</li>
+</ul>
+
+<h3>🇯🇵 Japan</h3>
+
+<div class="info-box">
+<strong>Regulatory Framework:</strong> Payment Services Act, Financial Instruments and Exchange Act
+<br><strong>Key Regulator:</strong> FSA (Financial Services Agency), JVCEA (Self-Regulatory)
+</div>
+
+<p><strong>Current Position:</strong></p>
+<ul>
+<li>Crypto Asset Exchange Service Provider (CAESP) registration required for exchanges</li>
+<li>AI providing <strong>investment advice</strong> needs Type II Financial Instruments Business registration</li>
+<li>Web3 National Strategy (2025) aims to clarify AI agent treatment</li>
+<li>JVCEA self-regulatory rules require disclosure of automated trading</li>
+</ul>
+
+<p><strong>Practical Guidance:</strong></p>
+<ul>
+<li>Register with FSA if managing Japanese user assets</li>
+<li>Implement clear disclosures about AI decision-making</li>
+<li>Maintain human override capabilities per FSA guidance</li>
+</ul>
+
+<h3>🇦🇺 Australia</h3>
+
+<div class="info-box">
+<strong>Regulatory Framework:</strong> Corporations Act, AML/CTF Act
+<br><strong>Key Regulator:</strong> ASIC (Australian Securities and Investments Commission)
+</div>
+
+<p><strong>Current Position:</strong></p>
+<ul>
+<li>Crypto financial products require Australian Financial Services (AFS) license</li>
+<li><strong>June 2026 deadline:</strong> All crypto firms must obtain AFSL or notify intent</li>
+<li>AI trading agents providing advice need to consider advice licensing</li>
+<li>ASIC developing AI-specific guidance (expected 2026)</li>
+</ul>
+
+<p><strong>Practical Guidance:</strong></p>
+<ul>
+<li>Assess whether AI agent activity constitutes "providing financial services"</li>
+<li>Prepare for AFSL application before June 2026 deadline</li>
+<li>Implement responsible AI principles aligned with ASIC expectations</li>
+</ul>
+</section>
+
+<section id="use-cases">
+<h2>Common Use Cases & Compliance Requirements</h2>
+
+<h3>Use Case 1: AI-Powered LP Vault</h3>
+<p><strong>Description:</strong> Users deposit funds, AI agent manages LP positions across Uniswap pools</p>
+
+<table>
+<tr><th>Jurisdiction</th><th>Likely Classification</th><th>Requirement</th></tr>
+<tr><td>🇭🇰 Hong Kong</td><td>Fund Management (Type 9)</td><td>SFC License Required</td></tr>
+<tr><td>🇸🇬 Singapore</td><td>Fund Management</td><td>CMS License + FA License</td></tr>
+<tr><td>🇯🇵 Japan</td><td>Investment Management</td><td>Type II FIB Registration</td></tr>
+<tr><td>🇦🇺 Australia</td><td>Managed Investment Scheme</td><td>AFS License + RE License</td></tr>
+</table>
+
+<h3>Use Case 2: AI Trading Copilot</h3>
+<p><strong>Description:</strong> AI suggests trades but user executes manually</p>
+
+<table>
+<tr><th>Jurisdiction</th><th>Likely Classification</th><th>Requirement</th></tr>
+<tr><td>🇭🇰 Hong Kong</td><td>Investment Advice (Type 4/9)</td><td>SFC License if personalized</td></tr>
+<tr><td>🇸🇬 Singapore</td><td>Financial Advisory</td><td>FA License if personalized</td></tr>
+<tr><td>🇯🇵 Japan</td><td>Investment Advisory</td><td>Registration if for fee</td></tr>
+<tr><td>🇦🇺 Australia</td><td>Personal Advice</td><td>AFS License if personalized</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>💡 Key Distinction:</strong> General information (price data, market analysis) vs. personalized advice (recommendations based on user's situation) - the latter typically requires licensing.
+</div>
+
+<h3>Use Case 3: MEV Protection Agent</h3>
+<p><strong>Description:</strong> AI routes trades to protect users from frontrunning/sandwich attacks</p>
+
+<table>
+<tr><th>Jurisdiction</th><th>Likely Classification</th><th>Requirement</th></tr>
+<tr><td>🇭🇰 Hong Kong</td><td>Execution Service</td><td>Generally favorable, assess per case</td></tr>
+<tr><td>🇸🇬 Singapore</td><td>Trade Routing</td><td>DPT license if handling funds</td></tr>
+<tr><td>🇯🇵 Japan</td><td>Order Routing</td><td>Lower risk if no custody</td></tr>
+<tr><td>🇦🇺 Australia</td><td>Trade Execution</td><td>Assess under best execution obligations</td></tr>
+</table>
+</section>
+
+<section id="implementation">
+<h2>Implementation Guidelines</h2>
+
+<h3>Compliance-First Architecture</h3>
+
+<pre><code>// Recommended AI Agent Architecture for Compliance
+
+class UniswapComplianceAgent {
+  constructor(jurisdiction: 'HK' | 'SG' | 'JP' | 'AU') {
+    this.jurisdiction = jurisdiction;
+    this.auditLogger = new ComplianceLogger();
+    this.humanOversight = new OversightController();
+  }
+
+  async executeSkill(skill: Skill, params: any) {
+    // 1. Log intent
+    this.auditLogger.logIntent(skill, params);
+    
+    // 2. Check jurisdiction restrictions
+    if (this.isRestricted(skill, this.jurisdiction)) {
+      throw new ComplianceError('Skill restricted in jurisdiction');
+    }
+    
+    // 3. Check if human approval needed
+    if (this.requiresHumanApproval(skill)) {
+      await this.humanOversight.requestApproval(skill, params);
+    }
+    
+    // 4. Execute with monitoring
+    const result = await skill.execute(params);
+    
+    // 5. Log execution
+    this.auditLogger.logExecution(skill, result);
+    
+    return result;
+  }
+}</code></pre>
+
+<h3>Essential Compliance Controls</h3>
+
+<div class="grid-2">
+<div class="grid-card">
+<h4>🔐 Access Controls</h4>
+<ul>
+<li>KYC verification for users</li>
+<li>Jurisdiction-based feature gating</li>
+<li>Professional investor restrictions</li>
+</ul>
+</div>
+
+<div class="grid-card">
+<h4>📝 Audit Trail</h4>
+<ul>
+<li>All AI decisions logged immutably</li>
+<li>Transaction rationale recorded</li>
+<li>7-year retention (most jurisdictions)</li>
+</ul>
+</div>
+
+<div class="grid-card">
+<h4>👤 Human Oversight</h4>
+<ul>
+<li>Kill switch for autonomous trading</li>
+<li>Approval thresholds for large trades</li>
+<li>Regular human review of AI decisions</li>
+</ul>
+</div>
+
+<div class="grid-card">
+<h4>📊 Risk Management</h4>
+<ul>
+<li>Position limits per user</li>
+<li>Volatility circuit breakers</li>
+<li>Slippage protection</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+
+<details>
+<summary><strong>Are AI agents executing Uniswap trades legal in Hong Kong?</strong></summary>
+<p style="padding: 16px 0;">Hong Kong SFC has not issued specific guidance on AI trading agents. However, any agent executing trades involving securities tokens would fall under SFC's Type 1 (dealing in securities) license requirements. For utility tokens, the current VATP regime applies to platforms, not individual trading tools.</p>
+</details>
+
+<details>
+<summary><strong>Do Uniswap v4 hooks require regulatory approval in Singapore?</strong></summary>
+<p style="padding: 16px 0;">Under MAS guidelines, hooks that execute autonomous financial transactions may trigger DPT service provider requirements. The key factors are: volume of transactions, custody of user funds, and whether the hook operator profits from the activity. Pure infrastructure hooks without custody typically don't require licensing.</p>
+</details>
+
+<details>
+<summary><strong>Can AI liquidity management agents operate in Japan?</strong></summary>
+<p style="padding: 16px 0;">Japan's FSA requires any entity providing investment advice or managing assets to register as a Financial Instruments Business Operator. AI-driven liquidity agents may need Type II Financial Instruments Business registration if they manage user funds or provide automated investment strategies.</p>
+</details>
+
+<details>
+<summary><strong>What compliance measures do Uniswap AI agents need in Australia?</strong></summary>
+<p style="padding: 16px 0;">ASIC classifies crypto assets based on function. AI agents trading crypto financial products require an AFS license. With ASIC's June 2026 deadline for crypto firms, operators of trading agents should assess whether their activities constitute providing financial services under the Corporations Act.</p>
+</details>
+
+<details>
+<summary><strong>How do MEV protection hooks affect regulatory compliance?</strong></summary>
+<p style="padding: 16px 0;">MEV protection hooks that optimize trade execution may be viewed favorably by regulators as consumer protection measures. However, if the hook operator extracts value (backrunning, arbitrage), this could trigger market manipulation concerns under existing securities laws in jurisdictions like Singapore and Hong Kong.</p>
+</details>
+
+<details>
+<summary><strong>Are autonomous LP management agents considered robo-advisors?</strong></summary>
+<p style="padding: 16px 0;">Yes, in most APAC jurisdictions. AI agents that automatically rebalance liquidity positions based on market conditions function similarly to robo-advisors. Singapore MAS, Hong Kong SFC, and Japan FSA all have robo-advisor frameworks that may apply to autonomous LP management tools.</p>
+</details>
+</section>
+
+<section>
+<h2>Related Resources</h2>
+<ul>
+<li><a href="/agents/coinbase-agentkit.html">Coinbase AgentKit Compliance Guide</a></li>
+<li><a href="/topics/defi.html">DeFi Regulation Overview - APAC</a></li>
+<li><a href="/regions/hk.html">Hong Kong Crypto Regulation Guide</a></li>
+<li><a href="/regions/sg.html">Singapore MAS License Guide</a></li>
+<li><a href="/regions/jp.html">Japan FSA License Guide</a></li>
+<li><a href="/regions/au.html">Australia ASIC License Guide</a></li>
+</ul>
+</section>
+
+</main>
+</div>
+
+<footer>
+<div class="container">
+<p><strong>APAC FINSTAB</strong> — AI-Powered Regulatory Intelligence for Digital Assets</p>
+<p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.8;">
+This guide is for informational purposes only and does not constitute legal advice. Regulatory requirements change frequently. Always consult qualified legal counsel for your specific situation.
+</p>
+<p style="margin-top: 20px;">
+<a href="/">Home</a> | <a href="/agents/">AI Agents</a> | <a href="/topics/defi.html">DeFi</a> | <a href="https://github.com/kyleleo2018/apacfinstab">GitHub</a>
+</p>
+<p style="margin-top: 16px; font-size: 0.85rem;">Last updated: March 2026</p>
+</div>
+</footer>
+
+</body>
+</html>
