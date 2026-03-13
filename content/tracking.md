@@ -14,7 +14,7 @@
 | 3/10 (一) | 稳定币监管APAC对比 | Stablecoin regulation APAC comparison | 加infographic | ✅ 已发布 |
 | 3/11 (二) | MCP安全vs合规：本质区别 | MCP security vs compliance | 纯文字深度 | ✅ 已发布3/10 |
 | 3/12 (三) | DeFi合规挑战2026 | DeFi compliance challenges | 案例驱动 | ✅ 已发布3/11 |
-| 3/13 (四) | 新加坡MAS AI指引解读 | Singapore MAS AI guidelines | 政策分析 | ⏳ |
+| 3/13 (四) | 新加坡MAS AI指引解读 | Singapore MAS AI guidelines | 政策分析 | ✅ 已发布 |
 | 3/14 (五) | 周度监管预测 | APAC regulation forecast | 预测+track record | ⏳ |
 
 ---
@@ -31,6 +31,7 @@
 | 3/10 | Stablecoin Regulation APAC | /learn/stablecoin-regulation-apac-comparison.html | ~2600 | TBD | TBD | infographic对比 |
 | 3/10 | MCP Security vs Compliance | /learn/mcp-security-vs-compliance.html | ~2800 | TBD | TBD | 纯文字深度 |
 | 3/11 | DeFi Compliance Challenges 2026 | /learn/defi-compliance-challenges-2026.html | ~2800 | TBD | TBD | 案例驱动 |
+| 3/13 | Singapore MAS AI Guidelines 2025 | /learn/singapore-mas-ai-guidelines-2025.html | ~2800 | TBD | TBD | 政策分析 |
 
 ---
 
@@ -111,4 +112,4 @@
 
 ---
 
-*最后更新: 2026-03-11 21:15*
+*最后更新: 2026-03-13 21:15*
