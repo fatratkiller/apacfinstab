@@ -1,0 +1,46 @@
+{
+  "date": "2026-03-14",
+  "generated": "2026-03-14T02:04:00Z",
+  "keywords": {
+    "hong kong crypto regulation": {
+      "target": "top 10",
+      "status": "monitoring",
+      "notes": "Core target keyword"
+    },
+    "hong kong stablecoin license": {
+      "target": "top 5",
+      "status": "monitoring",
+      "notes": "Hot topic - HSBC/StanChart news"
+    },
+    "apac crypto regulation": {
+      "target": "top 3",
+      "status": "monitoring",
+      "notes": "Brand keyword"
+    },
+    "singapore mas crypto license": {
+      "target": "top 10",
+      "status": "monitoring",
+      "notes": "Competitor landscape"
+    },
+    "japan crypto tax 2026": {
+      "target": "top 10",
+      "status": "monitoring",
+      "notes": "Tax reduction news"
+    },
+    "south korea corporate crypto trading": {
+      "target": "top 5",
+      "status": "monitoring",
+      "notes": "Recent policy change"
+    }
+  },
+  "newEvents": [
+    "evt-2026-0314-001",
+    "evt-2026-0313-001",
+    "evt-2026-0313-002"
+  ],
+  "contentOpportunities": [
+    "HSBC/Standard Chartered stablecoin license deep dive",
+    "SEC-CFTC MOU impact on APAC exchanges",
+    "Fed capital rules implications for APAC custody"
+  ]
+}
