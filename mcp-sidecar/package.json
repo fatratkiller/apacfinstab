@@ -1,0 +1,33 @@
+{
+  "name": "@apacfinstab/mcp-compliance-sidecar",
+  "version": "0.1.0",
+  "description": "MCP Compliance Sidecar - Audit and risk scoring for MCP tool calls",
+  "main": "src/index.js",
+  "bin": {
+    "mcp-sidecar": "./src/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.js start",
+    "discover": "node src/cli.js discover",
+    "report": "node src/cli.js report",
+    "test": "node --test tests/"
+  },
+  "keywords": [
+    "mcp",
+    "compliance",
+    "audit",
+    "fintech",
+    "regulatory"
+  ],
+  "author": "APAC FINSTAB",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "commander": "^12.0.0",
+    "yaml": "^2.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

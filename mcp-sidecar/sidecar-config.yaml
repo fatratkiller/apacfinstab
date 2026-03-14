@@ -1,0 +1,98 @@
+# MCP Compliance Sidecar Configuration
+version: "1.0"
+
+# Proxy settings
+proxy:
+  mode: "stdio"
+  # Example: upstream_command: ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+  upstream_command: []
+
+# Discovery settings
+discovery:
+  auto_scan: true
+  scan_interval_minutes: 60
+
+# Audit log settings
+audit:
+  enabled: true
+  storage: "sqlite"
+  database_path: "./sidecar-audit.db"
+  retention_days: 90
+  
+  # Data redaction
+  redaction:
+    enabled: true
+    patterns:
+      - name: "credit_card"
+        regex: "\\b\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}\\b"
+      - name: "hk_id"
+        regex: "\\b[A-Z]{1,2}\\d{6}[0-9A-Z]\\b"
+      - name: "email"
+        regex: "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b"
+
+  # Injection detection
+  injection_detection:
+    enabled: true
+    patterns:
+      - name: "sql_injection"
+        regex: "(?i)(union\\s+select|drop\\s+table|;\\s*delete|'\\s*or\\s*'|--\\s*$)"
+      - name: "prompt_injection"
+        regex: "(?i)(ignore\\s+previous|disregard\\s+instructions|system\\s*prompt)"
+      - name: "path_traversal"
+        regex: "\\.\\./|\\.\\.\\\\|%2e%2e"
+
+# Risk scoring settings
+risk_scoring:
+  enabled: true
+  weights:
+    data_sensitivity: 0.30
+    operation_type: 0.25
+    access_frequency: 0.15
+    injection_risk: 0.20
+    regulatory_relevance: 0.10
+  thresholds:
+    low: 0.3
+    medium: 0.6
+    high: 0.8
+
+# Alert settings
+alerts:
+  enabled: true
+  channels:
+    - type: "file"
+      path: "./alerts.log"
+  trigger_levels:
+    - "HIGH"
+    - "CRITICAL"
+
+# Regulatory compliance mapping (APAC FINSTAB core value)
+compliance:
+  jurisdictions:
+    - code: "HK-SFC"
+      name: "Hong Kong Securities and Futures Commission"
+      triggers:
+        - "securities"
+        - "trading"
+        - "futures"
+        - "investment"
+    - code: "HK-PDPO"
+      name: "Hong Kong Personal Data Protection Ordinance"
+      triggers:
+        - "customer"
+        - "personal"
+        - "name"
+        - "address"
+        - "email"
+    - code: "HK-AMLO"
+      name: "Hong Kong Anti-Money Laundering Ordinance"
+      triggers:
+        - "transaction"
+        - "transfer"
+        - "payment"
+        - "withdrawal"
+    - code: "SG-MAS"
+      name: "Monetary Authority of Singapore"
+      triggers:
+        - "payment"
+        - "remittance"
+        - "capital_markets"
