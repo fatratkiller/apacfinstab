@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaMask AI Agent Compliance Guide | Smart Accounts Kit + ERC-7710 Regulations APAC</title>
+    <meta name="description" content="Comprehensive compliance guide for MetaMask AI agents using Smart Accounts Kit, ERC-4337, and ERC-7710 delegation framework. APAC regulatory requirements for autonomous wallet transactions.">
+    <meta name="keywords" content="MetaMask AI agent, Smart Accounts Kit, ERC-4337, ERC-7710, delegation toolkit, AI wallet compliance, APAC crypto regulation, autonomous transactions, Snaps compliance">
+    <link rel="canonical" href="https://apacfinstab.com/agents/metamask-ai.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="MetaMask AI Agent Compliance Guide | APAC Regulatory Framework">
+    <meta property="og:description" content="Navigate APAC regulations for MetaMask AI agents using Smart Accounts Kit and ERC-7710 delegation. Compliance requirements for autonomous wallet transactions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://apacfinstab.com/agents/metamask-ai.html">
+    
+    <!-- Schema.org FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do MetaMask AI agents require VASP licensing in Hong Kong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the AI agent facilitates exchange, transfer, or custody of virtual assets on behalf of users, VASP licensing under the AMLO is required. Delegation-based agents that only execute pre-approved transactions may qualify for limited exemptions, but operators must consult SFC guidance on automated trading systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ERC-7710 delegation affect regulatory classification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ERC-7710's caveat enforcer system allows granular permission controls that may help operators demonstrate compliance boundaries. By limiting delegations to specific amounts, tokens, or actions, operators can argue reduced regulatory scope. However, most APAC regulators assess the economic function rather than technical implementation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What AML/KYC requirements apply to MetaMask AI agent operators in Singapore?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under the Payment Services Act, operators of AI agents that facilitate digital payment token services must implement CDD procedures, transaction monitoring, and STR filing capabilities. The MAS requires risk-based AML programs proportionate to the AI agent's transaction volumes and user base."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are autonomous transaction bots using Smart Accounts Kit regulated in Japan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The FSA regulates automated trading systems under the FIEA. Bots executing trades on behalf of users typically require Crypto Asset Exchange Service Provider (CAESP) registration. The 2024 amendments specifically address algorithmic trading obligations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What liability framework applies when AI agents execute erroneous transactions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Liability depends on jurisdiction. In most APAC markets, the operator bears primary liability for AI system failures. Hong Kong's SFC Guidelines and Singapore's MAS Guidelines emphasize human oversight requirements. Operators should implement circuit breakers, transaction limits, and user confirmation protocols."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Travel Rule requirements affect AI-initiated cross-border transfers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI agents initiating transfers above jurisdiction-specific thresholds (e.g., HKD 8,000 in Hong Kong, SGD 1,500 in Singapore) must transmit originator and beneficiary information. Automated Travel Rule compliance solutions must be integrated into the AI agent's transaction flow."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        :root {
+            --primary: #037DD6;
+            --secondary: #F6851B;
+            --bg: #1a1a2e;
+            --card-bg: #16213e;
+            --text: #e8e8e8;
+            --accent: #00d4ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        main {
+            padding: 50px 0;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .warning-card {
+            border-left-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+        }
+        
+        .success-card {
+            border-left-color: #51cf66;
+            background: rgba(81, 207, 102, 0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .tech-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .tech-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .compliance-matrix {
+            overflow-x: auto;
+        }
+        
+        .status-required {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        
+        .status-recommended {
+            color: #ffd93d;
+        }
+        
+        .status-optional {
+            color: #51cf66;
+        }
+        
+        ul, ol {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin: 10px 0;
+        }
+        
+        code {
+            background: rgba(0,212,255,0.1);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', monospace;
+            color: var(--accent);
+        }
+        
+        .use-case {
+            background: linear-gradient(135deg, rgba(3,125,214,0.2), rgba(246,133,27,0.2));
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .timeline {
+            border-left: 3px solid var(--primary);
+            padding-left: 30px;
+            margin: 25px 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        footer {
+            background: var(--card-bg);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            .container { padding: 0 15px; }
+            table { font-size: 0.9rem; }
+            th, td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🦊 MetaMask AI Agent Compliance Guide</h1>
+            <p class="subtitle">Smart Accounts Kit, ERC-4337 & ERC-7710 Delegation | APAC Regulatory Framework</p>
+            <span class="badge">Updated: March 2026</span>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Introduction -->
+        <section>
+            <h2>Overview: MetaMask AI Agents in APAC</h2>
+            <p>MetaMask's Smart Accounts Kit and ERC-7710 delegation framework enable AI agents to execute on-chain transactions while users retain custody of their private keys. This guide analyzes the regulatory implications across APAC jurisdictions for developers and operators building MetaMask-integrated AI systems.</p>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4>ERC-4337</h4>
+                    <p>Account Abstraction standard enabling programmable smart contract accounts with custom security policies</p>
+                </div>
+                <div class="tech-item">
+                    <h4>ERC-7710</h4>
+                    <p>Delegation standard defining interfaces for smart contracts to delegate capabilities to other accounts</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Smart Accounts Kit</h4>
+                    <p>MetaMask SDK for building ERC-4337 compliant accounts with advanced features like multi-sig and batching</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Caveat Enforcers</h4>
+                    <p>Permission control system applying rules and restrictions to delegated capabilities</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Regulatory Classification -->
+        <section>
+            <h2>Regulatory Classification by Jurisdiction</h2>
+            
+            <div class="compliance-matrix">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jurisdiction</th>
+                            <th>Primary Regulator</th>
+                            <th>AI Agent Classification</th>
+                            <th>License Requirement</th>
+                            <th>Key Statute</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🇭🇰 Hong Kong</td>
+                            <td>SFC / HKMA</td>
+                            <td>Automated Trading Facility</td>
+                            <td class="status-required">VASP License (Type 1/7)</td>
+                            <td>AMLO / SFO</td>
+                        </tr>
+                        <tr>
+                            <td>🇸🇬 Singapore</td>
+                            <td>MAS</td>
+                            <td>Digital Payment Token Service</td>
+                            <td class="status-required">MPI / DPT License</td>
+                            <td>Payment Services Act</td>
+                        </tr>
+                        <tr>
+                            <td>🇯🇵 Japan</td>
+                            <td>FSA / JFSA</td>
+                            <td>Crypto Asset Exchange Service</td>
+                            <td class="status-required">CAESP Registration</td>
+                            <td>FIEA / PSA</td>
+                        </tr>
+                        <tr>
+                            <td>🇰🇷 South Korea</td>
+                            <td>FSC / FIU</td>
+                            <td>VASP</td>
+                            <td class="status-required">VASP Registration + ISMS</td>
+                            <td>VASP Act (DABA)</td>
+                        </tr>
+                        <tr>
+                            <td>🇦🇺 Australia</td>
+                            <td>ASIC / AUSTRAC</td>
+                            <td>Digital Currency Exchange</td>
+                            <td class="status-required">DCE Registration</td>
+                            <td>AML/CTF Act</td>
+                        </tr>
+                        <tr>
+                            <td>🇹🇭 Thailand</td>
+                            <td>SEC Thailand</td>
+                            <td>Digital Asset Business</td>
+                            <td class="status-required">DA Business License</td>
+                            <td>Digital Asset Decree</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- ERC-7710 Compliance Analysis -->
+        <section>
+            <h2>ERC-7710 Delegation & Regulatory Implications</h2>
+            
+            <div class="card">
+                <h3>Understanding Delegation Scope</h3>
+                <p>ERC-7710 enables granular permission controls through <strong>caveat enforcers</strong>. From a regulatory perspective, these restrictions can help operators demonstrate compliance boundaries:</p>
+                
+                <ul>
+                    <li><strong>Amount Limits:</strong> Capping maximum transaction values may reduce regulatory scrutiny for small-value operations</li>
+                    <li><strong>Token Restrictions:</strong> Limiting delegations to specific approved tokens</li>
+                    <li><strong>Time Bounds:</strong> Setting expiration timestamps on delegations</li>
+                    <li><strong>Action Constraints:</strong> Restricting to specific contract calls (e.g., swaps only, no lending)</li>
+                </ul>
+            </div>
+            
+            <div class="card warning-card">
+                <h3>⚠️ Regulatory Reality Check</h3>
+                <p>Despite technical permission controls, most APAC regulators assess <strong>economic function</strong> rather than implementation details. Key points:</p>
+                <ul>
+                    <li>If the AI agent facilitates exchange, transfer, or custody of user assets, licensing typically applies regardless of delegation scope</li>
+                    <li>"Non-custodial" technical architecture does not automatically exempt operators from VASP/MSB obligations</li>
+                    <li>Regulators increasingly scrutinize "control" vs. "access" distinctions in automated systems</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Use Case Analysis -->
+        <section>
+            <h2>Use Case Compliance Analysis</h2>
+            
+            <div class="use-case">
+                <h3>Use Case 1: Automated DCA Bot</h3>
+                <p><strong>Function:</strong> AI agent executes recurring buy orders using delegated permissions</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jurisdiction</th>
+                            <th>Likely Classification</th>
+                            <th>Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hong Kong</td>
+                            <td>VASP (dealing in VA)</td>
+                            <td>Type 1 License, AML program, client asset segregation</td>
+                        </tr>
+                        <tr>
+                            <td>Singapore</td>
+                            <td>DPT Service</td>
+                            <td>MPI/DPT License, CDD, Travel Rule compliance</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>CAESP</td>
+                            <td>FSA registration, algo trading disclosures, capital requirements</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="use-case">
+                <h3>Use Case 2: Portfolio Rebalancer</h3>
+                <p><strong>Function:</strong> AI monitors portfolio and executes trades to maintain target allocations</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jurisdiction</th>
+                            <th>Likely Classification</th>
+                            <th>Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hong Kong</td>
+                            <td>Type 9 (Asset Management)</td>
+                            <td>SFC license, RO requirements, suitability obligations</td>
+                        </tr>
+                        <tr>
+                            <td>Singapore</td>
+                            <td>Fund Management Activity</td>
+                            <td>CMS License (potentially), AML, business conduct rules</td>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>MDA Scheme</td>
+                            <td>AFSL with MDA authorization, RG 179 compliance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="use-case">
+                <h3>Use Case 3: Gas Optimization Agent</h3>
+                <p><strong>Function:</strong> AI batches user transactions for gas efficiency, no trading</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jurisdiction</th>
+                            <th>Likely Classification</th>
+                            <th>Requirements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hong Kong</td>
+                            <td>Potentially unregulated (utility service)</td>
+                            <td>Monitor for VA-related activities, maintain records</td>
+                        </tr>
+                        <tr>
+                            <td>Singapore</td>
+                            <td>Potentially unregulated</td>
+                            <td>Ensure no facilitation of DPT dealing</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>Technical service (unregulated)</td>
+                            <td>No direct crypto asset handling</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- AML/KYC Requirements -->
+        <section>
+            <h2>AML/KYC Requirements for AI Agent Operators</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Hong Kong</th>
+                        <th>Singapore</th>
+                        <th>Japan</th>
+                        <th>Australia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Customer Due Diligence</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Monitoring</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                    </tr>
+                    <tr>
+                        <td>Travel Rule</td>
+                        <td class="status-required">&gt;HKD 8,000</td>
+                        <td class="status-required">&gt;SGD 1,500</td>
+                        <td class="status-required">&gt;JPY 100,000</td>
+                        <td class="status-recommended">Recommended</td>
+                    </tr>
+                    <tr>
+                        <td>Suspicious Transaction Reporting</td>
+                        <td class="status-required">JFIU</td>
+                        <td class="status-required">STRO</td>
+                        <td class="status-required">JAFIC</td>
+                        <td class="status-required">AUSTRAC</td>
+                    </tr>
+                    <tr>
+                        <td>Wallet Screening</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-required">Required</td>
+                        <td class="status-recommended">Expected</td>
+                    </tr>
+                    <tr>
+                        <td>Sanctions Compliance</td>
+                        <td class="status-required">UNSC + Local</td>
+                        <td class="status-required">UNSC + Local</td>
+                        <td class="status-required">UNSC + JFSA List</td>
+                        <td class="status-required">DFAT List</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="card">
+                <h3>AI-Specific AML Considerations</h3>
+                <ul>
+                    <li><strong>Automated Screening:</strong> AI agents must integrate real-time sanctions/PEP screening before executing transactions</li>
+                    <li><strong>Pattern Detection:</strong> Implement ML-based anomaly detection for structuring attempts</li>
+                    <li><strong>Audit Trails:</strong> Maintain immutable logs of all AI decisions and delegated actions</li>
+                    <li><strong>Human Oversight:</strong> Regulators expect manual review triggers for high-risk scenarios</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Technical Implementation -->
+        <section>
+            <h2>Compliance-Aware Implementation</h2>
+            
+            <div class="card success-card">
+                <h3>✅ Recommended Architecture</h3>
+                <ul>
+                    <li>Implement <strong>tiered delegation limits</strong> based on user KYC level</li>
+                    <li>Use <strong>caveat enforcers</strong> to restrict transactions to whitelisted contracts/tokens</li>
+                    <li>Build <strong>circuit breakers</strong> that halt operations when anomalies detected</li>
+                    <li>Integrate <strong>Travel Rule compliance layer</strong> (e.g., TRP, Notabene, Sygna)</li>
+                    <li>Maintain <strong>on-chain activity logs</strong> for regulatory audit purposes</li>
+                    <li>Implement <strong>user confirmation flows</strong> for transactions above thresholds</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Caveat Enforcer Compliance Patterns</h3>
+                <pre><code>// Example: Jurisdiction-aware delegation
+AllowedMethodsEnforcer: ["swap", "transfer"]
+ValueLimitEnforcer: {
+  HK_VASP: 8000 * HKD_RATE,  // Travel Rule threshold
+  SG_DPT: 1500 * SGD_RATE,
+  default: 1000 * USD_RATE
+}
+AllowedTargetsEnforcer: [sanctionedList.inverse()]
+TimeLimitEnforcer: { expiry: block.timestamp + 86400 }</code></pre>
+            </div>
+        </section>
+        
+        <!-- Recent Developments -->
+        <section>
+            <h2>Recent Developments (2026)</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">March 2026</span>
+                    <p><strong>CoinFello OpenClaw Launch:</strong> First major production deployment of MetaMask Smart Accounts Kit for AI agents, using ERC-7710 delegations with Moltbots. Demonstrates custodial-key-free AI transaction execution.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">February 2026</span>
+                    <p><strong>Hong Kong SFC:</strong> Issued guidance on automated trading systems, clarifying that AI-driven VA dealing requires licensing regardless of custody model.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">January 2026</span>
+                    <p><strong>Singapore MAS:</strong> Updated DPT service provider guidelines to address AI agent integrations, emphasizing human oversight requirements.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">December 2025</span>
+                    <p><strong>MetaMask Delegation Toolkit:</strong> General availability of Smart Accounts Kit with full ERC-7710 support, enabling mainstream adoption of delegation-based AI agents.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Schema Section -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="card">
+                <h3>Do MetaMask AI agents require VASP licensing in Hong Kong?</h3>
+                <p>If the AI agent facilitates exchange, transfer, or custody of virtual assets on behalf of users, VASP licensing under the AMLO is required. Delegation-based agents that only execute pre-approved transactions may qualify for limited exemptions, but operators must consult SFC guidance on automated trading systems.</p>
+            </div>
+            
+            <div class="card">
+                <h3>How does ERC-7710 delegation affect regulatory classification?</h3>
+                <p>ERC-7710's caveat enforcer system allows granular permission controls that may help operators demonstrate compliance boundaries. By limiting delegations to specific amounts, tokens, or actions, operators can argue reduced regulatory scope. However, most APAC regulators assess the economic function rather than technical implementation.</p>
+            </div>
+            
+            <div class="card">
+                <h3>What AML/KYC requirements apply to MetaMask AI agent operators in Singapore?</h3>
+                <p>Under the Payment Services Act, operators of AI agents that facilitate digital payment token services must implement CDD procedures, transaction monitoring, and STR filing capabilities. The MAS requires risk-based AML programs proportionate to the AI agent's transaction volumes and user base.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Are autonomous transaction bots using Smart Accounts Kit regulated in Japan?</h3>
+                <p>Yes. The FSA regulates automated trading systems under the FIEA. Bots executing trades on behalf of users typically require Crypto Asset Exchange Service Provider (CAESP) registration. The 2024 amendments specifically address algorithmic trading obligations.</p>
+            </div>
+            
+            <div class="card">
+                <h3>What liability framework applies when AI agents execute erroneous transactions?</h3>
+                <p>Liability depends on jurisdiction. In most APAC markets, the operator bears primary liability for AI system failures. Hong Kong's SFC Guidelines and Singapore's MAS Guidelines emphasize human oversight requirements. Operators should implement circuit breakers, transaction limits, and user confirmation protocols.</p>
+            </div>
+            
+            <div class="card">
+                <h3>How do Travel Rule requirements affect AI-initiated cross-border transfers?</h3>
+                <p>AI agents initiating transfers above jurisdiction-specific thresholds (e.g., HKD 8,000 in Hong Kong, SGD 1,500 in Singapore) must transmit originator and beneficiary information. Automated Travel Rule compliance solutions must be integrated into the AI agent's transaction flow.</p>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section>
+            <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--primary), var(--secondary));">
+                <h3>Need Compliance Intelligence for Your MetaMask AI Agent?</h3>
+                <p style="margin: 15px 0;">APAC FINSTAB provides real-time regulatory guidance through our MCP API and compliance tools.</p>
+                <a href="/index.html" style="display: inline-block; background: white; color: var(--primary); padding: 12px 30px; border-radius: 25px; font-weight: bold; margin-top: 10px;">Explore Our Tools →</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p><strong>APAC FINSTAB</strong> — AI-Powered Regulatory Intelligence for Digital Assets</p>
+            <p style="margin-top: 10px; opacity: 0.7;">
+                <a href="/agents/index.html">AI Agent Guides</a> |
+                <a href="/index.html">Home</a> |
+                <a href="/regions/hk.html">Hong Kong</a> |
+                <a href="/regions/sg.html">Singapore</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85rem; opacity: 0.5;">
+                Disclaimer: This content is for informational purposes only and does not constitute legal or regulatory advice. 
+                Consult qualified professionals for jurisdiction-specific guidance.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

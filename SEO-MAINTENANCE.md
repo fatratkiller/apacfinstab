@@ -71,9 +71,9 @@
 
 | 优先级 | 页面 | 目标URL | 目标关键词 | 状态 |
 |--------|------|---------|-----------|------|
-| P0 | Coinbase AgentKit | /agents/coinbase-agentkit/ | Coinbase AI agent, AgentKit, Based Agent | ⏳ |
+| ✅ | Coinbase AgentKit | /agents/coinbase-agentkit.html | Coinbase AI agent, AgentKit, Based Agent | ✅ 2026-03-10 |
 | ✅ | Uniswap AI Skills | /agents/uniswap-ai.html | Uniswap AI agent, hooks, skills | ✅ 2026-03-13 |
-| P0 | MetaMask AI Agent | /agents/metamask-ai-agent/ | MetaMask AI agent, SDK, Snaps | ⏳ |
+| ✅ | MetaMask Smart Accounts Kit | /agents/metamask-ai.html | MetaMask AI agent, ERC-4337, ERC-7710, Snaps | ✅ 2026-03-14 |
 | P1 | AIXBT | /agents/aixbt/ | aixbt, Virtuals agent, crypto KOL AI | ⏳ |
 | P1 | Luna Virtuals | /agents/luna-virtuals/ | Luna AI, AI influencer, TikTok AI | ⏳ |
 | P1 | Binance Trading Bot | /agents/binance-trading-bot/ | Binance bot, AI trading | ⏳ |
