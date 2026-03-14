@@ -104,6 +104,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- APAC Regulation Forecast W12 2026 -->
+  <url>
+    <loc>https://apacfinstab.com/learn/apac-regulation-forecast-w11-2026.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Policy Tracker (Data-Driven) -->
   <url>
     <loc>https://apacfinstab.com/tracker/</loc>
