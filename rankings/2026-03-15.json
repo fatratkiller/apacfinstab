@@ -1,0 +1,46 @@
+{
+  "date": "2026-03-15",
+  "checkedAt": "2026-03-15T02:00:00Z",
+  "keywords": [
+    {
+      "keyword": "Hong Kong crypto license",
+      "position": "monitoring",
+      "page": "hk/vasp-requirements.html",
+      "notes": "Target keyword"
+    },
+    {
+      "keyword": "Singapore MAS crypto license",
+      "position": "monitoring",
+      "page": "sg/mas-license-guide.html",
+      "notes": "Target keyword"
+    },
+    {
+      "keyword": "APAC crypto regulation",
+      "position": "monitoring",
+      "page": "index.html",
+      "notes": "Primary keyword"
+    },
+    {
+      "keyword": "Asia crypto compliance",
+      "position": "monitoring",
+      "page": "index.html",
+      "notes": "Secondary keyword"
+    },
+    {
+      "keyword": "Coinbase AgentKit",
+      "position": "monitoring",
+      "page": "agents/coinbase-agentkit.html",
+      "notes": "Agent page keyword"
+    },
+    {
+      "keyword": "MetaMask AI agent",
+      "position": "monitoring",
+      "page": "agents/metamask-ai.html",
+      "notes": "Agent page keyword"
+    }
+  ],
+  "notes": "Sunday check - Search API rate limited, manual verification recommended",
+  "searchApiStatus": "rate_limited",
+  "policyEventsCount": 99,
+  "lastEventDate": "2026-03-14"
+}
