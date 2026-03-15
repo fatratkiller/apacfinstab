@@ -75,7 +75,7 @@
 | ✅ | Uniswap AI Skills | /agents/uniswap-ai.html | Uniswap AI agent, hooks, skills | ✅ 2026-03-13 |
 | ✅ | MetaMask Smart Accounts Kit | /agents/metamask-ai.html | MetaMask AI agent, ERC-4337, ERC-7710, Snaps | ✅ 2026-03-14 |
 | ✅ | AIXBT | /agents/aixbt.html | aixbt, Virtuals agent, crypto KOL AI | ✅ 2026-03-14 |
-| P1 | Luna Virtuals | /agents/luna-virtuals/ | Luna AI, AI influencer, TikTok AI | ⏳ |
+| ✅ | Luna Virtuals | /agents/luna-virtuals.html | Luna AI, AI influencer, TikTok AI | ✅ 2026-03-15 |
 | P1 | Binance Trading Bot | /agents/binance-trading-bot/ | Binance bot, AI trading | ⏳ |
 | P1 | OKX Trading Bot | /agents/okx-trading-bot/ | OKX bot, AI trading | ⏳ |
 
