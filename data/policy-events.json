@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastUpdated": "2026-03-14T02:03:29Z",
-    "totalEvents": 99,
+    "lastUpdated": "2026-04-06T00:07:00Z",
+    "totalEvents": 104,
     "version": "1.0"
   },
   "dimensions": {
@@ -16,25 +16,26 @@
       "XRP"
     ],
     "regions": [
-      "HK",
-      "SG",
-      "JP",
-      "KR",
-      "CN",
       "AU",
-      "IN",
-      "TH",
-      "ID",
-      "VN",
-      "PH",
-      "MY",
-      "TW",
-      "US",
       "BR",
-      "RU",
-      "UK",
+      "CN",
+      "HK",
+      "ID",
+      "IN",
+      "JP",
+      "KH",
+      "KR",
+      "MY",
+      "PH",
       "PK",
-      "TR"
+      "RU",
+      "SG",
+      "TH",
+      "TR",
+      "TW",
+      "UK",
+      "US",
+      "VN"
     ],
     "topics": [
       "Staking",
@@ -2606,6 +2607,98 @@
       "summary": "Full VASP licensing under AMLO becomes mandatory for all crypto exchanges.",
       "impact": "high",
       "source": "https://www.sfc.hk"
-    }
+    },
+    [
+      {
+        "id": "evt-2026-0405-001",
+        "date": "2026-04-05",
+        "title": "Japan FSA Mandates Cybersecurity Self-Assessment for Crypto Platforms",
+        "protocols": [
+          "BTC",
+          "ETH"
+        ],
+        "regions": [
+          "JP"
+        ],
+        "topics": [
+          "Regulation",
+          "Exchange"
+        ],
+        "entities": [],
+        "summary": "Japan's FSA released new cybersecurity guidelines requiring crypto platforms to conduct self-assessments and threat-led penetration testing, effective FY2026.",
+        "impact": "high",
+        "source": "https://wublock.substack.com/p/asias-weekly-top10-crypto-news-japan"
+      },
+      {
+        "id": "evt-2026-0405-002",
+        "date": "2026-04-05",
+        "title": "Japan Reclassifies Crypto as Financial Instruments",
+        "protocols": [
+          "BTC",
+          "ETH"
+        ],
+        "regions": [
+          "JP"
+        ],
+        "topics": [
+          "Regulation"
+        ],
+        "entities": [],
+        "summary": "Japan moves crypto asset oversight from Payment Services Act to Financial Instruments and Exchange Act, recommending insider trading regulations for crypto.",
+        "impact": "high",
+        "source": "https://news.bitcoin.com/japan-advances-crypto-regulation-overhaul"
+      },
+      {
+        "id": "evt-2026-0405-003",
+        "date": "2026-04-05",
+        "title": "Cambodia Passes First Cybercrime Law Targeting Crypto Fraud",
+        "protocols": [],
+        "regions": [
+          "KH"
+        ],
+        "topics": [
+          "Regulation"
+        ],
+        "entities": [],
+        "summary": "Cambodia's National Assembly passed cybercrime law to combat online scam compounds and crypto-related money laundering, with 2-10 years imprisonment penalties.",
+        "impact": "medium",
+        "source": "https://www.theblock.co/post/396313/cambodias-parliment-passes-law"
+      },
+      {
+        "id": "evt-2026-0405-004",
+        "date": "2026-04-05",
+        "title": "Indonesia Transfers Crypto Oversight to OJK",
+        "protocols": [],
+        "regions": [
+          "ID"
+        ],
+        "topics": [
+          "Regulation",
+          "Exchange"
+        ],
+        "entities": [],
+        "summary": "Indonesia brings crypto platforms under Financial Services Authority (OJK), integrating crypto regulation with traditional finance and mandating suspicious transaction reporting.",
+        "impact": "high",
+        "source": "https://www.trmlabs.com/resources/blog/indonesia-law-enforcement"
+      },
+      {
+        "id": "evt-2026-0405-005",
+        "date": "2026-04-05",
+        "title": "Vietnam Develops Licensing Framework for Crypto Exchanges",
+        "protocols": [],
+        "regions": [
+          "VN"
+        ],
+        "topics": [
+          "Regulation",
+          "Licensing",
+          "Exchange"
+        ],
+        "entities": [],
+        "summary": "Vietnam actively developing regulatory framework requiring domestic crypto exchanges to obtain local licenses, aiming to address capital flight concerns and FATF grey list removal.",
+        "impact": "high",
+        "source": "https://www.blockchain-council.org/cryptocurrency/crypto-regulation-2026"
+      }
+    ]
   ]
 }
