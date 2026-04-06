@@ -1,0 +1,73 @@
+{
+  "date": "2026-04-06",
+  "keywords": [
+    {
+      "keyword": "APAC crypto regulation dashboard",
+      "position": "未检测到 apacfinstab.com",
+      "topCompetitors": [
+        "trulioo.com",
+        "greyspark.substack.com",
+        "thomsonreuters.com",
+        "soliduslabs.com"
+      ],
+      "searchVolume": "中",
+      "intent": "informational",
+      "notes": "竞品都是老牌合规/fintech公司，需要更多权威反链"
+    },
+    {
+      "keyword": "Hong Kong crypto regulation tracker",
+      "position": "未检测到 apacfinstab.com",
+      "topCompetitors": [
+        "gpslegal.asia",
+        "freemanlaw.com",
+        "hacken.io",
+        "sumsub.com"
+      ],
+      "searchVolume": "高",
+      "intent": "informational",
+      "notes": "法律类网站主导，需要法律视角内容"
+    },
+    {
+      "keyword": "APAC crypto policy events",
+      "position": "需手动验证",
+      "topCompetitors": [],
+      "searchVolume": "低",
+      "intent": "informational",
+      "notes": "长尾关键词，潜力大"
+    },
+    {
+      "keyword": "Japan crypto regulation 2026",
+      "position": "未检测到 apacfinstab.com",
+      "topCompetitors": [
+        "bitcoin.com",
+        "wublock.substack.com",
+        "bingx.com"
+      ],
+      "searchVolume": "高",
+      "intent": "news",
+      "notes": "新闻导向，需要及时更新"
+    },
+    {
+      "keyword": "Singapore Hong Kong crypto regulation comparison",
+      "position": "未检测到 apacfinstab.com",
+      "topCompetitors": [],
+      "searchVolume": "中",
+      "intent": "comparison",
+      "notes": "比较类内容缺口，机会"
+    }
+  ],
+  "summary": {
+    "totalKeywords": 5,
+    "ranked": 0,
+    "top10": 0,
+    "top20": 0,
+    "avgPosition": null,
+    "recommendations": [
+      "增加权威网站反链（法律、金融媒体）",
+      "创建比较类内容（SG vs HK, JP vs KR）",
+      "优化长尾关键词（APAC crypto policy events）",
+      "建立新闻发布节奏（每日政策更新）",
+      "提交到更多 fintech/crypto 目录"
+    ]
+  }
+}
