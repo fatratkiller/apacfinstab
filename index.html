@@ -587,6 +587,99 @@
       color: var(--brand-orange);
       transform: translateY(-2px);
     }
+
+    .regions-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 28px;
+    }
+
+    .regions-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .regions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .regions-kicker {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-orange);
+      margin-bottom: 10px;
+    }
+
+    .regions-panel h3 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .regions-panel p {
+      color: var(--text-secondary);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    .regions-cta {
+      padding: 12px 18px;
+      background: var(--brand-orange);
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .regions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .region-tile {
+      display: block;
+      padding: 16px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .region-tile:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand-orange);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .region-tile strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .region-tile span {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.5;
+    }
     
     iframe {
       width: 100%;
@@ -670,8 +763,8 @@
       <a href="/" class="active">Dashboard</a>
       <a href="/tracker/">Policy Tracker</a>
       <a href="/agents/">Agents</a>
-      <a href="/ren/">REN</a>
-      <a href="/learn/">Learn</a>
+      <a href="/compare/">Compare</a>
+      <a href="/regions/">Regions</a>
       <a href="/blog.html">Insights</a>
       <a href="/for-agents/">For AI</a>
       <a href="/contact.html">Contact</a>
@@ -741,20 +834,22 @@
     <li><strong>Cross-Border Payment Systems:</strong> SWIFT blockchain integration, institutional DeFi settlement rails, and regional payment corridor developments</li>
   </ul>
 
-  <h3>Jurisdictions We Track</h3>
+  <h3>Jurisdiction Intelligence Hub</h3>
+  <p>Explore our dedicated <a href="/regions/" style="color: var(--brand-orange); font-weight: 600;">Regions hub</a> for country-level crypto regulation guides covering Hong Kong, Singapore, Japan, Korea, Australia, Vietnam, and more. These pages are refreshed from our policy-event dataset and designed to capture high-intent search demand around licensing, stablecoins, exchange rules, and regulator posture.</p>
   <div class="coverage-badges">
+    <a href="/regions/" class="coverage-badge" style="background: var(--brand-orange); color: white;">🌏 View All Regions →</a>
     <a href="/regions/hk.html" class="coverage-badge">🇭🇰 Hong Kong</a>
     <a href="/regions/sg.html" class="coverage-badge">🇸🇬 Singapore</a>
     <a href="/regions/jp.html" class="coverage-badge">🇯🇵 Japan</a>
     <a href="/regions/kr.html" class="coverage-badge">🇰🇷 South Korea</a>
-    <a href="/regions/cn.html" class="coverage-badge">🇨🇳 China</a>
     <a href="/regions/au.html" class="coverage-badge">🇦🇺 Australia</a>
-    <a href="/regions/in.html" class="coverage-badge">🇮🇳 India</a>
+    <a href="/regions/vn.html" class="coverage-badge">🇻🇳 Vietnam</a>
+    <a href="/regions/my.html" class="coverage-badge">🇲🇾 Malaysia</a>
     <a href="/regions/th.html" class="coverage-badge">🇹🇭 Thailand</a>
     <a href="/regions/id.html" class="coverage-badge">🇮🇩 Indonesia</a>
-    <a href="/regions/vn.html" class="coverage-badge">🇻🇳 Vietnam</a>
     <a href="/regions/ph.html" class="coverage-badge">🇵🇭 Philippines</a>
-    <a href="/regions/my.html" class="coverage-badge">🇲🇾 Malaysia</a>
+    <a href="/regions/in.html" class="coverage-badge">🇮🇳 India</a>
+    <a href="/regions/cn.html" class="coverage-badge">🇨🇳 China</a>
   </div>
 
   <h3>Who This Is For</h3>
@@ -762,6 +857,41 @@
 
   <h3>Policy Tracker Database</h3>
   <p>Our <a href="/tracker/" style="color: var(--brand-orange); font-weight: 600;">APAC Crypto Policy Tracker</a> is a real-time database of regulatory events across the region. Filter by protocol (Ethereum, Bitcoin, Solana, TON), region (Hong Kong, Singapore, Japan, Korea), topic (Staking, ETF, DeFi, Licensing), or entity (Binance, OKX, Coinbase). Updated daily with the latest policy developments.</p>
+
+  <h3>🤖 AI Agent Compliance Directory</h3>
+  <p>Browse our comprehensive <a href="/agents/" style="color: var(--brand-orange); font-weight: 600;">AI Agent Compliance Directory</a> — regulatory profiles for 3,500+ DeFi protocols and AI agents. Each profile includes jurisdiction coverage, compliance scores, and licensing requirements.</p>
+  <div class="coverage-badges" style="margin-top: 1rem;">
+    <a href="/agents/aave/" class="coverage-badge">Aave</a>
+    <a href="/agents/uniswap/" class="coverage-badge">Uniswap</a>
+    <a href="/agents/chainlink/" class="coverage-badge">Chainlink</a>
+    <a href="/agents/compound/" class="coverage-badge">Compound</a>
+    <a href="/agents/makerdao/" class="coverage-badge">MakerDAO</a>
+    <a href="/agents/lido/" class="coverage-badge">Lido</a>
+    <a href="/agents/curve/" class="coverage-badge">Curve</a>
+    <a href="/agents/synthetix/" class="coverage-badge">Synthetix</a>
+    <a href="/agents/" class="coverage-badge" style="background: var(--brand-orange); color: white;">View All 3,500+ →</a>
+  </div>
+</section>
+
+<section class="regions-section" aria-label="Regions coverage">
+  <div class="regions-panel">
+    <div class="regions-header">
+      <div>
+        <span class="regions-kicker">New SEO Cluster</span>
+        <h3>Explore crypto regulation by region</h3>
+        <p>Country-intent pages are now a formal site section. Start with the highest-upside markets, then branch into comparisons and policy tracker views.</p>
+      </div>
+      <a href="/regions/" class="regions-cta">View all regions →</a>
+    </div>
+    <div class="regions-grid">
+      <a href="/regions/hk.html" class="region-tile"><strong>🇭🇰 Hong Kong</strong><span>Stablecoin + VASP demand leader</span></a>
+      <a href="/regions/sg.html" class="region-tile"><strong>🇸🇬 Singapore</strong><span>Institutional licensing intent</span></a>
+      <a href="/regions/jp.html" class="region-tile"><strong>🇯🇵 Japan</strong><span>Mature framework coverage</span></a>
+      <a href="/regions/kr.html" class="region-tile"><strong>🇰🇷 South Korea</strong><span>User-protection and stablecoin trend</span></a>
+      <a href="/regions/au.html" class="region-tile"><strong>🇦🇺 Australia</strong><span>Deadline-driven compliance traffic</span></a>
+      <a href="/regions/vn.html" class="region-tile"><strong>🇻🇳 Vietnam</strong><span>High-growth page already proving out</span></a>
+    </div>
+  </div>
 </section>
 
 <section class="dashboard-wrapper" id="dashboard">
@@ -772,16 +902,25 @@
   
   <div class="dashboard-card">
     <div class="dashboard-header">
-      <span class="dashboard-header-title">📈 Current Week: Mar 3 - Mar 9, 2026</span>
+      <span class="dashboard-header-title">📈 Current Week: May 19 - May 25, 2026</span>
       <span class="dashboard-badge">Updated Weekly</span>
     </div>
-    <iframe src="dashboards/latest.html" title="APAC Regulatory Weekly Dashboard - January 19-25, 2026" loading="lazy"></iframe>
+    <iframe src="dashboards/latest.html" title="APAC Regulatory Weekly Dashboard - May 19 - May 25, 2026" loading="lazy"></iframe>
   </div>
 
   <!-- Dashboard Archive for internal linking and crawlability -->
   <div class="dashboard-archive">
     <h3>📂 Previous Weekly Dashboards</h3>
     <div class="archive-grid">
+      <a href="dashboards/2026-W21.html" class="archive-link">📊 May 19 – May 25, 2026</a>
+      <a href="dashboards/2026-W19.html" class="archive-link">📊 May 5 – May 11, 2026</a>
+      <a href="dashboards/2026-W18.html" class="archive-link">📊 Apr 28 – May 4, 2026</a>
+      <a href="dashboards/2026-W17.html" class="archive-link">📊 Apr 21 – Apr 27, 2026</a>
+      <a href="dashboards/2026-W16.html" class="archive-link">📊 Apr 14 – Apr 20, 2026</a>
+      <a href="dashboards/2026-W15.html" class="archive-link">📊 Apr 7 – Apr 13, 2026</a>
+      <a href="dashboards/2026-W14.html" class="archive-link">📊 Mar 31 – Apr 6, 2026</a>
+      <a href="dashboards/2026-W13.html" class="archive-link">📊 Mar 17 – Mar 23, 2026</a>
+      <a href="dashboards/2026-W11.html" class="archive-link">📊 Mar 10 – Mar 16, 2026</a>
       <a href="dashboards/2026-W10.html" class="archive-link">📊 Mar 3 – Mar 9, 2026</a>
       <a href="dashboards/APAC_FinStab_Dashboard_0224-0302.html" class="archive-link">📊 Feb 24 – Mar 2, 2026</a>
       <a href="dashboards/APAC_FinStab_Dashboard_0217-0223.html" class="archive-link">📊 Feb 17 – Feb 23, 2026</a>
